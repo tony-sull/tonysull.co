@@ -22,10 +22,7 @@ if (!bookmark) {
 }
 ---
 
-<Layout
-  title={bookmark.metadata.title}
-  image={bookmark.metadata.image}
->
+<Layout title={bookmark.metadata.title} image={bookmark.metadata.image}>
   <setion>
     <BookmarkCard {...bookmark} />
   </setion>

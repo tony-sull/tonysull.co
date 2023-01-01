@@ -6,22 +6,21 @@ import Hero from '@components/Hero.astro'
 import { type Note, fetchNotes } from '@data/notes.js'
 
 export async function getStaticPaths() {
-    const allNotes = await fetchNotes()
+  const allNotes = await fetchNotes()
 
-    const tagsMap = allNotes.reduce((acc, next) => {
-        next.tags.forEach((tag) => {
-            const list = acc.get(tag) || []
-            acc.set(tag, list.concat(next.slug))
-        })
+  const tagsMap = allNotes.reduce((acc, next) => {
+    next.tags.forEach(tag => {
+      const list = acc.get(tag) || []
+      acc.set(tag, list.concat(next.slug))
+    })
 
-        return acc
-    }, new Map<string, string[]>())
+    return acc
+  }, new Map<string, string[]>())
 
-    return Array.from(tagsMap.entries())
-        .map(([key, value]) => ({
-            params: { tag: key },
-            props: { slugs: value }
-        }))
+  return Array.from(tagsMap.entries()).map(([key, value]) => ({
+    params: { tag: key },
+    props: { slugs: value },
+  }))
 }
 
 const { tag } = Astro.params as { tag: string }
@@ -31,8 +30,7 @@ const title = `#${tag} | Notes`
 const description =
   'Tony Sullivan is a fullstack developer based in Onbekend, USA.'
 
-const notes = (await fetchNotes())
-    .filter(({ slug }) => slugs.includes(slug))
+const notes = (await fetchNotes()).filter(({ slug }) => slugs.includes(slug))
 ---
 
 <Layout title={title} description={description}>

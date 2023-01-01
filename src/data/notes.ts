@@ -2,7 +2,7 @@ import type { MarkdownInstance } from 'astro'
 
 type NoteData = {
   type: 'h-entry'
-  slug: string
+  slug?: string
   description: string
   url?: string
   date: string
@@ -28,6 +28,13 @@ export type Note = {
   }
 }
 
+function fileToSlug(filename: string) {
+  return filename
+    .split('/')
+    .pop()!
+    .replace(/\.[^.]*$/, '')
+}
+
 function safeUrl(value?: string): URL | undefined {
   if (typeof value !== 'string') {
     return undefined
@@ -50,20 +57,20 @@ export async function fetchNotes(): Promise<Note[]> {
     ).map(c => c())
   )
 
-  return content
-    .map(({ frontmatter, rawContent, compiledContent }) => {
-      return {
-        ...frontmatter,
-        url: safeUrl(frontmatter.url),
-        date: new Date(frontmatter.date),
-        tags: frontmatter.tags || [],
-        'in-reply-to': safeUrl(frontmatter['in-reply-to']),
-        content: {
-          value: rawContent(),
-          html: compiledContent(),
-        },
-      }
-    })
+  return content.map(({ frontmatter, rawContent, compiledContent, file }) => {
+    return {
+      ...frontmatter,
+      slug: frontmatter.slug || fileToSlug(file),
+      url: safeUrl(frontmatter.url),
+      date: new Date(frontmatter.date),
+      tags: frontmatter.tags || [],
+      'in-reply-to': safeUrl(frontmatter['in-reply-to']),
+      content: {
+        value: rawContent(),
+        html: compiledContent(),
+      },
+    }
+  })
 }
 
 export async function fetchNote(slug: string): Promise<Note | undefined> {
@@ -83,10 +90,11 @@ export async function fetchNote(slug: string): Promise<Note | undefined> {
     return undefined
   }
 
-  const { frontmatter, rawContent, compiledContent } = noteContent
+  const { frontmatter, rawContent, compiledContent, file } = noteContent
 
   return {
     ...frontmatter,
+    slug: frontmatter.slug || fileToSlug(file),
     url: safeUrl(frontmatter.url),
     date: new Date(frontmatter.date),
     tags: frontmatter.tags || [],

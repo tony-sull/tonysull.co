@@ -80,7 +80,7 @@ export async function fetchArticles(): Promise<ArticleSummary[]> {
         url: safeUrl(frontmatter.url),
         published: new Date(frontmatter.published!),
         date: safeDate(frontmatter.date),
-        tags: frontmatter.tags || []
+        tags: frontmatter.tags || [],
       }
     })
 }

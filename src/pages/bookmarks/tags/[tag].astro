@@ -6,22 +6,21 @@ import Hero from '@components/Hero.astro'
 import { type Bookmark, fetchBookmarks } from '@data/bookmarks.js'
 
 export async function getStaticPaths() {
-    const allBookmarks = await fetchBookmarks()
+  const allBookmarks = await fetchBookmarks()
 
-    const tagsMap = allBookmarks.reduce((acc, next) => {
-        next.tags.forEach((tag) => {
-            const list = acc.get(tag) || []
-            acc.set(tag, list.concat(next.slug))
-        })
+  const tagsMap = allBookmarks.reduce((acc, next) => {
+    next.tags.forEach(tag => {
+      const list = acc.get(tag) || []
+      acc.set(tag, list.concat(next.slug))
+    })
 
-        return acc
-    }, new Map<string, string[]>())
+    return acc
+  }, new Map<string, string[]>())
 
-    return Array.from(tagsMap.entries())
-        .map(([key, value]) => ({
-            params: { tag: key },
-            props: { slugs: value }
-        }))
+  return Array.from(tagsMap.entries()).map(([key, value]) => ({
+    params: { tag: key },
+    props: { slugs: value },
+  }))
 }
 
 const { tag } = Astro.params as { tag: string }
@@ -31,8 +30,9 @@ const title = `#${tag} | Bookmarks`
 const description =
   'Tony Sullivan is a fullstack developer based in Onbekend, USA.'
 
-const bookmarks = (await fetchBookmarks())
-    .filter(({ slug }) => slugs.includes(slug))
+const bookmarks = (await fetchBookmarks()).filter(({ slug }) =>
+  slugs.includes(slug)
+)
 ---
 
 <Layout title={title} description={description}>
@@ -40,7 +40,10 @@ const bookmarks = (await fetchBookmarks())
     title="Hello, open web."
     cta={{ text: 'Hello, my name is Tony', href: '/about/' }}
   >
-    These are my bookmarks. I want to find them again later - might as well share them while I'm at it! They are also syndicated to my <a href="/bookmarks/feed.xml">RSS feed</a> if that's your thing!
+    These are my bookmarks. I want to find them again later - might as well
+    share them while I'm at it! They are also syndicated to my <a
+      href="/bookmarks/feed.xml">RSS feed</a
+    > if that's your thing!
   </Hero>
 
   <ul>
