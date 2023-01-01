@@ -1,0 +1,29 @@
+---
+import Layout from '@layouts/Page.astro'
+import BookmarkCard from '@components/BookmarkCard.astro'
+import For from '@components/For.astro'
+import Hero from '@components/Hero.astro'
+import { type Bookmark, fetchBookmarks } from '@data/bookmarks.js'
+
+const title = 'Bookmarks'
+const description =
+  'Tony Sullivan is a fullstack developer based in Onbekend, USA.'
+
+const bookmarks = await fetchBookmarks()
+console.log(bookmarks)
+---
+
+<Layout title={title} description={description}>
+  <Hero
+    title="Hello, open web."
+    cta={{ text: 'Hello, my name is Tony', href: '/about/' }}
+  >
+    These are my bookmarks. I want to find them again later - might as well share them while I'm at it! They are also syndicated to my <a href="/bookmarks/feed.xml">RSS feed</a> if that's your thing!
+  </Hero>
+
+  <ul>
+    <For each={bookmarks}>
+      {(bookmark: Bookmark) => <BookmarkCard {...bookmark} />}
+    </For>
+  </ul>
+</Layout>

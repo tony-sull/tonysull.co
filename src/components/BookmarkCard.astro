@@ -1,0 +1,20 @@
+---
+import type { Bookmark } from '@data/bookmarks.js'
+import Show from './Show.astro';
+
+export type Props = Bookmark
+
+const { metadata, 'bookmark-of': url } = Astro.props
+---
+
+<article>
+    <a href={url}>
+        <Show when={metadata.image}>
+            <img src={metadata.image} alt="" width="400" height="400" />
+        </Show>
+        <h3>{metadata.title}</h3>
+        <Show when={metadata.description}>
+            <p set:text={metadata.description}></p>
+        </Show>
+    </a>
+</article>

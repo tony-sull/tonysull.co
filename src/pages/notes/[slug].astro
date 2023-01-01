@@ -1,7 +1,7 @@
 ---
 import Layout from '@layouts/Page.astro'
 import { fetchNote, fetchNotes } from '@data/notes.js'
-import NoteSummary from '@components/NoteSummary.astro'
+import NoteCard from '@components/NoteCard.astro'
 
 export async function getStaticPaths() {
   const allNotes = await fetchNotes()
@@ -30,6 +30,6 @@ const canoncialURL = note.url || new URL(Astro.url.pathname, Astro.site)
   canonicalURL={canoncialURL}
 >
   <setion>
-    <NoteSummary {...note} />
+    <NoteCard {...note} />
   </setion>
 </Layout>

@@ -1,10 +1,10 @@
 ---
 import Layout from '@layouts/Page.astro'
-import ArticleSummary from '@components/ArticleSummary.astro'
+import ArticleCard from '@components/ArticleCard.astro'
 import For from '@components/For.astro'
 import Hero from '@components/Hero.astro'
 import {
-  type ArticleSummary as Article,
+  type ArticleSummary,
   fetchArticles,
 } from '@data/articles.js'
 
@@ -30,7 +30,7 @@ const articles = await fetchArticles()
 
   <ul>
     <For each={articles}>
-      {(article: Article) => <ArticleSummary {...article} />}
+      {(article: ArticleSummary) => <ArticleCard {...article} />}
     </For>
   </ul>
 </Layout>
