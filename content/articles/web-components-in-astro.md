@@ -8,6 +8,7 @@ slug: web-components-in-astro
 published: '2021-08-23T21:55:21+00:00'
 date: '2022-12-31T22:14:11.971Z'
 client_id: 'https://quill.p3k.io/'
+u-photo: 'uploads/2021-08-23-web-components-in-astro.jpg'
 ---
 
 Web components have had a bit of a rocky past, to put it lightly. The API design has gone through multiple iterations, a few unexpected [rough edges](https://thenewobjective.com/web-development/a-criticism-of-web-components) really hindered their usefulness. And if it wasn't already confusing enough, the level of excitement around the vision of custom elements has led to [over **50**](https://webcomponents.dev/blog/all-the-ways-to-make-a-web-component/) different patterns and frameworks to get the job done.
@@ -16,9 +17,7 @@ I've honestly not given custom elements much of a chance since the early iterati
 
 **tl;dr;** Web components aren't the magic bullet I'd hoped for, but they've come a long way in the last couple years. When paired with Astro's new [resolve](https://docs.astro.build/reference/api-reference#astroresolve) API you end up with a dead simple way to quickly author simple pure JavaScript web components, bundle them for production, and hydrate them on the client. Check out a [live demo](https://demo-astro-web-components.netlify.app/) or jump right into the source code on [GitHub](https://github.com/navillus-bv/demo-astro-web-components).
 
-
 ## Do web components require a framework?
-
 
 No! There are great options if you're ready to go all-in on frameworks though, I strongly recommend you checkout [webcomponent.dev's](https://webcomponents.dev/blog/all-the-ways-to-make-a-web-component/) detailed breakdown of all the different ways it can be done.
 
@@ -26,7 +25,7 @@ At the end of the day though, the frameworks are just going to compile down to J
 
 ### Less complicated than it sounds
 
-Web components can be daunting - shadow roots, `&lt;template&gt;`s, and `extend HTMLElement` aren't exactly old hack for most web developers. Let's break down the basic structure first, then jump into an full example.
+Web components can be daunting - shadow roots, `<template>`s, and `extend HTMLElement` aren't exactly old hack for most web developers. Let's break down the basic structure first, then jump into an full example.
 
 ## Web component basics
 
@@ -48,21 +47,40 @@ Web components are meant to be reusable, and for that to be possible you need to
 
 This can be done a few different ways, but the most common way is to use template literals right in your web component's JS file. I'll be using one of the excellent examples from [webcomponents.dev](https://webcomponents.dev/edit/ZCUsvyx06Au5j0yZzgG7?pm=1) as a starting point.
 
-```jsconst template = document.createElement('template')template.innerHTML = ` &lt;style&gt; /* your styles */ &lt;/style&gt; &lt;span id="count"&gt;&lt;/span&gt;````
+```js
+const template = document.createElement("template")
+template.innerHTML = `
+  <style>
+    /* your styles */
+  </style>
+  <span id="count"></span>
+`
+```
 
 Feels a little weird writing HTML in a template literal, right? It gets the job done though, and in my opinion plain JS web components really shine with small components so this shouldn't get too crazy to maintain.
 
-All this really does is create a new `&lt;template&gt;` tag, just like if you directly included it in your `index.html`. The template contains all the initial styling and HTML used to initialize the component.
+All this really does is create a new `<template>` tag, just like if you directly included it in your `index.html`. The template contains all the initial styling and HTML used to initialize the component.
 
 ### extending HTMLElement
 
-This is where it gets really interesting. Ever wonder why you can't make your own `&lt;select&gt;` or `&lt;input&gt;` elements? Well now you can (kind of)! I wouldn't recommend trying to actually replace existing HTML tags - I don't know if that would even work and it sounds like a nightmare for accessibility tools.
+This is where it gets really interesting. Ever wonder why you can't make your own `<select>` or `<input>` elements? Well now you can (kind of)! I wouldn't recommend trying to actually replace existing HTML tags - I don't know if that would even work and it sounds like a nightmare for accessibility tools.
 
-But you can make your own `&lt;my-counter&gt;` component, that's definitely not part of the HTML specs.
+But you can make your own `<my-counter>` component, that's definitely not part of the HTML specs.
 
-```jsclass MyCounter extends HTMLElement { constructor() { super() this.count = 0 // open mode keeps all elements accessible to the outside world this.attachShadow({ mode: 'open' }) } // ...}
+```js
+class MyCounter extends HTMLElement {
+  constructor() {
+    super()
+    this.count = 0
+    // open mode keeps all elements accessible to the outside world
+    this.attachShadow({ mode: "open" })
+  }
+  // ...
+}
 
-// tell the browser to use this class for all `&lt;my-counter&gt;` elementscustomElements.define('my-counter', MyCounter)```
+// tell the browser to use this class for all `<my-counter>` elements
+customElements.define("my-counter", MyCounter)
+```
 
 Notice the `open` mode there? I mentioned earlier that you can avoid the one-way encapsulation of the shadow DOM, that's all it takes. It's a shame having to turn off one of the key features of custom elements, but theming and styling really can be a big problem for real world apps!
 
@@ -74,27 +92,45 @@ I'll leave it up to you to check out the full source code on [GitHub](https://gi
 
 One huge benefit of Astro is the heavy focus on minimizing, or even completely avoiding, the amount of JavaScript used on a site. I've written [before](/blog/keeping-it-simple-with-astro) about how important simplicity is in web development, so I'll spare you the rant here.
 
-For me, the big promise of web components is the ability to easily share basic elements across multiple projects without being tied to one specific framework. I'm not ready to build an entire PWA in web components, but when it comes to the base-level building blocks for a site I'd love to share a single `&lt;nv-button&gt;`, `&lt;nv-spinner&gt;` etc.
+For me, the big promise of web components is the ability to easily share basic elements across multiple projects without being tied to one specific framework. I'm not ready to build an entire PWA in web components, but when it comes to the base-level building blocks for a site I'd love to share a single `<nv-button>`, `<nv-spinner>` etc.
 
 Maybe one of these days I'll find the time to build a full [OpenUI](https://openui5.org/) toolkit to use for all of our client projects...
 
 ### Oops, our web component breaks SSR!
 
-```jsconst template = document.createElement('template')```
+```js
+const template = document.createElement("template")
+```
 
 Well that didn't take long, literally the first line of code breaks our Astro build 🤣
 
 Astro is a static site generator, the entire build runs in Node.js. That means we can't actually touch the browser-only `document` object.
 
-```js// Just create a shared string here, no more document referenceconst template = ` &lt;style&gt; /* your styles */ &lt;/style&gt; &lt;span id="count"&gt;&lt;/span&gt;`
+```js
+// Just create a shared string here, no more document reference
+const template = `
+  <style>
+    /* your styles */
+  </style>
+  <span id="count"></span>
+`
 
-class MyCounter extends HTMLElement { constructor() { super()
+class MyCounter extends HTMLElement {
+  constructor() {
+    super()
 
-const elem = document.createElement('template') elem.innerHTML = template
+    const elem = document.createElement("template")
+    elem.innerHTML = template
 
-this.count = 0 this.attachShadow({ mode: 'open' }).appendChild( elem.content.cloneNode(true) ) }}
+    this.count = 0
+    this.attachShadow({ mode: "open" }).appendChild(
+      elem.content.cloneNode(true)
+    )
+  }
+}
 
-customElements.define('my-counter', MyCounter)```
+customElements.define("my-counter", MyCounter)
+```
 
 There we go! Don't touch the document element at all until the constructor is called. Note that this really could/should be cleaned up to move `elem` outside the class and only initialize it once, but for the sake of this demo I kept the code easier to follow.
 
@@ -106,11 +142,18 @@ This is handy for images, `Astro.resolve('../images/penguin.png')`, but we're go
 
 In the demo project, the web component is defined in `src/components/my-counter.js`. Inside the homepage at `src/pages/index.astro`,
 
-```astro&lt;head&gt; &lt;title&gt;Welcome to Astro&lt;/title&gt;
+```astro
+<head>
+  <title>Welcome to Astro</title>
 
-&lt;script type="module" src={Astro.resolve('../components/my-counter.js')} &gt;&lt;/script&gt;&lt;/head&gt;
+  <script type="module" src={Astro.resolve("../components/my-counter.js")}
+  ></script>
+</head>
 
-&lt;body&gt; &lt;my-counter /&gt;&lt;/body&gt;```
+<body>
+  <my-counter></my-counter>
+</body>
+```
 
 That's all there is to it! From there Astro will be aware of the JS file, bundle it during production builds, and replace the `Astro.resolve` call with the URL needed to load in the component.
 
@@ -125,5 +168,3 @@ Web components aren't a magic bullet, but I found this experience **much** less 
 I'm still not sure that I'd go through the effort to build an entire site in custom web components just yet, but I won't actually be surprised if that's a great option in the not too distant future.
 
 Until then, browser support is [surprisingly good](https://caniuse.com/?search=web%20components) and web components can be a great solution to reusable base components. Whether you're managing multiple projects or just preparing for the next big shakeup in frontend frameworks, it's worth giving native custom elements a second look in 2021.
-
-
