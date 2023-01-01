@@ -1,0 +1,43 @@
+---
+import Avatar from '@assets/avatar-96x96.jpg'
+import site from '@data/site.json'
+import type { Note } from '@data/notes.js'
+import { isoDate, shortDate } from '@utils/dates.js'
+import For from './For.astro'
+import Show from './Show.astro'
+
+export type Props = Note
+
+const { content, date, slug, tags } = Astro.props
+---
+
+<article class="h-entry">
+  <a href={`/notes/${slug}/`}>
+    <header>
+      <p class="p-author h-card" rel="author">
+        <img class="u-photo" src={Avatar.src} width={Avatar.width} height={Avatar.height} alt={site.author} />
+      </p>
+      <strong>
+        <span class="p-name">{site.author}</span>
+        <br />
+        <small>
+            <a href={site.social.twitter_url}>{site.social.twitter_handle}</a>
+            <span> •</span>
+            <time class="dt-published" datetime={isoDate(date)}>{shortDate(date)}</time>
+        </small>
+      </strong>
+    </header>
+    <main class="e-content p-name">
+        <div set:html={content.html}></div>
+        <Show when={tags?.length}>
+            <For each={tags}>
+                {(tag: string) => (
+                    <small>
+                        <a href={`/notes/tags/${tag}/`}>#{tag}</a>
+                    </small>
+                )}
+            </For>
+        </Show>
+    </main>
+  </a>
+</article>

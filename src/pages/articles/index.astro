@@ -1,0 +1,36 @@
+---
+import Layout from '@layouts/Page.astro'
+import ArticleSummary from '@components/ArticleSummary.astro'
+import For from '@components/For.astro'
+import Hero from '@components/Hero.astro'
+import {
+  type ArticleSummary as Article,
+  fetchArticles,
+} from '@data/articles.js'
+
+const title = 'Articles'
+const description =
+  'Tony Sullivan is a fullstack developer based in Onbekend, USA.'
+
+const articles = await fetchArticles()
+---
+
+<Layout title={title} description={description}>
+  <Hero
+    title="I write articles."
+    cta={{ text: 'Hello, my name is Tony', href: '/about/' }}
+  >
+    I'm a frontend developer and co-founder of <a href="https://navillus.dev"
+      >Navillus</a
+    >, a software studio and think tank. In a hurry? My [notes](/notes) also get
+    syndicated to <a href="https://twitter.com/tonysull_co)" target="_blank"
+      >Twitter</a
+    >.
+  </Hero>
+
+  <ul>
+    <For each={articles}>
+      {(article: Article) => <ArticleSummary {...article} />}
+    </For>
+  </ul>
+</Layout>

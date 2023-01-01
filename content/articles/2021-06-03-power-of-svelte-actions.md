@@ -60,11 +60,11 @@ export default (node, _options = {}) => {
       options.onClickOutside()
     }
   }
-  document.addEventListener("click", detect, { passive: true, capture: true })
+  document.addEventListener('click', detect, { passive: true, capture: true })
 
   return {
     destroy() {
-      document.removeEventListener("click", detect)
+      document.removeEventListener('click', detect)
     },
   }
 }
@@ -87,7 +87,7 @@ export default (node, _options = {}) => {
   function detect({ target }) {
     if (
       !node.contains(target) ||
-      options.include.some((i) => target.isSameNode(i))
+      options.include.some(i => target.isSameNode(i))
     ) {
       options.onClickOutside()
     }

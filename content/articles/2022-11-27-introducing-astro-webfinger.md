@@ -32,6 +32,7 @@ When you search for a user's profile on Mastodon you usually search for somethin
 ```bash
 indieweb.social/.well-known/webfinger?resource=acct:tonysull@indieweb.social
 ```
+
 The response will include metadata about my account like my profile's homepage and the URL for reading a feed of my posts and activity.
 
 ### Can we self-host it?

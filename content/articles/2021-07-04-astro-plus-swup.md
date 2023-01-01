@@ -57,7 +57,7 @@ npm install --save-dev swup
 Initialize swup in `/public/app.js`...
 
 ```js
-import Swup from "swup"
+import Swup from 'swup'
 
 const swup = new Swup()
 ```
@@ -82,8 +82,8 @@ npm install --save-dev @swup/slide-theme
 ```
 
 ```js
-import Swup from "swup"
-import SwupSlideTheme from "@swup/slide-theme"
+import Swup from 'swup'
+import SwupSlideTheme from '@swup/slide-theme'
 
 const swup = new Swup({
   plugins: [new SwupSlideTheme()],
@@ -103,9 +103,9 @@ npm install --save-dev @swup/head-plugin
 ```
 
 ```js
-import Swup from "swup"
-import SwupHeadPlugin from "@swup/head-plugin"
-import SwupSlideTheme from "@swup/slide-theme"
+import Swup from 'swup'
+import SwupHeadPlugin from '@swup/head-plugin'
+import SwupSlideTheme from '@swup/slide-theme'
 
 const swup = new Swup({
   plugins: [new SwupHeadPlugin(), new SwupSlideTheme()],
@@ -125,10 +125,10 @@ npm install --save-dev @swup/a11y-plugin
 ```
 
 ```js
-import Swup from "swup"
-import SwupA11yPlugin from "@swup/a11y-plugin"
-import SwupHeadPlugin from "@swup/head-plugin"
-import SwupSlideTheme from "@swup/slide-theme"
+import Swup from 'swup'
+import SwupA11yPlugin from '@swup/a11y-plugin'
+import SwupHeadPlugin from '@swup/head-plugin'
+import SwupSlideTheme from '@swup/slide-theme'
 
 const swup = new Swup({
   plugins: [new SwupA11yPlugin(), new SwupHeadPlugin(), new SwupSlideTheme()],

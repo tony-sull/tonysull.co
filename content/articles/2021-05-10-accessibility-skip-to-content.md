@@ -1,6 +1,6 @@
 ---
 type: h-entry
-title: "Web Accessibility: Hidden links make all the difference"
+title: 'Web Accessibility: Hidden links make all the difference'
 description: For visitors that use a keyboard or screen reader to navigate websites, hidden quick links can make a site much more enjoyable.
 tags:
   - code
@@ -110,7 +110,7 @@ function onSkipToContent(event) {
   event.preventDefault()
 
   // Find the hidden target div
-  const target = document.getElementById("start-of-content")
+  const target = document.getElementById('start-of-content')
 
   if (!target) {
     return
@@ -121,7 +121,7 @@ function onSkipToContent(event) {
 
   if (content instanceof HTMLElement) {
     // Make sure the content div can't be tabbed to again, the give it focus
-    content.setAttribute("tabindex", "-1")
+    content.setAttribute('tabindex', '-1')
     content.focus()
   }
 }
@@ -129,7 +129,7 @@ function onSkipToContent(event) {
 // Find the hidden "Skip to content" link and hook up tje click event
 const link = document.querySelector('a[href="#start-of-content"]')
 if (link) {
-  link.addEventListener("click", onSkipToContent())
+  link.addEventListener('click', onSkipToContent())
 }
 ```
 

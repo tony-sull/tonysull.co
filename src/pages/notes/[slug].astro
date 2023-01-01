@@ -1,0 +1,35 @@
+---
+import Layout from '@layouts/Page.astro'
+import { fetchNote, fetchNotes } from '@data/notes.js'
+import NoteSummary from '@components/NoteSummary.astro'
+
+export async function getStaticPaths() {
+  const allNotes = await fetchNotes()
+
+  return allNotes.map(({ slug }) => {
+    return {
+      params: { slug },
+    }
+  })
+}
+
+const { slug } = Astro.params as { slug: string }
+
+const note = await fetchNote(slug)
+
+if (!note) {
+  throw new Error(`[fetchNote] how was "${slug}" not found?`)
+}
+
+const canoncialURL = note.url || new URL(Astro.url.pathname, Astro.site)
+---
+
+<Layout
+  title={note.content.value}
+  image={note.photo}
+  canonicalURL={canoncialURL}
+>
+  <setion>
+    <NoteSummary {...note} />
+  </setion>
+</Layout>

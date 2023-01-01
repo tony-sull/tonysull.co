@@ -49,7 +49,7 @@ I didn't want to stray too far from the original 11ty project, and that meant st
 You can see the full details [in GitHub](https://github.com/Navillus-BV/demo-astro-snipcart/blob/main/src/utils/loadMenu.js), but the basic solution here takes advantage of [glob imports](https://vitejs.dev/guide/features.html#glob-import).
 
 ```js
-import.meta.glob("../data/menus/*.json")
+import.meta.glob('../data/menus/*.json')
 ```
 
 The code above is a bit of import magic that allows you to use a [glob pattern](https://www.npmjs.com/package/glob) to load multiple files at once.
@@ -75,14 +75,13 @@ Snipcart looks for another special class to discover products on your site, `sni
 
 ```astro
 <button
-    class="menuitem__cartbtn snipcart-add-item"
-    data-item-id={item.slug}
-    data-item-name={item.display_title || item.title}
-    data-item-price={item.price}
-    data-item-url={url}
-    data-item-image={item.image}
-    {...modifiersMap}
->
+  class="menuitem__cartbtn snipcart-add-item"
+  data-item-id={item.slug}
+  data-item-name={item.display_title || item.title}
+  data-item-price={item.price}
+  data-item-url={url}
+  data-item-image={item.image}
+  {...modifiersMap}></button>
 ```
 
 Most of this should be pretty straight forward, we're adding `data-item` properties to tell Snipcart what the product is. But what about that `modifiersMap` thing?
