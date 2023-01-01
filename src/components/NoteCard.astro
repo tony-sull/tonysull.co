@@ -8,7 +8,7 @@ import Show from './Show.astro'
 
 export type Props = Note
 
-const { content, date, slug, tags } = Astro.props
+const { content, date, slug, tags, 'in-reply-to': inReplyTo } = Astro.props
 ---
 
 <article class="h-entry">
@@ -28,6 +28,10 @@ const { content, date, slug, tags } = Astro.props
       </strong>
     </header>
     <main class="e-content p-name">
+        <Show when={inReplyTo}>
+          <i>In reply to </i>
+          <a href={inReplyTo}>{inReplyTo}</a>
+        </Show>
         <div set:html={content.html}></div>
         <Show when={tags.length}>
             <For each={tags}>
