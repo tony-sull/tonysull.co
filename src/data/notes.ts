@@ -18,7 +18,7 @@ export type Note = {
   url?: URL
   date: Date
   photo?: string
-  tags?: string[]
+  tags: string[]
   client_id?: string
   content: {
     value: string
@@ -54,6 +54,7 @@ export async function fetchNotes(): Promise<Note[]> {
         ...frontmatter,
         url: safeUrl(frontmatter.url),
         date: new Date(frontmatter.date),
+        tags: frontmatter.tags || [],
         content: {
           value: rawContent(),
           html: compiledContent(),
@@ -85,6 +86,7 @@ export async function fetchNote(slug: string): Promise<Note | undefined> {
     ...frontmatter,
     url: safeUrl(frontmatter.url),
     date: new Date(frontmatter.date),
+    tags: frontmatter.tags || [],
     content: {
       value: rawContent(),
       html: compiledContent(),

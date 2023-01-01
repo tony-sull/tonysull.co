@@ -29,7 +29,7 @@ const { content, date, slug, tags } = Astro.props
     </header>
     <main class="e-content p-name">
         <div set:html={content.html}></div>
-        <Show when={tags?.length}>
+        <Show when={tags.length}>
             <For each={tags}>
                 {(tag: string) => (
                     <small>

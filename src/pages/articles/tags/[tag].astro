@@ -9,7 +9,7 @@ export async function getStaticPaths() {
     const allArticles = await fetchArticles()
 
     const tagsMap = allArticles.reduce((acc, next) => {
-        next.tags?.forEach((tag) => {
+        next.tags.forEach((tag) => {
             const list = acc.get(tag) || []
             acc.set(tag, list.concat(next.slug))
         })

@@ -22,7 +22,7 @@ export type ArticleSummary = {
   published: Date
   date?: Date
   photo?: string
-  tags?: string[]
+  tags: string[]
   client_id?: string
 }
 
@@ -80,6 +80,7 @@ export async function fetchArticles(): Promise<ArticleSummary[]> {
         url: safeUrl(frontmatter.url),
         published: new Date(frontmatter.published!),
         date: safeDate(frontmatter.date),
+        tags: frontmatter.tags || []
       }
     })
 }
@@ -108,6 +109,7 @@ export async function fetchArticle(slug: string): Promise<Article | undefined> {
     url: safeUrl(frontmatter.url),
     published: new Date(frontmatter.published!),
     date: safeDate(frontmatter.date),
+    tags: frontmatter.tags || [],
     content: {
       value: rawContent(),
       html: compiledContent(),

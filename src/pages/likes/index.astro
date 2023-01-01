@@ -1,0 +1,28 @@
+---
+import Layout from '@layouts/Page.astro'
+import LikeCard from '@components/LikeCard.astro'
+import For from '@components/For.astro'
+import Hero from '@components/Hero.astro'
+import { type Like, fetchLikes } from '@data/likes.js'
+
+const title = 'likes'
+const description =
+  'Tony Sullivan is a fullstack developer based in Onbekend, USA.'
+
+const likes = await fetchLikes()
+---
+
+<Layout title={title} description={description}>
+  <Hero
+    title="Hello, open web."
+    cta={{ text: 'Hello, my name is Tony', href: '/about/' }}
+  >
+    I liked these pages, you might too! They are also syndicated to my <a href="/likes/feed.xml">RSS feed</a> if that's your thing!
+  </Hero>
+
+  <ul>
+    <For each={likes}>
+      {(like: Like) => <LikeCard {...like} />}
+    </For>
+  </ul>
+</Layout>
