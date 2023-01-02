@@ -5,9 +5,8 @@ description: That's right! Your site built with a JS framework with client-side 
 tags:
   - code
 slug: progressive-enhancement
-published: '2021-05-08T12:00:00+00:00'
-date: '2022-12-31T22:14:11.971Z'
-client_id: 'https://quill.p3k.io/'
+published: '2021-05-08T12:00:00+00:00Z'
+date: '2021-05-08T12:00:00+00:00Z'
 photo: 'uploads/2021-05-08-progressive-enhancement.jpg'
 url: https://navillus.dev/blog/progressive-enhancement/
 ---

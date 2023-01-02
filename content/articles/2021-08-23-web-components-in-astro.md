@@ -5,9 +5,8 @@ description: Building custom elements in plain old JavaScript + trying out the n
 tags:
   - code
 slug: web-components-in-astro
-published: '2021-08-23T21:55:21+00:00'
-date: '2022-12-31T22:14:11.971Z'
-client_id: 'https://quill.p3k.io/'
+published: '2021-08-23T21:55:21+00:00Z'
+date: '2021-08-23T21:55:21+00:00Z'
 photo: 'uploads/2021-08-23-web-components-in-astro.jpg'
 url: https://navillus.dev/blog/web-components-in-astro/
 ---

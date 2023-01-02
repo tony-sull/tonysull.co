@@ -5,9 +5,8 @@ description: Integrating Mastodon profiles with Astro.
 tags:
   - code
 slug: introducing-astro-webfinger
-published: '2022-04-08T21:55:21+00:00'
-date: '2022-12-31T22:14:11.971Z'
-client_id: 'https://quill.p3k.io/'
+published: '2022-04-08T21:55:21+00:00Z'
+date: '2022-04-08T21:55:21+00:00Z'
 photo: 'uploads/202211-27-introducing-astro-webfinger.jpg'
 ---
 

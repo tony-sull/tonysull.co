@@ -1,0 +1,39 @@
+---
+import { Icon } from 'astro-icon'
+
+export type Props = {
+    url: URL
+    alt: string
+}
+
+const { url, alt } = Astro.props
+---
+
+<share-link href={url} role="button">
+    <p class="sr-only">{alt}</p>
+    <Icon name="share" size={20} />
+</share-link>
+
+<style>
+    share-link {
+        cursor: pointer;
+    }
+</style>
+
+<script>
+    class ShareLink extends HTMLElement {
+        connectedCallback() {
+            this.addEventListener('click', this.share.bind(this), false)
+        }
+
+        get href() {
+            return this.getAttribute('href')!
+        }
+
+        async share() {
+            await navigator.clipboard.writeText(this.href)
+        }
+    }
+
+    customElements.define('share-link', ShareLink)
+</script>

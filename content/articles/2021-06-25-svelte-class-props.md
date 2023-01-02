@@ -5,9 +5,8 @@ description: A handy trick to make your Svelte components feel even more like pl
 tags:
   - code
 slug: svelte-class-props
-published: '2021-06-25T12:00:00+00:00'
-date: '2022-12-31T22:14:11.971Z'
-client_id: 'https://quill.p3k.io/'
+published: '2021-06-25T12:00:00+00:00Z'
+date: '2021-06-25T12:00:00+00:00Z'
 photo: 'uploads/2021-06-25-svelte-class-props.jpg'
 url: https://navillus.dev/blog/svelte-class-props/
 ---

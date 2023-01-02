@@ -5,9 +5,8 @@ description: Static doesn't mean boring! Easily add client routing and page tran
 tags:
   - code
 slug: astro-plus-swup
-published: '2021-07-04T12:00:00+00:00'
-date: '2022-12-31T22:14:11.971Z'
-client_id: 'https://quill.p3k.io/'
+published: '2021-07-04T12:00:00+00:00Z'
+date: '2021-07-04T12:00:00+00:00Z'
 photo: 'uploads/2021-07-24-astro-plus-swup.jpg'
 url: https://navillus.dev/blog/astro-plus-swup/
 ---
