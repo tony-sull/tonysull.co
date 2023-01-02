@@ -1,7 +1,7 @@
 ---
 type: h-entry
 title: Converting our site to Astro
-description: Spoiler - you probably don't need a kitchen sink framework.
+summary: Spoiler - you probably don't need a kitchen sink framework.
 tags:
   - code
 slug: converting-navillus-to-astro

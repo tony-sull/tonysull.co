@@ -1,7 +1,7 @@
 ---
 type: h-entry
 title: Astro Themes & Integrations
-description: 'Introducing: a growing catalog of themes, components, and integrations to jumpstart your next Astro project.'
+summary: 'Introducing: a growing catalog of themes, components, and integrations to jumpstart your next Astro project.'
 tags:
   - code
 slug: astro-themes-and-integrations

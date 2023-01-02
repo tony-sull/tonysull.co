@@ -1,7 +1,7 @@
 ---
 type: h-entry
 title: 'Web Accessibility: Hidden links make all the difference'
-description: For visitors that use a keyboard or screen reader to navigate websites, hidden quick links can make a site much more enjoyable.
+summary: For visitors that use a keyboard or screen reader to navigate websites, hidden quick links can make a site much more enjoyable.
 tags:
   - code
 slug: accessibility-skip-to-content

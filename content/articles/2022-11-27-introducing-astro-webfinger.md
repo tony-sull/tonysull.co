@@ -1,7 +1,7 @@
 ---
 type: h-entry
 title: Introducing astro-webfinger
-description: Integrating Mastodon profiles with Astro.
+summary: Integrating Mastodon profiles with Astro.
 tags:
   - code
 slug: introducing-astro-webfinger

@@ -1,5 +1,5 @@
 ---
-import { type Entry, isArticle, isBookmark, isNote } from '@data/entries.js'
+import { type Entry, isArticle, isBookmark, isNote, Note } from '@data/entries.js'
 import { isoDate, shortDate } from '@utils/dates.js'
 import For from './For.astro'
 import Share from './Share.astro'
@@ -26,8 +26,6 @@ function getTitle(entry: Entry) {
 function getSummary(entry: Entry) {
     if (isArticle(entry)) {
         return entry.summary
-    } else if (isBookmark(entry)) {
-        return `Bookmarked on ${shortDate(entry.date)}`
     }
 
     return undefined
@@ -87,34 +85,44 @@ const author = {
             <p class="p-name sr-only">{author.name}</p>
             <img src={author.avatar} alt="" class="u-logo" width="64" height="64" />
         </div>
-        <p class="p-nickname">{author.handle}</p>
+        <p class="p-nickname">
+            <b>{author.handle.slice(0, author.handle.indexOf('@'))}</b>
+            <span>@</span>
+            <i>{author.handle.slice(author.handle.indexOf('@') + 1, author.handle.lastIndexOf('.'))}</i>
+            <span class="sr-only">{author.handle.slice(author.handle.lastIndexOf('.'))}</span>
+        </p>
         <small><time datetime={isoDate(date)} class="dt-published">{shortDate(date)}</time></small>
         <Show when={entry.tags.length}>
             <ul>
-            <For each={entry.tags}>
-                {(tag: string) => (
-                    <li>
-                        <small><a href={`/tags/${tag}/`} rel="category tag" class="p-category">#{tag}</a></small>
-                    </li>
-                )}
-            </For>
+                <For each={entry.tags}>
+                    {(tag: string) => (
+                        <li>
+                            <small><a href={`/tags/${tag}/`} rel="category tag" class="p-category">#{tag}</a></small>
+                        </li>
+                    )}
+                </For>
             </ul>
         </Show>
     </header>
-    <Show when={'title'}>
-        <a href={url} target={openInNewTab(url!) ? '_blank' : undefined}>
-            <h2 class="p-name">{title}</h2>
-        </a>
-    </Show>
     <Show when={image}>
         <img src={image} alt="" class="u-featured" />
+    </Show>
+    <Show when={'title'}>
+        <a href={url} class:list={[{ "u-bookmark-of": isBookmark(entry), "e-content": !isArticle(entry) }]} target={openInNewTab(url!) ? '_blank' : undefined}>
+            <h2 class="p-name">{title}</h2>
+        </a>
     </Show>
     <Show when={summary}>
         <p class="p-summary">{summary}</p>
     </Show>
     <footer>
         <Show when={isArticle(entry)}>
-            <a href={url}>Full article</a>
+            <a href={url} class="u-url">Full article</a>
+        </Show>
+        <Show when={isNote(entry) && entry['in-reply-to']}>
+            <a href={(entry as Note)['in-reply-to']} class="u-in-reply-to">
+                In reply to
+            </a>
         </Show>
         <Share url={entry.url} alt="Share a direct link to this post" />
     </footer>
@@ -122,8 +130,9 @@ const author = {
 
 <style>
     article {
+        max-width: var(--size-content-2);
         display: flex;
-        background: var(--gray-0);
+        background: var(--surface-1);
         flex-direction: column;
         gap: var(--size-fluid-1);
         padding: var(--size-fluid-2);
@@ -161,7 +170,6 @@ const author = {
     .p-category {
         color: var(--gray-7);
         font-weight: var(--font-weight-7);
-        letter-spacing: var(--font-letterspacing-4);
     }
 
     .u-featured {
@@ -179,19 +187,34 @@ const author = {
         color: var(--gray-7);
     }
 
-    [target="_blank"] > h2:after {
+    [target="_blank"] > h2:after, .u-in-reply-to:after {
         content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M10 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4M14 4h6m0 0v6m0-6L10 14'/%3E%3C/svg%3E");
-        margin-inline-start: var(--size-2);
+        margin-inline-start: var(--size-1);
         opacity: 0.5;
+    }
+
+    .e-content h2 {
+        font-size: var(--font-size-2);
+        color: var(--text-2);
+        margin-block-start: var(--size-fluid-2);
     }
 
     footer {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        padding-block-start: var(--size-fluid-1);
     }
 
     footer > :global(:only-child) {
         margin-inline-start: auto;
+    }
+
+    .u-url {
+        font-size: var(--size-fluid-2);
+    }
+
+    .u-in-reply-to {
+        font-style: italic;
     }
 </style>

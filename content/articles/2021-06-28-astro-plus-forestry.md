@@ -1,7 +1,7 @@
 ---
 type: h-entry
 title: Astro + Foresty CMS
-description: Static sites powered by Forestry's git-based CMS, made easy.
+summary: Static sites powered by Forestry's git-based CMS, made easy.
 tags:
   - code
 slug: astro-plus-forestry
