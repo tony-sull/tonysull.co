@@ -140,6 +140,10 @@ const author = {
         letter-spacing: var(--font-letterspacing-4);
     }
 
+    :global([data-theme="dark"]) .p-category {
+        color: var(--gray-4);
+    }
+
     h1 {
         font-size: var(--font-size-fluid-3);
     }
@@ -170,11 +174,13 @@ const author = {
 
     @media (min-width: 640px) {
         header {
-            grid-template-areas: 'title title' 'author published' 'minutes tags' 'summary summary';
+            grid-template-columns: auto 1fr;
+            grid-template-areas: 'title title' 'author author' 'published minutes' 'tags tags' 'summary summary';
+            row-gap: var(--size-fluid-1);
         }
 
         header > ul {
-            margin-block-start: var(--size-00);
+            margin-block-start: var(--size-1);
         }
 
         .p-summary {
