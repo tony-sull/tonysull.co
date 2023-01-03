@@ -60,6 +60,11 @@ const fullTitle = [title, site.title].filter(Boolean).join(' • ')
 <!-- Sitemap -->
 <link rel="sitemap" href="/sitemap.xml" />
 
+<!-- Feeds -->
+<link rel="alternate" type="application/rss+xml" href={new URL("/rss.xml", Astro.site)} title="RSS Feed for Tony Sullivan">
+<link rel="alternate" type="application/atom+xml" href={new URL("/atom.xml", Astro.site)} title="Atom Feed for Tony Sullivan">
+<link rel="alternate" type="application/feed+json" href={new URL("/feed.json", Astro.site)} title="Atom Feed for Tony Sullivan">
+
 <!-- Web Mentions -->
 <link rel="webmention" href="https://webmention.io/tonysull.co/webmention" />
 <link rel="pingback" href="https://webmention.io/tonysull.co/xmlrpc" />
