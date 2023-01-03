@@ -1,15 +1,32 @@
 ---
-import Layout from './Base.astro'
-import type { Props as LayoutProps } from './Base.astro'
+import Head, { type Props as HeadProps } from '@components/Head.astro'
+import Header from '@components/Header.astro'
+import '@assets/global.css'
 import Footer from '@components/Footer.astro'
 
-export type Props = LayoutProps
+export type Props = HeadProps
 
-const { ...layout } = Astro.props
+const { ...head } = Astro.props
 ---
 
-<Layout {...layout}>
-  <slot />
+<html lang="en" data-theme="light">
+  <head>
+    <Head {...head} />
+  </head>
 
-  <Footer />
-</Layout>
+  <body>
+    <Header />
+
+    <main id="main" class="container">
+      <slot />
+    </main>
+
+    <Footer />
+  </body>
+</html>
+
+<style>
+  main {
+    margin-block: var(--size-fluid-4);
+  }
+</style>
