@@ -1,0 +1,383 @@
+{
+  "lastFetched": "2023-01-04T06:31:51.504Z",
+  "children": [
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Okiki Ojo",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/2f0dc5589797f59c20cb904eab4dd4553f4d648a453eda976ce988601b0f3f02.jpg",
+        "url": "https://twitter.com/okikio_dev"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1597240545734164486#favorited-by-1403482570864697346",
+      "published": null,
+      "wm-received": "2022-11-30T18:40:08Z",
+      "wm-id": 1572064,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1597240545734164486/1403482570864697346",
+      "wm-target": "https://tonysull.co/articles/introducing-astro-webfinger/",
+      "like-of": "https://tonysull.co/articles/introducing-astro-webfinger/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Okiki Ojo",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/2f0dc5589797f59c20cb904eab4dd4553f4d648a453eda976ce988601b0f3f02.jpg",
+        "url": "https://twitter.com/okikio_dev"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1597240545734164486#favorited-by-1403482570864697346",
+      "published": null,
+      "wm-received": "2022-11-30T18:40:08Z",
+      "wm-id": 1572065,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1597240545734164486/1403482570864697346",
+      "wm-target": "https://tonysull.co/notes/introducing-astro-webfinger-note/",
+      "like-of": "https://tonysull.co/notes/introducing-astro-webfinger-note/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Okiki Ojo",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/2f0dc5589797f59c20cb904eab4dd4553f4d648a453eda976ce988601b0f3f02.jpg",
+        "url": "https://twitter.com/okikio_dev"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1597037495753101312#favorited-by-1403482570864697346",
+      "published": null,
+      "wm-received": "2022-11-29T00:27:06Z",
+      "wm-id": 1570758,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1597037495753101312/1403482570864697346",
+      "wm-target": "https://tonysull.co/notes/self-host-webfinger/?v=1",
+      "like-of": "https://tonysull.co/notes/self-host-webfinger/?v=1",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Matt Biilmann",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/af70cb924db6d4dfc56c9c7cf65e39cf6e3901836a903a237357a1fc28c1c6a5.jpg",
+        "url": "https://twitter.com/biilmann"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1597240545734164486#favorited-by-24203304",
+      "published": null,
+      "wm-received": "2022-11-28T19:20:08Z",
+      "wm-id": 1570595,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1597240545734164486/24203304",
+      "wm-target": "https://tonysull.co/articles/introducing-astro-webfinger/",
+      "like-of": "https://tonysull.co/articles/introducing-astro-webfinger/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Matt Biilmann",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/af70cb924db6d4dfc56c9c7cf65e39cf6e3901836a903a237357a1fc28c1c6a5.jpg",
+        "url": "https://twitter.com/biilmann"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1597240545734164486#favorited-by-24203304",
+      "published": null,
+      "wm-received": "2022-11-28T19:20:08Z",
+      "wm-id": 1570596,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1597240545734164486/24203304",
+      "wm-target": "https://tonysull.co/notes/introducing-astro-webfinger-note/",
+      "like-of": "https://tonysull.co/notes/introducing-astro-webfinger-note/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "CodeMonument - Benjamin Jesuiter",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/62053c6adf99a025624a269e4655af1660bbf85311ef2f886c20d9065f02295f.jpg",
+        "url": "https://twitter.com/CodeMonument"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1597037495753101312#favorited-by-1451563693272088595",
+      "published": null,
+      "wm-received": "2022-11-28T19:19:38Z",
+      "wm-id": 1570593,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1597037495753101312/1451563693272088595",
+      "wm-target": "https://tonysull.co/notes/self-host-webfinger/?v=1",
+      "like-of": "https://tonysull.co/notes/self-host-webfinger/?v=1",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "aFuzzyBear 🇺🇦",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/9d9358e1d9f5be8d4737e24ddd64e262cb7bdd16b40d0521edd68629a3b07e93.jpg",
+        "url": "https://twitter.com/aFuzzyBear2"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1597037495753101312#favorited-by-1333800379838992384",
+      "published": null,
+      "wm-received": "2022-11-28T19:19:38Z",
+      "wm-id": 1570594,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1597037495753101312/1333800379838992384",
+      "wm-target": "https://tonysull.co/notes/self-host-webfinger/?v=1",
+      "like-of": "https://tonysull.co/notes/self-host-webfinger/?v=1",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Matt Biilmann",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/af70cb924db6d4dfc56c9c7cf65e39cf6e3901836a903a237357a1fc28c1c6a5.jpg",
+        "url": "https://twitter.com/biilmann"
+      },
+      "url": "https://twitter.com/biilmann/status/1597262292873510912",
+      "published": "2022-11-28T16:13:00+00:00",
+      "wm-received": "2022-11-28T19:19:36Z",
+      "wm-id": 1570591,
+      "wm-source": "https://brid.gy/repost/twitter/tonysull_co/1597240545734164486/1597262292873510912",
+      "wm-target": "https://tonysull.co/notes/introducing-astro-webfinger-note/",
+      "content": {
+        "text": "Not quite ready to manage your own Mastodon server?\n\nAdd astro-webfinger to your @astrodotbuild site and let users find your profile by searching for your homepage 🪄\n\ntonysull.co/articles/intro… (tonysull.co/notes/introduc…)"
+      },
+      "repost-of": "https://tonysull.co/notes/introducing-astro-webfinger-note/",
+      "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Matt Biilmann",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/af70cb924db6d4dfc56c9c7cf65e39cf6e3901836a903a237357a1fc28c1c6a5.jpg",
+        "url": "https://twitter.com/biilmann"
+      },
+      "url": "https://twitter.com/biilmann/status/1597262292873510912",
+      "published": "2022-11-28T16:13:00+00:00",
+      "wm-received": "2022-11-28T19:19:36Z",
+      "wm-id": 1570592,
+      "wm-source": "https://brid.gy/repost/twitter/tonysull_co/1597240545734164486/1597262292873510912",
+      "wm-target": "https://tonysull.co/articles/introducing-astro-webfinger/",
+      "content": {
+        "text": "Not quite ready to manage your own Mastodon server?\n\nAdd astro-webfinger to your @astrodotbuild site and let users find your profile by searching for your homepage 🪄\n\ntonysull.co/articles/intro… (tonysull.co/notes/introduc…)"
+      },
+      "repost-of": "https://tonysull.co/articles/introducing-astro-webfinger/",
+      "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Julian Cataldo — Webdev'",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/d73dd3964dd899e6484beb162856e26f50cba7edc0931d8153fef1abeca84138.jpg",
+        "url": "https://twitter.com/Julian_Cataldo"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1597240545734164486#favorited-by-942401530627526657",
+      "published": null,
+      "wm-received": "2022-11-28T19:19:35Z",
+      "wm-id": 1570588,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1597240545734164486/942401530627526657",
+      "wm-target": "https://tonysull.co/articles/introducing-astro-webfinger/",
+      "like-of": "https://tonysull.co/articles/introducing-astro-webfinger/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Julian Cataldo — Webdev'",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/d73dd3964dd899e6484beb162856e26f50cba7edc0931d8153fef1abeca84138.jpg",
+        "url": "https://twitter.com/Julian_Cataldo"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1597240545734164486#favorited-by-942401530627526657",
+      "published": null,
+      "wm-received": "2022-11-28T19:19:35Z",
+      "wm-id": 1570589,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1597240545734164486/942401530627526657",
+      "wm-target": "https://tonysull.co/notes/introducing-astro-webfinger-note/",
+      "like-of": "https://tonysull.co/notes/introducing-astro-webfinger-note/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Mayank",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/3b21cb81cc0e74a6d9f4c240e610493125a065d57a100559bfa7c3439b7ba3f2.jpg",
+        "url": "https://twitter.com/hi__mayank"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1597240545734164486#favorited-by-1451352320231550976",
+      "published": null,
+      "wm-received": "2022-11-28T19:19:35Z",
+      "wm-id": 1570590,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1597240545734164486/1451352320231550976",
+      "wm-target": "https://tonysull.co/notes/introducing-astro-webfinger-note/",
+      "like-of": "https://tonysull.co/notes/introducing-astro-webfinger-note/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Mayank",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/3b21cb81cc0e74a6d9f4c240e610493125a065d57a100559bfa7c3439b7ba3f2.jpg",
+        "url": "https://twitter.com/hi__mayank"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1597240545734164486#favorited-by-1451352320231550976",
+      "published": null,
+      "wm-received": "2022-11-28T19:19:34Z",
+      "wm-id": 1570587,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1597240545734164486/1451352320231550976",
+      "wm-target": "https://tonysull.co/articles/introducing-astro-webfinger/",
+      "like-of": "https://tonysull.co/articles/introducing-astro-webfinger/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Manuel Schröder",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/1867b26498176834e7f699edc34a5d4879cc4261c33e7831b11bc15336ad0dbc.jpg",
+        "url": "https://twitter.com/manuschroeder"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1597037495753101312#favorited-by-342632208",
+      "published": null,
+      "wm-received": "2022-11-28T12:47:43Z",
+      "wm-id": 1570180,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1597037495753101312/342632208",
+      "wm-target": "https://tonysull.co/notes/self-host-webfinger/?v=1",
+      "like-of": "https://tonysull.co/notes/self-host-webfinger/?v=1",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Julian Cataldo — Webdev'",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/d73dd3964dd899e6484beb162856e26f50cba7edc0931d8153fef1abeca84138.jpg",
+        "url": "https://twitter.com/Julian_Cataldo"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1597037495753101312#favorited-by-942401530627526657",
+      "published": null,
+      "wm-received": "2022-11-28T12:47:43Z",
+      "wm-id": 1570181,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1597037495753101312/942401530627526657",
+      "wm-target": "https://tonysull.co/notes/self-host-webfinger/?v=1",
+      "like-of": "https://tonysull.co/notes/self-host-webfinger/?v=1",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "TonySull",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/ff7ef9fa152eff94667d1b31c43162ad0f147871a6cd15b3924a4765251660a9.jpg",
+        "url": "https://twitter.com/tonysull_co"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1589480258704920576",
+      "published": "2022-11-07T04:49:59+00:00",
+      "wm-received": "2022-11-07T10:07:14Z",
+      "wm-id": 1552402,
+      "wm-source": "https://brid.gy/comment/twitter/tonysull_co/1589480258704920576/1589480258704920576",
+      "wm-target": "https://tonysull.co/",
+      "content": {
+        "html": "In the process of renovating mine with a proper schema-based API, complete with endpoints for LD+Jason, HTML, and .md\n\n<a href=\"https://tonysull.co\">tonysull.co</a>\n\n<a class=\"u-mention\" href=\"https://twitter.com/astrodotbuild\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/n_moore\"></a>",
+        "text": "In the process of renovating mine with a proper schema-based API, complete with endpoints for LD+Jason, HTML, and .md\n\ntonysull.co"
+      },
+      "in-reply-to": "https://tonysull.co/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Okiki Ojo",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/2f0dc5589797f59c20cb904eab4dd4553f4d648a453eda976ce988601b0f3f02.jpg",
+        "url": "https://twitter.com/okikio_dev"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1480951802992365569#favorited-by-1403482570864697346",
+      "published": null,
+      "wm-received": "2022-01-18T06:27:53Z",
+      "wm-id": 1333998,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1480951802992365569/1403482570864697346",
+      "wm-target": "https://tonysull.co/notes/2022-01-11-privacy-first-javascript/",
+      "like-of": "https://tonysull.co/notes/2022-01-11-privacy-first-javascript/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "R. Mark Volkmann",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/dbeeeb684ab30c16bf15ba1bb506416e5341e56727736ceff531faf57d1521b9.jpg",
+        "url": "https://twitter.com/mark_volkmann"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1480951802992365569#favorited-by-16169402",
+      "published": null,
+      "wm-received": "2022-01-12T15:27:57Z",
+      "wm-id": 1330368,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1480951802992365569/16169402",
+      "wm-target": "https://tonysull.co/notes/2022-01-11-privacy-first-javascript/",
+      "like-of": "https://tonysull.co/notes/2022-01-11-privacy-first-javascript/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Luca Casonato",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/0a119ed0469623250368f45bcfc6349c378aa208603761b45411d6f3fc66c836.jpg",
+        "url": "https://twitter.com/lcasdev"
+      },
+      "url": "https://twitter.com/lcasdev/status/1480976459325919237",
+      "published": "2022-01-11T18:54:37+00:00",
+      "wm-received": "2022-01-12T15:27:45Z",
+      "wm-id": 1330367,
+      "wm-source": "https://brid.gy/comment/twitter/tonysull_co/1480951802992365569/1480976459325919237",
+      "wm-target": "https://tonysull.co/notes/2022-01-11-privacy-first-javascript/",
+      "content": {
+        "html": "Browsers have this to some extent. It is called CSP there: <a href=\"https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP\">developer.mozilla.org/en-US/docs/Web…</a>\n<a class=\"u-mention\" href=\"https://tonysull.co\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/deno_land\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/firefox\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/googlechrome\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/tonysull_co\"></a>",
+        "text": "Browsers have this to some extent. It is called CSP there: developer.mozilla.org/en-US/docs/Web…"
+      },
+      "in-reply-to": "https://tonysull.co/notes/2022-01-11-privacy-first-javascript/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "TonySull",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/ff7ef9fa152eff94667d1b31c43162ad0f147871a6cd15b3924a4765251660a9.jpg",
+        "url": "https://twitter.com/tonysull_co"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1480997305222414337",
+      "published": "2022-01-11T20:17:27+00:00",
+      "wm-received": "2022-01-12T15:27:44Z",
+      "wm-id": 1330366,
+      "wm-source": "https://brid.gy/comment/twitter/tonysull_co/1480951802992365569/1480997305222414337",
+      "wm-target": "https://tonysull.co/notes/2022-01-11-privacy-first-javascript/",
+      "content": {
+        "html": "I've only ever used CSP features to protect sites I maintain, is there a way to really leverage that in user land?\n\nThe idea being I want client side JS to still work without it being able to open websockets, use fetch(), etc. Is that some CSP magic I haven't found yet?  👀\n<a class=\"u-mention\" href=\"https://twitter.com/deno_land\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/firefox\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/googlechrome\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/lcasdev\"></a>",
+        "text": "I've only ever used CSP features to protect sites I maintain, is there a way to really leverage that in user land?\n\nThe idea being I want client side JS to still work without it being able to open websockets, use fetch(), etc. Is that some CSP magic I haven't found yet?  👀"
+      },
+      "in-reply-to": "https://tonysull.co/notes/2022-01-11-privacy-first-javascript/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    }
+  ]
+}
