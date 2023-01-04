@@ -67,9 +67,11 @@ const author = {
             <a href={url} class="u-url">Full article</a>
         </Show>
         <Show when={isNote(entry) && entry['in-reply-to']}>
-            <a href={(entry as Note)['in-reply-to']} class="u-in-reply-to">
-                In reply to
-            </a>
+            <small>In reply to
+                <a href={(entry as Note)['in-reply-to']} class="u-in-reply-to">
+                    {entry.metadata?.title}
+                </a>
+            </small>
         </Show>
         <Share url={entry.url} alt="Share a direct link to this post" />
     </footer>
@@ -77,6 +79,7 @@ const author = {
 
 <style>
     article {
+        width: 100%;
         max-width: var(--size-content-2);
         display: flex;
         background: var(--surface-1);
