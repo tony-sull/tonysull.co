@@ -15,7 +15,7 @@ const {
   canonicalURL = new URL(Astro.url.pathname, Astro.site),
 } = Astro.props
 
-const imageAbsolute = `${site.url}${image}`
+const imageAbsolute = new URL(image, site.url)
 
 const fullTitle = [title, site.title].filter(Boolean).join(' • ')
 ---

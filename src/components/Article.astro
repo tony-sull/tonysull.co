@@ -71,8 +71,8 @@ const author = {
 
     header {
         display: grid;
-        grid-template-columns: 1fr auto;
-        grid-template-areas: 'title title' 'published minutes' 'tags tags' 'summary summary';
+        grid-template-columns: auto 1fr;
+        grid-template-areas: 'tags tags' 'title title' 'author author' 'published minutes' 'summary summary';
         align-items: center;
         column-gap: var(--size-fluid-2);
         margin-block-end: var(--size-fluid-3);
@@ -174,8 +174,8 @@ const author = {
 
     @media (min-width: 640px) {
         header {
-            grid-template-columns: auto 1fr;
-            grid-template-areas: 'title title' 'author author' 'published minutes' 'tags tags' 'summary summary';
+            grid-template-columns: auto auto 1fr;
+            grid-template-areas: 'tags tags tags' 'title title title' 'author published minutes' 'summary summary summary';
             row-gap: var(--size-fluid-1);
         }
 
@@ -185,6 +185,10 @@ const author = {
 
         .p-summary {
             margin-top: var(--size-fluid-2);
+        }
+
+        .p-category {
+            letter-spacing: var(--font-letterspacing-2);
         }
     }
 </style>
