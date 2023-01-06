@@ -12,7 +12,11 @@
     "github_url": "https://github.com/tony-sull",
     "mastodon_url": "https://indieweb.social/@tonysull"
   },
-  "rss": {
-    "all": "/rss.xml"
+  "feeds": {
+    "all": {
+      "rss": "/rss.xml",
+      "json": "/feed.json",
+      "atom": "/atom.xml"
+    }
   }
 }
