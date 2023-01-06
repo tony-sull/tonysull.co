@@ -9,7 +9,7 @@ import Show from "./Show.astro";
 
 export type Props = Article
 
-const { content, published, summary, tags, title } = Astro.props
+const { canonicalURL, content, image, published, summary, tags, title } = Astro.props
 
 const minutes = readingTime(content.html)
 
@@ -65,6 +65,12 @@ function getHandleDomain(handle: string) {
         </Show>
 
         <blockquote class="p-summary">{summary}</blockquote>
+
+        <Show when={image}>
+            <img src="u-photo" src={image} alt="" aria-hidden="true" loading="lazy" hidden />
+        </Show>
+
+        <a class="u-url" href={canonicalURL || new URL(Astro.url.pathname, Astro.site)} hidden />
     </header>
 
     <div class="e-content" set:html={content.html}></div>
