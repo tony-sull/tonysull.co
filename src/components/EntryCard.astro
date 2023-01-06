@@ -36,7 +36,7 @@ function getHandleDomain(handle: string) {
     <header class="p-author h-card">
         <div>
             <p class="p-name sr-only">{author.name}</p>
-            <img src={author.avatar} alt="" class="u-logo" width="64" height="64" />
+            <img src={author.avatar} alt="" class="u-logo" width="48" height="48" />
         </div>
         <p class="p-nickname">
             <b>{getHandleName(author.handle)}</b>
@@ -153,6 +153,10 @@ function getHandleDomain(handle: string) {
         font-size: var(--font-size-3);
         font-weight: var(--font-weight-4);
         max-inline-size: 100%;
+
+footer small span {
+    opacity: 75%;
+}
     }
 
     .dt-published {
