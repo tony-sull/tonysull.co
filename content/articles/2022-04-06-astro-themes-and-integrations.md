@@ -4,11 +4,13 @@ title: Astro Themes & Integrations
 summary: 'Introducing: a growing catalog of themes, components, and integrations to jumpstart your next Astro project.'
 tags:
   - code
+  - astro
 slug: astro-themes-and-integrations
 published: '2022-04-06T21:55:21+00:00Z'
 date: '2022-04-06T21:55:21+00:00Z'
 photo: 'uploads/2022-04-06-themes-and-integrations.jpg'
 url: https://astro.build/blog/themes-and-integrations/
+author: astro
 ---
 
 We [launched Astro](https://astro.build/blog/introducing-astro/) almost a year ago with the goal of delivering lightning-fast performance with a modern developer experience. Astro makes it easy to ship only what you need - 100% static HTML by default, bring your own framework to sprinkle in interactivity only where you need it.

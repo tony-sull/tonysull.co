@@ -1,7 +1,7 @@
 ---
 type: h-entry
 tags:
-  - web
+  - openweb
 slug: self-host-webfinger
 date: '2022-11-27T18:30:00Z'
 client_id: 'https://quill.p3k.io/'

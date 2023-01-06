@@ -4,11 +4,13 @@ title: Astro + Foresty CMS Revisited
 summary: Static sites powered by Forestry's git-based CMS, made even easier.
 tags:
   - code
+  - astro
 slug: astro-plus-forestry-revisited
 published: '2021-08-03T12:00:00+00:00Z'
 date: '2021-08-03T12:00:00+00:00Z'
 photo: 'uploads/2021-08-03-astro-plus-forestry-revisited.jpg'
 url: https://navillus.dev/blog/astro-plus-forestry-revisited/
+author: navillus
 ---
 
 It's been just over a month since the original [Astro + Forestry CMS](/blog/astro-plus-forestry) demo, but things have been [moving quickly](https://github.com/snowpackjs/astro/blob/main/packages/astro/CHANGELOG.md) in Astro land! We'll build upon the original demo, go ahead and check out the first post if you haven't done so already!

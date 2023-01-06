@@ -4,11 +4,13 @@ title: Converting our site to Astro
 summary: Spoiler - you probably don't need a kitchen sink framework.
 tags:
   - code
+  - astro
 slug: converting-navillus-to-astro
 published: '2021-07-20T12:00:00+00:00Z'
 date: '2021-07-20T12:00:00+00:00Z'
 photo: 'uploads/2021-07-20-converting-navillus-to-astro.jpg'
 url: https://navillus.dev/blog/converting-navillus-to-astro/
+author: navillus
 ---
 
 Not too long ago, the Navillus site was rewritten from the ground up in [Astro](https://astro.build). Since then we've had quite a bit of interest in why we jumped to Astro, how it went, and what we learned. I'll do my best to answer the common questions here, but feel free to reach out on [Twitter](https://twitter.com/navillus_dev) if we missed anything!

@@ -1,7 +1,8 @@
 ---
 import { type Entry, isArticle, isBookmark, isNote, Note } from '@data/entries.js'
 import { isoDate, shortDate } from '@utils/dates.js'
-import { getDate, getImage, getSummary, getTitle, getUrl, isExternalLink } from '@utils/entries.js'
+import { getAuthor, getDate, getImage, getSummary, getTitle, getUrl, isExternalLink } from '@utils/entries.js'
+import { Icon } from 'astro-icon'
 import For from './For.astro'
 import Share from './Share.astro'
 import Show from './Show.astro'
@@ -17,12 +18,17 @@ const summary = getSummary(entry)
 const image = getImage(entry)
 const url = getUrl(entry)
 const date = getDate(entry)
+const author = getAuthor(entry)
 
-const author = {
-    name: 'Tony',
-    handle: 'tony@tonysull.co',
-    avatar: '/assets/avatar-96x96.jpg',
-    url: 'https://tonysull.co'
+function getHandleName(handle: string) {
+    return handle.slice(0, handle.indexOf('@'))
+}
+
+function getHandleDomain(handle: string) {
+    const start = handle.indexOf('@')
+    const end = handle.lastIndexOf('.')
+
+    return handle.slice(start + 1, end >= 0 ? end : handle.length)
 }
 ---
 
@@ -33,9 +39,9 @@ const author = {
             <img src={author.avatar} alt="" class="u-logo" width="64" height="64" />
         </div>
         <p class="p-nickname">
-            <b>{author.handle.slice(0, author.handle.indexOf('@'))}</b>
+            <b>{getHandleName(author.handle)}</b>
             <span>@</span>
-            <i>{author.handle.slice(author.handle.indexOf('@') + 1, author.handle.lastIndexOf('.'))}</i>
+            <i>{getHandleDomain(author.handle)}</i>
             <span class="sr-only">{author.handle.slice(author.handle.lastIndexOf('.'))}</span>
         </p>
         <small><time datetime={isoDate(date)} class="dt-published">{shortDate(date)}</time></small>
@@ -65,6 +71,12 @@ const author = {
     <footer>
         <Show when={isArticle(entry)}>
             <a href={url} class="u-url">Full article</a>
+        </Show>
+        <Show when={isBookmark(entry)}>
+            <small>
+                <Icon name="bookmark-solid" size={24} />
+                <span>Bookmark</span>
+            </small>
         </Show>
         <Show when={isNote(entry) && entry['in-reply-to']}>
             <small>In reply to
@@ -108,6 +120,9 @@ const author = {
     }
 
     header > ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--size-4);
         margin: 0;
         padding: 0;
         list-style: none;
@@ -169,6 +184,16 @@ const author = {
         align-items: center;
         justify-content: space-between;
         padding-block-start: var(--size-fluid-1);
+    }
+
+    footer small {
+        display: flex;
+        align-items: center;
+        gap: var(--size-1);
+    }
+
+    footer small span {
+        opacity: 75%;
     }
 
     footer > :global(:only-child) {

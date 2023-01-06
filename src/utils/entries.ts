@@ -1,4 +1,5 @@
 import { type Entry, isArticle, isBookmark, isNote } from '@data/entries.js'
+import { type Persona, personas } from '@data/personas.js'
 
 export function getTitle(entry: Entry) {
     if (isArticle(entry)) {
@@ -46,6 +47,12 @@ export function getDate(entry: Entry): Date {
     } else {
         return entry.date
     }
+}
+
+export function getAuthor(entry: Entry): Persona {
+    const author = (entry as any).author || 'tony'
+
+    return personas[author]
 }
 
 export function isExternalLink(url: string) {

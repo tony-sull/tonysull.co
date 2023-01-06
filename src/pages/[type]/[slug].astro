@@ -5,6 +5,7 @@ import For from '@components/For.astro'
 import Show from '@components/Show.astro'
 import { type Entry, getAllEntries, isArticle } from '@data/entries.js'
 import Layout from '@layouts/Page.astro'
+import { getImage, getSummary, getTitle } from '@utils/entries'
 import {
   getAllMentions,
   isForUrl,
@@ -45,7 +46,7 @@ const likes = webMentions.filter(isMentionType(MENTION_TYPE.Like))
 const replies = webMentions.filter(isMentionType(MENTION_TYPE.Reply))
 ---
 
-<Layout>
+<Layout title={getTitle(entry)} description={getSummary(entry)} image={getImage(entry)} canonicalURL={entry.canonicalURL}>
     <Show when={article}>
         <Article {...article!} />
         

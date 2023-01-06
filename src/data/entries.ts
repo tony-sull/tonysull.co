@@ -1,5 +1,6 @@
 import { type Metadata, scrape } from "@utils/scrape.js"
 import type { MarkdownInstance } from "astro"
+import type { personas } from "./personas.js"
 
 type BaseEntryFrontmatter = {
     type: 'h-entry'
@@ -7,12 +8,14 @@ type BaseEntryFrontmatter = {
     date: string
     tags?: string[]
     client_id?: string
+    url?: string
 }
 
 type NoteFrontmatter = BaseEntryFrontmatter & {
     photo?: string
     url?: string
     'in-reply-to'?: string
+    author?: keyof typeof personas
 }
 
 type ArticleFrontmatter = NoteFrontmatter & {
@@ -47,8 +50,9 @@ export type BaseEntry = {
     slug: string
     date: Date
     tags: string[]
-    url: URL
+    url?: URL
     client_id?: string
+    canonicalURL?: URL
 }
 
 export type Note = BaseEntry & {
@@ -145,7 +149,8 @@ async function parseBaseEntry({ frontmatter, file }: MarkdownInstance<BaseEntryF
         slug,
         date: safeDate(frontmatter.date)!,
         tags: frontmatter.tags || [],
-        url: fileToUrl(file, slug)
+        url: fileToUrl(file, slug),
+        canonicalURL: safeUrl(frontmatter.url)
     }
 }
 
