@@ -1,5 +1,5 @@
 {
-  "lastFetched": "2023-01-06T03:01:21.290Z",
+  "lastFetched": "2023-01-11T14:11:05.952Z",
   "children": [
     {
       "type": "entry",
@@ -377,6 +377,42 @@
       },
       "in-reply-to": "https://tonysull.co/notes/2022-01-11-privacy-first-javascript/",
       "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Patrick Dung",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/f6f3f84aa8cfdf456c14c169fb3a5a72e3d0bc94cbefc1434ae1d9d9ff380b97.jpg",
+        "url": "https://twitter.com/mpatdung"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1597240545734164486#favorited-by-1144584487",
+      "published": null,
+      "wm-received": "2023-01-11T12:24:59Z",
+      "wm-id": 1597474,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1597240545734164486/1144584487",
+      "wm-target": "https://tonysull.co/notes/introducing-astro-webfinger-note/",
+      "like-of": "https://tonysull.co/notes/introducing-astro-webfinger-note/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Patrick Dung",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/f6f3f84aa8cfdf456c14c169fb3a5a72e3d0bc94cbefc1434ae1d9d9ff380b97.jpg",
+        "url": "https://twitter.com/mpatdung"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1597240545734164486#favorited-by-1144584487",
+      "published": null,
+      "wm-received": "2023-01-11T12:24:59Z",
+      "wm-id": 1597475,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1597240545734164486/1144584487",
+      "wm-target": "https://tonysull.co/articles/introducing-astro-webfinger/",
+      "like-of": "https://tonysull.co/articles/introducing-astro-webfinger/",
+      "wm-property": "like-of",
       "wm-private": false
     }
   ]
