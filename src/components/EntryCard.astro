@@ -85,7 +85,9 @@ function getHandleDomain(handle: string) {
                 </a>
             </small>
         </Show>
-        <Share url={entry.url} alt="Share a direct link to this post" />
+        <Show when={entry.url}>
+            <Share url={entry.url!} alt="Share a direct link to this post" />
+        </Show>
     </footer>
 </article>
 

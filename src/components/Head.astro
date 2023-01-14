@@ -1,4 +1,5 @@
 ---
+import { Fathom } from 'astro-fathom'
 import site from '@data/site.json'
 
 export interface Props {
@@ -75,3 +76,6 @@ const fullTitle = [title, site.title].filter(Boolean).join(' • ')
 <!-- IndieLogin -->
 <link rel="authorization_endpoint" href="https://indieauth.com/auth" />
 <link rel="token_endpoint" href="https://tokens.indieauth.com/token" />
+
+<!-- Fathom Analytics -->
+<Fathom site={import.meta.env.PUBLIC_FATHOM_SITE} trackingUrl={import.meta.env.PUBLIC_FATHOM_DOMAIN} />

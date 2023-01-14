@@ -7,6 +7,8 @@ export type Props = {
 }
 
 const { url, alt } = Astro.props
+
+console.log(import.meta.env)
 ---
 
 <share-link href={url} role="button">
@@ -31,6 +33,7 @@ const { url, alt } = Astro.props
         }
 
         async share() {
+            (window as any).fathom.trackGoal(import.meta.env.PUBLIC_FATHOM_EVENT_SHARE, 0)
             await navigator.clipboard.writeText(this.href)
         }
     }
