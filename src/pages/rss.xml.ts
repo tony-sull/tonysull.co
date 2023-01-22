@@ -1,6 +1,6 @@
 import type { APIRoute } from "astro"
 import { Feed } from "feed"
-import { getAllEntries, isArticle, isNote } from "@data/entries.js"
+import { getAllEntries, isArticle, isBookmark, isNote } from "@data/entries.js"
 import siteData from '@data/site.json'
 import { getDate, getImage, getSummary, getTitle, getUrl } from "@utils/entries.js"
 
@@ -22,17 +22,19 @@ export const get: APIRoute = async ({ site, generator }) => {
         }
     })
 
-    allEntries.forEach(entry => {
-        feed.addItem({
-            title: getTitle(entry)!,
-            id: getUrl(entry)!,
-            link: getUrl(entry)!,
-            description: getSummary(entry),
-            content: isArticle(entry) || isNote(entry) ? entry.content.html : getSummary(entry),
-            date: getDate(entry),
-            image: getImage(entry)
+    allEntries
+        .filter((entry) => !isBookmark(entry))
+        .forEach(entry => {
+            feed.addItem({
+                title: getTitle(entry)!,
+                id: getUrl(entry)!,
+                link: getUrl(entry)!,
+                description: getSummary(entry),
+                content: isArticle(entry) || isNote(entry) ? entry.content.html : getSummary(entry),
+                date: getDate(entry),
+                image: getImage(entry)
+            })
         })
-    })
 
     return {
         body: feed.rss2()
