@@ -24,7 +24,22 @@ const scraper = metascraper([
   title(),
 ])
 
+async function fetchWithTimeout(resource: RequestInfo | URL, options: { timeout?: number } & RequestInit = {}) {
+  const { timeout = 5000 } = options
+
+  const controller = new AbortController()
+  const id = setTimeout(() => {
+    controller.abort()
+  }, timeout)
+
+  const response = await fetch(resource, { ...options, signal: controller.signal })
+
+  clearTimeout(id)
+
+  return response
+}
+
 export async function scrape(url: URL): Promise<Metadata> {
-  const content = await fetch(url).then(res => res.text())
+  const content = await fetchWithTimeout(url).then(res => res.text())
   return await scraper({ url: url.toString(), html: content })
 }
