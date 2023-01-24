@@ -6,6 +6,8 @@ import logo from 'metascraper-logo'
 import publisher from 'metascraper-publisher'
 import title from 'metascraper-title'
 
+const USER_AGENT = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36'
+
 export type Metadata = {
   author?: string
   description?: string
@@ -54,7 +56,7 @@ export async function scrape(url: URL): Promise<Metadata> {
       fetchWithTimeout(url, {
         headers: {
           'user-agent':
-            'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36',
+            USER_AGENT,
         },
       }).then(res => res.text())
     )
