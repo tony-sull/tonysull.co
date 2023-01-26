@@ -1,0 +1,56 @@
+---
+import Card from "./Card.astro";
+import { Icon } from "astro-icon";
+import type { CollectionEntry } from "astro:content";
+import { scrape } from "~/utils/scrape";
+import Show from "./Show.astro";
+
+export type Props = CollectionEntry<"bookmarks">;
+
+const { data, slug } = Astro.props;
+
+const metadata = await scrape(data["bookmark-of"]);
+
+if (!metadata) {
+  throw new Error(`Could not load metadata for bookmark "${slug}"`);
+}
+---
+
+<Card
+  author={data.persona}
+  href={data["bookmark-of"]}
+  date={data.date}
+  tags={data.category}
+  photo={data.photo}
+  contentClass="u-bookmark-of"
+>
+  <h2 class="p-name">{metadata.title}</h2>
+
+  <Show when={metadata.description}>
+    <p class="p-summary">{metadata.description}</p>
+  </Show>
+
+  <small slot="footer">
+    <Icon name="bookmark-solid" size={24} />
+    <span>Bookmark</span>
+  </small>
+</Card>
+
+<style>
+  h2 {
+    font-size: var(--font-size-3);
+    color: var(--text-2);
+    font-weight: var(--font-weight-4);
+    max-inline-size: 100%;
+  }
+
+  p {
+    margin-block-start: var(--size-3);
+  }
+
+  small {
+    display: flex;
+    align-items: center;
+    gap: var(--size-1);
+  }
+</style>

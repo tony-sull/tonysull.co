@@ -1,214 +1,212 @@
 ---
-import type { Article } from "@data/entries.js"
-import { isoDate, shortDate } from "@utils/dates";
-import { getAuthor } from "@utils/entries";
+import { type CollectionEntry, getEntryBySlug } from "astro:content";
+import readingTime from "reading-time";
+import { isoDate, shortDate } from "~/utils/dates.js";
 import { Icon } from "astro-icon";
-import readingTime from 'reading-time'
-import For from "./For.astro";
 import Show from "./Show.astro";
+import TagList from "./TagList.astro";
 
-export type Props = Article
+export type Props = CollectionEntry<"articles">;
 
-const { canonicalURL, content, image, published, summary, tags, title } = Astro.props
+const { body, data, render } = Astro.props;
 
-const minutes = readingTime(content.html)
+const { Content } = await render();
 
-const author = getAuthor(Astro.props)
+const minutes = readingTime(body);
 
 function getHandleName(handle: string) {
-    return handle.slice(0, handle.indexOf('@'))
+  return handle.slice(0, handle.indexOf("@"));
 }
 
 function getHandleDomain(handle: string) {
-    const start = handle.indexOf('@')
-    const end = handle.lastIndexOf('.')
+  const start = handle.indexOf("@");
+  const end = handle.lastIndexOf(".");
 
-    return handle.slice(start + 1, end >= 0 ? end : handle.length)
+  return handle.slice(start + 1, end >= 0 ? end : handle.length);
 }
+
+const persona =
+  (data.persona && (await getEntryBySlug("personas", data.persona))) ||
+  (await getEntryBySlug("personas", "tony")!);
 ---
 
 <article class="h-entry">
-    <header>
-        <h1 class="p-name">{title}</h1>
-        
-        <Show when={published}>
-            <time datetime={isoDate(published!)} class="dt-published">{shortDate(published!)}</time>
-            <strong slot="fallback">DRAFT</strong>
-        </Show>
+  <header>
+    <h1 class="p-name">{data.name}</h1>
 
-        <div class="p-author h-card">
-            <img src={author.avatar} alt="" class="u-logo" width="48" height="48" loading="lazy" />
-            <p class="p-name sr-only">{author.name}</p>
-            <p class="p-nickname">
-                <b>{getHandleName(author.handle)}</b>
-                <span>@</span>
-                <i>{getHandleDomain(author.handle)}</i>
-                <span class="sr-only">{author.handle.slice(author.handle.lastIndexOf('.'))}</span>
-            </p>
-        </div>
+    <Show when={!data.draft}>
+      <time datetime={isoDate(data.date)} class="dt-published"
+        >{shortDate(data.date)}</time
+      >
+      <strong slot="fallback">DRAFT</strong>
+    </Show>
 
-        <p>
-            <Icon name="clock" size={16} aria-hidden="true" role="img" />
-            <span>{minutes.text}</span>
-        </p>
+    <div class="p-author h-card">
+      <img
+        src={persona.data.avatar}
+        alt=""
+        class="u-logo"
+        width="48"
+        height="48"
+        loading="lazy"
+      />
+      <p class="p-name sr-only">{persona.data.name}</p>
+      <p class="p-nickname">
+        <b>{getHandleName(persona.data.handle)}</b>
+        <span>@</span>
+        <i>{getHandleDomain(persona.data.handle)}</i>
+        <span class="sr-only"
+          >{
+            persona.data.handle.slice(persona.data.handle.lastIndexOf("."))
+          }</span
+        >
+      </p>
+    </div>
 
-        <Show when={tags.length}>
-            <ul>
-                <For each={tags}>
-                    {(tag: string) => (
-                        <li>
-                            <small><a href={`/tags/${tag}/`} rel="category tag" class="p-category">#{tag}</a></small>
-                        </li>
-                    )}
-                </For>
-            </ul>
-        </Show>
+    <p>
+      <Icon name="clock" size={16} aria-hidden="true" role="img" />
+      <span>{minutes.text}</span>
+    </p>
 
-        <blockquote class="p-summary">{summary}</blockquote>
+    <Show when={data.category?.length}>
+      <TagList tags={data.category!} class="tags" />
+    </Show>
 
-        <Show when={image}>
-            <img src="u-photo" src={image} alt="" aria-hidden="true" loading="lazy" hidden />
-        </Show>
+    <blockquote class="p-summary">{data.summary}</blockquote>
 
-        <a class="u-url" href={canonicalURL || new URL(Astro.url.pathname, Astro.site)} hidden />
-    </header>
+    <Show when={data.photo}>
+      <img
+        src="u-photo"
+        src={data.photo}
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
+        hidden
+      />
+    </Show>
 
-    <div class="e-content" set:html={content.html}></div>
+    <a
+      class="u-url"
+      href={(data.url && new URL(data.url)) ||
+        new URL(Astro.url.pathname, Astro.site)}
+      hidden></a>
+  </header>
+
+  <div class="e-content">
+    <Content />
+  </div>
 </article>
 
 <style>
-    article {
-        width: 100%;
-        max-inline-size: var(--size-content-3);
-    }
+  article {
+    width: 100%;
+    max-inline-size: var(--size-content-3);
+  }
 
+  header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: "tags tags" "title title" "author author" "published minutes" "summary summary";
+    align-items: center;
+    column-gap: var(--size-fluid-2);
+    margin-block-end: var(--size-fluid-3);
+  }
+
+  header h1 {
+    grid-area: title;
+    padding-block-end: var(--size-fluid-1);
+  }
+
+  header :global(.tags) {
+    grid-area: tags;
+  }
+
+  header time {
+    grid-area: published;
+  }
+
+  .p-summary {
+    grid-area: summary;
+    margin-top: var(--size-fluid-3);
+    font-size: var(--font-size-fluid-1);
+  }
+
+  .p-author {
+    grid-area: author;
+    display: flex;
+    align-items: center;
+    gap: var(--size-fluid-1);
+  }
+
+  .p-nickname {
+    gap: var(--size-1);
+  }
+
+  .u-logo {
+    border-radius: var(--radius-round);
+  }
+
+  header p {
+    grid-area: minutes;
+    display: flex;
+    align-items: center;
+    gap: var(--size-2);
+  }
+
+  header p :global(svg) {
+    opacity: 0.5;
+  }
+
+  h1 {
+    font-size: var(--font-size-fluid-3);
+  }
+
+  h2 {
+    font-size: var(--font-size-fluid-2);
+  }
+
+  h3,
+  h4 {
+    font-size: var(--font-size-fluid-1);
+  }
+
+  .e-content :global(:is(h1, h2, h3, h4, h5, h6)) {
+    margin-block-start: calc(1rem + 0.75em);
+    margin-block-end: calc(0.5rem + 0.15em);
+  }
+
+  .e-content :global(p + p) {
+    margin-block-start: 1rem;
+  }
+
+  .e-content :global(pre) {
+    margin-block: 1rem;
+    padding: var(--size-fluid-1);
+    max-inline-size: unset;
+  }
+
+  .e-content :global(blockquote) {
+    margin-block: 1rem;
+    max-inline-size: unset;
+  }
+
+  @media (min-width: 640px) {
     header {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        grid-template-areas: 'tags tags' 'title title' 'author author' 'published minutes' 'summary summary';
-        align-items: center;
-        column-gap: var(--size-fluid-2);
-        margin-block-end: var(--size-fluid-3);
-    }
-
-    header h1 {
-        grid-area: title;
-        padding-block-end: var(--size-fluid-1);
-    }
-    
-    header time {
-        grid-area: published;
-    }
-
-    .p-summary {
-        grid-area: summary;
-        margin-top: var(--size-fluid-3);
-        font-size: var(--font-size-fluid-1);
-    }
-
-    .p-author {
-        grid-area: author;
-        display: flex;
-        align-items: center;
-        gap: var(--size-fluid-1);
-    }
-
-    .p-nickname {
-        gap: var(--size-1);
-    }
-
-    .u-logo {
-        border-radius: var(--radius-round);
-    }
-
-    header p {
-        grid-area: minutes;
-        display: flex;
-        align-items: center;
-        gap: var(--size-2);
-    }
-
-    header p :global(svg) {
-        opacity: 0.5;
+      grid-template-columns: auto auto 1fr;
+      grid-template-areas: "tags tags tags" "title title title" "author published minutes" "summary summary summary";
+      row-gap: var(--size-fluid-1);
     }
 
     header > ul {
-        grid-area: tags;
-        display: flex;
-        flex-wrap: wrap;
-        gap: var(--size-4);
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        margin-block-start: var(--size-fluid-1);
+      margin-block-start: var(--size-1);
     }
 
-    header li {
-        padding: 0;
+    .p-summary {
+      margin-top: var(--size-fluid-2);
     }
 
     .p-category {
-        background: var(--surface-1);
-        padding: var(--size-2);
-        border-radius: var(--radius-2);
-        color: var(--gray-7);
-        font-weight: var(--font-weight-7);
-        letter-spacing: var(--font-letterspacing-4);
+      letter-spacing: var(--font-letterspacing-2);
     }
-
-    :global([data-theme="dark"]) .p-category {
-        color: var(--gray-4);
-    }
-
-    h1 {
-        font-size: var(--font-size-fluid-3);
-    }
-
-    h2 {
-        font-size: var(--font-size-fluid-2);
-    }
-
-    h3, h4 {
-        font-size: var(--font-size-fluid-1);
-    }
-
-    .e-content :global(:is(h1, h2, h3, h4, h5, h6)) {
-        margin-block-start: calc(1rem + 0.75em);
-        margin-block-end: calc(0.5rem + 0.15em);
-    }
-
-    .e-content :global(p + p) {
-        margin-block-start: 1rem;
-    }
-
-    .e-content :global(pre) {
-        margin-block: 1rem;
-        padding: var(--size-fluid-1);
-        max-inline-size: unset;
-    }
-
-    .e-content :global(blockquote) {
-        margin-block: 1rem;
-        max-inline-size: unset;
-    }
-
-    @media (min-width: 640px) {
-        header {
-            grid-template-columns: auto auto 1fr;
-            grid-template-areas: 'tags tags tags' 'title title title' 'author published minutes' 'summary summary summary';
-            row-gap: var(--size-fluid-1);
-        }
-
-        header > ul {
-            margin-block-start: var(--size-1);
-        }
-
-        .p-summary {
-            margin-top: var(--size-fluid-2);
-        }
-
-        .p-category {
-            letter-spacing: var(--font-letterspacing-2);
-        }
-    }
+  }
 </style>

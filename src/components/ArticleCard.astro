@@ -1,0 +1,74 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Card from "./Card.astro";
+import Show from "./Show.astro";
+import { scrape } from "~/utils/scrape.js";
+
+export type Props = CollectionEntry<"articles">;
+
+const { data, slug } = Astro.props;
+
+const replyMetadata = data["in-reply-to"]
+  ? await scrape(data["in-reply-to"])
+  : undefined;
+---
+
+<Card
+  author={data.persona}
+  href={`/articles/${slug}`}
+  date={data.date}
+  tags={data.category}
+>
+  <h2 class="p-name">{data.name}</h2>
+  <p class="p-summary">{data.summary}</p>
+
+  <Fragment slot="footer">
+    <a href={`/articles/${slug}`} class="u-url">Full article</a>
+    <Show when={replyMetadata}>
+      <small>
+        <span>In reply to</span>
+        <a href={data["in-reply-to"]} class="u-in-reply-to">
+          {replyMetadata?.title}
+        </a>
+      </small>
+    </Show>
+  </Fragment>
+</Card>
+
+<style>
+  .p-name {
+    font-size: var(--font-size-3);
+    font-weight: var(--font-weight-4);
+    max-inline-size: 100%;
+  }
+
+  footer small span {
+    opacity: 75%;
+  }
+
+  [target="_blank"] > h2:after,
+  .u-in-reply-to:after {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M10 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4M14 4h6m0 0v6m0-6L10 14'/%3E%3C/svg%3E");
+    margin-inline-start: var(--size-1);
+    opacity: 0.5;
+  }
+
+  :global([data-theme="dark"]) [target="_blank"] > h2:after,
+  :global([data-theme="dark"]) .u-in-reply-to:after {
+    filter: invert();
+  }
+
+  h2 {
+    font-size: var(--font-size-3);
+    color: var(--text-2);
+    margin-block-end: var(--size-3);
+  }
+
+  .u-url {
+    font-size: var(--size-fluid-2);
+  }
+
+  .u-in-reply-to {
+    font-style: italic;
+  }
+</style>
