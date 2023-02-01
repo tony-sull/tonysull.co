@@ -76,7 +76,7 @@ npm i -s svelte-entity-store
 Creating an instance of the store is pretty straight forward. Svelte has excellent [TypeScript support](https://svelte.dev/blog/svelte-and-typescript) these days, but it isn't a must. Using `svelte-entity-store` in plain old JavaScript is very similar, just skip the `interface` definition and `<Type>` casting.
 
 ```ts
-import { entityStore } from "svelte-entity-store"
+import { entityStore } from 'svelte-entity-store'
 
 // Define your entity interface
 interface TodoItem {
@@ -118,13 +118,13 @@ Properly overriding methods in TypeScript was an interesting challenge to get au
 
 ```ts
 // Get one entity by ID
-const item = store.get("abc-123")
+const item = store.get('abc-123')
 
 // Get a list of entities by ID
 const items = store.get([123, 456, 789])
 
 // Get a list of entities that match a filter function
-const activeItems = store.get((todo) => !todo.completed)
+const activeItems = store.get(todo => !todo.completed)
 
 // Or get every entity in the store
 const allItems = store.get()
@@ -159,7 +159,7 @@ Much like `get()`, `set()` has a few different overrides. Calling `set` will blo
 // Replace the existing entity with ID 123, or add it if the ID doesn't exist yet
 store.set({
   id: 123,
-  description: "Todo #1",
+  description: 'Todo #1',
   completed: true,
 })
 
@@ -190,7 +190,7 @@ store.update(toggleTodo, [123, 456])
 store.update(toggleTodo, $activeTodos)
 
 // What if you want to only update entities that meet a filter condition?
-store.update(toggleTodo, (todo) => todo.completed)
+store.update(toggleTodo, todo => todo.completed)
 
 // Go crazy with it and run the update against every entity in the store
 store.update(toggleTodo)

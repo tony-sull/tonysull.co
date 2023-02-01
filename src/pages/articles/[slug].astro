@@ -1,0 +1,71 @@
+---
+import Layout from '@layouts/Page.astro'
+import { fetchArticle, fetchArticles } from '@data/articles.js'
+import Show from '@components/Show.astro'
+import For from '@components/For.astro'
+import { isoDate, shortDate } from '@utils/dates'
+
+export async function getStaticPaths() {
+  const allArticles = await fetchArticles()
+
+  return allArticles.map(({ slug }) => {
+    return {
+      params: { slug },
+    }
+  })
+}
+
+const { slug } = Astro.params as { slug: string }
+
+const article = await fetchArticle(slug)
+
+if (!article) {
+  throw new Error(`[fetchArticle] how was "${slug}" not found?`)
+}
+
+const canoncialURL = article.url || new URL(Astro.url.pathname, Astro.site)
+---
+
+<Layout
+  title={article.title}
+  description={article.description}
+  image={article.photo}
+  canonicalURL={canoncialURL}
+>
+  <article class="h-entry">
+    <header>
+      <Show when={article.tags?.length}>
+        <For each={article.tags}>
+          {
+            (tag: string, i: number) => (
+              <Show when={i > 0 && i !== article.tags!.length}>
+                <span aria-hidden="true">⋅&nbsp;</span>
+                <a href={`/articles/tags/${tag}`}>{tag}</a>
+              </Show>
+            )
+          }
+        </For>
+      </Show>
+      <h1 class="pname">{article.title}</h1>
+
+      <small>
+        <time class="dt-published" datetime={isoDate(article.published)}
+          >{shortDate(article.published)}</time
+        >
+
+        <Show when={canoncialURL.origin !== Astro.site?.origin}>
+          <i>
+            • Originally published at
+            <a href={canoncialURL}>{canoncialURL.hostname}</a>
+          </i>
+        </Show>
+      </small>
+
+      <blockquote>
+        <p class="p-summary">{article.description}</p>
+      </blockquote>
+    </header>
+
+    <div class="e-content" set:html={article.content.html} />
+  </article>
+</Layout>

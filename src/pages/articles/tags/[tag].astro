@@ -1,0 +1,56 @@
+---
+import ArticleSummary from "@components/ArticleSummary.astro"
+import For from "@components/For.astro"
+import Hero from "@components/Hero.astro"
+import { type ArticleSummary as Article, fetchArticles } from "@data/articles.js"
+import Layout from '@layouts/Page.astro'
+
+export async function getStaticPaths() {
+    const allArticles = await fetchArticles()
+
+    const tagsMap = allArticles.reduce((acc, next) => {
+        next.tags?.forEach((tag) => {
+            const list = acc.get(tag) || []
+            acc.set(tag, list.concat(next.slug))
+        })
+
+        return acc
+    }, new Map<string, string[]>())
+
+    return Array.from(tagsMap.entries())
+        .map(([key, value]) => ({
+            params: { tag: key },
+            props: { slugs: value }
+        }))
+}
+
+const { tag } = Astro.params as { tag: string }
+const { slugs } = Astro.props as { slugs: string[] }
+
+const title = `#${tag} | Articles`
+const description =
+  'Tony Sullivan is a fullstack developer based in Onbekend, USA.'
+
+const articles = (await fetchArticles())
+    .filter(({ slug }) => slugs.includes(slug))
+---
+
+<Layout title={title} description={description}>
+    <Hero
+    title="I write articles."
+    cta={{ text: 'Hello, my name is Tony', href: '/about/' }}
+  >
+    I'm a frontend developer and co-founder of <a href="https://navillus.dev"
+      >Navillus</a
+    >, a software studio and think tank. In a hurry? My [notes](/notes) also get
+    syndicated to <a href="https://twitter.com/tonysull_co)" target="_blank"
+      >Twitter</a
+    >.
+  </Hero>
+
+  <ul>
+    <For each={articles}>
+      {(article: Article) => <ArticleSummary {...article} />}
+    </For>
+  </ul>
+</Layout>

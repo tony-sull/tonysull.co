@@ -24,13 +24,13 @@ With our new **Theme Catalog**, it's never been easier to go from idea to live t
 
 Astro has always maintained a collection of official [example projects](https://github.com/withastro/astro/tree/main/examples) and [starter templates](https://astro.new/). These were great learning resources, but they were also limiting: 1 official blog theme, 1 official docs theme, etc. etc.
 
-Meanwhile, our amazing community of developers had already begun to build and share fully-designed themes on our community Discord. Do you keep meaning to start a personal blog, but never seem to find the time? Grab a copy of the [Astro Ink](https://github.com/one-aalam/astro-ink) theme and start writing! With built-in support for dark mode, automated publishing for draft posts, and client-side search, you'll skip weeks of hacking to jump straight into the sharing your content. 
+Meanwhile, our amazing community of developers had already begun to build and share fully-designed themes on our community Discord. Do you keep meaning to start a personal blog, but never seem to find the time? Grab a copy of the [Astro Ink](https://github.com/one-aalam/astro-ink) theme and start writing! With built-in support for dark mode, automated publishing for draft posts, and client-side search, you'll skip weeks of hacking to jump straight into the sharing your content.
 
 We created the Astro Themes Catalog to showcase these amazing community-developed themes alongside our official set of starter kits.
 
 ![Astro Themes Catalog](/posts/assets/2022-04-06-astro-themes.png)
 
-Visit [astro.build/themes](http://astro.build/themes) to get started with any official or community theme. 
+Visit [astro.build/themes](http://astro.build/themes) to get started with any official or community theme.
 
 Interested in releasing your own theme? We’re here to help! Check out our [publishing best-practices](https://docs.astro.build/en/guides/publish-to-npm/#packagejson) for help getting started and instructions to get your theme listed on our catalog. Need help? Join the #themes channel on [Discord](https://astro.build/chat) to chat with other Astro theme creators.
 
@@ -48,13 +48,13 @@ With our new **Theme Catalog**, it's never been easier to go from idea to live t
 
 Astro has always maintained a collection of official [example projects](https://github.com/withastro/astro/tree/main/examples) and [starter templates](https://astro.new/). These were great learning resources, but they were also limiting: 1 official blog theme, 1 official docs theme, etc. etc.
 
-Meanwhile, our amazing community of developers had already begun to build and share fully-designed themes on our community Discord. Do you keep meaning to start a personal blog, but never seem to find the time? Grab a copy of the [Astro Ink](https://github.com/one-aalam/astro-ink) theme and start writing! With built-in support for dark mode, automated publishing for draft posts, and client-side search, you'll skip weeks of hacking to jump straight into the sharing your content. 
+Meanwhile, our amazing community of developers had already begun to build and share fully-designed themes on our community Discord. Do you keep meaning to start a personal blog, but never seem to find the time? Grab a copy of the [Astro Ink](https://github.com/one-aalam/astro-ink) theme and start writing! With built-in support for dark mode, automated publishing for draft posts, and client-side search, you'll skip weeks of hacking to jump straight into the sharing your content.
 
 We created the Astro Themes Catalog to showcase these amazing community-developed themes alongside our official set of starter kits.
 
 ![Astro Themes Catalog](/assets/blog/themes-and-integrations/astro-themes.png)
 
-Visit [astro.build/themes](http://astro.build/themes) to get started with any official or community theme. 
+Visit [astro.build/themes](http://astro.build/themes) to get started with any official or community theme.
 
 Interested in releasing your own theme? We’re here to help! Check out our [publishing best-practices](https://docs.astro.build/en/guides/publish-to-npm/#packagejson) for help getting started and instructions to get your theme listed on our catalog. Need help? Join the #themes channel on [Discord](https://astro.build/chat) to chat with other Astro theme creators.
 

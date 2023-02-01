@@ -61,7 +61,7 @@ They have you covered for components further down the page too, `:visible` will 
 ### Coming soon to an Astro near you
 
 ```astro
-<Component:media ="(min-width: 40em)"></Component:media>
+<Component:media />
 ```
 
 This is only a proposed feature still open on [Github](https://github.com/snowpackjs/astro/issues/396) and the syntax may very likely change, but the concept here will be a huge win.
