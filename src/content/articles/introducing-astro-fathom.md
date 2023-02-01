@@ -1,0 +1,45 @@
+---
+name: Introducing astro-fathom
+summary: Easily add and debug Fathom Analytics on your Astro sites.
+category:
+  - code
+  - astro
+slug: introducing-astro-fathom
+published: "2023-01-22T21:55:21Z"
+date: "2023-01-22T21:55:21Z"
+photo: "uploads/2023-01-22-introducing-astro-fathom.jpg"
+---
+
+Two paragraphs in and I realized how much I have to say about analytics! This will likely be the first in a series covering everything from my love/hate relationship with Google Analytics to what data you _really_ need to be collecting. Subscribe to my [RSS Feed](https://tonysull.co/articles/feed.xml) for updates!
+
+---
+
+I avoided adding analytics to my own sites for years, mainly out of concerns for visitors' privacy. I've also never enjoyed working with Google Analytics on client projects - the dashboard is much too complicated for my taste and frankly I've never seen a company actually gain meaningful value from such detailed (and complicated) analytics data.
+
+I've been using [Fathom Analytics](https://usefathom.com) on my own sites for a couple years now and really grew to appreciate the no nonsense approach to what data is collected and how it's presented to me. Sure there aren't as many features as Google Analytics, but that's because Fathom **actually cares** about user privacy (and isn't also in the search or ads business).
+
+It's not surprise I prefer to use [Astro](https://astro.build) these days. Go ahead and pull up the developer console on our site...
+
+![Browser developer tools showing Fathom analytics running on https://astro.build](/uploads/2023-01-22-astro-build-devtools.png)
+
+That's right, we use Fathom on Astro's homepage (as well as our [docs](https://docs.astro.build) and [astro.new](https://astro.new)).
+
+## Fun Fathom Facts
+
+### EU Isolation
+
+GDPR-compliance is no joke, and getting that right in the analytics business takes some serious attention. Fathom Analytics supports true [data isolation](https://usefathom.com/features/eu-isolation), meaning all of your EU traffic is processed and stored in Europe.
+
+### Ad blockers
+
+Ad blockers and similar browser plugins often block known analytics scripts in the name of user privacy, and rightfully so! I happily follow [privacytools.io](https://privacytools.io) recommendations every time I'm setting up a new machine or install a new browser. The goal is to protect privacy though, and Fathom has that built right in!
+
+Fathom supports [custom domains](https://usefathom.com/features/custom-domains), making it easy to serve the analytics script from your own subdomain. This gets around the broad net used by most ad blockers. Normally I don't like those kinds of games, but I've spent years focusing on my own online privacy setup and feel comfortable that using Fathom analytics really doesn't violate the privacy that many of the ad blockers are intending to protect.
+
+uBlock Origin is the main holdout here. It's a long story, but basically they've decided to chase Fathom Analytics and now block **any** `script.js` loaded from **any** subdomain. This is mind-boggling to me - it doesn't seem unreasonable to me for a site to be configured to bundle its own `script.js` that is hosted on a custom CDN from a subdomain...
+
+## Give it a try!
+
+Already using Fathom Analytics and looking for an easier to maintain setup? Check out the [`astro-fathom`](https://github.com/tony-sull/astro-fathom) I just published to [npm](https://www.npmjs.com/package/astro-fathom).
+
+Reach out if you [find a bug](https://github.com/tony-sull/astro-fathom/issues), have a [feature request](https://github.com/tony-sull/astro-fathom/discussions), or just need to [vent](https://twitter.com/tonysull_co) about online privacy!

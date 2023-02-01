@@ -1,33 +1,45 @@
 ---
-import Layout from '@layouts/Page.astro'
-import { type Entry, getAllEntries } from '@data/entries.js'
-import For from '@components/For.astro'
-import EntryCard from '@components/EntryCard.astro'
+import { type CollectionEntry, getCollection } from "astro:content";
+import ArticleCard from "~/components/ArticleCard.astro";
+import BookmarkCard from "~/components/BookmarkCard.astro";
+import NoteCard from "~/components/NoteCard.astro";
+import For from "~/components/For.astro";
+import Layout from "~/layouts/Page.astro";
+import { sortByDate } from "~/utils/sortByDate";
+
+type Entry =
+  | CollectionEntry<"articles">
+  | CollectionEntry<"bookmarks">
+  | CollectionEntry<"notes">;
 
 export async function getStaticPaths() {
-  const entries = await getAllEntries()
+  const articles = await getCollection("articles");
+  const bookmarks = await getCollection("bookmarks");
+  const notes = await getCollection("notes");
+
+  const entries = [...articles, ...bookmarks, ...notes].sort(sortByDate);
 
   const uniq = entries.reduce((acc, next) => {
-    next.tags.forEach(tag => {
-      const array = acc.has(tag) ? acc.get(tag)! : []
+    (next.data.category || []).forEach((tag) => {
+      const array = acc.has(tag) ? acc.get(tag)! : [];
 
-      array.push(next)
-      acc.set(tag, array)
-    })
+      array.push(next);
+      acc.set(tag, array);
+    });
 
-    return acc
-  }, new Map<string, Entry[]>())
+    return acc;
+  }, new Map<string, Entry[]>());
 
   return Array.from(uniq.entries()).map(([tag, entries]) => {
     return {
       params: { tag },
       props: { entries },
-    }
-  })
+    };
+  });
 }
 
-const { tag } = Astro.params as { tag: string }
-const { entries } = Astro.props as { entries: Entry[] }
+const { tag } = Astro.params as { tag: string };
+const { entries } = Astro.props as { entries: Entry[] };
 ---
 
 <Layout title={`Tag archive for "${tag}"`}>
@@ -36,7 +48,9 @@ const { entries } = Astro.props as { entries: Entry[] }
       {
         (entry: Entry) => (
           <li>
-            <EntryCard entry={entry} />
+            {entry.collection === "articles" && <ArticleCard {...entry} />}
+            {entry.collection === "bookmarks" && <BookmarkCard {...entry} />}
+            {entry.collection === "notes" && <NoteCard {...entry} />}
           </li>
         )
       }

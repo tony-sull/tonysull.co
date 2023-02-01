@@ -4,160 +4,169 @@ import For from "./For.astro";
 import ThemeToggle from "./ThemeToggle.astro";
 
 export type Link = {
-    href: string
-    text: string
-}
+  href: string;
+  text: string;
+};
 
 const links: Link[] = [
-    {
-        href: '/articles',
-        text: 'articles'
-    },
-    {
-        href: '/notes',
-        text: 'notes'
-    },
-    {
-        href: '/bookmarks',
-        text: 'bookmarks'
-    }
-]
+  {
+    href: "/articles",
+    text: "articles",
+  },
+  {
+    href: "/notes",
+    text: "notes",
+  },
+  {
+    href: "/bookmarks",
+    text: "bookmarks",
+  },
+];
 ---
 
 <header class="container">
-    <div>
-        <a href="/" title="Home">
-            <Icon name="logo" size={48} aria-hidden="true" />
-        </a>
+  <div>
+    <a href="/" title="Home">
+      <Icon name="logo" size={48} aria-hidden="true" />
+    </a>
 
-        <nav>
-            <ol>
-                <For each={links}>
-                    {(link: Link) => (
-                        <li>
-                            <a href={link.href} aria-current={link.href === Astro.url.pathname ? 'page' : undefined}>{link.text}</a>
-                        </li>
-                    )}
-                </For>
-            </ol>
-        </nav>
+    <nav>
+      <ol>
+        <For each={links}>
+          {
+            (link: Link) => (
+              <li>
+                <a
+                  href={link.href}
+                  aria-current={
+                    link.href === Astro.url.pathname ? "page" : undefined
+                  }
+                >
+                  {link.text}
+                </a>
+              </li>
+            )
+          }
+        </For>
+      </ol>
+    </nav>
 
-        <ThemeToggle />
-    </div>
+    <ThemeToggle />
+  </div>
 </header>
 
 <style>
-    header {
-        --link: var(--text-1);
-        --link-visited: var(--text-1);
-        padding-block: var(--size-fluid-2);
-    }
+  header {
+    --link: var(--text-1);
+    --link-visited: var(--text-1);
+    padding-block: var(--size-fluid-2);
+  }
 
-    a[title="Home"] {
-        grid-area: logo;
-        --icon-bg: var(--blue-7);
-        --icon-fg: var(--gray-0);
-    }
+  a[title="Home"] {
+    grid-area: logo;
+    --icon-bg: var(--blue-7);
+    --icon-fg: var(--gray-0);
+  }
 
-    :global([data-theme="dark"]) a[title="Home"] {
-        --icon-bg: var(--blue-4);
-        --icon-fg: var(--gray-9);
-    }
+  :global([data-theme="dark"]) a[title="Home"] {
+    --icon-bg: var(--blue-4);
+    --icon-fg: var(--gray-9);
+  }
 
-    div {
-        width: 100%;
-        display: grid;
-        grid-template-columns: 1fr auto;
-        grid-template-areas: 'logo theme' 'nav nav';
-        align-items: center;
-        gap: var(--size-fluid-2);
-    }
-    
+  div {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas: "logo theme" "nav nav";
+    align-items: center;
+    gap: var(--size-fluid-2);
+  }
+
+  nav {
+    grid-area: nav;
+    font-size: var(--font-size-1);
+    width: 100%;
+  }
+
+  ol {
+    list-style: none;
+    display: flex;
+    gap: var(--size-fluid-2);
+    counter-reset: menu;
+    justify-content: space-between;
+    font-size: var(--font-size-2);
+    padding: 0;
+    margin: 0;
+  }
+
+  ol li {
+    counter-increment: menu;
+  }
+
+  ol a::before {
+    content: "0" counter(menu);
+    font-weight: var(--font-weight-7);
+    margin-inline-end: var(--size-2);
+  }
+
+  nav a {
+    position: relative;
+    text-decoration-color: transparent;
+    padding-block: var(--size-2);
+  }
+
+  nav a::after {
+    content: "";
+    display: block;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 3px;
+    scale: 0;
+    transform-origin: 0 50%;
+    transition: scale 0.3s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+
+  nav a[aria-current="page"]::after {
+    scale: 1;
+    background: var(--blue-4);
+  }
+
+  nav a:not([aria-current="page"]):hover::after {
+    scale: 1;
+    background: var(--gray-6);
+  }
+
+  div > :last-child {
+    grid-area: theme;
+  }
+
+  @media (min-width: 350px) {
     nav {
-        grid-area: nav;
-        font-size: var(--font-size-1);
-        width: 100%;
+      font-size: var(--font-size-2);
     }
-    
+
+    img {
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+  @media (min-width: 640px) {
+    div {
+      grid-template-columns: auto 1fr auto;
+      grid-template-areas: "logo nav theme";
+      gap: var(--size-fluid-3);
+    }
+
+    nav {
+      justify-self: start;
+      width: auto;
+    }
+
     ol {
-        list-style: none;
-        display: flex;
-        gap: var(--size-fluid-2);
-        counter-reset: menu;
-        justify-content: space-between;
-        font-size: var(--font-size-2);
-        padding: 0;
-        margin: 0;
+      font-size: var(--font-size-3);
     }
-
-    ol li {
-      counter-increment: menu;
-    }
-
-    ol a::before {
-        content: "0" counter(menu);
-        font-weight: var(--font-weight-7);
-        margin-inline-end: var(--size-2);
-    }
-
-    nav a {
-        position: relative;
-        text-decoration-color: transparent;
-        padding-block: var(--size-2);
-    }
-
-    nav a::after {
-        content: "";
-        display: block;
-        height: 2px;
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 3px;
-        scale: 0;
-        transform-origin: 0 50%;
-        transition: scale 0.3s cubic-bezier(0.86, 0, 0.07, 1);
-    }
-
-    nav a[aria-current="page"]::after {
-      scale: 1;
-      background: var(--blue-4);
-    }
-
-    nav a:not([aria-current="page"]):hover::after {
-      scale: 1;
-      background: var(--gray-6);
-    }
-
-    div > :last-child {
-        grid-area: theme;
-    }
-
-    @media (min-width: 350px) {
-        nav {
-            font-size: var(--font-size-2);
-        }
-
-        img {
-            width: 48px;
-            height: 48px;
-        }
-    }
-
-    @media (min-width: 640px) {
-        div {
-            grid-template-columns: auto 1fr auto;
-            grid-template-areas: 'logo nav theme';
-            gap: var(--size-fluid-3);
-        }
-
-        nav {
-            justify-self: start;
-            width: auto;
-        }
-
-        ol {
-            font-size: var(--font-size-3);
-        }
-    }
+  }
 </style>

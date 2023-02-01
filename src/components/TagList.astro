@@ -1,0 +1,60 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import For from "./For.astro";
+
+export type Props = HTMLAttributes<"ul"> & {
+  tags: string[];
+  alt?: boolean;
+};
+
+const { tags, alt = false, ...attrs } = Astro.props;
+---
+
+<ul {...attrs}>
+  <For each={tags}>
+    {
+      (tag: string) => (
+        <li>
+          <a
+            href={`/tags/${tag}`}
+            rel="category tag"
+            class:list={["p-category", { alt }]}
+          >
+            #{tag}
+          </a>
+        </li>
+      )
+    }
+  </For>
+</ul>
+
+<style>
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--size-4);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  header li {
+    padding: 0;
+  }
+
+  .p-category {
+    color: var(--gray-7);
+    background: var(--surface-1);
+    border-radius: var(--radius-2);
+    padding: var(--size-1) var(--size-2);
+  }
+
+  .p-category.alt {
+    color: var(--gray-7);
+    background: var(--surface-2);
+  }
+
+  :global([data-theme="dark"]) .p-category {
+    color: var(--gray-3);
+  }
+</style>

@@ -1,72 +1,74 @@
 ---
-import Layout from './Page.astro'
-import { shortDate } from "@utils/dates.js"
+import Layout from "./Page.astro";
+import { shortDate } from "~/utils/dates.js";
 
 interface Content {
-  title: string
-  subtitle: string
-  description: string
-  modified_date: string
+  title: string;
+  subtitle: string;
+  description: string;
+  modified_date: string;
 }
 
 interface Props {
-  content: Content
+  content: Content;
 }
 
-const { content } = Astro.props as Props
-const { title, subtitle, description, modified_date } = content
+const { content } = Astro.props as Props;
+const { title, subtitle, description, modified_date } = content;
 
-const modifiedDate = shortDate(modified_date)
+const modifiedDate = shortDate(modified_date);
 ---
 
 <Layout title={title} description={description}>
-    <section>
-        <h1>{title}</h1>
-        <em>{subtitle}</em>
-    
-        <slot />
-    
-        <small>Last updated: {modifiedDate}</small>
-    </section>
+  <section>
+    <h1>{title}</h1>
+    <em>{subtitle}</em>
+
+    <slot />
+
+    <small>Last updated: {modifiedDate}</small>
+  </section>
 </Layout>
 
 <style>
-    section :global(p) {
-        line-height: 1.7;
-    }
+  section :global(p) {
+    line-height: 1.7;
+  }
 
-    em {
-        display: block;
-        margin-bottom: var(--size-fluid-3);
-        font-size: var(--chisel-h4);
-        font-style: normal;
-        font-weight: 400;
-        color: var(--chisel-neutral-700);
-    }
+  em {
+    display: block;
+    margin-bottom: var(--size-fluid-3);
+    font-size: var(--font-size-fluid-1);
+    font-style: normal;
+    font-weight: 400;
+    color: var(--font-weight-7);
+  }
 
-    small {
-        font-style: italic;
-        font-size: var(--chisel-p);
-    }
+  small {
+    display: block;
+    font-style: italic;
+    font-size: var(--chisel-p);
+    margin-block-start: var(--size-fluid-1);
+  }
 
-    h1 {
-        font-size: var(--font-size-fluid-3);
-    }
+  h1 {
+    font-size: var(--font-size-fluid-3);
+  }
 
-    section :global(h2) {
-        font-size: var(--font-size-fluid-2);
-    }
+  section :global(h2) {
+    font-size: var(--font-size-fluid-2);
+  }
 
-    section: global(:is(h3, h4)) {
-        font-size: var(--font-size-fluid-1);
-    }
+  section: global(: is(h3, h4)) {
+    font-size: var(--font-size-fluid-1);
+  }
 
-    section :global(:is(h1, h2, h3, h4, h5, h6)) {
-        margin-block-start: calc(1rem + 0.75em);
-        margin-block-end: calc(0.5rem + 0.15em);
-    }
+  section :global(:is(h1, h2, h3, h4, h5, h6)) {
+    margin-block-start: calc(1rem + 0.75em);
+    margin-block-end: calc(0.5rem + 0.15em);
+  }
 
-    section :global(p + p) {
-        margin-block-start: 1rem;
-    }
+  section :global(p + p) {
+    margin-block-start: 1rem;
+  }
 </style>
