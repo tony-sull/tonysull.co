@@ -1,6 +1,11 @@
+import { getPicture } from "@astrojs/image"
 import { type Metadata, scrape } from "@utils/scrape.js"
 import type { MarkdownInstance } from "astro"
+import { JSDOM } from 'jsdom'
+import path from "path"
 import type { personas } from "./personas.js"
+
+const images = import.meta.glob('../assets/uploads/*')
 
 type BaseEntryFrontmatter = {
     type: 'h-entry'
@@ -165,13 +170,44 @@ async function parseNote(instance: MarkdownInstance<NoteFrontmatter>): Promise<N
 
     const inReplyTo = safeUrl(frontmatter['in-reply-to'])
 
+    const html = compiledContent()
+    const dom = new JSDOM(html)
+
+    for (const mdImg of dom.window.document.querySelectorAll<HTMLImageElement>('img[src^="/src/')) {
+        const inputSrc = mdImg.src.replace("/src", "..")
+
+        if (inputSrc) {
+            const { default: src } = await images[inputSrc]() as { default: ImageMetadata }
+
+            const picture = await getPicture({ src, widths: [415, 830, 1245, 1660], alt: mdImg.alt, formats: ['jpg', 'webp', 'avif'] })
+            
+            const mdPicture = dom.window.document.createElement('picture')
+            
+            for (const { type, srcset } of picture.sources) {
+                const source = dom.window.document.createElement('source')
+                source.type = type
+                source.srcset = srcset
+                mdPicture.appendChild(source)
+            }
+
+            const img = dom.window.document.createElement('img')
+            for (const [key, value] of Object.entries(picture.image)) {
+                img.setAttribute(key, value)
+            }
+
+            mdPicture.appendChild(img)
+
+            mdImg.replaceWith(mdPicture)
+        }
+    }
+
     return {
         ...entry,
         'in-reply-to': inReplyTo,
         metadata: inReplyTo ? await scrape(inReplyTo) : undefined,
         content: {
             value: rawContent(),
-            html: compiledContent()
+            html: dom.serialize(),
         }
     }
 }
