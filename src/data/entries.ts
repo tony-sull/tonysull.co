@@ -115,9 +115,21 @@ function safeUrl(value?: string | URL): URL | undefined {
 
 function fileToSlug(filename: string) {
     return filename
-    .split('/')
-    .pop()!
-    .replace(/\.[^.]*$/, '')
+        .split('/')
+        .pop()!
+        .replace(/\.[^.]*$/, '')
+}
+
+function fileToUrl(filename: string, slug: string) {
+    const matches = filename.match(/\/content\/(\w+?)\//)
+
+    if (!matches) {
+        throw new Error(`[fileToUrl] could not match entry type from "${filename}"`)
+    }
+
+    const [_, type] = matches
+    
+    return new URL(`/${type}/${slug}`, import.meta.env.SITE)
 }
 
 async function parseBaseEntry({ frontmatter, file }: MarkdownInstance<BaseEntryFrontmatter>): Promise<BaseEntry | undefined> {
@@ -125,13 +137,14 @@ async function parseBaseEntry({ frontmatter, file }: MarkdownInstance<BaseEntryF
         console.warn(`[parseBaseEntry] date not found, ignoring entry ${file}`)
         return undefined
     }
+    const slug = frontmatter.slug || fileToSlug(file)
 
     return {
         ...frontmatter,
-        slug: frontmatter.slug || fileToSlug(file),
+        slug,
         date: safeDate(frontmatter.date)!,
         tags: frontmatter.tags || [],
-        url: new URL(file.replace(/^\/content/, ''), import.meta.env.SITE)
+        url: fileToUrl(file, slug)
     }
 }
 

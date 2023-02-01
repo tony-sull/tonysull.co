@@ -1,6 +1,5 @@
 ---
-import Head from '@components/Head.astro'
-import type { Props as HeadProps } from '@components/Head.astro'
+import Head, { type Props as HeadProps } from '@components/Head.astro'
 import '@assets/global.css'
 import 'open-props/style'
 import 'open-props/normalize'
@@ -11,21 +10,14 @@ export type Props = HeadProps
 const { ...head } = Astro.props
 ---
 
-<html lang="en" data-chisel-theme="light">
+<html lang="en">
   <head>
     <Head {...head} />
   </head>
 
   <body>
-    <main id="main">
+    <main id="main" class="container">
       <slot />
     </main>
   </body>
 </html>
-
-<style>
-  html, body {
-    background-color: var(--gray-1);
-    color: var(--gray-12);
-  }
-</style>

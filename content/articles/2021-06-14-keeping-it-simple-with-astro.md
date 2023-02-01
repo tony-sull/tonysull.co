@@ -1,7 +1,7 @@
 ---
 type: h-entry
 title: Keeping it simple with Astro
-description: Do you really need all that JavaScript?
+summary: Do you really need all that JavaScript?
 tags:
   - code
 slug: keeping-it-simple-with-astro

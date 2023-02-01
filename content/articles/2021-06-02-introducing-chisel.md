@@ -1,7 +1,7 @@
 ---
 type: h-entry
 title: Introducing chisel.css
-description: A (work-in-progress) minimalist CSS framework.
+summary: A (work-in-progress) minimalist CSS framework.
 tags:
   - code
 slug: introducing-chisel

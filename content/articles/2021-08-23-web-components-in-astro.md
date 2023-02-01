@@ -1,7 +1,7 @@
 ---
 type: h-entry
 title: How to use Web Components in Astro
-description: Building custom elements in plain old JavaScript + trying out the new Astro.resolve() API!
+summary: Building custom elements in plain old JavaScript + trying out the new Astro.resolve() API!
 tags:
   - code
 slug: web-components-in-astro

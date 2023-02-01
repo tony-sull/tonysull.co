@@ -1,0 +1,184 @@
+---
+import type { Article } from "@data/entries.js"
+import { isoDate, shortDate } from "@utils/dates";
+import { Icon } from "astro-icon";
+import readingTime from 'reading-time'
+import For from "./For.astro";
+import Show from "./Show.astro";
+
+export type Props = Article
+
+const { content, published, summary, tags, title } = Astro.props
+
+const minutes = readingTime(content.html)
+
+const author = {
+    name: 'Tony',
+    handle: 'tony@tonysull.co',
+    avatar: '/assets/avatar-96x96.jpg',
+    url: 'https://tonysull.co'
+}
+---
+
+<article class="h-entry">
+    <header>
+        <h1 class="p-name">{title}</h1>
+        
+        <Show when={published}>
+            <time datetime={isoDate(published!)} class="dt-published">{shortDate(published!)}</time>
+            <strong slot="fallback">DRAFT</strong>
+        </Show>
+
+        <div class="p-author h-card">
+            <img src={author.avatar} alt="" class="u-logo" width="48" height="48" />
+            <p class="p-name sr-only">{author.name}</p>
+            <p class="p-nickname">
+                <b>{author.handle.slice(0, author.handle.indexOf('@'))}</b>
+                <span>@</span>
+                <i>{author.handle.slice(author.handle.indexOf('@') + 1, author.handle.lastIndexOf('.'))}</i>
+                <span class="sr-only">{author.handle.slice(author.handle.lastIndexOf('.'))}</span>
+            </p>
+        </div>
+
+        <p>
+            <Icon name="clock" size={16} aria-hidden="true" role="img" />
+            <span>{minutes.text}</span>
+        </p>
+
+        <Show when={tags.length}>
+            <ul>
+                <For each={tags}>
+                    {(tag: string) => (
+                        <li>
+                            <small><a href={`/tags/${tag}/`} rel="category tag" class="p-category">#{tag}</a></small>
+                        </li>
+                    )}
+                </For>
+            </ul>
+        </Show>
+
+        <blockquote class="p-summary">{summary}</blockquote>
+    </header>
+
+    <div class="e-content" set:html={content.html}></div>
+</article>
+
+<style>
+    article {
+        width: 100%;
+        max-inline-size: var(--size-content-3);
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-areas: 'title title' 'published minutes' 'tags tags' 'summary summary';
+        align-items: center;
+        column-gap: var(--size-fluid-2);
+        margin-block-end: var(--size-fluid-3);
+    }
+
+    header h1 {
+        grid-area: title;
+        padding-block-end: var(--size-fluid-1);
+    }
+    
+    header time {
+        grid-area: published;
+    }
+
+    .p-summary {
+        grid-area: summary;
+        margin-top: var(--size-fluid-3);
+        font-size: var(--font-size-fluid-1);
+    }
+
+    .p-author {
+        grid-area: author;
+        display: flex;
+        align-items: center;
+        gap: var(--size-fluid-1);
+    }
+
+    .p-nickname {
+        gap: var(--size-1);
+    }
+
+    .u-logo {
+        border-radius: var(--radius-round);
+    }
+
+    header p {
+        grid-area: minutes;
+        display: flex;
+        align-items: center;
+        gap: var(--size-2);
+    }
+
+    header p :global(svg) {
+        opacity: 0.5;
+    }
+
+    header > ul {
+        grid-area: tags;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        margin-block-start: var(--size-fluid-1);
+    }
+
+    header li {
+        padding: 0;
+    }
+
+    .p-category {
+        background: var(--surface-1);
+        padding: var(--size-2);
+        border-radius: var(--radius-2);
+        color: var(--gray-7);
+        font-weight: var(--font-weight-7);
+        letter-spacing: var(--font-letterspacing-4);
+    }
+
+    h1 {
+        font-size: var(--font-size-fluid-3);
+    }
+
+    h2 {
+        font-size: var(--font-size-fluid-2);
+    }
+
+    h3, h4 {
+        font-size: var(--font-size-fluid-1);
+    }
+
+    .e-content :global(:is(h1, h2, h3, h4, h5, h6)) {
+        margin-block-start: calc(1rem + 0.75em);
+        margin-block-end: calc(0.5rem + 0.15em);
+    }
+
+    .e-content :global(p + p) {
+        margin-block-start: 1rem;
+    }
+
+    .e-content :global(pre) {
+        margin-block: 1rem;
+        padding: var(--size-fluid-1);
+        width: 100%;
+        max-inline-size: unset;
+    }
+
+    @media (min-width: 640px) {
+        header {
+            grid-template-areas: 'title title' 'author published' 'minutes tags' 'summary summary';
+        }
+
+        header > ul {
+            margin-block-start: var(--size-00);
+        }
+
+        .p-summary {
+            margin-top: var(--size-fluid-2);
+        }
+    }
+</style>

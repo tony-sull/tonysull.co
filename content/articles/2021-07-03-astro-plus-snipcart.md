@@ -1,7 +1,7 @@
 ---
 type: h-entry
 title: Astro + Snipcart
-description: Scalable e-commerce made easy with the Jamstack.
+summary: Scalable e-commerce made easy with the Jamstack.
 tags:
   - code
 slug: astro-plus-snipcart

@@ -1,3 +1,62 @@
+:root {
+  --size-content-1: 30ch;
+  --size-content-2: 50ch;
+  --size-content-3: 80ch;
+
+  --font-sans: 'Atkinson Hyperlegible', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+  --font-serif: 'Atkinson Hyperlegible', ui-serif, serif;
+  --font-mono: Dank Mono, Operator Mono, Inconsolata, Fira Mono, ui-monospace, SF Mono, Monaco, Droid Sans Mono, Source Code Pro, monospace;
+}
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: normal;
+  font-display: fallback;
+  src: url('/fonts/Atkinson-Hyperlegible-Regular-102.ttf') format('ttf'),
+    url('/fonts/Atkinson-Hyperlegible-Regular-102a.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible Blod';
+  font-style: bold;
+  font-weight: normal;
+  font-display: fallback;
+  src: url('/fonts/Atkinson-Hyperlegible-Bold-102.ttf') format('ttf'),
+    url('/fonts/Atkinson-Hyperlegible-Bold-102a.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible Italic';
+  font-style: italic;
+  font-weight: normal;
+  font-display: fallback;
+  src: url('/fonts/Atkinson-Hyperlegible-Italic-102.ttf') format('ttf'),
+    url('/fonts/Atkinson-Hyperlegible-Italic-102a.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible BoldItalic';
+  font-style: bold;
+  font-weight: italic;
+  font-display: fallback;
+  src: url('/fonts/Atkinson-Hyperlegible-BoldItalic-102.ttf') format('ttf'),
+    url('/fonts/Atkinson-Hyperlegible-BoldItalic-102a.woff2') format('woff2');
+}
+
+html, body {
+  background-color: var(--surface-2);
+}
+
+small {
+  font-size: var(--font-size-fluid-0);
+  letter-spacing: var(--font-letterspacing-2);
+}
+
+:not(pre) > code {
+  background-color: var(--surface-3);
+}
+
 .sr-only {
   border: 0;
   padding: 0;
@@ -25,4 +84,18 @@
   clip: auto;
   clip-path: initial;
   white-space: normal;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr calc(100% - (2 * var(--size-fluid-2))) 1fr;
+}
+
+.container > * {
+  grid-column: 2;
+  margin: 0 auto;
+}
+
+.container > .full-bleed {
+  grid-column: 1 / -1;
 }

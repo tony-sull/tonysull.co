@@ -8,8 +8,6 @@ const entries = await getAllEntries()
 ---
 
 <Layout>
-  <h1>Astro</h1>
-  
   <ul>
     <For each={entries}>
       {(entry: Entry) => (

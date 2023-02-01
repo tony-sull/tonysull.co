@@ -1,0 +1,38 @@
+---
+import Article from '@components/Article.astro'
+import EntryCard from '@components/EntryCard.astro'
+import Show from '@components/Show.astro'
+import { type Entry, getAllEntries, isArticle } from '@data/entries.js'
+import Layout from '@layouts/Page.astro'
+
+export async function getStaticPaths() {
+    const entries = await getAllEntries()
+
+    const results = entries.map((entry) => {
+        const [type] = entry.url.pathname.split('/').filter(Boolean)
+        return {
+            params: {
+                type,
+                slug: entry.slug
+            },
+            props: {
+                entry
+            }
+        }
+    })
+
+    return results
+}
+
+const { entry } = Astro.props as { entry: Entry }
+
+const article = isArticle(entry) ? entry : undefined
+---
+
+<Layout>
+    <Show when={article}>
+        <Article {...article!} />
+        
+        <EntryCard entry={entry} slot="fallback" />
+    </Show>
+</Layout>

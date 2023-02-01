@@ -1,7 +1,7 @@
 ---
 type: h-entry
 title: Class properties in Svelte
-description: A handy trick to make your Svelte components feel even more like plain old HTML.
+summary: A handy trick to make your Svelte components feel even more like plain old HTML.
 tags:
   - code
 slug: svelte-class-props

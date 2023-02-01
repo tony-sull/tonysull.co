@@ -1,7 +1,7 @@
 ---
 type: h-entry
 title: Including json+ld structured data in Svelte
-description: Easily add json+ld structured data to pages build in Svelte, with TypeScript type checking!
+summary: Easily add json+ld structured data to pages build in Svelte, with TypeScript type checking!
 tags:
   - code
 slug: json-ld-in-sveltekit

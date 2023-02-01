@@ -1,7 +1,7 @@
 ---
 type: h-entry
 title: Introducing svelte-entity-store
-description: A (work-in-progress) generic entity store for Svelte projects.
+summary: A (work-in-progress) generic entity store for Svelte projects.
 tags:
   - code
 slug: introducing-svelte-entity-store

@@ -1,7 +1,7 @@
 ---
 type: h-entry
 title: Introducing The Astro Showcase
-description: Explore beautiful community websites built with Astro.
+summary: Explore beautiful community websites built with Astro.
 tags:
   - code
 slug: astro-showcase

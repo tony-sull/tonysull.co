@@ -1,7 +1,7 @@
 ---
 type: h-entry
 title: Astro + Netlify CMS
-description: Static sites powered by a git-based CMS, made easy.
+summary: Static sites powered by a git-based CMS, made easy.
 tags:
   - code
 slug: astro-plus-netlify-cms

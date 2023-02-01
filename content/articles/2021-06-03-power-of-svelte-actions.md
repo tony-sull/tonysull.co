@@ -1,7 +1,7 @@
 ---
 type: h-entry
 title: The power of Svelte actions
-description: When you should `use:` actions in Svelte.
+summary: When you should `use:` actions in Svelte.
 tags:
   - code
 slug: power-of-svelte-actions
