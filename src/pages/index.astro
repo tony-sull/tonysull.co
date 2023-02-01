@@ -4,9 +4,7 @@ import For from '@components/For.astro';
 import { type Entry, getAllEntries } from '@data/entries.js'
 import Layout from '@layouts/Page.astro'
 
-console.log('getting all entries')
 const entries = await getAllEntries()
-console.log(`loaded ${entries.length} entries`)
 ---
 
 <Layout>
