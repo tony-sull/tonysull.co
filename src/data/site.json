@@ -13,7 +13,6 @@
     "mastodon_url": "https://indieweb.social/@tonysull"
   },
   "rss": {
-    "articles": "/articles/feed.xml",
-    "notes": "/notes/feed.xml"
+    "all": "/rss.xml"
   }
 }

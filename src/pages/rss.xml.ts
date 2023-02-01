@@ -82,7 +82,6 @@ export const get: APIRoute = async ({ site, generator }) => {
     })
 
     return {
-        body: feed.rss2(),
-        encoding: 'application/xml'
+        body: feed.rss2()
     }
 }

@@ -82,7 +82,6 @@ export const get: APIRoute = async ({ site, generator }) => {
     })
 
     return {
-        body: feed.atom1(),
-        encoding: 'application/xml'
+        body: feed.atom1()
     }
 }
