@@ -8,6 +8,7 @@ type NoteData = {
   date: string
   photo?: string
   tags?: string[]
+  'in-reply-to'?: string
   client_id?: string
 }
 
@@ -19,6 +20,7 @@ export type Note = {
   date: Date
   photo?: string
   tags: string[]
+  'in-reply-to'?: URL
   client_id?: string
   content: {
     value: string
@@ -55,6 +57,7 @@ export async function fetchNotes(): Promise<Note[]> {
         url: safeUrl(frontmatter.url),
         date: new Date(frontmatter.date),
         tags: frontmatter.tags || [],
+        'in-reply-to': safeUrl(frontmatter['in-reply-to']),
         content: {
           value: rawContent(),
           html: compiledContent(),
@@ -87,6 +90,7 @@ export async function fetchNote(slug: string): Promise<Note | undefined> {
     url: safeUrl(frontmatter.url),
     date: new Date(frontmatter.date),
     tags: frontmatter.tags || [],
+    'in-reply-to': safeUrl(frontmatter['in-reply-to']),
     content: {
       value: rawContent(),
       html: compiledContent(),
