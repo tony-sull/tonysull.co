@@ -7,7 +7,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': ^5.45.0
   '@typescript-eslint/parser': ^5.45.0
   astro: ^1.6.12
-  astro-fathom: ^1.0.1
+  astro-fathom: ^1.1.2
   astro-icon: ^0.8.0
   date-fns: ^2.29.3
   eslint: ^8.29.0
@@ -39,7 +39,7 @@ devDependencies:
   '@types/node': 18.11.18
   '@typescript-eslint/eslint-plugin': 5.48.1_qdjeohovcytra7xto5vgmxssaq
   '@typescript-eslint/parser': 5.48.1_eslint@8.31.0
-  astro-fathom: 1.0.1_astro@1.9.2
+  astro-fathom: 1.1.2_astro@1.9.2
   astro-icon: 0.8.0
   date-fns: 2.29.3
   eslint: 8.31.0
@@ -1027,8 +1027,8 @@ packages:
       - supports-color
     dev: true
 
-  /astro-fathom/1.0.1_astro@1.9.2:
-    resolution: {integrity: sha512-Mce0l5RBTXPk7VMyEUp6fi9Sip7PkuZKJS2HB473qk1vVM2Altq5igAad9FHYNALHa4KE9zqVUJkjLnwPTusdQ==}
+  /astro-fathom/1.1.2_astro@1.9.2:
+    resolution: {integrity: sha512-AmLnYi3vztq2zsqyFY2W6yHPsfLCDhtfo9d0g5XWS4QyHvqhxA+lE0lSBlQoaoEgt+yO7Jpq0TbBKyTpOjpg0A==}
     peerDependencies:
       astro: ^1.6.11
     dependencies:
