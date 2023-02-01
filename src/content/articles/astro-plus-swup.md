@@ -7,7 +7,7 @@ category:
 published: '2021-07-04T12:00:00Z'
 featured: '/uploads/2021-07-24-astro-plus-swup.jpg'
 url: https://navillus.dev/blog/astro-plus-swup/
-persona: navillus
+author: navillus
 ---
 
 I can't be the only developer that has come across a beautifully designed website with top notch animations only to burn an afternoon trying to figure out how exactly they did it. Usually the answer is a combination of 5 different libraries and a pile of JavaScript and CSS being sent over the wire.

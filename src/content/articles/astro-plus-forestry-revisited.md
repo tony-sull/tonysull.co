@@ -7,7 +7,7 @@ category:
 published: '2021-08-03T12:00:00Z'
 featured: '/uploads/2021-08-03-astro-plus-forestry-revisited.jpg'
 url: https://navillus.dev/blog/astro-plus-forestry-revisited/
-persona: navillus
+author: navillus
 ---
 
 It's been just over a month since the original [Astro + Forestry CMS](/blog/astro-plus-forestry) demo, but things have been [moving quickly](https://github.com/snowpackjs/astro/blob/main/packages/astro/CHANGELOG.md) in Astro land! We'll build upon the original demo, go ahead and check out the first post if you haven't done so already!

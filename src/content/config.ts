@@ -1,17 +1,20 @@
 import { defineCollection } from 'astro:content'
-import { articleSchema, cardSchema, noteSchema } from '../types.js'
+import { createSchemas } from "@indiepub/core"
+
+const { articleSchema, bookmarkSchema, noteSchema, personSchema } = createSchemas({ site: 'https://tonysull.co' })
 
 export const collections = {
   notes: defineCollection({
-    schema: noteSchema.omit({ bookmarkOf: true }),
+    schema: noteSchema,
   }),
   articles: defineCollection({
     schema: articleSchema,
   }),
   bookmarks: defineCollection({
-    schema: noteSchema.required({ bookmarkOf: true }),
+    schema: bookmarkSchema,
   }),
   personas: defineCollection({
-    schema: cardSchema.required({ nickname: true }),
+    // nicknames are ALWAYS required in the site's UI
+    schema: personSchema.required({ nickname: true }),
   }),
 }

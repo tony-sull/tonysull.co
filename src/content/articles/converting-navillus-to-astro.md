@@ -7,7 +7,7 @@ category:
 published: '2021-07-20T12:00:00Z'
 featured: '/uploads/2021-07-20-converting-navillus-to-astro.jpg'
 url: https://navillus.dev/blog/converting-navillus-to-astro/
-persona: navillus
+author: navillus
 ---
 
 Not too long ago, the Navillus site was rewritten from the ground up in [Astro](https://astro.build). Since then we've had quite a bit of interest in why we jumped to Astro, how it went, and what we learned. I'll do my best to answer the common questions here, but feel free to reach out on [Twitter](https://twitter.com/navillus_dev) if we missed anything!

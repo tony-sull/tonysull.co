@@ -7,7 +7,7 @@ category:
 published: '2021-06-03T12:00:00Z'
 featured: '/uploads/2021-06-03-power-of-svelte-actions.jpg'
 url: https://navillus.dev/blog/power-of-svelte-actions/
-persona: navillus
+author: navillus
 ---
 
 Svelte does an excellent job of blurring the lines between frontend frameworks and plain old HTML/JS. Leaning on Svelte's [reactivity model](https://svelte.dev/docs#2_Assignments_are_reactive), [property binding](https://svelte.dev/docs#bind_element_property), and [event directives](https://svelte.dev/docs#on_element_event) will get you 99% of the way to a finished app, but every once in a while you just really need to work directly with the `HTMLElement`.

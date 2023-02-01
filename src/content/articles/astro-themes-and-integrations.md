@@ -7,7 +7,7 @@ category:
 published: '2022-04-06T21:55:21Z'
 featured: '/uploads/2022-04-06-themes-and-integrations.jpg'
 url: https://astro.build/blog/themes-and-integrations/
-persona: astro
+author: astro
 ---
 
 We [launched Astro](https://astro.build/blog/introducing-astro/) almost a year ago with the goal of delivering lightning-fast performance with a modern developer experience. Astro makes it easy to ship only what you need - 100% static HTML by default, bring your own framework to sprinkle in interactivity only where you need it.

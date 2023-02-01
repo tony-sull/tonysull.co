@@ -7,7 +7,7 @@ category:
 published: '2021-06-28T12:00:00Z'
 featured: '/uploads/2021-06-28-astro-plus-forestry.jpg'
 url: https://navillus.dev/blog/astro-plus-forestry/
-persona: navillus
+author: navillus
 ---
 
 This is a follow-up post to our [Astro + Netlify CMS](/blog/astro-plus-netlify-cms) demo - check that one out first if you haven't read it yet!

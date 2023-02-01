@@ -7,7 +7,7 @@ category:
 published: '2021-06-25T12:00:00Z'
 featured: '/uploads/2021-06-25-svelte-class-props.jpg'
 url: https://navillus.dev/blog/svelte-class-props/
-persona: navillus
+author: navillus
 ---
 
 I've noticed an interesting pattern when a [React](https://reactjs.org/) developer gives [Svelte](https://svelte.dev) a try - they almost immediately add a `className` property to their first Svelte component.

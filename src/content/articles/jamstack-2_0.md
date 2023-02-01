@@ -6,7 +6,7 @@ category:
 published: '2021-05-07T12:00:00Z'
 featured: '/uploads/2021-05-07-jamstack-2_0.jpg'
 url: https://navillus.dev/blog/jamstack-2_0/
-persona: navillus
+author: navillus
 ---
 
 It's time we officially bump the [major version](https://semver.org/) of Jamstack to `2.0`. The term "Jamstack" has always been a bit of a marketing success for a general architecture idea, but most developers took it to mean 90's era websites with nothing but static files on a CDN. The latest frontend framework and serverless infrastructure features are combining to shake up the game - Jamstack is growing up.

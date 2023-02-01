@@ -7,7 +7,7 @@ category:
 published: '2021-05-17T12:00:00Z'
 featured: '/uploads/2021-05-17-json-ld-in-sveltekit.jpg'
 url: https://navillus.dev/blog/json-ld-in-sveltekit/
-persona: navillus
+author: navillus
 ---
 
 Ever wonder how Google search results include shopping results for products, or location results for local businesses? Their search bot is constantly being improved to better find that kind of content on your site, but ultimately if you care at all about SEO on your site it's important to include [structured data](https://schema.org/) on the page.

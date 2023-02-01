@@ -7,7 +7,7 @@ categories:
 published: '2021-05-01T12:00:00Z'
 featured: '/uploads/2021-05-01-introducing-svelte-entity-store.jpg'
 url: https://navillus.dev/blog/introducing-svelte-entity-store/
-persona: navillus
+author: navillus
 ---
 
 A (**w**ork-**i**n-**p**rogress) generic entity store for Svelte projects.

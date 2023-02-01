@@ -7,7 +7,7 @@ slug: introducing-chisel
 published: '2021-06-02T12:00:00Z'
 featured: '/uploads/2021-06-02-introducing-chisel.jpg'
 url: https://navillus.dev/blog/introducing-chisel/
-persona: navillus
+author: navillus
 ---
 
 Have you ever really tried rendering some HTML without any CSS? It's a hot mess! Modern browsers are [operating systems](https://www.google.com/chromebook/chrome-os/) unto themselves these days - I don't envy anyone who has to sift through the complexity to add even a basic feature to a browser these days. But damn do I wish they would add spend a couple days to ship some decent looking default styles for HTML5 elements!

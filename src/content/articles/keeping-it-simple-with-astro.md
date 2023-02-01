@@ -7,7 +7,7 @@ category:
 published: '2021-06-14T12:00:00Z'
 featured: '/uploads/2021-06-14-keeping-it-simple-with-astro.jpg'
 url: https://navillus.dev/blog/keeping-it-simple-with-astro/
-persona: navillus
+author: navillus
 ---
 
 Frontend frameworks have taken over much of the web, but the question remains - do we really need all that JavaScript in the browser?
