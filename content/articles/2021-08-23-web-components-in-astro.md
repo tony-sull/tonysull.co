@@ -8,7 +8,8 @@ slug: web-components-in-astro
 published: '2021-08-23T21:55:21+00:00'
 date: '2022-12-31T22:14:11.971Z'
 client_id: 'https://quill.p3k.io/'
-u-photo: 'uploads/2021-08-23-web-components-in-astro.jpg'
+photo: 'uploads/2021-08-23-web-components-in-astro.jpg'
+url: https://navillus.dev/blog/web-components-in-astro/
 ---
 
 Web components have had a bit of a rocky past, to put it lightly. The API design has gone through multiple iterations, a few unexpected [rough edges](https://thenewobjective.com/web-development/a-criticism-of-web-components) really hindered their usefulness. And if it wasn't already confusing enough, the level of excitement around the vision of custom elements has led to [over **50**](https://webcomponents.dev/blog/all-the-ways-to-make-a-web-component/) different patterns and frameworks to get the job done.
