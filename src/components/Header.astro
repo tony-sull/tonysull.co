@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon";
 import For from "./For.astro";
 import ThemeToggle from "./ThemeToggle.astro";
 
@@ -9,15 +10,15 @@ export type Link = {
 
 const links: Link[] = [
     {
-        href: '/articles/',
+        href: '/articles',
         text: 'articles'
     },
     {
-        href: '/notes/',
+        href: '/notes',
         text: 'notes'
     },
     {
-        href: '/bookmarks/',
+        href: '/bookmarks',
         text: 'bookmarks'
     }
 ]
@@ -26,15 +27,19 @@ const links: Link[] = [
 <header class="container">
     <div>
         <a href="/" title="Home">
-            <img src="/assets/avatar-96x96.jpg" width="48" height="48" alt="" />
+            <Icon name="logo" size={48} aria-hidden="true" />
         </a>
 
         <nav>
-            <For each={links}>
-                {(link: Link) => (
-                    <a href={link.href} aria-current={link.href === Astro.url.pathname ? 'page' : undefined}>{link.text}</a>
-                )}
-            </For>
+            <ol>
+                <For each={links}>
+                    {(link: Link) => (
+                        <li>
+                            <a href={link.href} aria-current={link.href === Astro.url.pathname ? 'page' : undefined}>{link.text}</a>
+                        </li>
+                    )}
+                </For>
+            </ol>
         </nav>
 
         <ThemeToggle />
@@ -43,27 +48,89 @@ const links: Link[] = [
 
 <style>
     header {
+        --link: inherit;
+        --link-visited: var(--text-1);
         padding-block: var(--size-fluid-2);
+    }
+
+    a[title="Home"] {
+        grid-area: logo;
+        --icon-bg: var(--blue-7);
+        --icon-fg: var(--gray-0);
+    }
+
+    :global([data-theme="dark"]) a[title="Home"] {
+        --icon-bg: var(--blue-4);
+        --icon-fg: var(--gray-9);
     }
 
     div {
         width: 100%;
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-areas: 'logo theme' 'nav nav';
         align-items: center;
         gap: var(--size-fluid-2);
     }
-
-    img {
-        border-radius: var(--radius-round);
-        width: 36px;
-        height: 36px;
-    }
     
     nav {
-        display: flex;
-        gap: var(--size-fluid-1);
+        grid-area: nav;
         font-size: var(--font-size-1);
-        margin-inline-end: auto;
+        width: 100%;
+    }
+    
+    ol {
+        list-style: none;
+        display: flex;
+        gap: var(--size-fluid-2);
+        counter-reset: menu;
+        justify-content: space-between;
+        font-size: var(--font-size-2);
+        padding: 0;
+        margin: 0;
+    }
+
+    ol li {
+      counter-increment: menu;
+    }
+
+    ol a::before {
+        content: "0" counter(menu);
+        font-weight: var(--font-weight-7);
+        margin-inline-end: var(--size-2);
+    }
+
+    nav a {
+        position: relative;
+        text-decoration-color: transparent;
+        padding-block: var(--size-2);
+    }
+
+    nav a::after {
+        content: "";
+        display: block;
+        height: 2px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 3px;
+        scale: 0;
+        transform-origin: 0 50%;
+        transition: scale 0.3s cubic-bezier(0.86, 0, 0.07, 1);
+    }
+
+    nav a[aria-current="page"]::after {
+      scale: 1;
+      background: var(--blue-4);
+    }
+
+    nav a:not([aria-current="page"]):hover::after {
+      scale: 1;
+      background: var(--gray-6);
+    }
+
+    div > :last-child {
+        grid-area: theme;
     }
 
     @media (min-width: 350px) {
@@ -79,7 +146,18 @@ const links: Link[] = [
 
     @media (min-width: 640px) {
         div {
+            grid-template-columns: auto 1fr auto;
+            grid-template-areas: 'logo nav theme';
             gap: var(--size-fluid-3);
+        }
+
+        nav {
+            justify-self: start;
+            width: auto;
+        }
+
+        ol {
+            font-size: var(--font-size-3);
         }
     }
 </style>

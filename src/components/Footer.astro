@@ -29,8 +29,12 @@ const year = new Date().getFullYear()
     </p>
 
     <p>
-      <strong>RSS Feed</strong>
-      <a title="RSS Feed" href={site.rss.all}>Subscribe</a>
+      <strong>Subscribe</strong>
+      <a title="RSS Feed" href={site.feeds.all.rss}>RSS</a>
+      /
+      <a title="Atom Feed" href={site.feeds.all.atom}>Atom</a>
+      /
+      <a title="JSON Feed" href={site.feeds.all.json}>JSON</a>
     </p>
 
     <p>
@@ -42,9 +46,6 @@ const year = new Date().getFullYear()
       </a>
       <a title="GitHub" href={social.github_url}>
         <Icon name="github" size={24} />
-      </a>
-      <a title="RSS Feed" href={site.rss.all}>
-        <Icon name="rss" size={24} />
       </a>
     </p>
   </section>

@@ -52,56 +52,58 @@ const replies = webMentions.filter(isMentionType(MENTION_TYPE.Reply))
         <EntryCard entry={entry} slot="fallback" />
     </Show>
 
-    <section>
-        <h2 id="comments">Mentions</h2>
+    <Show when={webMentions.length}>
+        <section>
+            <h2 id="comments">Mentions</h2>
 
-        <Show when={likes.length}>
-            <p>{likes.length} like{likes.length > 1 ? 's' : ''}</p>
-            <ul class="facepile">
-                <For each={likes}>
-                    {(like: WebMention) => (
-                        <li title={like.author.name}>
-                            <a href={like.url}>
-                                <img src={like.author.photo} alt={like.author.name} width="48" height="48" />
-                            </a>
-                        </li>
-                    )}
-                </For>
-            </ul>
-        </Show>
+            <Show when={likes.length}>
+                <p>{likes.length} like{likes.length > 1 ? 's' : ''}</p>
+                <ul class="facepile">
+                    <For each={likes}>
+                        {(like: WebMention) => (
+                            <li title={like.author.name}>
+                                <a href={like.url}>
+                                    <img src={like.author.photo} alt={like.author.name} width="48" height="48" />
+                                </a>
+                            </li>
+                        )}
+                    </For>
+                </ul>
+            </Show>
 
-        <Show when={reposts.length}>
-            <p>{reposts.length} share{reposts.length > 1 ? 's' : ''}</p>
-            <ul class="facepile">
-                <For each={reposts}>
-                    {(repost: WebMention) => (
-                        <li title={repost.author.name}>
-                            <a href={repost.url}>
-                                <img src={repost.author.photo} alt={repost.author.name} width="48" height="48" />
+            <Show when={reposts.length}>
+                <p>{reposts.length} share{reposts.length > 1 ? 's' : ''}</p>
+                <ul class="facepile">
+                    <For each={reposts}>
+                        {(repost: WebMention) => (
+                            <li title={repost.author.name}>
+                                <a href={repost.url}>
+                                    <img src={repost.author.photo} alt={repost.author.name} width="48" height="48" />
+                                </a>
+                            </li>
+                        )}
+                    </For>
+                </ul>
+            </Show>
+            
+            <For each={replies}>
+                {(reply: WebMention) => (
+                    <div class="reply">
+                        <blockquote set:html={reply.content!.html}></blockquote>
+                        <div>
+                            <a href={reply.author.url}>
+                                <span class="sr-only">{reply.author.name}</span>
+                                <img src={reply.author.photo} alt="" width="24" height="24" />
                             </a>
-                        </li>
-                    )}
-                </For>
-            </ul>
-        </Show>
-        
-        <For each={replies}>
-            {(reply: WebMention) => (
-                <div class="reply">
-                    <blockquote set:html={reply.content!.html}></blockquote>
-                    <div>
-                        <a href={reply.author.url}>
-                            <span class="sr-only">{reply.author.name}</span>
-                            <img src={reply.author.photo} alt="" width="24" height="24" />
-                        </a>
-                        <a href={reply.url}>
-                            {reply.author.name}
-                        </a>
+                            <a href={reply.url}>
+                                {reply.author.name}
+                            </a>
+                        </div>
                     </div>
-                </div>
-            )}
-        </For>
-    </section>
+                )}
+            </For>
+        </section>
+    </Show>
 </Layout>
 
 <style>
