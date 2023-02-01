@@ -1,27 +1,26 @@
 ---
-import ArticleCard from "@components/ArticleCard.astro"
-import For from "@components/For.astro"
-import Hero from "@components/Hero.astro"
-import { type ArticleSummary, fetchArticles } from "@data/articles.js"
+import ArticleCard from '@components/ArticleCard.astro'
+import For from '@components/For.astro'
+import Hero from '@components/Hero.astro'
+import { type ArticleSummary, fetchArticles } from '@data/articles.js'
 import Layout from '@layouts/Page.astro'
 
 export async function getStaticPaths() {
-    const allArticles = await fetchArticles()
+  const allArticles = await fetchArticles()
 
-    const tagsMap = allArticles.reduce((acc, next) => {
-        next.tags.forEach((tag) => {
-            const list = acc.get(tag) || []
-            acc.set(tag, list.concat(next.slug))
-        })
+  const tagsMap = allArticles.reduce((acc, next) => {
+    next.tags.forEach(tag => {
+      const list = acc.get(tag) || []
+      acc.set(tag, list.concat(next.slug))
+    })
 
-        return acc
-    }, new Map<string, string[]>())
+    return acc
+  }, new Map<string, string[]>())
 
-    return Array.from(tagsMap.entries())
-        .map(([key, value]) => ({
-            params: { tag: key },
-            props: { slugs: value }
-        }))
+  return Array.from(tagsMap.entries()).map(([key, value]) => ({
+    params: { tag: key },
+    props: { slugs: value },
+  }))
 }
 
 const { tag } = Astro.params as { tag: string }
@@ -31,12 +30,13 @@ const title = `#${tag} | Articles`
 const description =
   'Tony Sullivan is a fullstack developer based in Onbekend, USA.'
 
-const articles = (await fetchArticles())
-    .filter(({ slug }) => slugs.includes(slug))
+const articles = (await fetchArticles()).filter(({ slug }) =>
+  slugs.includes(slug)
+)
 ---
 
 <Layout title={title} description={description}>
-    <Hero
+  <Hero
     title="I write articles."
     cta={{ text: 'Hello, my name is Tony', href: '/about/' }}
   >

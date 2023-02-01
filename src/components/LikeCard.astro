@@ -1,7 +1,7 @@
 ---
 import type { Like } from '@data/likes.js'
-import { shortDate } from '@utils/dates';
-import Show from './Show.astro';
+import { shortDate } from '@utils/dates'
+import Show from './Show.astro'
 
 export type Props = Like
 
@@ -9,17 +9,17 @@ const { title, 'like-of': url, date, metadata } = Astro.props
 ---
 
 <article>
-    <a href={url}>
-        <Show when={metadata.image}>
-            <img src={metadata.image} alt="" width={400} height={400} />
-        </Show>
-        <h3>{title}</h3>
-        <p>Liked ⋅ {shortDate(date)}</p>
-    </a>
+  <a href={url}>
+    <Show when={metadata.image}>
+      <img src={metadata.image} alt="" width={400} height={400} />
+    </Show>
+    <h3>{title}</h3>
+    <p>Liked ⋅ {shortDate(date)}</p>
+  </a>
 </article>
 
 <style>
-    img {
-        object-fit: contain;
-    }
+  img {
+    object-fit: contain;
+  }
 </style>

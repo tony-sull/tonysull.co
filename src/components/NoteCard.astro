@@ -15,33 +15,43 @@ const { content, date, slug, tags, 'in-reply-to': inReplyTo } = Astro.props
   <a href={`/notes/${slug}/`}>
     <header>
       <p class="p-author h-card" rel="author">
-        <img class="u-photo" src={Avatar.src} width={Avatar.width} height={Avatar.height} alt={site.author} />
+        <img
+          class="u-photo"
+          src={Avatar.src}
+          width={Avatar.width}
+          height={Avatar.height}
+          alt={site.author}
+        />
       </p>
       <strong>
         <span class="p-name">{site.author}</span>
         <br />
         <small>
-            <a href={site.social.twitter_url}>{site.social.twitter_handle}</a>
-            <span> •</span>
-            <time class="dt-published" datetime={isoDate(date)}>{shortDate(date)}</time>
+          <a href={site.social.twitter_url}>{site.social.twitter_handle}</a>
+          <span> •</span>
+          <time class="dt-published" datetime={isoDate(date)}
+            >{shortDate(date)}</time
+          >
         </small>
       </strong>
     </header>
     <main class="e-content p-name">
-        <Show when={inReplyTo}>
-          <i>In reply to </i>
-          <a href={inReplyTo}>{inReplyTo}</a>
-        </Show>
-        <div set:html={content.html}></div>
-        <Show when={tags.length}>
-            <For each={tags}>
-                {(tag: string) => (
-                    <small>
-                        <a href={`/notes/tags/${tag}/`}>#{tag}</a>
-                    </small>
-                )}
-            </For>
-        </Show>
+      <Show when={inReplyTo}>
+        <i>In reply to</i>
+        <a href={inReplyTo}>{inReplyTo}</a>
+      </Show>
+      <div set:html={content.html} />
+      <Show when={tags.length}>
+        <For each={tags}>
+          {
+            (tag: string) => (
+              <small>
+                <a href={`/notes/tags/${tag}/`}>#{tag}</a>
+              </small>
+            )
+          }
+        </For>
+      </Show>
     </main>
   </a>
 </article>

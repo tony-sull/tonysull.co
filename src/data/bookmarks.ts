@@ -20,14 +20,19 @@ export type Bookmark = {
 }
 
 function fileToSlug(filename: string) {
-    return filename.split('/').pop()!.replace(/\.[^.]*$/,'')
+  return filename
+    .split('/')
+    .pop()!
+    .replace(/\.[^.]*$/, '')
 }
 
-async function withMetadata(bookmark: Omit<Bookmark, 'metadata'>): Promise<Bookmark> {
-    return {
-        ...bookmark,
-        metadata: await scrape(bookmark['bookmark-of'])
-    }
+async function withMetadata(
+  bookmark: Omit<Bookmark, 'metadata'>
+): Promise<Bookmark> {
+  return {
+    ...bookmark,
+    metadata: await scrape(bookmark['bookmark-of']),
+  }
 }
 
 export async function fetchBookmarks(): Promise<Bookmark[]> {
@@ -45,31 +50,35 @@ export async function fetchBookmarks(): Promise<Bookmark[]> {
       slug: fileToSlug(file),
       'bookmark-of': new URL(frontmatter['bookmark-of']),
       date: new Date(frontmatter.date),
-      tags: frontmatter.tags || []
+      tags: frontmatter.tags || [],
     }
   })
 
-  return await Promise.all(bookmarks.map((b) => withMetadata(b)))
+  return await Promise.all(bookmarks.map(b => withMetadata(b)))
 }
 
-export async function fetchBookmark(slug: string): Promise<Bookmark | undefined> {
-    const results = await import.meta.glob<false, string, MarkdownInstance<BookmarkData>>(
-        `/content/bookmarks/*.md`
-    )
+export async function fetchBookmark(
+  slug: string
+): Promise<Bookmark | undefined> {
+  const results = await import.meta.glob<
+    false,
+    string,
+    MarkdownInstance<BookmarkData>
+  >(`/content/bookmarks/*.md`)
 
-    const content = results[`/content/bookmarks/${slug}.md`]
+  const content = results[`/content/bookmarks/${slug}.md`]
 
-    if (!content) {
-        return undefined
-    }
+  if (!content) {
+    return undefined
+  }
 
-    const { frontmatter, file } = await content()
+  const { frontmatter, file } = await content()
 
-    return await withMetadata({
-        ...frontmatter,
-        slug: fileToSlug(file),
-        'bookmark-of': new URL(frontmatter['bookmark-of']),
-        date: new Date(frontmatter.date),
-        tags: frontmatter.tags || []
-    })
+  return await withMetadata({
+    ...frontmatter,
+    slug: fileToSlug(file),
+    'bookmark-of': new URL(frontmatter['bookmark-of']),
+    date: new Date(frontmatter.date),
+    tags: frontmatter.tags || [],
+  })
 }

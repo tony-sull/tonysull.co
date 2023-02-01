@@ -27,10 +27,10 @@ function fileToSlug(filename: string) {
 }
 
 async function withMetadata(like: Omit<Like, 'metadata'>): Promise<Like> {
-    return {
-        ...like,
-        metadata: await scrape(like['like-of'])
-    }
+  return {
+    ...like,
+    metadata: await scrape(like['like-of']),
+  }
 }
 
 export async function fetchLikes(): Promise<Like[]> {
@@ -51,26 +51,28 @@ export async function fetchLikes(): Promise<Like[]> {
     }
   })
 
-  return await Promise.all(likes.map((l) => withMetadata(l)))
+  return await Promise.all(likes.map(l => withMetadata(l)))
 }
 
 export async function fetchLike(slug: string): Promise<Like | undefined> {
-    const results = await import.meta.glob<false, string, MarkdownInstance<LikeData>>(
-        `/content/likes/*.md`
-    )
+  const results = await import.meta.glob<
+    false,
+    string,
+    MarkdownInstance<LikeData>
+  >(`/content/likes/*.md`)
 
-    const content = results[`/content/likes/${slug}.md`]
+  const content = results[`/content/likes/${slug}.md`]
 
-    if (!content) {
-        return undefined
-    }
+  if (!content) {
+    return undefined
+  }
 
-    const { frontmatter, file } = await content()
+  const { frontmatter, file } = await content()
 
-    return withMetadata({
-        ...frontmatter,
-        slug: fileToSlug(file),
-        'like-of': new URL(frontmatter['like-of']),
-        date: new Date(frontmatter.date)
-    })
+  return withMetadata({
+    ...frontmatter,
+    slug: fileToSlug(file),
+    'like-of': new URL(frontmatter['like-of']),
+    date: new Date(frontmatter.date),
+  })
 }
