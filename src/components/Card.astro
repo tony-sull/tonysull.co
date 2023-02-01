@@ -104,4 +104,19 @@ const singlePhoto = Array.isArray(photo) ? photo[0] : photo
     justify-content: space-between;
     padding-block-start: var(--size-fluid-1);
   }
+
+  .e-content :global(p + p) {
+    margin-block-start: 1rem;
+  }
+
+  .e-content :global(pre) {
+    margin-block: 1rem;
+    padding: var(--size-fluid-1);
+    max-inline-size: unset;
+  }
+
+  .e-content :global(blockquote) {
+    margin-block: 1rem;
+    max-inline-size: unset;
+  }
 </style>
