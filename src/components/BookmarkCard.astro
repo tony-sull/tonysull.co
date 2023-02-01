@@ -14,6 +14,8 @@ const metadata = await scrape(data["bookmark-of"]);
 if (!metadata) {
   throw new Error(`Could not load metadata for bookmark "${slug}"`);
 }
+
+const bookmarkUrl = new URL(data['bookmark-of'])
 ---
 
 <Card
@@ -24,15 +26,15 @@ if (!metadata) {
   photo={data.photo}
   contentClass="u-bookmark-of"
 >
-  <h2 class="p-name">{metadata.title}</h2>
+  <h2 class="p-name">{metadata.title || data.name}</h2>
 
   <Show when={metadata.description}>
     <p class="p-summary">{metadata.description}</p>
   </Show>
 
   <small slot="footer">
-    <Icon name="bookmark-solid" size={24} />
-    <span>Bookmark</span>
+    <Icon name="bookmark-solid" size={24} aria-label="Bookmark" />
+    <span>Bookmarked from {bookmarkUrl.host}</span>
   </small>
 </Card>
 
