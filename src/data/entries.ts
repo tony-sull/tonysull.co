@@ -54,6 +54,7 @@ export type BaseEntry = {
 export type Note = BaseEntry & {
     photo?: string
     'in-reply-to'?: URL
+    metadata?: Metadata
     content: {
         value: string
         html: string
@@ -157,9 +158,12 @@ async function parseNote(instance: MarkdownInstance<NoteFrontmatter>): Promise<N
 
     const { frontmatter, compiledContent, rawContent } = instance
 
+    const inReplyTo = safeUrl(frontmatter['in-reply-to'])
+
     return {
         ...entry,
-        'in-reply-to': safeUrl(frontmatter["in-reply-to"]),
+        'in-reply-to': inReplyTo,
+        metadata: inReplyTo ? await scrape(inReplyTo) : undefined,
         content: {
             value: rawContent(),
             html: compiledContent()

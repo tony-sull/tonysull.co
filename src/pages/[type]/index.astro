@@ -1,10 +1,9 @@
 ---
-import Article from '@components/Article.astro'
 import EntryCard from '@components/EntryCard.astro'
 import For from '@components/For.astro'
-import Show from '@components/Show.astro'
-import { type Entry, getAllEntries, isArticle } from '@data/entries.js'
+import { type Entry, getAllEntries } from '@data/entries.js'
 import Layout from '@layouts/Page.astro'
+import { capitalize } from '@utils/capitalize.js'
 
 export async function getStaticPaths() {
     const entries = await getAllEntries()
@@ -29,10 +28,11 @@ export async function getStaticPaths() {
         })
 }
 
+const { type } = Astro.params as { type: string }
 const { entries } = Astro.props as { entries: Entry[] }
 ---
 
-<Layout>
+<Layout title={capitalize(type)}>
     <ul>
       <For each={entries}>
         {(entry: Entry) => (
