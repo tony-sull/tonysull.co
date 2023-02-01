@@ -5,8 +5,7 @@ category:
   - code
 slug: introducing-chisel
 published: "2021-06-02T12:00:00Z"
-date: "2021-06-02T12:00:00Z"
-photo: "uploads/2021-06-02-introducing-chisel.jpg"
+featured: "/uploads/2021-06-02-introducing-chisel.jpg"
 url: https://navillus.dev/blog/introducing-chisel/
 persona: navillus
 ---

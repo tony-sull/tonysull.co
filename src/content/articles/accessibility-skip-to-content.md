@@ -5,8 +5,7 @@ category:
   - code
   - a11y
 published: "2021-05-10T12:00:00Z"
-date: "2021-05-10T12:00:00Z"
-photo: "uploads/2021-05-10-accessibility-skip-to-content.jpg"
+featured: "/uploads/2021-05-10-accessibility-skip-to-content.jpg"
 url: https://navillus.dev/blog/accessibility-skip-to-content/
 persona: navillus
 ---

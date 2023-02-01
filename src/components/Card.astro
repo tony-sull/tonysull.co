@@ -1,69 +1,44 @@
 ---
-import { getEntryBySlug } from "astro:content";
 import { isoDate, shortDate } from "~/utils/dates.js";
+import Avatar from "./Avatar.astro";
 import Show from "./Show.astro";
 import TagList from "./TagList.astro";
 
 export type Props = {
   author?: string | undefined;
   href?: string;
-  date: Date;
+  date?: Date | null | undefined;
   tags?: string[] | undefined;
-  photo?: string | undefined;
+  photo?: (string | undefined)[] | string | undefined;
   contentClass?: string;
 };
 
 const { author, href, date, tags, photo, contentClass } = Astro.props;
 
-const persona =
-  (author && (await getEntryBySlug("personas", author))) ||
-  (await getEntryBySlug("personas", "tony")!);
-
-function getHandleName(handle: string) {
-  return handle.slice(0, handle.indexOf("@"));
-}
-
-function getHandleDomain(handle: string) {
-  const start = handle.indexOf("@");
-  const end = handle.lastIndexOf(".");
-
-  return handle.slice(start + 1, end >= 0 ? end : handle.length);
-}
+const singlePhoto = Array.isArray(photo) ? photo[0] : photo
 ---
 
 <article class="h-entry">
   <header class="p-author h-card">
-    <div>
-      <p class="p-name sr-only">{persona.data.name}</p>
-      <img
-        src={persona.data.avatar}
-        alt=""
-        class="u-logo"
-        width="48"
-        height="48"
-        loading="lazy"
-      />
-    </div>
-    <p class="p-nickname">
-      <b>{getHandleName(persona.data.handle)}</b>
-      <span>@</span>
-      <i>{getHandleDomain(persona.data.handle)}</i>
-      <span class="sr-only"
-        >{persona.data.handle.slice(persona.data.handle.lastIndexOf("."))}</span
-      >
-    </p>
-    <small>
-      <time datetime={isoDate(date)} class="dt-published">
-        {shortDate(date)}
-      </time>
-    </small>
+    <Avatar class="p-author" author={author} />
+    <Show when={date}>
+      <small>
+        <time datetime={isoDate(date!)} class="dt-published">
+          {shortDate(date!)}
+        </time>
+      </small>
+
+      <small slot="fallback">
+        DRAFT
+      </small>
+    </Show>
     <Show when={tags?.length}>
       <TagList tags={tags!} alt class="tags" />
     </Show>
   </header>
 
-  <Show when={photo}>
-    <img src={photo} alt="" class="u-featured" loading="lazy" />
+  <Show when={singlePhoto}>
+    <img src={singlePhoto!} alt="" class="u-featured" loading="lazy" />
   </Show>
 
   <a href={href} class:list={[contentClass, "e-content"]}>
@@ -90,9 +65,9 @@ function getHandleDomain(handle: string) {
 
   header {
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: 1fr auto;
     grid-template-rows: auto auto;
-    grid-template-areas: "avatar nickname published" "tags tags tags";
+    grid-template-areas: "avatar published" "tags tags";
     align-items: center;
     column-gap: var(--size-fluid-1);
     row-gap: var(--size-fluid-1);
@@ -103,23 +78,13 @@ function getHandleDomain(handle: string) {
     grid-area: tags;
   }
 
-  header > :first-child {
+  header :global(.h-author) {
     grid-area: avatar;
-  }
-
-  .u-logo {
-    border-radius: var(--radius-round);
   }
 
   .u-featured {
     aspect-ratio: var(--ratio-widescreen);
     object-fit: cover;
-  }
-
-  .p-name {
-    font-size: var(--font-size-3);
-    font-weight: var(--font-weight-4);
-    max-inline-size: 100%;
   }
 
   .dt-published {

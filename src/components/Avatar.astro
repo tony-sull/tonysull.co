@@ -1,0 +1,68 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+import { CollectionEntry, getEntryBySlug } from 'astro:content'
+
+export type Props = HTMLAttributes<'div'> & {
+  author?: string | undefined
+}
+
+const { author, class: className, ...attrs } = Astro.props
+
+function getHandleName(author: CollectionEntry<'personas'>) {
+  return author.data.nickname.slice(0, author.data.nickname.indexOf('@'))
+}
+
+function getHandleDomain(author: CollectionEntry<'personas'>) {
+  const start = author.data.nickname.indexOf('@')
+  const end = author.data.nickname.lastIndexOf('.')
+
+  return author.data.nickname.slice(
+    start + 1,
+    end >= 0 ? end : author.data.nickname.length
+  )
+}
+
+const persona = (author && await getEntryBySlug('personas', author)) || await getEntryBySlug('personas', 'tony')
+---
+
+<div class:list={[className, 'h-card']} {...attrs}>
+  <img
+    src={persona.data.logo}
+    alt=""
+    class="u-logo"
+    width="48"
+    height="48"
+    loading="lazy"
+  />
+  <p class="p-name sr-only">{persona.data.name}</p>
+  <p class="p-nickname">
+    <b>{getHandleName(persona)}</b>
+    <span>@</span>
+    <i>{getHandleDomain(persona)}</i>
+    <span
+      >{
+        persona.data.nickname.slice(persona.data.nickname.lastIndexOf('.'))
+      }</span
+    >
+  </p>
+</div>
+
+<style>
+  .h-card {
+    display: flex;
+    align-items: center;
+    gap: var(--size-fluid-1);
+  }
+
+  .p-nickname {
+    gap: var(--size-1);
+  }
+
+  .p-nickname > span:last-of-type {
+    display: none;
+  }
+
+  .u-logo {
+    border-radius: var(--radius-round);
+  }
+</style>

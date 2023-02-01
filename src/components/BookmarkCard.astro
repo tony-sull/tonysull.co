@@ -9,24 +9,24 @@ export type Props = CollectionEntry<"bookmarks">;
 
 const { data, slug } = Astro.props;
 
-const metadata = await scrape(data["bookmark-of"]);
+const metadata = await scrape(data.bookmarkOf);
 
 if (!metadata) {
   throw new Error(`Could not load metadata for bookmark "${slug}"`);
 }
 
-const bookmarkUrl = new URL(data['bookmark-of'])
+const bookmarkUrl = new URL(data.bookmarkOf)
 ---
 
 <Card
-  author={data.persona}
-  href={data["bookmark-of"]}
-  date={data.date}
+  author={data.author}
+  href={data.bookmarkOf}
+  date={data.published}
   tags={data.category}
   photo={data.photo}
   contentClass="u-bookmark-of"
 >
-  <h2 class="p-name">{metadata.title || data.name}</h2>
+  <h2 class="p-name">{metadata.title}</h2>
 
   <Show when={metadata.description}>
     <p class="p-summary">{metadata.description}</p>

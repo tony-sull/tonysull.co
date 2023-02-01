@@ -9,7 +9,9 @@ export async function getFeed({ site, generator }: APIContext) {
   const articles = await getCollection("articles");
   const notes = await getCollection("notes");
 
-  const entries = [...articles, ...notes].sort(sortByDate);
+  const entries = [...articles, ...notes]
+    .filter((entry) => entry.data.published)
+    .sort(sortByDate);
 
   const feed = new Feed({
     title: siteData.title,
@@ -34,15 +36,15 @@ export async function getFeed({ site, generator }: APIContext) {
       id: url.toString(),
       link: url.toString(),
       content: mdToHtml(entry.body),
-      date: entry.data.date,
+      date: entry.data.published!
     };
 
-    if (entry.collection === "articles" && entry.data.summary) {
+    if ('summary' in entry.data && entry.data.summary) {
       item.description = entry.data.summary;
     }
 
-    if (entry.data.photo) {
-      item.image = new URL(entry.data.photo, site).toString();
+    if ('featured' in entry.data && entry.data.featured) {
+      item.image = new URL(entry.data.featured, site).toString();
     }
 
     feed.addItem(item);

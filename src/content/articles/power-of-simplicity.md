@@ -4,8 +4,7 @@ summary: easy to get swept up in the latest libraries and platforms, but don't u
 category:
   - code
 published: "2021-08-07T12:00:00Z"
-date: "2021-08-07T12:00:00Z"
-photo: "uploads/2021-08-07-power-of-simplicity.jpg"
+featured: "/uploads/2021-08-07-power-of-simplicity.jpg"
 url: https://navillus.dev/blog/power-of-simplicity/
 persona: navillus
 ---

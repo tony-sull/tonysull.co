@@ -4,8 +4,8 @@ summary: A (work-in-progress) generic entity store for Svelte projects.
 categories:
   - code
   - svelte
-date: '2021-05-01T12:00:00Z'
-photo: '/uploads/2021-05-01-introducing-svelte-entity-store.jpg'
+published: '2021-05-01T12:00:00Z'
+featured: '/uploads/2021-05-01-introducing-svelte-entity-store.jpg'
 url: https://navillus.dev/blog/introducing-svelte-entity-store/
 persona: navillus
 ---

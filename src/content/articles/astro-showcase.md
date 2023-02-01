@@ -5,8 +5,7 @@ category:
   - code
   - astro
 published: "2022-04-08T21:55:21Z"
-date: "2022-04-08T21:55:21Z"
-photo: "uploads/2022-04-08-astro-showcase.jpg"
+featured: "/uploads/2022-04-08-astro-showcase.jpg"
 url: https://astro.build/blog/astro-showcase/
 persona: astro
 ---

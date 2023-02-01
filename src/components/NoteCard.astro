@@ -10,15 +10,15 @@ const { data, render, slug } = Astro.props;
 
 const { Content } = await render();
 
-const replyMetadata = data["in-reply-to"]
-  ? await scrape(data["in-reply-to"])
+const replyMetadata = data.inReplyTo
+  ? await scrape(data.inReplyTo)
   : undefined;
 ---
 
 <Card
-  author={data.persona}
+  author={data.author}
   href={`/notes/${slug}`}
-  date={data.date}
+  date={data.published}
   tags={data.category}
   photo={data.photo}
 >
@@ -27,7 +27,7 @@ const replyMetadata = data["in-reply-to"]
   <Show when={replyMetadata}>
     <small slot="footer">
       <span>In reply to</span>
-      <a href={data["in-reply-to"]} class="u-in-reply-to">
+      <a href={data.inReplyTo} class="u-in-reply-to">
         {replyMetadata?.title}
       </a>
     </small>

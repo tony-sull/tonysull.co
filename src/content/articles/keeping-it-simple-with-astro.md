@@ -5,8 +5,7 @@ category:
   - code
   - astro
 published: "2021-06-14T12:00:00Z"
-date: "2021-06-14T12:00:00Z"
-photo: "uploads/2021-06-14-keeping-it-simple-with-astro.jpg"
+featured: "/uploads/2021-06-14-keeping-it-simple-with-astro.jpg"
 url: https://navillus.dev/blog/keeping-it-simple-with-astro/
 persona: navillus
 ---

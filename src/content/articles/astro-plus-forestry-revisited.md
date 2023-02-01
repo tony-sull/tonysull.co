@@ -5,8 +5,7 @@ category:
   - code
   - astro
 published: "2021-08-03T12:00:00Z"
-date: "2021-08-03T12:00:00Z"
-photo: "uploads/2021-08-03-astro-plus-forestry-revisited.jpg"
+featured: "/uploads/2021-08-03-astro-plus-forestry-revisited.jpg"
 url: https://navillus.dev/blog/astro-plus-forestry-revisited/
 persona: navillus
 ---

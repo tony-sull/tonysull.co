@@ -5,8 +5,7 @@ category:
   - code
   - openweb
 published: "2022-11-27T21:55:21Z"
-date: "2022-11-27T21:55:21Z"
-photo: "uploads/2022-11-27-introducing-astro-webfinger.jpg"
+featured: "/uploads/2022-11-27-introducing-astro-webfinger.jpg"
 ---
 
 This is the first in a series of articles as I attempt to tie together concepts from the [IndieWeb](https://indieweb.com) and [ActivityPub](https://www.w3.org/TR/activitypub/) to build a self-hosted social network. Subscribe to the [RSS Feed](https://tonysull.co/articles/feed.xml) for updates!

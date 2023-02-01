@@ -1,8 +1,9 @@
 ---
-import { type CollectionEntry, getEntryBySlug } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 import readingTime from "reading-time";
 import { isoDate, shortDate } from "~/utils/dates.js";
 import { Icon } from "astro-icon";
+import Avatar from "./Avatar.astro"
 import Show from "./Show.astro";
 import TagList from "./TagList.astro";
 
@@ -13,55 +14,20 @@ const { body, data, render } = Astro.props;
 const { Content } = await render();
 
 const minutes = readingTime(body);
-
-function getHandleName(handle: string) {
-  return handle.slice(0, handle.indexOf("@"));
-}
-
-function getHandleDomain(handle: string) {
-  const start = handle.indexOf("@");
-  const end = handle.lastIndexOf(".");
-
-  return handle.slice(start + 1, end >= 0 ? end : handle.length);
-}
-
-const persona =
-  (data.persona && (await getEntryBySlug("personas", data.persona))) ||
-  (await getEntryBySlug("personas", "tony")!);
 ---
 
 <article class="h-entry">
   <header>
     <h1 class="p-name">{data.name}</h1>
 
-    <Show when={!data.draft}>
-      <time datetime={isoDate(data.date)} class="dt-published"
-        >{shortDate(data.date)}</time
+    <Show when={data.published}>
+      <time datetime={isoDate(data.published!)} class="dt-published"
+        >{shortDate(data.published!)}</time
       >
       <strong slot="fallback">DRAFT</strong>
     </Show>
 
-    <div class="p-author h-card">
-      <img
-        src={persona.data.avatar}
-        alt=""
-        class="u-logo"
-        width="48"
-        height="48"
-        loading="lazy"
-      />
-      <p class="p-name sr-only">{persona.data.name}</p>
-      <p class="p-nickname">
-        <b>{getHandleName(persona.data.handle)}</b>
-        <span>@</span>
-        <i>{getHandleDomain(persona.data.handle)}</i>
-        <span class="sr-only"
-          >{
-            persona.data.handle.slice(persona.data.handle.lastIndexOf("."))
-          }</span
-        >
-      </p>
-    </div>
+    <Avatar class="p-author" author={data.author} />
 
     <p>
       <Icon name="clock" size={16} aria-hidden="true" role="img" />
@@ -74,10 +40,10 @@ const persona =
 
     <blockquote class="p-summary">{data.summary}</blockquote>
 
-    <Show when={data.photo}>
+    <Show when={data.featured}>
       <img
         src="u-photo"
-        src={data.photo}
+        src={data.featured}
         alt=""
         aria-hidden="true"
         loading="lazy"
@@ -87,7 +53,7 @@ const persona =
 
     <a
       class="u-url"
-      href={(data.url && new URL(data.url)) ||
+      href={/*(data.url && new URL(data.url)) ||*/
         new URL(Astro.url.pathname, Astro.site)}
       hidden></a>
   </header>
@@ -131,19 +97,8 @@ const persona =
     font-size: var(--font-size-fluid-1);
   }
 
-  .p-author {
+  header :global(.p-author) {
     grid-area: author;
-    display: flex;
-    align-items: center;
-    gap: var(--size-fluid-1);
-  }
-
-  .p-nickname {
-    gap: var(--size-1);
-  }
-
-  .u-logo {
-    border-radius: var(--radius-round);
   }
 
   header p {

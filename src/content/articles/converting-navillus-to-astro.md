@@ -5,8 +5,7 @@ category:
   - code
   - astro
 published: '2021-07-20T12:00:00Z'
-date: '2021-07-20T12:00:00Z'
-photo: 'uploads/2021-07-20-converting-navillus-to-astro.jpg'
+featured: '/uploads/2021-07-20-converting-navillus-to-astro.jpg'
 url: https://navillus.dev/blog/converting-navillus-to-astro/
 persona: navillus
 ---
