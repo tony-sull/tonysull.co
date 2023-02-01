@@ -203,6 +203,13 @@ declare module 'astro:content' {
   collection: "articles",
   data: InferEntrySchema<"articles">
 },
+"the-web-needs-more-indie.md": {
+  id: "the-web-needs-more-indie.md",
+  slug: "the-web-needs-more-indie",
+  body: string,
+  collection: "articles",
+  data: InferEntrySchema<"articles">
+},
 "web-components-in-astro.md": {
   id: "web-components-in-astro.md",
   slug: "web-components-in-astro",
@@ -263,6 +270,13 @@ declare module 'astro:content' {
 },
 },
 "notes": {
+"indieweb-schemas.md": {
+  id: "indieweb-schemas.md",
+  slug: "indieweb-schemas",
+  body: string,
+  collection: "notes",
+  data: InferEntrySchema<"notes">
+},
 "self-host-webfinger.md": {
   id: "self-host-webfinger.md",
   slug: "self-host-webfinger",

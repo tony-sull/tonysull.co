@@ -1,5 +1,5 @@
 {
-  "lastFetched": "2023-01-30T03:44:16.165Z",
+  "lastFetched": "2023-02-01T15:34:28.559Z",
   "children": [
     {
       "type": "entry",
@@ -413,6 +413,42 @@
       },
       "in-reply-to": "https://tonysull.co/notes/2022-01-11-privacy-first-javascript/",
       "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Jaydan Urwin",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/6c27ac3859cede784a28a6d6dbdfd7f75a9e55bedf7751e6d53d43d0104dcdd7.jpg",
+        "url": "https://twitter.com/jaydanurwin"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1620100144984383490#favorited-by-1185196163160395776",
+      "published": null,
+      "wm-received": "2023-01-31T02:43:07Z",
+      "wm-id": 1611619,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1620100144984383490/1185196163160395776",
+      "wm-target": "https://tonysull.co/notes/indieweb-schemas/",
+      "like-of": "https://tonysull.co/notes/indieweb-schemas/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Sarah Rainsberger ~ @sarah11918@mastodon.social",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/10cfe082ff1c77d7f5c86d80b6512144f982d432d4532924894eef09bbf2c026.png",
+        "url": "https://twitter.com/sarah11918"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1620100144984383490#favorited-by-14871106",
+      "published": null,
+      "wm-received": "2023-01-30T21:21:45Z",
+      "wm-id": 1611065,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1620100144984383490/14871106",
+      "wm-target": "https://tonysull.co/notes/indieweb-schemas/",
+      "like-of": "https://tonysull.co/notes/indieweb-schemas/",
+      "wm-property": "like-of",
       "wm-private": false
     }
   ]
