@@ -40,6 +40,7 @@ async function fetchWithTimeout(resource: RequestInfo | URL, options: { timeout?
 }
 
 export async function scrape(url: URL): Promise<Metadata> {
+  console.log('scraping', url.toString())
   const content = await fetchWithTimeout(url).then(res => res.text())
   return await scraper({ url: url.toString(), html: content })
 }
