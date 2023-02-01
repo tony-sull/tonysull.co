@@ -1,6 +1,10 @@
 ---
 import Head from '@components/Head.astro'
 import type { Props as HeadProps } from '@components/Head.astro'
+import '@assets/global.css'
+import 'open-props/style'
+import 'open-props/normalize'
+import 'open-props/buttons'
 
 export type Props = HeadProps
 
@@ -18,3 +22,10 @@ const { ...head } = Astro.props
     </main>
   </body>
 </html>
+
+<style>
+  html, body {
+    background-color: var(--gray-1);
+    color: var(--gray-12);
+  }
+</style>

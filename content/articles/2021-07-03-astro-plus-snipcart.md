@@ -5,9 +5,8 @@ description: Scalable e-commerce made easy with the Jamstack.
 tags:
   - code
 slug: astro-plus-snipcart
-published: '2021-07-03T12:00:00+00:00'
-date: '2022-12-31T22:14:11.971Z'
-client_id: 'https://quill.p3k.io/'
+published: '2021-07-03T12:00:00+00:00Z'
+date: '2021-07-03T12:00:00+00:00Z'
 photo: 'uploads/2021-07-02-astro-plus-snipcart.jpg'
 url: https://navillus.dev/blog/astro-plus-snipcart/
 ---

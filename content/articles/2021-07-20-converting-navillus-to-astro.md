@@ -5,9 +5,8 @@ description: Spoiler - you probably don't need a kitchen sink framework.
 tags:
   - code
 slug: converting-navillus-to-astro
-published: '2021-07-20T12:00:00+00:00'
-date: '2022-12-31T22:14:11.971Z'
-client_id: 'https://quill.p3k.io/'
+published: '2021-07-20T12:00:00+00:00Z'
+date: '2021-07-20T12:00:00+00:00Z'
 photo: 'uploads/2021-07-20-converting-navillus-to-astro.jpg'
 url: https://navillus.dev/blog/converting-navillus-to-astro/
 ---

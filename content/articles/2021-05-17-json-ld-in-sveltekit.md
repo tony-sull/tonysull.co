@@ -5,9 +5,8 @@ description: Easily add json+ld structured data to pages build in Svelte, with T
 tags:
   - code
 slug: json-ld-in-sveltekit
-published: '2021-05-17T12:00:00+00:00'
-date: '2022-12-31T22:14:11.971Z'
-client_id: 'https://quill.p3k.io/'
+published: '2021-05-17T12:00:00+00:00Z'
+date: '2021-05-17T12:00:00+00:00Z'
 photo: 'uploads/2021-05-17-json-ld-in-sveltekit.jpg'
 url: https://navillus.dev/blog/json-ld-in-sveltekit/
 ---

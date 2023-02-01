@@ -5,9 +5,8 @@ description: Static sites powered by a git-based CMS, made easy.
 tags:
   - code
 slug: astro-plus-netlify-cms
-published: '2021-06-23T12:00:00+00:00'
-date: '2022-12-31T22:14:11.971Z'
-client_id: 'https://quill.p3k.io/'
+published: '2021-06-23T12:00:00+00:00Z'
+date: '2021-06-23T12:00:00+00:00Z'
 photo: 'uploads/2021-06-23-astro-plus-netlify-cms.jpg'
 url: https://navillus.dev/blog/astro-plus-netlify-cms/
 ---

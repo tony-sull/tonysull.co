@@ -5,9 +5,8 @@ description: Static sites powered by Forestry's git-based CMS, made easy.
 tags:
   - code
 slug: astro-plus-forestry
-published: '2021-06-28T12:00:00+00:00'
-date: '2022-12-31T22:14:11.971Z'
-client_id: 'https://quill.p3k.io/'
+published: '2021-06-28T12:00:00+00:00Z'
+date: '2021-06-28T12:00:00+00:00Z'
 photo: 'uploads/2021-06-28-astro-plus-forestry.jpg'
 url: https://navillus.dev/blog/astro-plus-forestry/
 ---

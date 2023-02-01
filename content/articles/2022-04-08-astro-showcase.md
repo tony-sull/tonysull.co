@@ -5,9 +5,8 @@ description: Explore beautiful community websites built with Astro.
 tags:
   - code
 slug: astro-showcase
-published: '2022-04-08T21:55:21+00:00'
-date: '2022-12-31T22:14:11.971Z'
-client_id: 'https://quill.p3k.io/'
+published: '2022-04-08T21:55:21+00:00Z'
+date: '2022-04-08T21:55:21+00:00Z'
 photo: 'uploads/2022-04-08-astro-showcase.jpg'
 url: https://astro.build/blog/astro-showcase/
 ---

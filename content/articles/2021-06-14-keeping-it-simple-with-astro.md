@@ -5,9 +5,8 @@ description: Do you really need all that JavaScript?
 tags:
   - code
 slug: keeping-it-simple-with-astro
-published: '2021-06-14T12:00:00+00:00'
-date: '2022-12-31T22:14:11.971Z'
-client_id: 'https://quill.p3k.io/'
+published: '2021-06-14T12:00:00+00:00Z'
+date: '2021-06-14T12:00:00+00:00Z'
 photo: 'uploads/2021-06-14-keeping-it-simple-with-astro.jpg'
 url: https://navillus.dev/blog/keeping-it-simple-with-astro/
 ---
