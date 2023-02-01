@@ -64,7 +64,7 @@ const replies = webMentions.filter(isMentionType(MENTION_TYPE.Reply))
                         {(like: WebMention) => (
                             <li title={like.author.name}>
                                 <a href={like.url}>
-                                    <img src={like.author.photo} alt={like.author.name} width="48" height="48" />
+                                    <img src={like.author.photo} alt={like.author.name} width="48" height="48" loading="lazy" />
                                 </a>
                             </li>
                         )}
@@ -79,7 +79,7 @@ const replies = webMentions.filter(isMentionType(MENTION_TYPE.Reply))
                         {(repost: WebMention) => (
                             <li title={repost.author.name}>
                                 <a href={repost.url}>
-                                    <img src={repost.author.photo} alt={repost.author.name} width="48" height="48" />
+                                    <img src={repost.author.photo} alt={repost.author.name} width="48" height="48" loading="lazy" />
                                 </a>
                             </li>
                         )}
@@ -94,7 +94,7 @@ const replies = webMentions.filter(isMentionType(MENTION_TYPE.Reply))
                         <div>
                             <a href={reply.author.url}>
                                 <span class="sr-only">{reply.author.name}</span>
-                                <img src={reply.author.photo} alt="" width="24" height="24" />
+                                <img src={reply.author.photo} alt="" width="24" height="24" loading="lazy" />
                             </a>
                             <a href={reply.url}>
                                 {reply.author.name}
