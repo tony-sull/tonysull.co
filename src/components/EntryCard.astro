@@ -34,8 +34,6 @@ function getSummary(entry: Entry) {
 function getImage(entry: Entry): string | undefined {
     if ('image' in entry && !!entry.image) {
         return entry.image as string
-    } else if ('metadata' in entry) {
-        return entry.metadata.image
     }
 
     return undefined
