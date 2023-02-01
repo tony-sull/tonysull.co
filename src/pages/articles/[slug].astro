@@ -34,7 +34,7 @@ const canoncialURL = article.url || new URL(Astro.url.pathname, Astro.site)
 >
   <article class="h-entry">
     <header>
-      <Show when={article.tags?.length}>
+      <Show when={article.tags.length}>
         <For each={article.tags}>
           {
             (tag: string, i: number) => (

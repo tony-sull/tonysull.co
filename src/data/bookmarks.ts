@@ -6,6 +6,7 @@ type BookmarkData = {
   'bookmark-of': string
   date: string
   client_id?: string
+  tags?: string[]
 }
 
 export type Bookmark = {
@@ -15,6 +16,7 @@ export type Bookmark = {
   date: Date
   client_id?: string
   metadata: Metadata
+  tags: string[]
 }
 
 function fileToSlug(filename: string) {
@@ -43,6 +45,7 @@ export async function fetchBookmarks(): Promise<Bookmark[]> {
       slug: fileToSlug(file),
       'bookmark-of': new URL(frontmatter['bookmark-of']),
       date: new Date(frontmatter.date),
+      tags: frontmatter.tags || []
     }
   })
 
@@ -54,7 +57,7 @@ export async function fetchBookmark(slug: string): Promise<Bookmark | undefined>
         `/content/bookmarks/*.md`
     )
 
-    const content = results[slug]
+    const content = results[`/content/bookmarks/${slug}.md`]
 
     if (!content) {
         return undefined
@@ -66,6 +69,7 @@ export async function fetchBookmark(slug: string): Promise<Bookmark | undefined>
         ...frontmatter,
         slug: fileToSlug(file),
         'bookmark-of': new URL(frontmatter['bookmark-of']),
-        date: new Date(frontmatter.date)
+        date: new Date(frontmatter.date),
+        tags: frontmatter.tags || []
     })
 }

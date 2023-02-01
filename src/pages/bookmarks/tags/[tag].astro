@@ -1,14 +1,14 @@
 ---
 import Layout from '@layouts/Page.astro'
-import NoteCard from '@components/NoteCard.astro'
+import BookmarkCard from '@components/BookmarkCard.astro'
 import For from '@components/For.astro'
 import Hero from '@components/Hero.astro'
-import { type Note, fetchNotes } from '@data/notes.js'
+import { type Bookmark, fetchBookmarks } from '@data/bookmarks.js'
 
 export async function getStaticPaths() {
-    const allNotes = await fetchNotes()
+    const allBookmarks = await fetchBookmarks()
 
-    const tagsMap = allNotes.reduce((acc, next) => {
+    const tagsMap = allBookmarks.reduce((acc, next) => {
         next.tags.forEach((tag) => {
             const list = acc.get(tag) || []
             acc.set(tag, list.concat(next.slug))
@@ -27,11 +27,11 @@ export async function getStaticPaths() {
 const { tag } = Astro.params as { tag: string }
 const { slugs } = Astro.props as { slugs: string[] }
 
-const title = `#${tag} | Notes`
+const title = `#${tag} | Bookmarks`
 const description =
   'Tony Sullivan is a fullstack developer based in Onbekend, USA.'
 
-const notes = (await fetchNotes())
+const bookmarks = (await fetchBookmarks())
     .filter(({ slug }) => slugs.includes(slug))
 ---
 
@@ -40,15 +40,12 @@ const notes = (await fetchNotes())
     title="Hello, open web."
     cta={{ text: 'Hello, my name is Tony', href: '/about/' }}
   >
-    These are my notes, good or bad I wrote them. Why let them live in a walled
-    garden? They are also syndicated to my <a
-      href="https://twitter.com/tony-sull">Twitter</a
-    > account and an <a href="/notes/feed.xml">RSS feed</a> if that's your thing!
+    These are my bookmarks. I want to find them again later - might as well share them while I'm at it! They are also syndicated to my <a href="/bookmarks/feed.xml">RSS feed</a> if that's your thing!
   </Hero>
 
   <ul>
-    <For each={notes}>
-      {(note: Note) => <NoteCard {...note} />}
+    <For each={bookmarks}>
+      {(bookmark: Bookmark) => <BookmarkCard {...bookmark} />}
     </For>
   </ul>
 </Layout>
