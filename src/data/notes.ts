@@ -74,23 +74,17 @@ export async function fetchNotes(): Promise<Note[]> {
 }
 
 export async function fetchNote(slug: string): Promise<Note | undefined> {
-  const content = await Promise.all(
-    Object.values(
-      await import.meta.glob<false, string, MarkdownInstance<NoteData>>(
-        '/content/notes/*.md'
-      )
-    ).map(c => c())
+  const results = await import.meta.glob<false, string, MarkdownInstance<NoteData>>(
+    '/content/notes/*.md'
   )
+  
+  const content = results[`/content/notes/${slug}.md`]
 
-  const noteContent = content.find(
-    ({ frontmatter }) => frontmatter.slug === slug
-  )
-
-  if (!noteContent) {
+  if (!content) {
     return undefined
   }
 
-  const { frontmatter, rawContent, compiledContent, file } = noteContent
+  const { frontmatter, rawContent, compiledContent, file } = await content()
 
   return {
     ...frontmatter,
