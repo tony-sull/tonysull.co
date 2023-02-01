@@ -3,8 +3,8 @@ name: Jamstack 2.0
 summary: The Jamstack is evolving. Where did it start, and what does it look like in 2021?
 category:
   - code
-published: "2021-05-07T12:00:00Z"
-featured: "/uploads/2021-05-07-jamstack-2_0.jpg"
+published: '2021-05-07T12:00:00Z'
+featured: '/uploads/2021-05-07-jamstack-2_0.jpg'
 url: https://navillus.dev/blog/jamstack-2_0/
 persona: navillus
 ---

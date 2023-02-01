@@ -1,19 +1,19 @@
 ---
-import { isoDate, shortDate } from "~/utils/dates.js";
-import Avatar from "./Avatar.astro";
-import Show from "./Show.astro";
-import TagList from "./TagList.astro";
+import { isoDate, shortDate } from '~/utils/dates.js'
+import Avatar from './Avatar.astro'
+import Show from './Show.astro'
+import TagList from './TagList.astro'
 
 export type Props = {
-  author?: string | undefined;
-  href?: string;
-  date?: Date | null | undefined;
-  tags?: string[] | undefined;
-  photo?: (string | undefined)[] | string | undefined;
-  contentClass?: string;
-};
+  author?: string | undefined
+  href?: string
+  date?: Date | null | undefined
+  tags?: string[] | undefined
+  photo?: (string | undefined)[] | string | undefined
+  contentClass?: string
+}
 
-const { author, href, date, tags, photo, contentClass } = Astro.props;
+const { author, href, date, tags, photo, contentClass } = Astro.props
 
 const singlePhoto = Array.isArray(photo) ? photo[0] : photo
 ---
@@ -28,9 +28,7 @@ const singlePhoto = Array.isArray(photo) ? photo[0] : photo
         </time>
       </small>
 
-      <small slot="fallback">
-        DRAFT
-      </small>
+      <small slot="fallback"> DRAFT</small>
     </Show>
     <Show when={tags?.length}>
       <TagList tags={tags!} alt class="tags" />
@@ -41,7 +39,7 @@ const singlePhoto = Array.isArray(photo) ? photo[0] : photo
     <img src={singlePhoto!} alt="" class="u-featured" loading="lazy" />
   </Show>
 
-  <a href={href} class:list={[contentClass, "e-content"]}>
+  <a href={href} class:list={[contentClass, 'e-content']}>
     <slot />
   </a>
 
@@ -67,7 +65,7 @@ const singlePhoto = Array.isArray(photo) ? photo[0] : photo
     display: grid;
     grid-template-columns: 1fr auto;
     grid-template-rows: auto auto;
-    grid-template-areas: "avatar published" "tags tags";
+    grid-template-areas: 'avatar published' 'tags tags';
     align-items: center;
     column-gap: var(--size-fluid-1);
     row-gap: var(--size-fluid-1);
@@ -91,7 +89,7 @@ const singlePhoto = Array.isArray(photo) ? photo[0] : photo
     color: var(--gray-7);
   }
 
-  :global([data-theme="dark"]) .dt-published {
+  :global([data-theme='dark']) .dt-published {
     color: var(--gray-4);
   }
 

@@ -1,6 +1,9 @@
-import type { CollectionEntry } from "astro:content";
+import type { CollectionEntry } from 'astro:content'
 
-type SortableEntry = CollectionEntry<'articles' > | CollectionEntry<'bookmarks'> | CollectionEntry<'notes'>
+type SortableEntry =
+  | CollectionEntry<'articles'>
+  | CollectionEntry<'bookmarks'>
+  | CollectionEntry<'notes'>
 
 export function sortByDate(a: SortableEntry, b: SortableEntry) {
   if (!a.data.published && !b.data.published) {

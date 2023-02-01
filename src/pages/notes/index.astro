@@ -1,11 +1,11 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
-import NoteCard from "~/components/NoteCard.astro";
-import For from "~/components/For.astro";
-import Layout from "~/layouts/Page.astro";
-import { sortByDate } from "~/utils/sortByDate";
+import { type CollectionEntry, getCollection } from 'astro:content'
+import NoteCard from '~/components/NoteCard.astro'
+import For from '~/components/For.astro'
+import Layout from '~/layouts/Page.astro'
+import { sortByDate } from '~/utils/sortByDate'
 
-const notes = await getCollection("notes");
+const notes = await getCollection('notes')
 
 type Note = CollectionEntry<'notes'>
 ---

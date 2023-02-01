@@ -1,12 +1,12 @@
 ---
-import { Icon } from "astro-icon";
+import { Icon } from 'astro-icon'
 
 export type Props = {
-  url: string;
-  alt: string;
-};
+  url: string
+  alt: string
+}
 
-const { url, alt } = Astro.props;
+const { url, alt } = Astro.props
 ---
 
 <share-link href={url} role="button">
@@ -23,21 +23,21 @@ const { url, alt } = Astro.props;
 <script>
   class ShareLink extends HTMLElement {
     connectedCallback() {
-      this.addEventListener("click", this.share.bind(this), false);
+      this.addEventListener('click', this.share.bind(this), false)
     }
 
     get href() {
-      return this.getAttribute("href")!;
+      return this.getAttribute('href')!
     }
 
     async share() {
-      (window as any).fathom.trackGoal(
+      ;(window as any).fathom.trackGoal(
         import.meta.env.PUBLIC_FATHOM_EVENT_SHARE,
         0
-      );
-      await navigator.clipboard.writeText(this.href);
+      )
+      await navigator.clipboard.writeText(this.href)
     }
   }
 
-  customElements.define("share-link", ShareLink);
+  customElements.define('share-link', ShareLink)
 </script>

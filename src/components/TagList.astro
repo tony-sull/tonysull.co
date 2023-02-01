@@ -1,13 +1,13 @@
 ---
-import type { HTMLAttributes } from "astro/types";
-import For from "./For.astro";
+import type { HTMLAttributes } from 'astro/types'
+import For from './For.astro'
 
-export type Props = HTMLAttributes<"ul"> & {
-  tags: string[];
-  alt?: boolean;
-};
+export type Props = HTMLAttributes<'ul'> & {
+  tags: string[]
+  alt?: boolean
+}
 
-const { tags, alt = false, ...attrs } = Astro.props;
+const { tags, alt = false, ...attrs } = Astro.props
 ---
 
 <ul {...attrs}>
@@ -18,7 +18,7 @@ const { tags, alt = false, ...attrs } = Astro.props;
           <a
             href={`/tags/${tag}`}
             rel="category tag"
-            class:list={["p-category", { alt }]}
+            class:list={['p-category', { alt }]}
           >
             #{tag}
           </a>
@@ -54,7 +54,7 @@ const { tags, alt = false, ...attrs } = Astro.props;
     background: var(--surface-2);
   }
 
-  :global([data-theme="dark"]) .p-category {
+  :global([data-theme='dark']) .p-category {
     color: var(--gray-3);
   }
 </style>

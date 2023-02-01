@@ -22,7 +22,9 @@ function getHandleDomain(author: CollectionEntry<'personas'>) {
   )
 }
 
-const persona = (author && await getEntryBySlug('personas', author)) || await getEntryBySlug('personas', 'tony')
+const persona =
+  (author && (await getEntryBySlug('personas', author))) ||
+  (await getEntryBySlug('personas', 'tony'))
 ---
 
 <div class:list={[className, 'h-card']} {...attrs}>

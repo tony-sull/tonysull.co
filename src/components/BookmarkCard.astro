@@ -1,18 +1,18 @@
 ---
-import Card from "./Card.astro";
-import { Icon } from "astro-icon";
-import type { CollectionEntry } from "astro:content";
-import { scrape } from "~/utils/scrape";
-import Show from "./Show.astro";
+import Card from './Card.astro'
+import { Icon } from 'astro-icon'
+import type { CollectionEntry } from 'astro:content'
+import { scrape } from '~/utils/scrape'
+import Show from './Show.astro'
 
-export type Props = CollectionEntry<"bookmarks">;
+export type Props = CollectionEntry<'bookmarks'>
 
-const { data, slug } = Astro.props;
+const { data, slug } = Astro.props
 
-const metadata = await scrape(data.bookmarkOf);
+const metadata = await scrape(data.bookmarkOf)
 
 if (!metadata) {
-  throw new Error(`Could not load metadata for bookmark "${slug}"`);
+  throw new Error(`Could not load metadata for bookmark "${slug}"`)
 }
 
 const bookmarkUrl = new URL(data.bookmarkOf)

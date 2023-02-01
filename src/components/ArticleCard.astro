@@ -1,10 +1,10 @@
 ---
-import type { CollectionEntry } from "astro:content";
-import Card from "./Card.astro";
+import type { CollectionEntry } from 'astro:content'
+import Card from './Card.astro'
 
-export type Props = CollectionEntry<"articles">;
+export type Props = CollectionEntry<'articles'>
 
-const { data, slug } = Astro.props;
+const { data, slug } = Astro.props
 ---
 
 <Card
@@ -28,8 +28,8 @@ const { data, slug } = Astro.props;
     max-inline-size: 100%;
   }
 
-  :global([data-theme="dark"]) [target="_blank"] > h2:after,
-  :global([data-theme="dark"]) .u-in-reply-to:after {
+  :global([data-theme='dark']) [target='_blank'] > h2:after,
+  :global([data-theme='dark']) .u-in-reply-to:after {
     filter: invert();
   }
 

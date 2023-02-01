@@ -1,9 +1,9 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
-import BookmarkCard from "~/components/BookmarkCard.astro";
-import For from "~/components/For.astro";
-import Show from "~/components/Show.astro";
-import Layout from "~/layouts/Page.astro";
+import { type CollectionEntry, getCollection } from 'astro:content'
+import BookmarkCard from '~/components/BookmarkCard.astro'
+import For from '~/components/For.astro'
+import Show from '~/components/Show.astro'
+import Layout from '~/layouts/Page.astro'
 import {
   getAllMentions,
   isForUrl,
@@ -11,12 +11,12 @@ import {
   MENTION_TYPE,
   sortMentions,
   type WebMention,
-} from "~/utils/mentions.js";
+} from '~/utils/mentions.js'
 
 export async function getStaticPaths() {
-  const bookmarks = await getCollection("bookmarks");
+  const bookmarks = await getCollection('bookmarks')
 
-  return bookmarks.map((bookmark) => {
+  return bookmarks.map(bookmark => {
     return {
       params: {
         slug: bookmark.slug,
@@ -24,20 +24,20 @@ export async function getStaticPaths() {
       props: {
         bookmark,
       },
-    };
-  });
+    }
+  })
 }
 
-const { bookmark } = Astro.props as { bookmark: CollectionEntry<"bookmarks"> };
+const { bookmark } = Astro.props as { bookmark: CollectionEntry<'bookmarks'> }
 
-const allMentions = await getAllMentions();
+const allMentions = await getAllMentions()
 const webMentions = allMentions.children
   .filter(isForUrl(new URL(Astro.url.pathname, Astro.site).toString()))
-  .sort(sortMentions(true));
+  .sort(sortMentions(true))
 
-const reposts = webMentions.filter(isMentionType(MENTION_TYPE.Share));
-const likes = webMentions.filter(isMentionType(MENTION_TYPE.Like));
-const replies = webMentions.filter(isMentionType(MENTION_TYPE.Reply));
+const reposts = webMentions.filter(isMentionType(MENTION_TYPE.Share))
+const likes = webMentions.filter(isMentionType(MENTION_TYPE.Like))
+const replies = webMentions.filter(isMentionType(MENTION_TYPE.Reply))
 ---
 
 <Layout title="Bookmarks" image={bookmark.data.photo}>
@@ -48,7 +48,7 @@ const replies = webMentions.filter(isMentionType(MENTION_TYPE.Reply));
       <h2 id="comments">Mentions</h2>
 
       <Show when={likes.length}>
-        <p>{likes.length} like{likes.length > 1 ? "s" : ""}</p>
+        <p>{likes.length} like{likes.length > 1 ? 's' : ''}</p>
         <ul class="facepile">
           <For each={likes}>
             {
@@ -71,7 +71,7 @@ const replies = webMentions.filter(isMentionType(MENTION_TYPE.Reply));
       </Show>
 
       <Show when={reposts.length}>
-        <p>{reposts.length} share{reposts.length > 1 ? "s" : ""}</p>
+        <p>{reposts.length} share{reposts.length > 1 ? 's' : ''}</p>
         <ul class="facepile">
           <For each={reposts}>
             {
@@ -125,7 +125,7 @@ const replies = webMentions.filter(isMentionType(MENTION_TYPE.Reply));
   }
 
   section h2:after {
-    content: "#";
+    content: '#';
     margin-inline-start: var(--size-fluid-1);
     font-weight: normal;
     color: var(--link);

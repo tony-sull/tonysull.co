@@ -1,19 +1,19 @@
 ---
-import type { CollectionEntry } from "astro:content";
-import readingTime from "reading-time";
-import { isoDate, shortDate } from "~/utils/dates.js";
-import { Icon } from "astro-icon";
-import Avatar from "./Avatar.astro"
-import Show from "./Show.astro";
-import TagList from "./TagList.astro";
+import type { CollectionEntry } from 'astro:content'
+import readingTime from 'reading-time'
+import { isoDate, shortDate } from '~/utils/dates.js'
+import { Icon } from 'astro-icon'
+import Avatar from './Avatar.astro'
+import Show from './Show.astro'
+import TagList from './TagList.astro'
 
-export type Props = CollectionEntry<"articles">;
+export type Props = CollectionEntry<'articles'>
 
-const { body, data, render } = Astro.props;
+const { body, data, render } = Astro.props
 
-const { Content } = await render();
+const { Content } = await render()
 
-const minutes = readingTime(body);
+const minutes = readingTime(body)
 ---
 
 <article class="h-entry">
@@ -54,7 +54,7 @@ const minutes = readingTime(body);
     <a
       class="u-url"
       href={/*(data.url && new URL(data.url)) ||*/
-        new URL(Astro.url.pathname, Astro.site)}
+      new URL(Astro.url.pathname, Astro.site)}
       hidden></a>
   </header>
 
@@ -72,7 +72,7 @@ const minutes = readingTime(body);
   header {
     display: grid;
     grid-template-columns: auto 1fr;
-    grid-template-areas: "tags tags" "title title" "author author" "published minutes" "summary summary";
+    grid-template-areas: 'tags tags' 'title title' 'author author' 'published minutes' 'summary summary';
     align-items: center;
     column-gap: var(--size-fluid-2);
     margin-block-end: var(--size-fluid-3);
@@ -148,7 +148,7 @@ const minutes = readingTime(body);
   @media (min-width: 640px) {
     header {
       grid-template-columns: auto auto 1fr;
-      grid-template-areas: "tags tags tags" "title title title" "author published minutes" "summary summary summary";
+      grid-template-areas: 'tags tags tags' 'title title title' 'author published minutes' 'summary summary summary';
       row-gap: var(--size-fluid-1);
     }
 

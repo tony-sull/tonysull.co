@@ -1,11 +1,11 @@
 ---
 name: Astro Themes & Integrations
-summary: "Introducing: a growing catalog of themes, components, and integrations to jumpstart your next Astro project."
+summary: 'Introducing: a growing catalog of themes, components, and integrations to jumpstart your next Astro project.'
 category:
   - code
   - astro
-published: "2022-04-06T21:55:21Z"
-featured: "/uploads/2022-04-06-themes-and-integrations.jpg"
+published: '2022-04-06T21:55:21Z'
+featured: '/uploads/2022-04-06-themes-and-integrations.jpg'
 url: https://astro.build/blog/themes-and-integrations/
 persona: astro
 ---

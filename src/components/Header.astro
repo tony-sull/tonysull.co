@@ -1,27 +1,27 @@
 ---
-import { Icon } from "astro-icon";
-import For from "./For.astro";
-import ThemeToggle from "./ThemeToggle.astro";
+import { Icon } from 'astro-icon'
+import For from './For.astro'
+import ThemeToggle from './ThemeToggle.astro'
 
 export type Link = {
-  href: string;
-  text: string;
-};
+  href: string
+  text: string
+}
 
 const links: Link[] = [
   {
-    href: "/articles",
-    text: "articles",
+    href: '/articles',
+    text: 'articles',
   },
   {
-    href: "/notes",
-    text: "notes",
+    href: '/notes',
+    text: 'notes',
   },
   {
-    href: "/bookmarks",
-    text: "bookmarks",
+    href: '/bookmarks',
+    text: 'bookmarks',
   },
-];
+]
 ---
 
 <header class="container">
@@ -39,7 +39,7 @@ const links: Link[] = [
                 <a
                   href={link.href}
                   aria-current={
-                    link.href === Astro.url.pathname ? "page" : undefined
+                    link.href === Astro.url.pathname ? 'page' : undefined
                   }
                 >
                   {link.text}
@@ -62,13 +62,13 @@ const links: Link[] = [
     padding-block: var(--size-fluid-2);
   }
 
-  a[title="Home"] {
+  a[title='Home'] {
     grid-area: logo;
     --icon-bg: var(--blue-7);
     --icon-fg: var(--gray-0);
   }
 
-  :global([data-theme="dark"]) a[title="Home"] {
+  :global([data-theme='dark']) a[title='Home'] {
     --icon-bg: var(--blue-4);
     --icon-fg: var(--gray-9);
   }
@@ -77,7 +77,7 @@ const links: Link[] = [
     width: 100%;
     display: grid;
     grid-template-columns: 1fr auto;
-    grid-template-areas: "logo theme" "nav nav";
+    grid-template-areas: 'logo theme' 'nav nav';
     align-items: center;
     gap: var(--size-fluid-2);
   }
@@ -104,7 +104,7 @@ const links: Link[] = [
   }
 
   ol a::before {
-    content: "0" counter(menu);
+    content: '0' counter(menu);
     font-weight: var(--font-weight-7);
     margin-inline-end: var(--size-2);
   }
@@ -117,7 +117,7 @@ const links: Link[] = [
   }
 
   nav a::after {
-    content: "";
+    content: '';
     display: block;
     height: 2px;
     position: absolute;
@@ -129,12 +129,12 @@ const links: Link[] = [
     transition: scale 0.3s cubic-bezier(0.86, 0, 0.07, 1);
   }
 
-  nav a[aria-current="page"]::after {
+  nav a[aria-current='page']::after {
     scale: 1;
     background: var(--blue-4);
   }
 
-  nav a:not([aria-current="page"]):hover::after {
+  nav a:not([aria-current='page']):hover::after {
     scale: 1;
     background: var(--gray-6);
   }
@@ -157,7 +157,7 @@ const links: Link[] = [
   @media (min-width: 640px) {
     div {
       grid-template-columns: auto 1fr auto;
-      grid-template-areas: "logo nav theme";
+      grid-template-areas: 'logo nav theme';
       gap: var(--size-fluid-3);
     }
 

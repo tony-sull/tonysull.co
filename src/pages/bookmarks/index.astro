@@ -1,11 +1,11 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
-import BookmarkCard from "~/components/BookmarkCard.astro";
-import For from "~/components/For.astro";
-import Layout from "~/layouts/Page.astro";
-import { sortByDate } from "~/utils/sortByDate";
+import { type CollectionEntry, getCollection } from 'astro:content'
+import BookmarkCard from '~/components/BookmarkCard.astro'
+import For from '~/components/For.astro'
+import Layout from '~/layouts/Page.astro'
+import { sortByDate } from '~/utils/sortByDate'
 
-const bookmarks = await getCollection("bookmarks");
+const bookmarks = await getCollection('bookmarks')
 
 type Bookmark = CollectionEntry<'bookmarks'>
 ---

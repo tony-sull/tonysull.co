@@ -1,22 +1,22 @@
 ---
-import Layout from "./Page.astro";
-import { shortDate } from "~/utils/dates.js";
+import Layout from './Page.astro'
+import { shortDate } from '~/utils/dates.js'
 
 interface Content {
-  title: string;
-  subtitle: string;
-  description: string;
-  modified_date: string;
+  title: string
+  subtitle: string
+  description: string
+  modified_date: string
 }
 
 interface Props {
-  content: Content;
+  content: Content
 }
 
-const { content } = Astro.props as Props;
-const { title, subtitle, description, modified_date } = content;
+const { content } = Astro.props as Props
+const { title, subtitle, description, modified_date } = content
 
-const modifiedDate = shortDate(modified_date);
+const modifiedDate = shortDate(modified_date)
 ---
 
 <Layout title={title} description={description}>

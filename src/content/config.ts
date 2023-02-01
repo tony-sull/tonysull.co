@@ -6,10 +6,10 @@ export const collections = {
     schema: noteSchema.omit({ bookmarkOf: true }),
   }),
   articles: defineCollection({
-    schema: articleSchema
+    schema: articleSchema,
   }),
   bookmarks: defineCollection({
-    schema: noteSchema.required({ bookmarkOf: true })
+    schema: noteSchema.required({ bookmarkOf: true }),
   }),
   personas: defineCollection({
     schema: cardSchema.required({ nickname: true }),

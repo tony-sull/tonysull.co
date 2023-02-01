@@ -1,10 +1,10 @@
-import type { APIRoute } from "astro";
-import { getFeed } from "./_feed.js";
+import type { APIRoute } from 'astro'
+import { getFeed } from './_feed.js'
 
-export const get: APIRoute = async (context) => {
-  const feed = await getFeed(context);
+export const get: APIRoute = async context => {
+  const feed = await getFeed(context)
 
   return {
     body: feed.rss2(),
-  };
-};
+  }
+}

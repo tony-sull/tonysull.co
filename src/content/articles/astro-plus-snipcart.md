@@ -4,8 +4,8 @@ summary: Scalable e-commerce made easy with the Jamstack.
 category:
   - code
   - astro
-published: "2021-07-03T12:00:00Z"
-featured: "/uploads/2021-07-02-astro-plus-snipcart.jpg"
+published: '2021-07-03T12:00:00Z'
+featured: '/uploads/2021-07-02-astro-plus-snipcart.jpg'
 url: https://navillus.dev/blog/astro-plus-snipcart/
 persona: navillus
 ---
@@ -47,7 +47,7 @@ I didn't want to stray too far from the original 11ty project, and that meant st
 You can see the full details [in GitHub](https://github.com/Navillus-BV/demo-astro-snipcart/blob/main/src/utils/loadMenu.js), but the basic solution here takes advantage of [glob imports](https://vitejs.dev/guide/features.html#glob-import).
 
 ```js
-import.meta.glob("../data/menus/*.json");
+import.meta.glob('../data/menus/*.json')
 ```
 
 The code above is a bit of import magic that allows you to use a [glob pattern](https://www.npmjs.com/package/glob) to load multiple files at once.

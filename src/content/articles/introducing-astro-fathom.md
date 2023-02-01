@@ -5,8 +5,8 @@ category:
   - code
   - astro
 slug: introducing-astro-fathom
-published: "2023-01-22T21:55:21Z"
-featured: "/uploads/2023-01-22-introducing-astro-fathom.jpg"
+published: '2023-01-22T21:55:21Z'
+featured: '/uploads/2023-01-22-introducing-astro-fathom.jpg'
 ---
 
 Two paragraphs in and I realized how much I have to say about analytics! This will likely be the first in a series covering everything from my love/hate relationship with Google Analytics to what data you _really_ need to be collecting. Subscribe to my [RSS Feed](https://tonysull.co/articles/feed.xml) for updates!

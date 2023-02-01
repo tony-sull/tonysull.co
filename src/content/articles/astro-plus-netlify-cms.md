@@ -4,8 +4,8 @@ summary: Static sites powered by a git-based CMS, made easy.
 category:
   - code
   - astro
-published: "2021-06-23T12:00:00Z"
-featured: "/uploads/2021-06-23-astro-plus-netlify-cms.jpg"
+published: '2021-06-23T12:00:00Z'
+featured: '/uploads/2021-06-23-astro-plus-netlify-cms.jpg'
 url: https://navillus.dev/blog/astro-plus-netlify-cms/
 persona: navillus
 ---
@@ -47,23 +47,23 @@ For Netlify CMS, The key is to make sure that your `config.yml` is pointing to t
 ```yaml
 collections:
   # Our blog posts
-  - name: "blog" # Used in routes, e.g., /admin/collections/blog
-    label: "Post" # Used in the UI
-    folder: "src/pages/posts" # The path to the folder where the documents are stored
+  - name: 'blog' # Used in routes, e.g., /admin/collections/blog
+    label: 'Post' # Used in the UI
+    folder: 'src/pages/posts' # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
-    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - {
-          label: "Author",
-          name: "author",
-          widget: "string",
-          default: "Anonymous",
+          label: 'Author',
+          name: 'author',
+          widget: 'string',
+          default: 'Anonymous',
         }
-      - { label: "Summary", name: "summary", widget: "text" }
-      - { label: "Tags", name: "tags", widget: "list", default: ["post"] }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: 'Summary', name: 'summary', widget: 'text' }
+      - { label: 'Tags', name: 'tags', widget: 'list', default: ['post'] }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
 ```
 
 In this excerpt from the demo's `config.yml`, note that `folder` is pointing to the correct directory.
@@ -73,19 +73,19 @@ In this excerpt from the demo's `config.yml`, note that `folder` is pointing to 
 Loading local data is handled with the [Astro.fetchContent](https://github.com/snowpackjs/astro#-fetching-data) API.
 
 ```js
-export let collection: any;
+export let collection: any
 
 export async function createCollection() {
   return {
     /** Load posts, sort newest -> oldest */
     async data() {
-      const allPosts = Astro.fetchContent("./posts/*.md");
-      return allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+      const allPosts = Astro.fetchContent('./posts/*.md')
+      return allPosts.sort((a, b) => new Date(b.date) - new Date(a.date))
     },
 
     /** Set page size */
     pageSize: 10,
-  };
+  }
 }
 ```
 
@@ -95,7 +95,7 @@ That's really all there is to it! The `fetchContent` API takes care of loading a
 <Layout {title} {description}>
   <h1>{title}</h1>
 
-  {collection.data.map((post) => <PostPreview post={post} />)}
+  {collection.data.map(post => <PostPreview post={post} />)}
 </Layout>
 ```
 

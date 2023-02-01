@@ -1,12 +1,12 @@
 ---
-import { Fathom } from "astro-fathom";
-import site from "~/data/site.json";
+import { Fathom } from 'astro-fathom'
+import site from '~/data/site.json'
 
 export interface Props {
-  title?: string | undefined;
-  description?: string | undefined;
-  image?: string | undefined;
-  canonicalURL?: URL | undefined;
+  title?: string | undefined
+  description?: string | undefined
+  image?: string | undefined
+  canonicalURL?: URL | undefined
 }
 
 const {
@@ -14,11 +14,11 @@ const {
   description = site.description,
   image = site.social.image,
   canonicalURL = new URL(Astro.url.pathname, Astro.site),
-} = Astro.props;
+} = Astro.props
 
-const imageAbsolute = new URL(image, site.url);
+const imageAbsolute = new URL(image, site.url)
 
-const fullTitle = [title, site.title].filter(Boolean).join(" • ");
+const fullTitle = [title, site.title].filter(Boolean).join(' • ')
 ---
 
 <!-- Common -->
@@ -71,19 +71,19 @@ const fullTitle = [title, site.title].filter(Boolean).join(" • ");
 <link
   rel="alternate"
   type="application/rss+xml"
-  href={new URL("/rss.xml", Astro.site)}
+  href={new URL('/rss.xml', Astro.site)}
   title="RSS Feed for Tony Sullivan"
 />
 <link
   rel="alternate"
   type="application/atom+xml"
-  href={new URL("/atom.xml", Astro.site)}
+  href={new URL('/atom.xml', Astro.site)}
   title="Atom Feed for Tony Sullivan"
 />
 <link
   rel="alternate"
   type="application/feed+json"
-  href={new URL("/feed.json", Astro.site)}
+  href={new URL('/feed.json', Astro.site)}
   title="Atom Feed for Tony Sullivan"
 />
 

@@ -4,8 +4,8 @@ summary: A (work-in-progress) minimalist CSS framework.
 category:
   - code
 slug: introducing-chisel
-published: "2021-06-02T12:00:00Z"
-featured: "/uploads/2021-06-02-introducing-chisel.jpg"
+published: '2021-06-02T12:00:00Z'
+featured: '/uploads/2021-06-02-introducing-chisel.jpg'
 url: https://navillus.dev/blog/introducing-chisel/
 persona: navillus
 ---
@@ -63,7 +63,7 @@ So what went wrong? If you take a look at v0.4.0, we added custom CSS properties
 At least on some browsers, CSS variable scope isn't always what you'd expect.
 
 ```css
-[data-chisel-theme="dark"] {
+[data-chisel-theme='dark'] {
   ---chisel-primary: #002244;
 }
 ```

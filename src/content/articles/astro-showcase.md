@@ -4,8 +4,8 @@ summary: Explore beautiful community websites built with Astro.
 category:
   - code
   - astro
-published: "2022-04-08T21:55:21Z"
-featured: "/uploads/2022-04-08-astro-showcase.jpg"
+published: '2022-04-08T21:55:21Z'
+featured: '/uploads/2022-04-08-astro-showcase.jpg'
 url: https://astro.build/blog/astro-showcase/
 persona: astro
 ---

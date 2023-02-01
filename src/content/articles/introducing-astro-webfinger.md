@@ -4,8 +4,8 @@ summary: Integrating Mastodon profiles with Astro.
 category:
   - code
   - openweb
-published: "2022-11-27T21:55:21Z"
-featured: "/uploads/2022-11-27-introducing-astro-webfinger.jpg"
+published: '2022-11-27T21:55:21Z'
+featured: '/uploads/2022-11-27-introducing-astro-webfinger.jpg'
 ---
 
 This is the first in a series of articles as I attempt to tie together concepts from the [IndieWeb](https://indieweb.com) and [ActivityPub](https://www.w3.org/TR/activitypub/) to build a self-hosted social network. Subscribe to the [RSS Feed](https://tonysull.co/articles/feed.xml) for updates!
@@ -66,16 +66,16 @@ pnpm i @astrojs/rss
 To configure this integration, pass a `config` object to the `webfinger()` function call in `astro.config.mjs`.
 
 ```js
-import webfinger from "astro-webfinger";
+import webfinger from 'astro-webfinger'
 
 export default defineConfig({
   integrations: [
     webfinger({
-      instance: "myinstance.social",
-      username: "myusername",
+      instance: 'myinstance.social',
+      username: 'myusername',
     }),
   ],
-});
+})
 ```
 
 ### Deploy
