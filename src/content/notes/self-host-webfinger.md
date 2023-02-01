@@ -1,5 +1,5 @@
 ---
-tags:
+category:
   - openweb
 published: '2022-11-27T18:30:00Z'
 ---
