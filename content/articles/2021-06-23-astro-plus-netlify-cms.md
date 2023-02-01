@@ -4,11 +4,13 @@ title: Astro + Netlify CMS
 summary: Static sites powered by a git-based CMS, made easy.
 tags:
   - code
+  - astro
 slug: astro-plus-netlify-cms
 published: '2021-06-23T12:00:00+00:00Z'
 date: '2021-06-23T12:00:00+00:00Z'
 photo: 'uploads/2021-06-23-astro-plus-netlify-cms.jpg'
 url: https://navillus.dev/blog/astro-plus-netlify-cms/
+author: navillus
 ---
 
 I like markdown as much as the next developer, but it's easy to forget how convenient a CMS can be. For personal projects or internal tools, though, I can't justify reaching for a full headless CMS setup. Configuration takes time and, more importantly, for Jamstack sites it can be a huge time saver to have the entire CMS alongside the source code right in `git`.

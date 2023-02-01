@@ -9,6 +9,7 @@ published: '2021-05-08T12:00:00+00:00Z'
 date: '2021-05-08T12:00:00+00:00Z'
 photo: 'uploads/2021-05-08-progressive-enhancement.jpg'
 url: https://navillus.dev/blog/progressive-enhancement/
+author: navillus
 ---
 
 We've all heard about "mobile first" designs, but what about JavaScript last? It'll need a catchier name to really stick, but many of us ignore how important it is that basic site functionality works even if JavaScript is disabled or has failed. Browsing the web with JavaScript disabled can be a real pain but it happens more then you'd expect.

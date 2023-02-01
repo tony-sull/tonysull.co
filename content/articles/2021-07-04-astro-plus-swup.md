@@ -4,11 +4,13 @@ title: Animated page transitions in Astro with Swup
 summary: Static doesn't mean boring! Easily add client routing and page transition animations with swup.js
 tags:
   - code
+  - astro
 slug: astro-plus-swup
 published: '2021-07-04T12:00:00+00:00Z'
 date: '2021-07-04T12:00:00+00:00Z'
 photo: 'uploads/2021-07-24-astro-plus-swup.jpg'
 url: https://navillus.dev/blog/astro-plus-swup/
+author: navillus
 ---
 
 I can't be the only developer that has come across a beautifully designed website with top notch animations only to burn an afternoon trying to figure out how exactly they did it. Usually the answer is a combination of 5 different libraries and a pile of JavaScript and CSS being sent over the wire.

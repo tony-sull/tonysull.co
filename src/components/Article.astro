@@ -1,6 +1,7 @@
 ---
 import type { Article } from "@data/entries.js"
 import { isoDate, shortDate } from "@utils/dates";
+import { getAuthor } from "@utils/entries";
 import { Icon } from "astro-icon";
 import readingTime from 'reading-time'
 import For from "./For.astro";
@@ -12,11 +13,17 @@ const { content, published, summary, tags, title } = Astro.props
 
 const minutes = readingTime(content.html)
 
-const author = {
-    name: 'Tony',
-    handle: 'tony@tonysull.co',
-    avatar: '/assets/avatar-96x96.jpg',
-    url: 'https://tonysull.co'
+const author = getAuthor(Astro.props)
+
+function getHandleName(handle: string) {
+    return handle.slice(0, handle.indexOf('@'))
+}
+
+function getHandleDomain(handle: string) {
+    const start = handle.indexOf('@')
+    const end = handle.lastIndexOf('.')
+
+    return handle.slice(start + 1, end >= 0 ? end : handle.length)
 }
 ---
 
@@ -33,9 +40,9 @@ const author = {
             <img src={author.avatar} alt="" class="u-logo" width="48" height="48" />
             <p class="p-name sr-only">{author.name}</p>
             <p class="p-nickname">
-                <b>{author.handle.slice(0, author.handle.indexOf('@'))}</b>
+                <b>{getHandleName(author.handle)}</b>
                 <span>@</span>
-                <i>{author.handle.slice(author.handle.indexOf('@') + 1, author.handle.lastIndexOf('.'))}</i>
+                <i>{getHandleDomain(author.handle)}</i>
                 <span class="sr-only">{author.handle.slice(author.handle.lastIndexOf('.'))}</span>
             </p>
         </div>
@@ -121,6 +128,9 @@ const author = {
 
     header > ul {
         grid-area: tags;
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--size-4);
         margin: 0;
         padding: 0;
         list-style: none;
