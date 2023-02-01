@@ -110,7 +110,15 @@
 
   @media (hover: none) {
     button {
+      --size: 36px;
+      padding: var(--size-1);
+    }
+  }
+
+  @media (hover: none) and (min-width: 350px) {
+    button {
       --size: 48px;
+      padding: var(--size-2);
     }
   }
 
