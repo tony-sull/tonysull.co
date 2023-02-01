@@ -1,0 +1,70 @@
+---
+import For from "./For.astro";
+import ThemeToggle from "./ThemeToggle.astro";
+
+export type Link = {
+    href: string
+    text: string
+}
+
+const links: Link[] = [
+    {
+        href: '/',
+        text: 'all'
+    },
+    {
+        href: '/articles/',
+        text: 'articles'
+    },
+    {
+        href: '/notes/',
+        text: 'notes'
+    },
+    {
+        href: '/bookmarks/',
+        text: 'bookmarks'
+    }
+]
+---
+
+<header class="container">
+    <div>
+        <a href="/" title="Home">
+            <img src="/assets/avatar-96x96.jpg" width="48" height="48" alt="" />
+        </a>
+
+        <nav>
+            <For each={links}>
+                {(link: Link) => (
+                    <a href={link.href} aria-current={link.href === Astro.url.pathname ? 'page' : undefined}>{link.text}</a>
+                )}
+            </For>
+        </nav>
+
+        <ThemeToggle />
+    </div>
+</header>
+
+<style>
+    header {
+        padding-block: var(--size-fluid-2);
+    }
+
+    div {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: var(--size-fluid-3);
+    }
+
+    img {
+        border-radius: var(--radius-round);
+    }
+    
+    nav {
+        display: flex;
+        gap: var(--size-fluid-1);
+        font-size: var(--font-size-2);
+        margin-inline-end: auto;
+    }
+</style>

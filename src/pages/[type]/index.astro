@@ -1,0 +1,62 @@
+---
+import Article from '@components/Article.astro'
+import EntryCard from '@components/EntryCard.astro'
+import For from '@components/For.astro'
+import Show from '@components/Show.astro'
+import { type Entry, getAllEntries, isArticle } from '@data/entries.js'
+import Layout from '@layouts/Page.astro'
+
+export async function getStaticPaths() {
+    const entries = await getAllEntries()
+
+    const uniq = entries.reduce((acc, next) => {
+        const [type] = next.url.pathname.split('/').filter(Boolean)
+        
+        const array = acc.has(type) ? acc.get(type)! : []
+
+        array.push(next)
+        acc.set(type, array)
+        
+        return acc
+    }, new Map<string, Entry[]>())
+
+    return Array.from(uniq.entries())
+        .map(([type, entries]) => {
+            return {
+                params: { type },
+                props: { entries }
+            }
+        })
+}
+
+const { entries } = Astro.props as { entries: Entry[] }
+---
+
+<Layout>
+    <ul>
+      <For each={entries}>
+        {(entry: Entry) => (
+          <li>
+            <EntryCard entry={entry} />
+          </li>
+        )}
+      </For>
+    </ul>
+  </Layout>
+  
+  <style>
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: var(--size-fluid-3);
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+    }
+  
+    li {
+      width: 100%;
+      padding: 0;
+    }
+  </style>

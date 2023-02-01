@@ -1,21 +1,21 @@
 ---
 import Head, { type Props as HeadProps } from '@components/Head.astro'
+import Header from '@components/Header.astro'
 import '@assets/global.css'
-import 'open-props/style'
-import 'open-props/normalize'
-import 'open-props/buttons'
 
 export type Props = HeadProps
 
 const { ...head } = Astro.props
 ---
 
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <Head {...head} />
   </head>
 
   <body>
+    <Header />
+
     <main id="main" class="container">
       <slot />
     </main>

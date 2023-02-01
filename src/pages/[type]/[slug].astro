@@ -8,7 +8,7 @@ import Layout from '@layouts/Page.astro'
 export async function getStaticPaths() {
     const entries = await getAllEntries()
 
-    const results = entries.map((entry) => {
+    return entries.map((entry) => {
         const [type] = entry.url.pathname.split('/').filter(Boolean)
         return {
             params: {
@@ -20,8 +20,6 @@ export async function getStaticPaths() {
             }
         }
     })
-
-    return results
 }
 
 const { entry } = Astro.props as { entry: Entry }
