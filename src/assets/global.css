@@ -72,6 +72,10 @@
   :not(pre) > code {
     background-color: var(--surface-3);
   }
+
+  [hidden] {
+    display: none !important;
+  }
 }
 
 @layer utilities {
