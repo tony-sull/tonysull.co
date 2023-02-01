@@ -26,6 +26,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-astro": "^0.21.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
+    "feed": "^4.2.2",
     "metascraper": "^5.32.4",
     "metascraper-author": "^5.32.4",
     "metascraper-description": "^5.32.4",
