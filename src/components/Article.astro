@@ -168,7 +168,11 @@ const author = {
     .e-content :global(pre) {
         margin-block: 1rem;
         padding: var(--size-fluid-1);
-        width: 100%;
+        max-inline-size: unset;
+    }
+
+    .e-content :global(blockquote) {
+        margin-block: 1rem;
         max-inline-size: unset;
     }
 
