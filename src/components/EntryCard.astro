@@ -73,13 +73,14 @@ function getHandleDomain(handle: string) {
             <a href={url} class="u-url">Full article</a>
         </Show>
         <Show when={isBookmark(entry)}>
-            <small>
+            <small class="bookmark">
                 <Icon name="bookmark-solid" size={24} />
                 <span>Bookmark</span>
             </small>
         </Show>
         <Show when={isNote(entry) && entry['in-reply-to']}>
-            <small>In reply to
+            <small>
+                <span>In reply to</span>
                 <a href={(entry as Note)['in-reply-to']} class="u-in-reply-to">
                     {entry.metadata?.title}
                 </a>
@@ -193,7 +194,7 @@ footer small span {
         padding-block-start: var(--size-fluid-1);
     }
 
-    footer small {
+    footer .bookmark {
         display: flex;
         align-items: center;
         gap: var(--size-1);
