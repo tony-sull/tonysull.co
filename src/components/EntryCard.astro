@@ -1,6 +1,7 @@
 ---
 import { type Entry, isArticle, isBookmark, isNote, Note } from '@data/entries.js'
 import { isoDate, shortDate } from '@utils/dates.js'
+import { getDate, getImage, getSummary, getTitle, getUrl, isExternalLink } from '@utils/entries.js'
 import For from './For.astro'
 import Share from './Share.astro'
 import Show from './Show.astro'
@@ -10,58 +11,6 @@ export type Props = {
 }
 
 const { entry } = Astro.props
-
-function getTitle(entry: Entry) {
-    if (isArticle(entry)) {
-        return entry.title
-    } else if (isBookmark(entry)) {
-        return entry.metadata.title
-    } else if (isNote(entry)) {
-        return entry.content.value
-    }
-
-    return undefined
-}
-
-function getSummary(entry: Entry) {
-    if (isArticle(entry)) {
-        return entry.summary
-    }
-
-    return undefined
-}
-
-function getImage(entry: Entry): string | undefined {
-    if ('image' in entry && !!entry.image) {
-        return entry.image as string
-    }
-
-    return undefined
-}
-
-function getUrl(entry: Entry): string | undefined {
-    if (isArticle(entry)) {
-        return `/articles/${entry.slug}/`
-    } else if (isBookmark(entry)) {
-        return entry['bookmark-of'].toString()
-    } else if (isNote(entry)) {
-        return `/notes/${entry.slug}/`
-    }
-
-    return undefined
-}
-
-function getDate(entry: Entry): Date {
-    if ('published' in entry) {
-        return entry.published!
-    } else {
-        return entry.date
-    }
-}
-
-function openInNewTab(url: string) {
-    return !/^\//.test(url)
-}
 
 const title = getTitle(entry)
 const summary = getSummary(entry)
@@ -106,7 +55,7 @@ const author = {
         <img src={image} alt="" class="u-featured" />
     </Show>
     <Show when={'title'}>
-        <a href={url} class:list={[{ "u-bookmark-of": isBookmark(entry), "e-content": !isArticle(entry) }]} target={openInNewTab(url!) ? '_blank' : undefined}>
+        <a href={url} class:list={[{ "u-bookmark-of": isBookmark(entry), "e-content": !isArticle(entry) }]} target={isExternalLink(url!) ? '_blank' : undefined}>
             <h2 class="p-name">{title}</h2>
         </a>
     </Show>
@@ -168,6 +117,9 @@ const author = {
     .p-category {
         color: var(--gray-7);
         font-weight: var(--font-weight-7);
+        background: var(--surface-2);
+        border-radius: var(--radius-2);
+        padding: var(--size-1) var(--size-2);
     }
 
     .u-featured {

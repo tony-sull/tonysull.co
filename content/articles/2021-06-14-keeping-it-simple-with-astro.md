@@ -19,7 +19,7 @@ Client-side rendering can be an extremely powerful tool, and in some cases can s
 
 The [Navillus](https://navillus.dev) is a perfect example. It has a mobile menu taking advantage of Svelte's excellent [built-in transition](https://svelte.dev/docs#svelte_transition), and we recently added in a dark mode toggle. That's it for interactions on our site though, the rest is entirely static.
 
-![Screenshot of Navillus devtools](/posts/assets/2021-06-14-navillus-dev-tools.png)
+![Screenshot of Navillus devtools](/uploads/2021-06-14-navillus-dev-tools.png)
 
 Here's a screenshot of devtools with our homepage loaded. A grand total of ~78KB transferred, including all the HTML, CSS, JavaScript, images, and fonts. Don't get me wrong, there's more to web design and development than just minimizing bundle size, but performance matters and small wins can add up quickly.
 
