@@ -277,6 +277,13 @@ declare module 'astro:content' {
 },
 },
 "notes": {
+"federation-not-decentralization.md": {
+  id: "federation-not-decentralization.md",
+  slug: "federation-not-decentralization",
+  body: string,
+  collection: "notes",
+  data: InferEntrySchema<"notes">
+},
 "indieweb-schemas.md": {
   id: "indieweb-schemas.md",
   slug: "indieweb-schemas",
