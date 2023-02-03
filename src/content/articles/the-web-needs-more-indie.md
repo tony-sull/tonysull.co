@@ -2,7 +2,7 @@
 name: The web needs more indie
 summary: The web wasn't designed to be dominated by a handful of companies - it's about time we take it back.
 category:
-  - openweb
+  - indieweb
 published: '2023-02-01T15:32:36Z'
 featured: '/uploads/2023-02-01-the-web-needs-more-indie.jpg'
 ---

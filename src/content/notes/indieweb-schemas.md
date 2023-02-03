@@ -1,6 +1,6 @@
 ---
 category:
-  - openweb
+  - indieweb
   - astro
 published: '2023-01-30T16:09:10.161Z'
 ---

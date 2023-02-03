@@ -3,7 +3,7 @@ name: Introducing astro-webfinger
 summary: Integrating Mastodon profiles with Astro.
 category:
   - code
-  - openweb
+  - indieweb
 published: '2022-11-27T21:55:21Z'
 featured: '/uploads/2022-11-27-introducing-astro-webfinger.jpg'
 ---

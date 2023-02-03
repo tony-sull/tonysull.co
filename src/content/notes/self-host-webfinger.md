@@ -1,6 +1,6 @@
 ---
 category:
-  - openweb
+  - indieweb
 published: '2022-11-27T18:30:00Z'
 ---
 
