@@ -126,6 +126,13 @@ declare module 'astro:content' {
   collection: "articles",
   data: InferEntrySchema<"articles">
 },
+"digging-in-to-activitypub.md": {
+  id: "digging-in-to-activitypub.md",
+  slug: "introducing-astro-fathom",
+  body: string,
+  collection: "articles",
+  data: InferEntrySchema<"articles">
+},
 "introducing-astro-fathom.md": {
   id: "introducing-astro-fathom.md",
   slug: "introducing-astro-fathom",

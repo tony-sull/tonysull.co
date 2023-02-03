@@ -1,5 +1,5 @@
 {
-  "lastFetched": "2023-02-01T15:34:28.559Z",
+  "lastFetched": "2023-02-03T15:03:07.078Z",
   "children": [
     {
       "type": "entry",
@@ -448,6 +448,96 @@
       "wm-source": "https://brid.gy/like/twitter/tonysull_co/1620100144984383490/14871106",
       "wm-target": "https://tonysull.co/notes/indieweb-schemas/",
       "like-of": "https://tonysull.co/notes/indieweb-schemas/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Chris Coyier",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/fe17827fe542a95c9bfbe5d1bcd9a1dd2890b5efc270bf77b5776b244bb0e0f9.jpg",
+        "url": "https://twitter.com/chriscoyier"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1620816125318815744#favorited-by-793830",
+      "published": null,
+      "wm-received": "2023-02-02T16:28:02Z",
+      "wm-id": 1613935,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1620816125318815744/793830",
+      "wm-target": "https://tonysull.co/articles/the-web-needs-more-indie/",
+      "like-of": "https://tonysull.co/articles/the-web-needs-more-indie/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Dave Rupert",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/12bf29c49f4519399f5b7022c1ff1b156aa6e597a75f31dfd0d5a884ed35b341.jpg",
+        "url": "https://twitter.com/davatron5000"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1620816125318815744#favorited-by-14839862",
+      "published": null,
+      "wm-received": "2023-02-02T16:27:33Z",
+      "wm-id": 1613933,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1620816125318815744/14839862",
+      "wm-target": "https://tonysull.co/articles/the-web-needs-more-indie/",
+      "like-of": "https://tonysull.co/articles/the-web-needs-more-indie/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Dave Rupert",
+        "photo": "https://webmention.io/avatar/cdn.masto.host/df90600eac314bfae461e88ce4a64f1853a8f914c25802ed58d55307a0525a72.jpg",
+        "url": "https://mastodon.social/@davatron5000"
+      },
+      "url": "https://indieweb.social/@tonysull/109790666692416205#favorited-by-96041",
+      "published": null,
+      "wm-received": "2023-02-02T10:45:45Z",
+      "wm-id": 1613739,
+      "wm-source": "https://brid.gy/like/mastodon/@tonysull@indieweb.social/109790666692416205/96041",
+      "wm-target": "https://tonysull.co/articles/the-web-needs-more-indie/",
+      "like-of": "https://tonysull.co/articles/the-web-needs-more-indie/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Sarah Rainsberger ~ @sarah11918@mastodon.social",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/10cfe082ff1c77d7f5c86d80b6512144f982d432d4532924894eef09bbf2c026.png",
+        "url": "https://twitter.com/sarah11918"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1620816125318815744#favorited-by-14871106",
+      "published": null,
+      "wm-received": "2023-02-01T20:04:07Z",
+      "wm-id": 1613415,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1620816125318815744/14871106",
+      "wm-target": "https://tonysull.co/articles/the-web-needs-more-indie/",
+      "like-of": "https://tonysull.co/articles/the-web-needs-more-indie/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Mark Peck",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/8a6db48583d577a3d60216a3ac2a048a1d9cb3fed49d706b5fdcf11c057dc019.jpg",
+        "url": "https://twitter.com/doodlemarks"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1620816125318815744#favorited-by-114843185",
+      "published": null,
+      "wm-received": "2023-02-01T17:32:07Z",
+      "wm-id": 1613362,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1620816125318815744/114843185",
+      "wm-target": "https://tonysull.co/articles/the-web-needs-more-indie/",
+      "like-of": "https://tonysull.co/articles/the-web-needs-more-indie/",
       "wm-property": "like-of",
       "wm-private": false
     }
