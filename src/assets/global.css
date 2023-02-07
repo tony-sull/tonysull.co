@@ -81,6 +81,12 @@
   [hidden] {
     display: none !important;
   }
+
+  figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 @layer utilities {

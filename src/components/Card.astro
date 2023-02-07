@@ -1,4 +1,5 @@
 ---
+import { getEntryBySlug } from 'astro:content'
 import { isoDate, shortDate } from '~/utils/dates.js'
 import Avatar from './Avatar.astro'
 import Show from './Show.astro'
@@ -16,6 +17,7 @@ export type Props = {
 const { author, href, date, tags, photo, contentClass } = Astro.props
 
 const singlePhoto = Array.isArray(photo) ? photo[0] : photo
+const localPhoto = singlePhoto ? await getEntryBySlug('photos', singlePhoto) : undefined
 ---
 
 <article class="h-entry">
@@ -36,7 +38,14 @@ const singlePhoto = Array.isArray(photo) ? photo[0] : photo
   </header>
 
   <Show when={singlePhoto}>
-    <img src={singlePhoto!} alt="" class="u-featured" loading="lazy" />
+    <Show when={localPhoto}>
+      <figure>
+        <img src={localPhoto?.data?.photo} alt={localPhoto!?.data?.name} class="u-featured" loading="lazy" />
+        <figcaption>{localPhoto?.data?.summary}</figcaption>
+      </figure>
+
+      <img slot="fallback" src={singlePhoto} alt="" class="u-featured" loading="lazy" />
+    </Show>
   </Show>
 
   <a href={href} class:list={[contentClass, 'e-content']}>
@@ -83,6 +92,7 @@ const singlePhoto = Array.isArray(photo) ? photo[0] : photo
   .u-featured {
     aspect-ratio: var(--ratio-widescreen);
     object-fit: cover;
+    border-radius: var(--radius-2);
   }
 
   .dt-published {

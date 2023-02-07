@@ -44,9 +44,13 @@ declare module 'astro:content' {
 	): E extends ValidEntrySlug<C>
 		? Promise<CollectionEntry<C>>
 		: Promise<CollectionEntry<C> | undefined>;
+	export function getCollection<C extends keyof typeof entryMap, E extends CollectionEntry<C>>(
+		collection: C,
+		filter?: (entry: CollectionEntry<C>) => entry is E
+	): Promise<E[]>;
 	export function getCollection<C extends keyof typeof entryMap>(
 		collection: C,
-		filter?: (data: CollectionEntry<C>) => boolean
+		filter?: (entry: CollectionEntry<C>) => unknown
 	): Promise<CollectionEntry<C>[]>;
 
 	type InferEntrySchema<C extends keyof typeof entryMap> = import('astro/zod').infer<
@@ -122,13 +126,6 @@ declare module 'astro:content' {
 "converting-navillus-to-astro.md": {
   id: "converting-navillus-to-astro.md",
   slug: "converting-navillus-to-astro",
-  body: string,
-  collection: "articles",
-  data: InferEntrySchema<"articles">
-},
-"digging-in-to-activitypub.md": {
-  id: "digging-in-to-activitypub.md",
-  slug: "introducing-astro-fathom",
   body: string,
   collection: "articles",
   data: InferEntrySchema<"articles">
@@ -298,6 +295,20 @@ declare module 'astro:content' {
   collection: "notes",
   data: InferEntrySchema<"notes">
 },
+"surface-duo-camera.md": {
+  id: "surface-duo-camera.md",
+  slug: "surface-duo-camera",
+  body: string,
+  collection: "notes",
+  data: InferEntrySchema<"notes">
+},
+"tailwind-logical-properties.md": {
+  id: "tailwind-logical-properties.md",
+  slug: "tailwind-logical-properties",
+  body: string,
+  collection: "notes",
+  data: InferEntrySchema<"notes">
+},
 "would-you-like-a-straw.md": {
   id: "would-you-like-a-straw.md",
   slug: "would-you-like-a-straw",
@@ -327,6 +338,15 @@ declare module 'astro:content' {
   body: string,
   collection: "personas",
   data: InferEntrySchema<"personas">
+},
+},
+"photos": {
+"duo-sample-pandi.md": {
+  id: "duo-sample-pandi.md",
+  slug: "duo-sample-pandi",
+  body: string,
+  collection: "photos",
+  data: InferEntrySchema<"photos">
 },
 },
 
