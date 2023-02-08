@@ -44,8 +44,8 @@ const replies = webMentions.filter(isMentionType(MENTION_TYPE.Reply))
 <Layout
   title={data.name}
   description={data.summary}
-  image={data.photo}
-  canonicalURL={data.url ? new URL(data.url) : undefined}
+  image={data.featured}
+  canonicalURL={data.uid ? new URL(data.uid) : undefined}
 >
   <Show when={article}>
     <Article {...article} />
