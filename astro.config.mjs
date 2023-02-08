@@ -6,6 +6,6 @@ const NETLIFY_PREVIEW_SITE = process.env.CONTEXT !== 'production' && process.env
 
 // https://astro.build/config
 export default defineConfig({
-  site: NETLIFY_PREVIEW_SITE || 'https://astro.build',
+  site: NETLIFY_PREVIEW_SITE || 'https://tonysull.co',
   integrations: [image({ serviceEntryPoint: '@astrojs/image/sharp' })],
 })
