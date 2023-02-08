@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@astrojs/image": "^0.14.0",
-    "@indiepub/core": "^1.4.0",
+    "@indiepub/core": "^1.5.0",
     "@types/marked": "^4.0.8",
     "@types/node": "^18.11.19",
     "@types/sanitize-html": "^2.8.0",

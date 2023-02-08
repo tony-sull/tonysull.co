@@ -1,0 +1,37 @@
+---
+import { Picture } from '@astrojs/image/components'
+import type { Props as PictureProps } from '@astrojs/image/components/Picture.astro'
+import { getEntryBySlug } from 'astro:content'
+import { resolvePhoto } from '~/utils/assets.js'
+
+export type Props = Omit<PictureProps, 'alt' | 'src' | 'slot'> & {
+    src: string
+    alt?: string
+}
+
+const { src, ...attrs } = Astro.props
+
+const photoEntry = src ? await getEntryBySlug('photos', src) : undefined
+const resolvedPhoto = photoEntry ? await resolvePhoto(photoEntry) : undefined
+
+const pictureSrc: any = resolvedPhoto ? resolvedPhoto : photoEntry ? photoEntry.data.photo : src
+const caption = photoEntry?.data?.name
+
+const {
+    alt = photoEntry ? photoEntry.data.summary : attrs.alt,
+    ...pictureProps
+} = attrs
+---
+
+<figure>
+    <a href={pictureSrc?.src || pictureSrc} target="_blank">
+        <Picture src={pictureSrc} alt={alt || ""} {...pictureProps} width={resolvedPhoto?.width} height={resolvedPhoto?.height} />
+    </a>
+    <figcaption>{caption}</figcaption>
+</figure>
+
+<style>
+    a:hover, a:focus-within {
+        cursor: zoom-in;
+    }
+</style>
