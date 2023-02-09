@@ -125,6 +125,10 @@ const minutes = readingTime(body)
     font-size: var(--font-size-fluid-1);
   }
 
+  .e-content {
+    text-align: justify;
+  }
+
   .e-content :global(:is(h1, h2, h3, h4, h5, h6)) {
     margin-block-start: calc(1rem + 0.75em);
     margin-block-end: calc(0.5rem + 0.15em);
@@ -141,13 +145,18 @@ const minutes = readingTime(body)
   }
 
   .e-content :global(blockquote) {
-    margin-block: 1rem;
+    margin-block: var(--size-fluid-1);
     max-inline-size: unset;
+  }
+
+  .e-content :global(img, video, svg) {
+    margin-inline: auto;
+    margin-block: var(--size-fluid-2);
   }
 
   @media (min-width: 640px) {
     header {
-      grid-template-columns: auto auto 1fr;
+      grid-template-columns: auto 1fr auto;
       grid-template-areas: 'tags tags tags' 'title title title' 'author published minutes' 'summary summary summary';
       row-gap: var(--size-fluid-1);
     }
