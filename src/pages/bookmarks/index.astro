@@ -10,7 +10,7 @@ const bookmarks = await getCollection('bookmarks')
 type Bookmark = CollectionEntry<'bookmarks'>
 ---
 
-<Layout title="Notes">
+<Layout title="Bookmarks">
   <ul>
     <For each={bookmarks.sort(sortByDate)}>
       {

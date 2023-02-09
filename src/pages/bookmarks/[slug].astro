@@ -40,7 +40,7 @@ const likes = webMentions.filter(isMentionType(MENTION_TYPE.Like))
 const replies = webMentions.filter(isMentionType(MENTION_TYPE.Reply))
 ---
 
-<Layout title="Bookmarks" image={bookmark.data.photo}>
+<Layout title="Bookmarks">
   <BookmarkCard {...bookmark} />
 
   <Show when={webMentions.length}>

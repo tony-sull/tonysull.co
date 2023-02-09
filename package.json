@@ -16,7 +16,7 @@
   "devDependencies": {
     "@astro-community/astro-embed-twitter": "^0.2.2",
     "@astrojs/image": "^0.14.1",
-    "@indiepub/core": "^1.6.0",
+    "@indiepub/core": "^1.6.2",
     "@types/marked": "^4.0.8",
     "@types/node": "^18.13.0",
     "@types/sanitize-html": "^2.8.0",
