@@ -133,3 +133,23 @@
     grid-column: 1 / -1;
   }
 }
+
+@layer components.tweet {
+  .tweet-card {
+    border-color: var(--blue-7);
+    max-inline-size: var(--size-content-2);
+    margin-inline: auto;
+    margin-block: var(--size-fluid-3);
+    text-align: justify;
+  }
+
+  .tweet-header {
+    display: flex;
+    align-items: center;
+    gap: var(--size-3);
+  }
+
+  .tweet-header a:visited {
+    color: inherit;
+  }
+}

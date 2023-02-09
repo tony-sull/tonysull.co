@@ -109,15 +109,15 @@ declare module 'astro:content' {
   collection: "articles",
   data: InferEntrySchema<"articles">
 },
-"astro-showcase.md": {
-  id: "astro-showcase.md",
+"astro-showcase.mdx": {
+  id: "astro-showcase.mdx",
   slug: "astro-showcase",
   body: string,
   collection: "articles",
   data: InferEntrySchema<"articles">
 },
-"astro-themes-and-integrations.md": {
-  id: "astro-themes-and-integrations.md",
+"astro-themes-and-integrations.mdx": {
+  id: "astro-themes-and-integrations.mdx",
   slug: "astro-themes-and-integrations",
   body: string,
   collection: "articles",
@@ -130,8 +130,8 @@ declare module 'astro:content' {
   collection: "articles",
   data: InferEntrySchema<"articles">
 },
-"introducing-astro-fathom.md": {
-  id: "introducing-astro-fathom.md",
+"introducing-astro-fathom.mdx": {
+  id: "introducing-astro-fathom.mdx",
   slug: "introducing-astro-fathom",
   body: string,
   collection: "articles",
@@ -172,8 +172,8 @@ declare module 'astro:content' {
   collection: "articles",
   data: InferEntrySchema<"articles">
 },
-"keeping-it-simple-with-astro.md": {
-  id: "keeping-it-simple-with-astro.md",
+"keeping-it-simple-with-astro.mdx": {
+  id: "keeping-it-simple-with-astro.mdx",
   slug: "keeping-it-simple-with-astro",
   body: string,
   collection: "articles",
@@ -341,6 +341,48 @@ declare module 'astro:content' {
 },
 },
 "photos": {
+"2021-06-14-navillus-dev-tools.md": {
+  id: "2021-06-14-navillus-dev-tools.md",
+  slug: "2021-06-14-navillus-dev-tools",
+  body: string,
+  collection: "photos",
+  data: InferEntrySchema<"photos">
+},
+"2022-04-06-astro-partytown.md": {
+  id: "2022-04-06-astro-partytown.md",
+  slug: "2022-04-06-astro-partytown",
+  body: string,
+  collection: "photos",
+  data: InferEntrySchema<"photos">
+},
+"2022-04-06-astro-themes-integrations.md": {
+  id: "2022-04-06-astro-themes-integrations.md",
+  slug: "2022-04-06-astro-themes-integrations",
+  body: string,
+  collection: "photos",
+  data: InferEntrySchema<"photos">
+},
+"2022-04-06-astro-themes.md": {
+  id: "2022-04-06-astro-themes.md",
+  slug: "2022-04-06-astro-themes",
+  body: string,
+  collection: "photos",
+  data: InferEntrySchema<"photos">
+},
+"2022-04-08-astro-showcase-screenshot.md": {
+  id: "2022-04-08-astro-showcase-screenshot.md",
+  slug: "2022-04-08-astro-showcase-screenshot",
+  body: string,
+  collection: "photos",
+  data: InferEntrySchema<"photos">
+},
+"2023-01-22-astro-build-devtools.md": {
+  id: "2023-01-22-astro-build-devtools.md",
+  slug: "2023-01-22-astro-build-devtools",
+  body: string,
+  collection: "photos",
+  data: InferEntrySchema<"photos">
+},
 "duo-sample-pandi.md": {
   id: "duo-sample-pandi.md",
   slug: "duo-sample-pandi",

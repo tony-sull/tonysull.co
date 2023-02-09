@@ -37,7 +37,7 @@ const singlePhoto = Array.isArray(photo) ? photo[0] : photo
   </header>
 
   <Show when={singlePhoto}>
-    <Photo src={singlePhoto!} class="u-fetaured" widths={[375, 522, 1044]} sizes="(min-width: 530px) 522px, 100vw" />
+    <Photo zoomIn src={singlePhoto!} class="u-fetaured" widths={[375, 522, 1044]} sizes="(min-width: 530px) 522px, 100vw" />
   </Show>
 
   <a href={href} class:list={[contentClass, 'e-content']}>

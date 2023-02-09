@@ -144,14 +144,18 @@ const minutes = readingTime(body)
     max-inline-size: unset;
   }
 
-  .e-content :global(blockquote) {
+  .e-content :global(blockquote:not(.tweet-card)) {
     margin-block: var(--size-fluid-1);
     max-inline-size: unset;
   }
 
+  .e-content :global(figure) {
+    margin-block: var(--size-fluid-3);
+  }
+
   .e-content :global(img, video, svg) {
     margin-inline: auto;
-    margin-block: var(--size-fluid-2);
+    border-radius: var(--radius-2);
   }
 
   @media (min-width: 640px) {

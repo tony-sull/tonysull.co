@@ -3,35 +3,65 @@ import { Picture } from '@astrojs/image/components'
 import type { Props as PictureProps } from '@astrojs/image/components/Picture.astro'
 import { getEntryBySlug } from 'astro:content'
 import { resolvePhoto } from '~/utils/assets.js'
+import Show from './Show.astro'
 
 export type Props = Omit<PictureProps, 'alt' | 'src' | 'slot'> & {
-    src: string
-    alt?: string
+  src: string
+  alt?: string
+  zoomIn?: boolean
 }
 
-const { src, ...attrs } = Astro.props
+const { src, zoomIn = false, ...attrs } = Astro.props
 
 const photoEntry = src ? await getEntryBySlug('photos', src) : undefined
 const resolvedPhoto = photoEntry ? await resolvePhoto(photoEntry) : undefined
 
-const pictureSrc: any = resolvedPhoto ? resolvedPhoto : photoEntry ? photoEntry.data.photo : src
+if (photoEntry && !resolvedPhoto) {
+  throw new Error(
+    `${src} entry was found but the image "${photoEntry.data.photo}" could not be found. Is there a typo?`
+  )
+}
+
+const pictureSrc: any = resolvedPhoto
+  ? resolvedPhoto
+  : photoEntry
+  ? photoEntry.data.photo
+  : src
 const caption = photoEntry?.data?.name
 
 const {
-    alt = photoEntry ? photoEntry.data.summary : attrs.alt,
-    ...pictureProps
+  alt = photoEntry ? photoEntry.data.summary : attrs.alt,
+  ...pictureProps
 } = attrs
 ---
 
 <figure>
+  <Show when={zoomIn}>
     <a href={pictureSrc?.src || pictureSrc} target="_blank">
-        <Picture src={pictureSrc} alt={alt || ""} {...pictureProps} width={resolvedPhoto?.width} height={resolvedPhoto?.height} />
+      <Picture
+        src={pictureSrc}
+        alt={alt || ''}
+        {...pictureProps}
+        width={resolvedPhoto?.width}
+        height={resolvedPhoto?.height}
+      />
     </a>
-    <figcaption>{caption}</figcaption>
+
+    <Picture
+      slot="fallback"
+      src={pictureSrc}
+      alt={alt || ''}
+      {...pictureProps}
+      width={resolvedPhoto?.width}
+      height={resolvedPhoto?.height}
+    />
+  </Show>
+  <figcaption>{caption}</figcaption>
 </figure>
 
 <style>
-    a:hover, a:focus-within {
-        cursor: zoom-in;
-    }
+  a:hover,
+  a:focus-within {
+    cursor: zoom-in;
+  }
 </style>
