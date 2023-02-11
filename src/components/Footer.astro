@@ -79,6 +79,10 @@ const year = new Date().getFullYear()
     display: inline-block;
   }
 
+  p:last-of-type {
+    margin-block-start: var(--size-fluid-3);
+  }
+
   p:last-of-type a:not(:last-of-type) {
     margin-right: var(--size-fluid-2);
   }
@@ -92,7 +96,6 @@ const year = new Date().getFullYear()
 
     p:last-of-type {
       flex-basis: 100%;
-      margin-block-start: var(--size-fluid-3);
     }
   }
 
