@@ -70,18 +70,25 @@ const tags = Array.from(uniq.entries())
     display: flex;
     flex-direction: column;
     gap: var(--size-fluid-3);
-    font-weight: 700;
+    font-weight: var(--font-weight-7);
     font-family: var(--font-mono);
-  }
-
-  a, p {
-    font-size: var(--font-size-fluid-1);
+    color: var(--text-2);
   }
 
   a[title='Home'] {
     grid-area: logo;
     --icon-bg: var(--blue-7);
     --icon-fg: var(--gray-0);
+  }
+
+  a {
+    --link: var(--text-2);
+    --link-visited: var(--text-2);
+  }
+
+  a:hover, a:focus-visible {
+    --link: var(--indigo-11);
+    --link-visited: var(--indigo-11);
   }
 
   div {
@@ -97,9 +104,11 @@ const tags = Array.from(uniq.entries())
     gap: var(--size-1);
   }
 
+  a, p {
+    font-size: var(--font-size-fluid-0);
+  }
+
   ul {
-    --link: var(--text-1);
-    --link-visited: var(--text-1);
     list-style: none;
     padding: 0;
     margin: 0;
@@ -118,10 +127,5 @@ const tags = Array.from(uniq.entries())
 
   ul a:first-child {
     margin-inline-start: -1rem;
-  }
-
-  ul a:hover, ul a:focus-visible {
-    --link: var(--indigo-11);
-    --link-visited: var(--indigo-11);
   }
 </style>

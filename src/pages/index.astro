@@ -40,7 +40,7 @@ type Entry =
 
 <style>
   :global(main) {
-    --container-width: 50ch;
+    --container-width: var(--size-content-2);
   }
 
   ul {
@@ -62,7 +62,7 @@ type Entry =
     .profile {
       grid-column: 1;
       justify-self: end;
-      max-width: 30ch;
+      max-width: var(--size-content-1);
     }
   }
 </style>
