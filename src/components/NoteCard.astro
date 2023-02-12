@@ -22,14 +22,18 @@ const replyMetadata = data.inReplyTo ? await scrape(data.inReplyTo) : undefined
 >
   <Content />
 
-  <Show when={replyMetadata}>
-    <small slot="footer">
-      <span>In reply to</span>
-      <a href={data.inReplyTo} class="u-in-reply-to">
-        {replyMetadata?.title}
-      </a>
-    </small>
-  </Show>
+  <div slot="footer">
+    <a href={`/articles/${slug}`} class="u-url">View and share</a>
+
+    <Show when={replyMetadata}>
+      <small>
+        <span>In reply to</span>
+        <a href={data.inReplyTo} class="u-in-reply-to">
+          {replyMetadata?.title}
+        </a>
+      </small>
+    </Show>
+  </div>
 </Card>
 
 <style>
@@ -47,6 +51,11 @@ const replyMetadata = data.inReplyTo ? await scrape(data.inReplyTo) : undefined
   :global([data-theme='dark']) [target='_blank'] > h2:after,
   :global([data-theme='dark']) .u-in-reply-to:after {
     filter: invert();
+  }
+
+  .u-url {
+    white-space: nowrap;
+    font-size: var(--size-fluid-2);
   }
 
   .u-in-reply-to {

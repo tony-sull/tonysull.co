@@ -40,9 +40,9 @@ const singlePhoto = Array.isArray(photo) ? photo[0] : photo
     <Photo zoomIn src={singlePhoto} class="u-fetaured" widths={[375, 522, 1044]} sizes="(min-width: 530px) 522px, 100vw" />
   )}
 
-  <a href={href} class:list={[contentClass, 'e-content']}>
+  <div class:list={[contentClass, 'e-content']}>
     <slot />
-  </a>
+  </div>
 
   <footer>
     <slot name="footer" />
@@ -120,5 +120,9 @@ const singlePhoto = Array.isArray(photo) ? photo[0] : photo
   .e-content :global(blockquote) {
     margin-block: 1rem;
     max-inline-size: unset;
+  }
+
+  .e-content :global(hr) {
+    margin-block: var(--size-fluid-2);
   }
 </style>

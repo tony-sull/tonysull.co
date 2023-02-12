@@ -302,6 +302,13 @@ declare module 'astro:content' {
   collection: "notes",
   data: InferEntrySchema<"notes">
 },
+"tailwind-blockers.md": {
+  id: "tailwind-blockers.md",
+  slug: "tailwind-blockers",
+  body: string,
+  collection: "notes",
+  data: InferEntrySchema<"notes">
+},
 "tailwind-logical-properties.md": {
   id: "tailwind-logical-properties.md",
   slug: "tailwind-logical-properties",
