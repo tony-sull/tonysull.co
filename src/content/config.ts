@@ -15,7 +15,7 @@ export const collections = {
   }),
   personas: defineCollection({
     // nicknames are ALWAYS required in the site's UI
-    schema: personSchema.required({ nickname: true }),
+    schema: personSchema.required({ nickname: true, logo: true }),
   }),
   photos: defineCollection({
     schema: photoSchema

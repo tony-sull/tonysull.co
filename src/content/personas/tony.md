@@ -1,6 +1,6 @@
 ---
 name: tony-sull
 nickname: tony@tonysull.co
-logo: /assets/avatar-96x96.jpg
+logo: avatar-tony-sull
 url: https://tonysull.co
 ---

@@ -1,6 +1,8 @@
 ---
+import { Image } from '@astrojs/image/components'
 import type { HTMLAttributes } from 'astro/types'
 import { CollectionEntry, getEntryBySlug } from 'astro:content'
+import { resolvePhoto } from '~/utils/assets.js'
 
 export type Props = HTMLAttributes<'div'> & {
   author?: string | undefined
@@ -25,16 +27,19 @@ function getHandleDomain(author: CollectionEntry<'personas'>) {
 const persona =
   (author && (await getEntryBySlug('personas', author))) ||
   (await getEntryBySlug('personas', 'tony'))
+
+const avatarEntry = await getEntryBySlug('photos', persona.data.logo)
+const avatar = (avatarEntry && await resolvePhoto(avatarEntry)) || persona.data.logo
 ---
 
 <div class:list={[className, 'h-card']} {...attrs}>
-  <img
-    src={persona.data.logo}
-    alt=""
+  <Image
+    src={avatar}
+    alt={avatarEntry?.data?.name || ""}
+    width={48}
+    height={48}
+    format="webp"
     class="u-logo"
-    width="48"
-    height="48"
-    loading="lazy"
   />
   <p class="p-name sr-only">{persona.data.name}</p>
   <p class="p-nickname">

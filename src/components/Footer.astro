@@ -1,5 +1,6 @@
 ---
 import { Icon } from 'astro-icon'
+import avatar from '~/assets/uploads/avatar-tony-sull.png'
 import site from '~/data/site.json'
 
 const { url, title, social } = site
@@ -9,7 +10,7 @@ const year = new Date().getFullYear()
 
 <footer class="container">
   <section class="h-card">
-    <img hidden class="u-photo" src="/avatar-96x96.jpg" loading="lazy" />
+    <img hidden class="u-photo" src={avatar.src} loading="lazy" />
     <span hidden class="p-note">{site.description}</span>
     <p>
       <strong>© {year}</strong>
