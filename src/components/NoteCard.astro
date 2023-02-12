@@ -23,7 +23,7 @@ const replyMetadata = data.inReplyTo ? await scrape(data.inReplyTo) : undefined
   <Content />
 
   <div slot="footer">
-    <a href={`/articles/${slug}`} class="u-url">View and share</a>
+    <a href={`/notes/${slug}`} class="u-url">View and share</a>
 
     <Show when={replyMetadata}>
       <small>
