@@ -3,6 +3,7 @@ import { type CollectionEntry, getCollection } from 'astro:content'
 import ArticleCard from '~/components/ArticleCard.astro'
 import BookmarkCard from '~/components/BookmarkCard.astro'
 import NoteCard from '~/components/NoteCard.astro'
+import Profile from '~/components/Profile.astro'
 import For from '~/components/For.astro'
 import Layout from '~/layouts/Page.astro'
 import { sortByDate } from '~/utils/sortByDate'
@@ -20,6 +21,8 @@ type Entry =
 ---
 
 <Layout>
+  <Profile class="profile" />
+
   <ul>
     <For each={entries}>
       {
@@ -36,6 +39,10 @@ type Entry =
 </Layout>
 
 <style>
+  :global(main) {
+    --container-width: 50ch;
+  }
+
   ul {
     display: flex;
     flex-direction: column;
@@ -49,5 +56,13 @@ type Entry =
   li {
     width: 100%;
     padding: 0;
+  }
+
+  @media (min-width: 80ch) {
+    .profile {
+      grid-column: 1;
+      justify-self: end;
+      max-width: 30ch;
+    }
   }
 </style>

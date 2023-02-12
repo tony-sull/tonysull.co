@@ -3,6 +3,7 @@ name: Introducing chisel.css
 summary: A (work-in-progress) minimalist CSS framework.
 category:
   - code
+  - opensource
 slug: introducing-chisel
 published: '2021-06-02T12:00:00Z'
 featured: '/uploads/2021-06-02-introducing-chisel.jpg'

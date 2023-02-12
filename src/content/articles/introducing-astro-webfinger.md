@@ -4,6 +4,7 @@ summary: Integrating Mastodon profiles with Astro.
 category:
   - code
   - indieweb
+  - opensource
 published: '2022-11-27T21:55:21Z'
 featured: '/uploads/2022-11-27-introducing-astro-webfinger.jpg'
 ---
