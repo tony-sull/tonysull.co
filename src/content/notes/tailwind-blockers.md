@@ -14,7 +14,7 @@ Logical properties like padding-inline or block-size fundamentally won’t work
 
 i.e. it only really works with left-to-right (LTR) languages
 
-That's fine for a smaller project, but a show stopper for something a properly translated site like [Astro's docs](https://docs.astro.build)
+That's fine for a smaller project, but a show stopper for a properly translated site like [Astro's docs](https://docs.astro.build)
 
 ---
 
