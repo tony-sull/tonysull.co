@@ -121,7 +121,9 @@
 
   .container {
     display: grid;
-    grid-template-columns: 1fr calc(100% - (2 * var(--size-fluid-2))) 1fr;
+    grid-template-columns: 1fr min(var(--container-width, 80ch), calc(100% - (2 * var(--size-fluid-2)))) 1fr;
+    grid-column-gap: var(--size-fluid-2);
+    row-gap: var(--size-fluid-4);
   }
 
   .container > * {

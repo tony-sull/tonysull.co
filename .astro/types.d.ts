@@ -383,6 +383,13 @@ declare module 'astro:content' {
   collection: "photos",
   data: InferEntrySchema<"photos">
 },
+"avatar-tony-sull.md": {
+  id: "avatar-tony-sull.md",
+  slug: "avatar-tony-sull",
+  body: string,
+  collection: "photos",
+  data: InferEntrySchema<"photos">
+},
 "duo-sample-pandi.md": {
   id: "duo-sample-pandi.md",
   slug: "duo-sample-pandi",
