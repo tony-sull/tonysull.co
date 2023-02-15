@@ -288,6 +288,13 @@ declare module 'astro:content' {
   collection: "notes",
   data: InferEntrySchema<"notes">
 },
+"modern-web-astro.md": {
+  id: "modern-web-astro.md",
+  slug: "modern-web-astro",
+  body: string,
+  collection: "notes",
+  data: InferEntrySchema<"notes">
+},
 "self-host-webfinger.md": {
   id: "self-host-webfinger.md",
   slug: "self-host-webfinger",

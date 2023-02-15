@@ -1,5 +1,5 @@
 {
-  "lastFetched": "2023-02-12T01:32:31.979Z",
+  "lastFetched": "2023-02-15T14:14:48.164Z",
   "children": [
     {
       "type": "entry",
@@ -539,6 +539,122 @@
       "wm-target": "https://tonysull.co/articles/the-web-needs-more-indie/",
       "like-of": "https://tonysull.co/articles/the-web-needs-more-indie/",
       "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Ben Smith",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/cf11bec7951816d017329e8e25178d1ba01dee732c6c18ef5033012ff0ae25db.jpg",
+        "url": "https://twitter.com/smithbm2316"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1620816125318815744#favorited-by-1378031856017281025",
+      "published": null,
+      "wm-received": "2023-02-12T18:42:22Z",
+      "wm-id": 1621553,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1620816125318815744/1378031856017281025",
+      "wm-target": "https://tonysull.co/articles/the-web-needs-more-indie/",
+      "like-of": "https://tonysull.co/articles/the-web-needs-more-indie/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Ben Smith",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/cf11bec7951816d017329e8e25178d1ba01dee732c6c18ef5033012ff0ae25db.jpg",
+        "url": "https://twitter.com/smithbm2316"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1622611100838535173#favorited-by-1378031856017281025",
+      "published": null,
+      "wm-received": "2023-02-12T18:42:21Z",
+      "wm-id": 1621552,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1622611100838535173/1378031856017281025",
+      "wm-target": "https://tonysull.co/notes/tailwind-logical-properties/",
+      "like-of": "https://tonysull.co/notes/tailwind-logical-properties/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Ben Smith",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/cf11bec7951816d017329e8e25178d1ba01dee732c6c18ef5033012ff0ae25db.jpg",
+        "url": "https://twitter.com/smithbm2316"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1624599486558310401#favorited-by-1378031856017281025",
+      "published": null,
+      "wm-received": "2023-02-12T18:13:31Z",
+      "wm-id": 1621509,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1624599486558310401/1378031856017281025",
+      "wm-target": "https://tonysull.co/notes/tailwind-blockers/",
+      "like-of": "https://tonysull.co/notes/tailwind-blockers/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Ben Holmes",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/39f1a8b3dda816fa6cc1935baa6ecd3f30bbf36cf0054971d561124054e9e753.jpg",
+        "url": "https://twitter.com/BHolmesDev"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1624599486558310401#favorited-by-1042799721948098560",
+      "published": null,
+      "wm-received": "2023-02-12T07:12:26Z",
+      "wm-id": 1621080,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1624599486558310401/1042799721948098560",
+      "wm-target": "https://tonysull.co/notes/tailwind-blockers/",
+      "like-of": "https://tonysull.co/notes/tailwind-blockers/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "tonysull",
+        "photo": "https://webmention.io/avatar/cdn.masto.host/1f414b7da35680fdaf68a1335833849d6f77bbab7cf655991fbb8599554e2391.png",
+        "url": "https://indieweb.social/@tonysull"
+      },
+      "url": "https://indieweb.social/@tonysull/109849466721948666",
+      "published": "2023-02-12T02:44:01",
+      "wm-received": "2023-02-12T06:04:12Z",
+      "wm-id": 1621035,
+      "wm-source": "https://brid.gy/comment/mastodon/@tonysull@indieweb.social/109849462739145093/109849466721948666",
+      "wm-target": "https://tonysull.co/notes/tailwind-blockers/",
+      "content": {
+        "html": "<p>Code splitting seems to be a real challenge regardless of framework</p><p>Utility classes used on any page often bleed out to every page on the site</p><p>Call it a bundler challenge or even an optimization for page transitions, but I don’t want complex /admin styles on my landing page</p>",
+        "text": "Code splitting seems to be a real challenge regardless of frameworkUtility classes used on any page often bleed out to every page on the siteCall it a bundler challenge or even an optimization for page transitions, but I don’t want complex /admin styles on my landing page"
+      },
+      "in-reply-to": "https://tonysull.co/notes/tailwind-blockers/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "tonysull",
+        "photo": "https://webmention.io/avatar/cdn.masto.host/1f414b7da35680fdaf68a1335833849d6f77bbab7cf655991fbb8599554e2391.png",
+        "url": "https://indieweb.social/@tonysull"
+      },
+      "url": "https://indieweb.social/@tonysull/109849464677961474",
+      "published": "2023-02-12T02:43:30",
+      "wm-received": "2023-02-12T06:04:12Z",
+      "wm-id": 1621036,
+      "wm-source": "https://brid.gy/comment/mastodon/@tonysull@indieweb.social/109849462739145093/109849464677961474",
+      "wm-target": "https://tonysull.co/notes/tailwind-blockers/",
+      "content": {
+        "html": "<p>Logical properties like padding-inline or block-size fundamentally won’t work</p><p>i.e. it only really works with left-to-right (LTR) languages</p><p>That’s fine for a smaller project, but a show stopper for something a properly translated site like <span class=\"h-card\"><a href=\"https://m.webtoo.ls/@astro\" class=\"u-url\">@<span>astro</span></a></span> docs</p>",
+        "text": "Logical properties like padding-inline or block-size fundamentally won’t worki.e. it only really works with left-to-right (LTR) languagesThat’s fine for a smaller project, but a show stopper for something a properly translated site like @astro docs"
+      },
+      "in-reply-to": "https://tonysull.co/notes/tailwind-blockers/",
+      "wm-property": "in-reply-to",
       "wm-private": false
     }
   ]

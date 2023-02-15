@@ -199,4 +199,8 @@ const replies = webMentions.filter(isMentionType(MENTION_TYPE.Reply))
     border-radius: var(--radius-2);
     box-shadow: var(--shadow-3);
   }
+
+  .reply + .reply {
+    margin-block-start: var(--size-8);
+  }
 </style>
