@@ -1,16 +1,13 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content'
 import BookmarkCard from '~/components/BookmarkCard.astro'
-import For from '~/components/For.astro'
 import Show from '~/components/Show.astro'
+import WebMentions from '~/components/WebMentions.astro'
 import Layout from '~/layouts/Page.astro'
 import {
   getAllMentions,
   isForUrl,
-  isMentionType,
-  MENTION_TYPE,
   sortMentions,
-  type WebMention,
 } from '~/utils/mentions.js'
 
 export async function getStaticPaths() {
@@ -31,176 +28,15 @@ export async function getStaticPaths() {
 const { bookmark } = Astro.props as { bookmark: CollectionEntry<'bookmarks'> }
 
 const allMentions = await getAllMentions()
-const webMentions = allMentions.children
+const mentions = allMentions.children
   .filter(isForUrl(new URL(Astro.url.pathname, Astro.site).toString()))
   .sort(sortMentions(true))
-
-const reposts = webMentions.filter(isMentionType(MENTION_TYPE.Share))
-const likes = webMentions.filter(isMentionType(MENTION_TYPE.Like))
-const replies = webMentions.filter(isMentionType(MENTION_TYPE.Reply))
 ---
 
 <Layout title="Bookmarks">
   <BookmarkCard {...bookmark} />
 
-  <Show when={webMentions.length}>
-    <section>
-      <h2 id="comments">Mentions</h2>
-
-      <Show when={likes.length}>
-        <p>{likes.length} like{likes.length > 1 ? 's' : ''}</p>
-        <ul class="facepile">
-          <For each={likes}>
-            {
-              (like: WebMention) => (
-                <li title={like.author.name}>
-                  <a href={like.url}>
-                    <img
-                      src={like.author.photo}
-                      alt={like.author.name}
-                      width="48"
-                      height="48"
-                      loading="lazy"
-                    />
-                  </a>
-                </li>
-              )
-            }
-          </For>
-        </ul>
-      </Show>
-
-      <Show when={reposts.length}>
-        <p>{reposts.length} share{reposts.length > 1 ? 's' : ''}</p>
-        <ul class="facepile">
-          <For each={reposts}>
-            {
-              (repost: WebMention) => (
-                <li title={repost.author.name}>
-                  <a href={repost.url}>
-                    <img
-                      src={repost.author.photo}
-                      alt={repost.author.name}
-                      width="48"
-                      height="48"
-                      loading="lazy"
-                    />
-                  </a>
-                </li>
-              )
-            }
-          </For>
-        </ul>
-      </Show>
-
-      <For each={replies}>
-        {
-          (reply: WebMention) => (
-            <div class="reply">
-              <blockquote set:html={reply.content!.html} />
-              <div>
-                <a href={reply.author.url}>
-                  <span class="sr-only">{reply.author.name}</span>
-                  <img
-                    src={reply.author.photo}
-                    alt=""
-                    width="24"
-                    height="24"
-                    loading="lazy"
-                  />
-                </a>
-                <a href={reply.url}>{reply.author.name}</a>
-              </div>
-            </div>
-          )
-        }
-      </For>
-    </section>
+  <Show when={mentions.length}>
+    <WebMentions mentions={mentions} />
   </Show>
 </Layout>
-
-<style>
-  section {
-    margin-block-start: var(--size-fluid-4);
-  }
-
-  section h2:after {
-    content: '#';
-    margin-inline-start: var(--size-fluid-1);
-    font-weight: normal;
-    color: var(--link);
-  }
-
-  section p {
-    margin-block-start: var(--size-fluid-3);
-  }
-
-  .facepile {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    margin-block-end: var(--size-fluid-4);
-  }
-
-  .facepile li {
-    margin-inline-end: -24px;
-    transition: translate 0.5s var(--ease-squish-3);
-  }
-
-  .facepile li:hover {
-    translate: 0 -12px;
-  }
-
-  .facepile a {
-    margin: 0;
-    padding: 0;
-  }
-
-  :is(.facepile, .reply) img {
-    border-radius: var(--radius-round);
-  }
-
-  .reply {
-    position: relative;
-  }
-
-  .reply:after {
-    position: absolute;
-    content: url(https://api.iconify.design/mingcute:quote-right-fill.svg?color=%23dee2e6);
-    z-index: 1;
-    top: -4px;
-    left: -4px;
-    scale: 2;
-  }
-
-  .reply blockquote {
-    border: none;
-    background: var(--surface-1);
-    border-radius: var(--radius-3);
-    box-shadow: var(--shadow-2);
-  }
-
-  .reply blockquote a:empty {
-    display: none;
-  }
-
-  .reply div {
-    position: absolute;
-    right: calc(-1 * var(--size-3));
-    bottom: calc(-1 * var(--size-3));
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    gap: var(--size-fluid-1);
-    background: var(--surface-3);
-    padding: var(--size-2) var(--size-3);
-    border-radius: var(--radius-2);
-    box-shadow: var(--shadow-3);
-  }
-
-  .reply + .reply {
-    margin-block-start: var(--size-8);
-  }
-</style>
