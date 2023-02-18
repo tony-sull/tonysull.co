@@ -3,6 +3,7 @@ name: The power of simplicity
 summary: easy to get swept up in the latest libraries and platforms, but don't underestimate the time savings of "boring" tech.
 category:
   - code
+  - simplicity
 published: '2021-08-07T12:00:00Z'
 featured: '/uploads/2021-08-07-power-of-simplicity.jpg'
 url: https://navillus.dev/blog/power-of-simplicity/

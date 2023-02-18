@@ -200,6 +200,13 @@ declare module 'astro:content' {
   collection: "articles",
   data: InferEntrySchema<"articles">
 },
+"routing-is-complicated.md": {
+  id: "routing-is-complicated.md",
+  slug: "routing-is-complicated",
+  body: string,
+  collection: "articles",
+  data: InferEntrySchema<"articles">
+},
 "svelte-class-props.md": {
   id: "svelte-class-props.md",
   slug: "svelte-class-props",
