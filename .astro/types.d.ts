@@ -302,9 +302,23 @@ declare module 'astro:content' {
   collection: "notes",
   data: InferEntrySchema<"notes">
 },
+"prediction-google-disables-js.md": {
+  id: "prediction-google-disables-js.md",
+  slug: "prediction-google-disables-js",
+  body: string,
+  collection: "notes",
+  data: InferEntrySchema<"notes">
+},
 "self-host-webfinger.md": {
   id: "self-host-webfinger.md",
   slug: "self-host-webfinger",
+  body: string,
+  collection: "notes",
+  data: InferEntrySchema<"notes">
+},
+"seo-disable-js.md": {
+  id: "seo-disable-js.md",
+  slug: "seo-disable-js",
   body: string,
   collection: "notes",
   data: InferEntrySchema<"notes">

@@ -1,5 +1,5 @@
 {
-  "lastFetched": "2023-02-18T17:56:36.828Z",
+  "lastFetched": "2023-02-20T16:24:14.589Z",
   "children": [
     {
       "type": "entry",
@@ -654,6 +654,227 @@
         "text": "Logical properties like padding-inline or block-size fundamentally won’t worki.e. it only really works with left-to-right (LTR) languagesThat’s fine for a smaller project, but a show stopper for something a properly translated site like @astro docs"
       },
       "in-reply-to": "https://tonysull.co/notes/tailwind-blockers/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Hector Sosa",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/ce00c9cd54d75ac594865785ea2bbd7ace09e9c9fd598a750bd988c16c5caa02.jpg",
+        "url": "https://twitter.com/_ekqt"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1627006762766180354#favorited-by-1529564400847314945",
+      "published": null,
+      "wm-received": "2023-02-19T13:28:37Z",
+      "wm-id": 1626399,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1627006762766180354/1529564400847314945",
+      "wm-target": "https://tonysull.co/articles/routing-is-complicated/",
+      "like-of": "https://tonysull.co/articles/routing-is-complicated/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Christopher Ehrlich",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/33392e0770684f629448eab98a903c046917b7d61ea719989d79c3d134c7504d.jpg",
+        "url": "https://twitter.com/ccccjjjjeeee"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1627006762766180354#favorited-by-1187025909901090817",
+      "published": null,
+      "wm-received": "2023-02-19T08:35:31Z",
+      "wm-id": 1626307,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1627006762766180354/1187025909901090817",
+      "wm-target": "https://tonysull.co/articles/routing-is-complicated/",
+      "like-of": "https://tonysull.co/articles/routing-is-complicated/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "૮༼⚆︿⚆༽つ @drsensor@fosstodon.org",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/43c88fa8589b48edac451fca4671179e132524db437a639d30e929a5c873313d.jpg",
+        "url": "https://twitter.com/dr_sensor"
+      },
+      "url": "https://twitter.com/dr_sensor/status/1627084870672592896",
+      "published": "2023-02-18T23:17:17+00:00",
+      "wm-received": "2023-02-18T23:31:28Z",
+      "wm-id": 1626029,
+      "wm-source": "https://brid.gy/post/twitter/tonysull_co/1627084870672592896",
+      "wm-target": "https://tonysull.co/articles/routing-is-complicated/",
+      "content": {
+        "html": "This is what in my mind when I first read the tweet 😂\n<a href=\"https://en.m.wikipedia.org/wiki/Router_(computing)\">en.m.wikipedia.org/wiki/Router_(c…</a>\n<a class=\"u-mention\" href=\"https://tonysull.co/articles/routing-is-complicated/\"></a>",
+        "text": "This is what in my mind when I first read the tweet 😂\nen.m.wikipedia.org/wiki/Router_(c…"
+      },
+      "mention-of": "https://tonysull.co/articles/routing-is-complicated/",
+      "wm-property": "mention-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Ryan Hiebert",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/709be428adbe2173f8d54dff124e8e0b5feb1fab042f79e2ae7d1fa8483f3493.jpg",
+        "url": "https://twitter.com/RyanHiebert"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1627006762766180354#favorited-by-14280556",
+      "published": null,
+      "wm-received": "2023-02-18T22:25:11Z",
+      "wm-id": 1626008,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1627006762766180354/14280556",
+      "wm-target": "https://tonysull.co/articles/routing-is-complicated/",
+      "like-of": "https://tonysull.co/articles/routing-is-complicated/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Matthew Phillips",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/8faba5b45de26674c4ef3097e8153c04b4c9ce81fad7653113bd74906ae4d067.jpg",
+        "url": "https://twitter.com/matthewcp"
+      },
+      "url": "https://twitter.com/matthewcp/status/1627050095228362752",
+      "published": "2023-02-18T20:59:06+00:00",
+      "wm-received": "2023-02-18T21:22:53Z",
+      "wm-id": 1625984,
+      "wm-source": "https://brid.gy/repost/twitter/tonysull_co/1627006762766180354/1627050095228362752",
+      "wm-target": "https://tonysull.co/articles/routing-is-complicated/",
+      "content": {
+        "text": "🌶️ If you can’t describe how a router works in two sentences or less, it’s too complex\n\nA developer that isn’t familiar with the code should be able to go from a URL to all code require to actually render the page.\n\ntonysull.co/articles/routi…"
+      },
+      "repost-of": "https://tonysull.co/articles/routing-is-complicated/",
+      "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Sarah Rainsberger ~ @sarah11918@mastodon.social",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/10cfe082ff1c77d7f5c86d80b6512144f982d432d4532924894eef09bbf2c026.png",
+        "url": "https://twitter.com/sarah11918"
+      },
+      "url": "https://twitter.com/sarah11918/status/1627035079154483206",
+      "published": "2023-02-18T19:59:26+00:00",
+      "wm-received": "2023-02-18T20:14:55Z",
+      "wm-id": 1625950,
+      "wm-source": "https://brid.gy/comment/twitter/tonysull_co/1627006762766180354/1627035079154483206",
+      "wm-target": "https://tonysull.co/articles/routing-is-complicated/",
+      "content": {
+        "html": "This has been a <a href=\"https://twitter.com/search?q=%23TonyTake\">#TonyTake</a> 🌶️\n<a class=\"u-mention\" href=\"https://tonysull.co/\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/tonysull_co\"></a>",
+        "text": "This has been a #TonyTake 🌶️"
+      },
+      "in-reply-to": "https://tonysull.co/articles/routing-is-complicated/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Manuel Schröder",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/1867b26498176834e7f699edc34a5d4879cc4261c33e7831b11bc15336ad0dbc.jpg",
+        "url": "https://twitter.com/manuschroeder"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1627006762766180354#favorited-by-342632208",
+      "published": null,
+      "wm-received": "2023-02-18T18:50:14Z",
+      "wm-id": 1625921,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1627006762766180354/342632208",
+      "wm-target": "https://tonysull.co/articles/routing-is-complicated/",
+      "like-of": "https://tonysull.co/articles/routing-is-complicated/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "aFuzzyBear 🇺🇦",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/9d9358e1d9f5be8d4737e24ddd64e262cb7bdd16b40d0521edd68629a3b07e93.jpg",
+        "url": "https://twitter.com/aFuzzyBear2"
+      },
+      "url": "https://twitter.com/aFuzzyBear2/status/1627009953348169729",
+      "published": "2023-02-18T18:19:35+00:00",
+      "wm-received": "2023-02-18T18:50:13Z",
+      "wm-id": 1625919,
+      "wm-source": "https://brid.gy/comment/twitter/tonysull_co/1627006762766180354/1627009953348169729",
+      "wm-target": "https://tonysull.co/articles/routing-is-complicated/",
+      "content": {
+        "html": "I'd say the router is one of those design patterns that isnlike the jumper that was just an inch too bit on everybody that tired it\n<a class=\"u-mention\" href=\"https://tonysull.co/\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/tonysull_co\"></a>",
+        "text": "I'd say the router is one of those design patterns that isnlike the jumper that was just an inch too bit on everybody that tired it"
+      },
+      "in-reply-to": "https://tonysull.co/articles/routing-is-complicated/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "aFuzzyBear 🇺🇦",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/9d9358e1d9f5be8d4737e24ddd64e262cb7bdd16b40d0521edd68629a3b07e93.jpg",
+        "url": "https://twitter.com/aFuzzyBear2"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1627006762766180354#favorited-by-1333800379838992384",
+      "published": null,
+      "wm-received": "2023-02-18T18:50:13Z",
+      "wm-id": 1625920,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1627006762766180354/1333800379838992384",
+      "wm-target": "https://tonysull.co/articles/routing-is-complicated/",
+      "like-of": "https://tonysull.co/articles/routing-is-complicated/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "tonysull",
+        "photo": "https://webmention.io/avatar/cdn.masto.host/1f414b7da35680fdaf68a1335833849d6f77bbab7cf655991fbb8599554e2391.png",
+        "url": "https://indieweb.social/@tonysull"
+      },
+      "url": "https://indieweb.social/@tonysull/109887072921316897",
+      "published": "2023-02-18T18:07:46",
+      "wm-received": "2023-02-18T18:09:36Z",
+      "wm-id": 1625790,
+      "wm-source": "https://brid.gy/comment/mastodon/@tonysull@indieweb.social/109887071260768956/109887072921316897",
+      "wm-target": "https://tonysull.co/articles/routing-is-complicated/",
+      "content": {
+        "html": "<p>The sheer complexity of all the different routing solutions today should raise serious red flags</p><p>What we really need is a spec that works well enough for every framework. Sure it will be limiting, but I'd take limiting over /(admin)/blog/[slug]/edit/$page-layout.html any day</p>",
+        "text": "The sheer complexity of all the different routing solutions today should raise serious red flagsWhat we really need is a spec that works well enough for every framework. Sure it will be limiting, but I'd take limiting over /(admin)/blog/[slug]/edit/$page-layout.html any day"
+      },
+      "in-reply-to": "https://tonysull.co/articles/routing-is-complicated/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "tonysull",
+        "photo": "https://webmention.io/avatar/cdn.masto.host/1f414b7da35680fdaf68a1335833849d6f77bbab7cf655991fbb8599554e2391.png",
+        "url": "https://indieweb.social/@tonysull"
+      },
+      "url": "https://indieweb.social/@tonysull/109887072274920348",
+      "published": "2023-02-18T18:07:36",
+      "wm-received": "2023-02-18T18:09:36Z",
+      "wm-id": 1625791,
+      "wm-source": "https://brid.gy/comment/mastodon/@tonysull@indieweb.social/109887071260768956/109887072274920348",
+      "wm-target": "https://tonysull.co/articles/routing-is-complicated/",
+      "content": {
+        "html": "<p>Been sitting on this rant for a while now, time to call it good enough to actually publish it</p><p>Routing is effectively table stakes for a modern framework at this point</p><p>We really need to start fresh with what server routing should really look like in a JavaScript framework</p>",
+        "text": "Been sitting on this rant for a while now, time to call it good enough to actually publish itRouting is effectively table stakes for a modern framework at this pointWe really need to start fresh with what server routing should really look like in a JavaScript framework"
+      },
+      "in-reply-to": "https://tonysull.co/articles/routing-is-complicated/",
       "wm-property": "in-reply-to",
       "wm-private": false
     }
