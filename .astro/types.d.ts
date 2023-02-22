@@ -179,6 +179,13 @@ declare module 'astro:content' {
   collection: "articles",
   data: InferEntrySchema<"articles">
 },
+"my-ideal-ssr-router.md": {
+  id: "my-ideal-ssr-router.md",
+  slug: "my-ideal-ssr-router",
+  body: string,
+  collection: "articles",
+  data: InferEntrySchema<"articles">
+},
 "power-of-simplicity.md": {
   id: "power-of-simplicity.md",
   slug: "power-of-simplicity",
@@ -312,13 +319,6 @@ declare module 'astro:content' {
 "self-host-webfinger.md": {
   id: "self-host-webfinger.md",
   slug: "self-host-webfinger",
-  body: string,
-  collection: "notes",
-  data: InferEntrySchema<"notes">
-},
-"seo-disable-js.md": {
-  id: "seo-disable-js.md",
-  slug: "seo-disable-js",
   body: string,
   collection: "notes",
   data: InferEntrySchema<"notes">

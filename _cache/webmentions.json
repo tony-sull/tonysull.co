@@ -1,5 +1,5 @@
 {
-  "lastFetched": "2023-02-20T16:24:14.589Z",
+  "lastFetched": "2023-02-22T14:10:51.600Z",
   "children": [
     {
       "type": "entry",
@@ -876,6 +876,67 @@
       },
       "in-reply-to": "https://tonysull.co/articles/routing-is-complicated/",
       "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "TonySull",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/ff7ef9fa152eff94667d1b31c43162ad0f147871a6cd15b3924a4765251660a9.jpg",
+        "url": "https://twitter.com/tonysull_co"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1628246156168798208",
+      "published": "2023-02-22T04:11:49+00:00",
+      "wm-received": "2023-02-22T04:44:50Z",
+      "wm-id": 1627813,
+      "wm-source": "https://brid.gy/comment/twitter/tonysull_co/1628246156168798208/1628246156168798208",
+      "wm-target": "https://tonysull.co/articles/routing-is-complicated/",
+      "content": {
+        "html": "It'd be amazing to see a push for shared specs at the framework level, we all keep chasing the same problems.\n\nI finally published my \"we need one router\" rant this weekend, so much effort is spent reinventing the wheel!\n\n<a href=\"https://tonysull.co/articles/routing-is-complicated/\">tonysull.co/articles/routi…</a>\n<a class=\"u-mention\" href=\"https://twitter.com/FredKSchott\"></a>",
+        "text": "It'd be amazing to see a push for shared specs at the framework level, we all keep chasing the same problems.\n\nI finally published my \"we need one router\" rant this weekend, so much effort is spent reinventing the wheel!\n\ntonysull.co/articles/routi…"
+      },
+      "in-reply-to": "https://tonysull.co/articles/routing-is-complicated/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Mark Peck",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/8a6db48583d577a3d60216a3ac2a048a1d9cb3fed49d706b5fdcf11c057dc019.jpg",
+        "url": "https://twitter.com/doodlemarks"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1627706589233790976#favorited-by-114843185",
+      "published": null,
+      "wm-received": "2023-02-21T11:10:13Z",
+      "wm-id": 1627398,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1627706589233790976/114843185",
+      "wm-target": "https://tonysull.co/notes/prediction-google-disables-js/",
+      "like-of": "https://tonysull.co/notes/prediction-google-disables-js/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "#devbubble",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/5612ae08c5af5c98bcd1273f561cb50746aa0620cca8a7ad936d51ab7dd7a33c.png",
+        "url": "https://twitter.com/devsbubble"
+      },
+      "url": "https://twitter.com/devsbubble/status/1627706790774177809",
+      "published": "2023-02-20T16:28:34+00:00",
+      "wm-received": "2023-02-20T16:58:15Z",
+      "wm-id": 1626948,
+      "wm-source": "https://brid.gy/repost/twitter/tonysull_co/1627706589233790976/1627706790774177809",
+      "wm-target": "https://tonysull.co/notes/prediction-google-disables-js/",
+      "content": {
+        "text": "🎯 2024 prediction\n\n@google announces that JavaScript execution will be disabled again for search crawlers\n\ntonysull.co/notes/predicti…"
+      },
+      "repost-of": "https://tonysull.co/notes/prediction-google-disables-js/",
+      "wm-property": "repost-of",
       "wm-private": false
     }
   ]
