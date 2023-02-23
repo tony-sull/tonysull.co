@@ -288,6 +288,13 @@ declare module 'astro:content' {
 },
 },
 "notes": {
+"dom-as-state.md": {
+  id: "dom-as-state.md",
+  slug: "dom-as-state",
+  body: string,
+  collection: "notes",
+  data: InferEntrySchema<"notes">
+},
 "federation-not-decentralization.md": {
   id: "federation-not-decentralization.md",
   slug: "federation-not-decentralization",
