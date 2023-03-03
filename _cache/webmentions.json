@@ -1,5 +1,5 @@
 {
-  "lastFetched": "2023-02-23T13:56:04.667Z",
+  "lastFetched": "2023-03-03T02:05:43.421Z",
   "children": [
     {
       "type": "entry",
@@ -937,6 +937,345 @@
       },
       "repost-of": "https://tonysull.co/notes/prediction-google-disables-js/",
       "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Alex Vipond",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/eae2cb35c6a8aabc1d301d1acfc04155e83f5d0d4d4b7163be7565faeb91acbf.jpg",
+        "url": "https://twitter.com/AlPalVipond"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1630933022139641859#favorited-by-3151990024",
+      "published": null,
+      "wm-received": "2023-03-02T06:18:16Z",
+      "wm-id": 1632568,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1630933022139641859/3151990024",
+      "wm-target": "https://tonysull.co/notes/html-is-forever/",
+      "like-of": "https://tonysull.co/notes/html-is-forever/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Mark Peck",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/8a6db48583d577a3d60216a3ac2a048a1d9cb3fed49d706b5fdcf11c057dc019.jpg",
+        "url": "https://twitter.com/doodlemarks"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1630933022139641859#favorited-by-114843185",
+      "published": null,
+      "wm-received": "2023-03-02T02:47:49Z",
+      "wm-id": 1632549,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1630933022139641859/114843185",
+      "wm-target": "https://tonysull.co/notes/html-is-forever/",
+      "like-of": "https://tonysull.co/notes/html-is-forever/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Angelo II",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/97542789fc6f27237125c044d5742c398c2c35b30faf9e146a09bfb30d4fbe34.jpg",
+        "url": "https://twitter.com/angiva7"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1630933022139641859#favorited-by-1405963440099897344",
+      "published": null,
+      "wm-received": "2023-03-01T15:05:50Z",
+      "wm-id": 1632199,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1630933022139641859/1405963440099897344",
+      "wm-target": "https://tonysull.co/notes/html-is-forever/",
+      "like-of": "https://tonysull.co/notes/html-is-forever/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "MapleLeaf 🍁",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/5f2a66315eb87a04a459c6114c8c0be36d0335ae566b975e966c9098928d8879.png",
+        "url": "https://twitter.com/heyImMapleLeaf"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1630933022139641859#favorited-by-328863384",
+      "published": null,
+      "wm-received": "2023-03-01T14:38:35Z",
+      "wm-id": 1632181,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1630933022139641859/328863384",
+      "wm-target": "https://tonysull.co/notes/html-is-forever/",
+      "like-of": "https://tonysull.co/notes/html-is-forever/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Magne",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/57157e821768ca3083e79d3bd9c5ecfb6aaf5fe919af5332a02a20c34027f13f.jpg",
+        "url": "https://twitter.com/magnemg"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1628756433083801602#favorited-by-154762008",
+      "published": null,
+      "wm-received": "2023-02-24T09:02:29Z",
+      "wm-id": 1629347,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1628756433083801602/154762008",
+      "wm-target": "https://tonysull.co/notes/dom-as-state/",
+      "like-of": "https://tonysull.co/notes/dom-as-state/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "James",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/c7a298ad0c9582298714225ed82823dd5043d2d6f58055d17aecef8ab829a654.jpg",
+        "url": "https://twitter.com/jstarmx"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1628756433083801602#favorited-by-22760704",
+      "published": null,
+      "wm-received": "2023-02-24T08:20:57Z",
+      "wm-id": 1629335,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1628756433083801602/22760704",
+      "wm-target": "https://tonysull.co/notes/dom-as-state/",
+      "like-of": "https://tonysull.co/notes/dom-as-state/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Baptiste Devessier",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/c63bf8cbb115f62aed868628138df043d9c74858db09b197fb1ff1d2704560a1.jpg",
+        "url": "https://twitter.com/BDevessier"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1628756433083801602#favorited-by-725623430700212225",
+      "published": null,
+      "wm-received": "2023-02-23T20:52:11Z",
+      "wm-id": 1629070,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1628756433083801602/725623430700212225",
+      "wm-target": "https://tonysull.co/notes/dom-as-state/",
+      "like-of": "https://tonysull.co/notes/dom-as-state/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Neev",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/a3fc7290094c82d6f46c3c2c3c1e7e084290653e6c1ec1792b27666f63ba4797.jpg",
+        "url": "https://twitter.com/neevde01"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1628756433083801602#favorited-by-1621159014313906180",
+      "published": null,
+      "wm-received": "2023-02-23T15:29:55Z",
+      "wm-id": 1628775,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1628756433083801602/1621159014313906180",
+      "wm-target": "https://tonysull.co/notes/dom-as-state/",
+      "like-of": "https://tonysull.co/notes/dom-as-state/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Thien Bui",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/d3825d6c475a127ff5780fdabfbbc4b69717c3c94a2055b26d8bc5f08a14cce4.png",
+        "url": "https://twitter.com/dartrode"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1628756433083801602#favorited-by-1451916731157450760",
+      "published": null,
+      "wm-received": "2023-02-23T15:04:17Z",
+      "wm-id": 1628760,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1628756433083801602/1451916731157450760",
+      "wm-target": "https://tonysull.co/notes/dom-as-state/",
+      "like-of": "https://tonysull.co/notes/dom-as-state/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Farzad Yousefzadeh",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/50ccc65070a977dea388fd43da2fc9d49cbeffe60362e44db5b92b9e8d839bfe.jpg",
+        "url": "https://twitter.com/farzad_yz"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1628756433083801602#favorited-by-304289713",
+      "published": null,
+      "wm-received": "2023-02-23T15:04:17Z",
+      "wm-id": 1628761,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1628756433083801602/304289713",
+      "wm-target": "https://tonysull.co/notes/dom-as-state/",
+      "like-of": "https://tonysull.co/notes/dom-as-state/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "TonySull",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/ff7ef9fa152eff94667d1b31c43162ad0f147871a6cd15b3924a4765251660a9.jpg",
+        "url": "https://twitter.com/tonysull_co"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1628757814599376903",
+      "published": "2023-02-23T14:04:58+00:00",
+      "wm-received": "2023-02-23T14:26:19Z",
+      "wm-id": 1628733,
+      "wm-source": "https://brid.gy/comment/twitter/tonysull_co/1628756433083801602/1628757814599376903",
+      "wm-target": "https://tonysull.co/notes/dom-as-state/",
+      "content": {
+        "html": "It's definitely not a new idea, but worth dusting off now that we aren't trying to render the entire world in a SPA\n\nServer-rendered HTML partials + using the DOM as an Object Model instead of a JS app serialization format sure is compelling\n<a class=\"u-mention\" href=\"https://twitter.com/matthewcp\"></a>",
+        "text": "It's definitely not a new idea, but worth dusting off now that we aren't trying to render the entire world in a SPA\n\nServer-rendered HTML partials + using the DOM as an Object Model instead of a JS app serialization format sure is compelling"
+      },
+      "in-reply-to": "https://tonysull.co/notes/dom-as-state/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Matthew Phillips",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/8faba5b45de26674c4ef3097e8153c04b4c9ce81fad7653113bd74906ae4d067.jpg",
+        "url": "https://twitter.com/matthewcp"
+      },
+      "url": "https://twitter.com/matthewcp/status/1628756990527766530",
+      "published": "2023-02-23T14:01:42+00:00",
+      "wm-received": "2023-02-23T14:26:17Z",
+      "wm-id": 1628732,
+      "wm-source": "https://brid.gy/comment/twitter/tonysull_co/1628756433083801602/1628756990527766530",
+      "wm-target": "https://tonysull.co/notes/dom-as-state/",
+      "content": {
+        "html": "I like your thinking: <a href=\"https://matthewphillips.info/programming/posts/html-as-data/\">matthewphillips.info/programming/po…</a>\n<a class=\"u-mention\" href=\"https://tonysull.co/\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/tonysull_co\"></a>",
+        "text": "I like your thinking: matthewphillips.info/programming/po…"
+      },
+      "in-reply-to": "https://tonysull.co/notes/dom-as-state/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "حمد بنقالي | 🇸🇦X7md",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/78ae529dd02e85b04588a76fb96d75893b730ddf58e5cb8af4cfa96ab6297745.jpg",
+        "url": "https://twitter.com/X7mdNet"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1628756433083801602#favorited-by-1470767480847093770",
+      "published": null,
+      "wm-received": "2023-02-23T14:25:59Z",
+      "wm-id": 1628730,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1628756433083801602/1470767480847093770",
+      "wm-target": "https://tonysull.co/notes/dom-as-state/",
+      "like-of": "https://tonysull.co/notes/dom-as-state/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Matthew Phillips",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/8faba5b45de26674c4ef3097e8153c04b4c9ce81fad7653113bd74906ae4d067.jpg",
+        "url": "https://twitter.com/matthewcp"
+      },
+      "url": "https://twitter.com/matthewcp/status/1628757086724128772",
+      "published": "2023-02-23T14:02:04+00:00",
+      "wm-received": "2023-02-23T14:25:59Z",
+      "wm-id": 1628731,
+      "wm-source": "https://brid.gy/repost/twitter/tonysull_co/1628756433083801602/1628757086724128772",
+      "wm-target": "https://tonysull.co/notes/dom-as-state/",
+      "content": {
+        "text": "The idea of a JS framework based on Finite State Machines got me thinking\n\nIts really interesting to see JS frameworks shift back towards server rendering.\n\nWhat if we leaning into web components and treating the DOM as our state?\n\ntonysull.co/notes/dom-as-s…"
+      },
+      "repost-of": "https://tonysull.co/notes/dom-as-state/",
+      "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Leonardo Matos",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/ab3636366d03cb0738374463ca1777f5fbce494cbf7c974a98eaefa9fca70e6f.jpg",
+        "url": "https://twitter.com/leomp1208"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1628756433083801602#favorited-by-3383973587",
+      "published": null,
+      "wm-received": "2023-02-23T14:25:58Z",
+      "wm-id": 1628728,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1628756433083801602/3383973587",
+      "wm-target": "https://tonysull.co/notes/dom-as-state/",
+      "like-of": "https://tonysull.co/notes/dom-as-state/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Siwat Kaolueng",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/131c016a26dc1a0f9e3f8c28c9778f7004b8bfbefa7dc00d8042052018a2d79d.jpg",
+        "url": "https://twitter.com/perjerz34"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1628756433083801602#favorited-by-2848197444",
+      "published": null,
+      "wm-received": "2023-02-23T14:25:58Z",
+      "wm-id": 1628729,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1628756433083801602/2848197444",
+      "wm-target": "https://tonysull.co/notes/dom-as-state/",
+      "like-of": "https://tonysull.co/notes/dom-as-state/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "David K. 🎹",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/a2558375a7de02f82ccde383822fee3bdaea423d1258adfb6ed6a3fc350c6736.jpg",
+        "url": "https://twitter.com/DavidKPiano"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1628756433083801602#favorited-by-992126114",
+      "published": null,
+      "wm-received": "2023-02-23T14:25:57Z",
+      "wm-id": 1628726,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1628756433083801602/992126114",
+      "wm-target": "https://tonysull.co/notes/dom-as-state/",
+      "like-of": "https://tonysull.co/notes/dom-as-state/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Juho Vepsäläinen",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/0a9839e2cbdc77bc28376dc591b334889f7f35b419689e88f4cc870ae324917d.jpg",
+        "url": "https://twitter.com/bebraw"
+      },
+      "url": "https://twitter.com/bebraw/status/1628759054100180993",
+      "published": "2023-02-23T14:09:54+00:00",
+      "wm-received": "2023-02-23T14:25:57Z",
+      "wm-id": 1628727,
+      "wm-source": "https://brid.gy/comment/twitter/tonysull_co/1628756433083801602/1628759054100180993",
+      "wm-target": "https://tonysull.co/notes/dom-as-state/",
+      "content": {
+        "html": "Combine that with streaming and loading what you need on demand.\n<a class=\"u-mention\" href=\"https://tonysull.co/\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/matthewcp\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/tonysull_co\"></a>",
+        "text": "Combine that with streaming and loading what you need on demand."
+      },
+      "in-reply-to": "https://tonysull.co/notes/dom-as-state/",
+      "wm-property": "in-reply-to",
       "wm-private": false
     }
   ]

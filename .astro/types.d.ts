@@ -302,6 +302,13 @@ declare module 'astro:content' {
   collection: "notes",
   data: InferEntrySchema<"notes">
 },
+"html-is-forever.md": {
+  id: "html-is-forever.md",
+  slug: "html-is-forever",
+  body: string,
+  collection: "notes",
+  data: InferEntrySchema<"notes">
+},
 "indieweb-schemas.md": {
   id: "indieweb-schemas.md",
   slug: "indieweb-schemas",
