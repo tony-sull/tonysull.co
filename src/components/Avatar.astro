@@ -1,53 +1,48 @@
 ---
 import { Image } from 'astro:assets'
 import type { HTMLAttributes } from 'astro/types'
-import { CollectionEntry, getEntryBySlug } from 'astro:content'
-import { resolvePhoto } from '~/utils/assets.js'
+import type { CollectionEntry } from 'astro:content'
 
 export type Props = HTMLAttributes<'div'> & {
-  author?: string | undefined
+  author: CollectionEntry<'personas'>['data']
 }
 
 const { author, class: className, ...attrs } = Astro.props
 
-function getHandleName(author: CollectionEntry<'personas'>) {
-  return author.data.nickname.slice(0, author.data.nickname.indexOf('@'))
+function getHandleName(author: CollectionEntry<'personas'>['data']) {
+  return author.nickname.slice(0, author.nickname.indexOf('@'))
 }
 
-function getHandleDomain(author: CollectionEntry<'personas'>) {
-  const start = author.data.nickname.indexOf('@')
-  const end = author.data.nickname.lastIndexOf('.')
+function getHandleDomain(author: CollectionEntry<'personas'>['data']) {
+  const start = author.nickname.indexOf('@')
+  const end = author.nickname.lastIndexOf('.')
 
-  return author.data.nickname.slice(
+  return author.nickname.slice(
     start + 1,
-    end >= 0 ? end : author.data.nickname.length
+    end >= 0 ? end : author.nickname.length
   )
 }
 
-const persona =
-  (author && (await getEntryBySlug('personas', author))) ||
-  (await getEntryBySlug('personas', 'tony'))
-
-const avatar = persona.data.logo!.photo
+console.log(author)
 ---
 
 <div class:list={[className, 'h-card']} {...attrs}>
   <Image
-    src={avatar}
-    alt={persona.data.logo.name || ""}
+    src={author.logo.photo}
+    alt={author.logo.name || ""}
     width={96}
     height={96}
     format="webp"
     class="u-logo"
   />
-  <p class="p-name sr-only">{persona.data.name}</p>
+  <p class="p-name sr-only">{author.name}</p>
   <p class="p-nickname">
-    <b>{getHandleName(persona)}</b>
+    <b>{getHandleName(author)}</b>
     <span>@</span>
-    <i>{getHandleDomain(persona)}</i>
+    <i>{getHandleDomain(author)}</i>
     <span
       >{
-        persona.data.nickname.slice(persona.data.nickname.lastIndexOf('.'))
+        author.nickname.slice(author.nickname.lastIndexOf('.'))
       }</span
     >
   </p>

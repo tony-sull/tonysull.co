@@ -7,7 +7,7 @@ import Show from './Show.astro'
 import TagList from './TagList.astro'
 
 export type Props = {
-  author?: string | undefined
+  author: CollectionEntry<'personas'>['data']
   href?: string
   date?: Date | null | undefined
   tags?: string[] | undefined
@@ -15,11 +15,9 @@ export type Props = {
   contentClass?: string
 }
 
-const { author, href, date, tags, photo, contentClass } = Astro.props
+const { author, date, tags, photo, contentClass } = Astro.props
 
 const singlePhoto = Array.isArray(photo) ? photo[0] : photo
-
-console.log(singlePhoto)
 ---
 
 <article class="h-entry">
@@ -40,7 +38,7 @@ console.log(singlePhoto)
   </header>
 
   <Show when={singlePhoto}>
-    <CardPhoto zoomIn src={singlePhoto} class="u-featured" />
+    <CardPhoto zoomIn src={singlePhoto!} class="u-featured" />
   </Show>
 
   <div class:list={[contentClass, 'e-content']}>

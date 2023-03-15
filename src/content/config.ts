@@ -27,22 +27,26 @@ const photoSchema = schemas.photoSchema.extend({
 	photo: image(),
 })
 
-const articleSchema = schemas.articleSchema.extend({
-	featured: image(),
-})
-
-const bookmarkSchema = schemas.bookmarkSchema
-
-const noteSchema = schemas.noteSchema.extend({
-	photo: relation("photos", photoSchema).optional(),
-})
-
 // nicknames are ALWAYS required in the site's UI
 const personaSchema = schemas.personSchema
 	.extend({
 		logo: relation("photos", photoSchema),
 	})
 	.required({ nickname: true, logo: true })
+
+const articleSchema = schemas.articleSchema.extend({
+	author: relation("personas", personaSchema).default("tony"),
+	featured: image(),
+})
+
+const bookmarkSchema = schemas.bookmarkSchema.extend({
+	author: relation("personas", personaSchema).default("tony"),
+})
+
+const noteSchema = schemas.noteSchema.extend({
+	author: relation("personas", personaSchema).default("tony"),
+	photo: relation("photos", photoSchema).optional(),
+})
 
 export const collections = {
 	articles: defineCollection({
