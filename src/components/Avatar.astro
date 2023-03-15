@@ -35,8 +35,8 @@ const avatar = persona.data.logo!.photo
   <Image
     src={avatar}
     alt={persona.data.logo.name || ""}
-    width={48}
-    height={48}
+    width={96}
+    height={96}
     format="webp"
     class="u-logo"
   />
@@ -69,6 +69,9 @@ const avatar = persona.data.logo!.photo
   }
 
   .u-logo {
+    width: var(--size-8);
+    height: var(--size-8);
+    object-fit: cover;
     border-radius: var(--radius-round);
   }
 </style>

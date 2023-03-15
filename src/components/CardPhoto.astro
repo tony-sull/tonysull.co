@@ -1,0 +1,43 @@
+---
+import { getImage } from "astro:assets"
+import type { CollectionEntry } from "astro:content"
+
+export type Props = {
+	src: CollectionEntry<'photos'>['data']
+    alt: string
+    zoomIn?: boolean
+}
+
+const { src, zoomIn = false } = Astro.props
+
+console.log(src)
+
+const widths = [375, 522, 1044]
+
+console.log('CardPhoto', Astro.props)
+
+const srcs = await Promise.all(
+	widths.map((width) =>
+		getImage({
+			src: src.photo.src,
+			alt: src.name,
+			width,
+			height: src.photo.height * (width / src.photo.width),
+		}),
+	),
+)
+
+const fallback = srcs[0]!
+const srcset = widths.map((width, i) => `${srcs[i]!.src} ${width}w`).join(", ")
+---
+
+<img
+	src={fallback.src}
+	srcset={srcset}
+	{...fallback.attributes}
+	style={{
+		width: "100%",
+		height: "auto",
+		aspectRatio: fallback.attributes.width / fallback.attributes.height,
+	}}
+/>
