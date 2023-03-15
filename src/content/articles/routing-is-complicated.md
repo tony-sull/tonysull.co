@@ -5,7 +5,7 @@ category:
   - code
   - simplicity
 published: '2023-02-18T17:58:23Z'
-featured: '/uploads/2023-02-18-routing-is-complicated.jpg'
+featured: 'uploads/2023-02-18-routing-is-complicated'
 ---
 
 Routing on the web is a complicated problem, and kind of a big deal considering your site just won't work if URLs are busted. More often than not we (we as in people, not just coders) see complicated problems and throw complex solutions at them, adding more and more complexity until we have it **under control\***. We as web developers owe it to ourselves to take a step back from framework router hell to have a frank discussion about what the best way forward is.

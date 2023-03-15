@@ -1,5 +1,5 @@
 ---
-import { Image } from '@astrojs/image/components'
+import { Image } from 'astro:assets'
 import type { HTMLAttributes } from 'astro/types'
 import { CollectionEntry, getEntryBySlug } from 'astro:content'
 import { resolvePhoto } from '~/utils/assets.js'
@@ -28,14 +28,13 @@ const persona =
   (author && (await getEntryBySlug('personas', author))) ||
   (await getEntryBySlug('personas', 'tony'))
 
-const avatarEntry = await getEntryBySlug('photos', persona.data.logo)
-const avatar = (avatarEntry && await resolvePhoto(avatarEntry)) || persona.data.logo
+const avatar = persona.data.logo!.photo
 ---
 
 <div class:list={[className, 'h-card']} {...attrs}>
   <Image
     src={avatar}
-    alt={avatarEntry?.data?.name || ""}
+    alt={persona.data.logo.name || ""}
     width={48}
     height={48}
     format="webp"

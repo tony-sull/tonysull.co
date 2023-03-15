@@ -6,7 +6,7 @@ categories:
   - svelte
   - opensource
 published: '2021-05-01T12:00:00Z'
-featured: '/uploads/2021-05-01-introducing-svelte-entity-store.jpg'
+featured: 'uploads/2021-05-01-introducing-svelte-entity-store'
 url: https://navillus.dev/blog/introducing-svelte-entity-store/
 author: navillus
 ---

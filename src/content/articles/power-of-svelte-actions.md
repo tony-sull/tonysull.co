@@ -5,7 +5,7 @@ category:
   - code
   - svelte
 published: '2021-06-03T12:00:00Z'
-featured: '/uploads/2021-06-03-power-of-svelte-actions.jpg'
+featured: 'uploads/2021-06-03-power-of-svelte-actions'
 url: https://navillus.dev/blog/power-of-svelte-actions/
 author: navillus
 ---

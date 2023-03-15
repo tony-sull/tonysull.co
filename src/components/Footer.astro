@@ -1,16 +1,21 @@
 ---
+import { Image } from 'astro:assets'
+import { getEntryBySlug } from 'astro:content'
 import { Icon } from 'astro-icon'
-import avatar from '~/assets/uploads/avatar-tony-sull.png'
 import site from '~/data/site.json'
+
+const avatar = await getEntryBySlug('personas', 'tony')
 
 const { url, title, social } = site
 
 const year = new Date().getFullYear()
+
+console.log(avatar.data)
 ---
 
 <footer class="container">
   <section class="h-card">
-    <img hidden class="u-photo" src={avatar.src} loading="lazy" />
+    <Image hidden class="u-photo" src={avatar.data.logo.photo} format="webp" alt={avatar.data.logo.name} />
     <span hidden class="p-note">{site.description}</span>
     <p>
       <strong>© {year}</strong>
@@ -56,6 +61,7 @@ const year = new Date().getFullYear()
 
 <style>
   footer {
+    --container-width: 100%;
     padding-block: var(--size-fluid-2);
   }
 

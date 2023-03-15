@@ -1,13 +1,51 @@
 ---
-import Photo, { type Props as PhotoProps } from './Photo.astro'
+import { getImage } from "astro:assets"
+import { getEntryBySlug } from "astro:content"
 
-export type Props = PhotoProps
+export type Props = {
+	src: string
+}
 
-const {
-    widths = [375, 768, 1532],
-    sizes = "100vw",
-    ...attrs
-} = Astro.props
+const { src } = Astro.props
+
+const entry = await getEntryBySlug("photos", src)
+
+if (!entry) {
+	throw new Error(
+		`[ArticleImage] photos entry for "${src}" not found, does it exist in src/content/photos?`,
+	)
+}
+
+if (!entry.data.photo) {
+	throw new Error(
+		`[ArticleImage] photo for "${src}" could not resolve! Does the file exist in src/assets?`,
+	)
+}
+
+const widths = [375, 768, 1532]
+
+const srcs = await Promise.all(
+	widths.map((width) =>
+		getImage({
+			src: entry.data.photo.src,
+			alt: entry.data.summary,
+			width,
+			height: entry.data.photo!.height * (width / entry.data.photo!.width),
+		}),
+	),
+)
+
+const fallback = srcs[0]!
+const srcset = widths.map((width, i) => `${srcs[i]!.src} ${width}w`).join(", ")
 ---
 
-<Photo widths={widths} sizes={sizes} {...attrs} />
+<img
+	src={fallback.src}
+	srcset={srcset}
+	{...fallback.attributes}
+	style={{
+		width: "100%",
+		height: "auto",
+		aspectRatio: fallback.attributes.width / fallback.attributes.height,
+	}}
+/>

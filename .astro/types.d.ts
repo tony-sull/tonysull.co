@@ -142,6 +142,13 @@ declare module 'astro:content' {
   collection: "articles",
   data: InferEntrySchema<"articles">
 } & { render(): Render[".mdx"] },
+"astro-webfinger-2.md": {
+  id: "astro-webfinger-2.md",
+  slug: "astro-webfinger-2",
+  body: string,
+  collection: "articles",
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] },
 "converting-navillus-to-astro.md": {
   id: "converting-navillus-to-astro.md",
   slug: "converting-navillus-to-astro",
@@ -307,6 +314,13 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] },
 },
 "notes": {
+"back-to-quantitative-easing.md": {
+  id: "back-to-quantitative-easing.md",
+  slug: "back-to-quantitative-easing",
+  body: string,
+  collection: "notes",
+  data: InferEntrySchema<"notes">
+} & { render(): Render[".md"] },
 "dom-as-state.md": {
   id: "dom-as-state.md",
   slug: "dom-as-state",
@@ -451,9 +465,23 @@ declare module 'astro:content' {
   collection: "photos",
   data: InferEntrySchema<"photos">
 } & { render(): Render[".md"] },
-"avatar-tony-sull.md": {
-  id: "avatar-tony-sull.md",
-  slug: "avatar-tony-sull",
+"avatar-astro.md": {
+  id: "avatar-astro.md",
+  slug: "avatar-astro",
+  body: string,
+  collection: "photos",
+  data: InferEntrySchema<"photos">
+} & { render(): Render[".md"] },
+"avatar-navillus.md": {
+  id: "avatar-navillus.md",
+  slug: "avatar-navillus",
+  body: string,
+  collection: "photos",
+  data: InferEntrySchema<"photos">
+} & { render(): Render[".md"] },
+"avatar-tonysull.md": {
+  id: "avatar-tonysull.md",
+  slug: "avatar-tonysull",
   body: string,
   collection: "photos",
   data: InferEntrySchema<"photos">

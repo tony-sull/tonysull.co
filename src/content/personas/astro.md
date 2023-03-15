@@ -1,6 +1,6 @@
 ---
 name: Astro
 nickname: tony@astro.build
-logo: /assets/astro-96x96.jpg
+logo: avatar-astro
 url: https://astro.build
 ---

@@ -5,7 +5,7 @@ category:
   - code
   - astro
 published: '2021-07-04T12:00:00Z'
-featured: '/uploads/2021-07-24-astro-plus-swup.jpg'
+featured: 'uploads/2021-07-24-astro-plus-swup'
 url: https://navillus.dev/blog/astro-plus-swup/
 author: navillus
 ---

@@ -5,7 +5,7 @@ category:
   - code
   - svelte
 published: '2021-05-17T12:00:00Z'
-featured: '/uploads/2021-05-17-json-ld-in-sveltekit.jpg'
+featured: 'uploads/2021-05-17-json-ld-in-sveltekit'
 url: https://navillus.dev/blog/json-ld-in-sveltekit/
 author: navillus
 ---

@@ -5,7 +5,7 @@ category:
   - code
   - simplicity
 published: '2023-02-22T17:58:23Z'
-featured: '/uploads/2023-02-22-my-ideal-ssr-router.jpg'
+featured: 'uploads/2023-02-22-my-ideal-ssr-router'
 ---
 
 Thought I'd follow up on a rant I published over the weekend about [how complicated routing is](https://tonysull.co/articles/routing-is-complicated/) — request routing on the server that is, don't let me near your network router!

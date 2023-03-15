@@ -5,7 +5,7 @@ category:
   - code
   - a11y
 published: '2021-05-10T12:00:00Z'
-featured: '/uploads/2021-05-10-accessibility-skip-to-content.jpg'
+featured: 'uploads/2021-05-10-accessibility-skip-to-content'
 url: https://navillus.dev/blog/accessibility-skip-to-content/
 author: navillus
 ---

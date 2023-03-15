@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets'
 import type { CollectionEntry } from 'astro:content'
 import readingTime from 'reading-time'
 import { isoDate, shortDate } from '~/utils/dates.js'
@@ -41,8 +42,8 @@ const minutes = readingTime(body)
     <blockquote class="p-summary">{data.summary}</blockquote>
 
     <Show when={data.featured}>
-      <img
-        src="u-photo"
+      <Image
+        class="u-photo"
         src={data.featured}
         alt=""
         aria-hidden="true"

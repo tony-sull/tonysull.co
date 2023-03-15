@@ -4,7 +4,7 @@ summary: The Jamstack is evolving. Where did it start, and what does it look lik
 category:
   - code
 published: '2021-05-07T12:00:00Z'
-featured: '/uploads/2021-05-07-jamstack-2_0.jpg'
+featured: 'uploads/2021-05-07-jamstack-2_0'
 url: https://navillus.dev/blog/jamstack-2_0/
 author: navillus
 ---
