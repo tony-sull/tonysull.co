@@ -1,5 +1,5 @@
 {
-  "lastFetched": "2023-03-09T03:03:24.219Z",
+  "lastFetched": "2023-05-31T12:56:41.831Z",
   "children": [
     {
       "type": "entry",
@@ -1276,6 +1276,214 @@
       },
       "in-reply-to": "https://tonysull.co/notes/dom-as-state/",
       "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "",
+        "photo": "",
+        "url": ""
+      },
+      "url": "https://jeffbridgforth.com/weeknotes-march-21-2023/",
+      "published": null,
+      "wm-received": "2023-03-21T19:24:04Z",
+      "wm-id": 1645992,
+      "wm-source": "https://jeffbridgforth.com/weeknotes-march-21-2023/",
+      "wm-target": "https://tonysull.co/articles/the-web-needs-more-indie/",
+      "mention-of": "https://tonysull.co/articles/the-web-needs-more-indie/",
+      "wm-property": "mention-of",
+      "wm-private": false,
+      "rels": {
+        "canonical": "https://jeffbridgforth.com/weeknotes-march-21-2023/"
+      }
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "aFuzzyBear 🇺🇦",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/9d9358e1d9f5be8d4737e24ddd64e262cb7bdd16b40d0521edd68629a3b07e93.jpg",
+        "url": "https://twitter.com/aFuzzyBear2"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1635274517886164992#favorited-by-1333800379838992384",
+      "published": null,
+      "wm-received": "2023-03-14T11:36:56Z",
+      "wm-id": 1640593,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1635274517886164992/1333800379838992384",
+      "wm-target": "https://tonysull.co/notes/back-to-quantitative-easing/",
+      "like-of": "https://tonysull.co/notes/back-to-quantitative-easing/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Okiki Ojo",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/2f0dc5589797f59c20cb904eab4dd4553f4d648a453eda976ce988601b0f3f02.jpg",
+        "url": "https://twitter.com/okikio_dev"
+      },
+      "url": "https://twitter.com/okikio_dev/status/1635391517551624194",
+      "published": "2023-03-13T21:24:56+00:00",
+      "wm-received": "2023-03-13T21:34:27Z",
+      "wm-id": 1640178,
+      "wm-source": "https://brid.gy/comment/twitter/tonysull_co/1635274517886164992/1635391517551624194",
+      "wm-target": "https://tonysull.co/notes/back-to-quantitative-easing/",
+      "video": [
+        "https://video.twimg.com/tweet_video/FrIT6lCXgAAOyuk.mp4"
+      ],
+      "content": {
+        "html": "Well who doesn't like drifting...\n<a class=\"u-mention\" href=\"https://tonysull.co/\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/tonysull_co\"></a>",
+        "text": "Well who doesn't like drifting..."
+      },
+      "in-reply-to": "https://tonysull.co/notes/back-to-quantitative-easing/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Matthew Phillips",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/8faba5b45de26674c4ef3097e8153c04b4c9ce81fad7653113bd74906ae4d067.jpg",
+        "url": "https://twitter.com/matthewcp"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1635274517886164992#favorited-by-14447248",
+      "published": null,
+      "wm-received": "2023-03-13T19:40:55Z",
+      "wm-id": 1640126,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1635274517886164992/14447248",
+      "wm-target": "https://tonysull.co/notes/back-to-quantitative-easing/",
+      "like-of": "https://tonysull.co/notes/back-to-quantitative-easing/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Matt Biilmann",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/af70cb924db6d4dfc56c9c7cf65e39cf6e3901836a903a237357a1fc28c1c6a5.jpg",
+        "url": "https://twitter.com/biilmann"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1634195299609501697#favorited-by-24203304",
+      "published": null,
+      "wm-received": "2023-03-11T00:15:17Z",
+      "wm-id": 1638301,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1634195299609501697/24203304",
+      "wm-target": "https://tonysull.co/articles/astro-webfinger-2/",
+      "like-of": "https://tonysull.co/articles/astro-webfinger-2/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Ben Holmes",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/39f1a8b3dda816fa6cc1935baa6ecd3f30bbf36cf0054971d561124054e9e753.jpg",
+        "url": "https://twitter.com/BHolmesDev"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1634195299609501697#favorited-by-1042799721948098560",
+      "published": null,
+      "wm-received": "2023-03-10T23:43:35Z",
+      "wm-id": 1638269,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1634195299609501697/1042799721948098560",
+      "wm-target": "https://tonysull.co/articles/astro-webfinger-2/",
+      "like-of": "https://tonysull.co/articles/astro-webfinger-2/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "jhcha.app | 주훈",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/15e1d469f397435b2b39bf1fe3beac1adb5f59e95e1ad71d616f3c0a8410bbe8.jpg",
+        "url": "https://twitter.com/jcha0713"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1634195299609501697#favorited-by-166515838",
+      "published": null,
+      "wm-received": "2023-03-10T23:18:28Z",
+      "wm-id": 1638264,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1634195299609501697/166515838",
+      "wm-target": "https://tonysull.co/articles/astro-webfinger-2/",
+      "like-of": "https://tonysull.co/articles/astro-webfinger-2/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Chris",
+        "photo": "https://webmention.io/avatar/cdn.masto.host/54b10e5e19854635728431367b3e48491e503ecd8e0555fe478b58157498a569.jpg",
+        "url": "https://m.webtoo.ls/@swithinbank"
+      },
+      "url": "https://indieweb.social/@tonysull/109999390726622168#favorited-by-109933560906697252",
+      "published": null,
+      "wm-received": "2023-03-10T20:54:28Z",
+      "wm-id": 1638223,
+      "wm-source": "https://brid.gy/like/mastodon/@tonysull@indieweb.social/109999390726622168/109933560906697252",
+      "wm-target": "https://tonysull.co/articles/astro-webfinger-2/",
+      "like-of": "https://tonysull.co/articles/astro-webfinger-2/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Nate Moore",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/1777eaca4cbf177981f6fcbc375facb3bce28c136c9257368c7dc0fd661332ee.jpg",
+        "url": "https://twitter.com/n_moore"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1634195299609501697#favorited-by-41262231",
+      "published": null,
+      "wm-received": "2023-03-10T19:14:53Z",
+      "wm-id": 1638177,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1634195299609501697/41262231",
+      "wm-target": "https://tonysull.co/articles/astro-webfinger-2/",
+      "like-of": "https://tonysull.co/articles/astro-webfinger-2/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Lakshya Singh 🦀🐿️",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/682f2be2c9836e54cd6a204589333ac21d65cdbc3116ce8a2eabcb69e897b9bd.jpg",
+        "url": "https://twitter.com/1108King"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1634195299609501697#favorited-by-794034159081623556",
+      "published": null,
+      "wm-received": "2023-03-10T19:14:53Z",
+      "wm-id": 1638178,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1634195299609501697/794034159081623556",
+      "wm-target": "https://tonysull.co/articles/astro-webfinger-2/",
+      "like-of": "https://tonysull.co/articles/astro-webfinger-2/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Okiki Ojo",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/2f0dc5589797f59c20cb904eab4dd4553f4d648a453eda976ce988601b0f3f02.jpg",
+        "url": "https://twitter.com/okikio_dev"
+      },
+      "url": "https://twitter.com/tonysull_co/status/1634195299609501697#favorited-by-1403482570864697346",
+      "published": null,
+      "wm-received": "2023-03-10T19:14:52Z",
+      "wm-id": 1638176,
+      "wm-source": "https://brid.gy/like/twitter/tonysull_co/1634195299609501697/1403482570864697346",
+      "wm-target": "https://tonysull.co/articles/astro-webfinger-2/",
+      "like-of": "https://tonysull.co/articles/astro-webfinger-2/",
+      "wm-property": "like-of",
       "wm-private": false
     }
   ]
