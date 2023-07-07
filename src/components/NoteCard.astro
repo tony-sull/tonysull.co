@@ -1,7 +1,6 @@
 ---
-import type { CollectionEntry } from 'astro:content'
+import { getEntry, type CollectionEntry } from 'astro:content'
 import Card from './Card.astro'
-import { scrape } from '~/utils/scrape'
 import Show from './Show.astro'
 
 export type Props = CollectionEntry<'notes'>
@@ -10,11 +9,13 @@ const { data, render, slug } = Astro.props
 
 const { Content } = await render()
 
-const replyMetadata = data.inReplyTo ? await scrape(data.inReplyTo) : undefined
+const replyMetadata = data['in-reply-to']
+
+const author = await getEntry(data.author)
 ---
 
 <Card
-  author={data.author}
+  author={author}
   href={`/notes/${slug}`}
   date={data.published}
   tags={data.category}
@@ -28,7 +29,7 @@ const replyMetadata = data.inReplyTo ? await scrape(data.inReplyTo) : undefined
     <Show when={replyMetadata}>
       <small>
         <span>In reply to</span>
-        <a href={data.inReplyTo} class="u-in-reply-to">
+        <a href={replyMetadata?.url} class="u-in-reply-to">
           {replyMetadata?.title}
         </a>
       </small>

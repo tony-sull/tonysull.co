@@ -1,56 +1,34 @@
 ---
-import { Image } from '@astrojs/image/components'
+import { Image } from 'astro:assets'
 import type { HTMLAttributes } from 'astro/types'
-import { CollectionEntry, getEntryBySlug } from 'astro:content'
-import { resolvePhoto } from '~/utils/assets.js'
+import type { CollectionEntry } from 'astro:content'
 
 export type Props = HTMLAttributes<'div'> & {
-  author?: string | undefined
+  author: CollectionEntry<'personas'>
 }
 
 const { author, class: className, ...attrs } = Astro.props
 
-function getHandleName(author: CollectionEntry<'personas'>) {
-  return author.data.nickname.slice(0, author.data.nickname.indexOf('@'))
-}
-
-function getHandleDomain(author: CollectionEntry<'personas'>) {
-  const start = author.data.nickname.indexOf('@')
-  const end = author.data.nickname.lastIndexOf('.')
-
-  return author.data.nickname.slice(
-    start + 1,
-    end >= 0 ? end : author.data.nickname.length
-  )
-}
-
-const persona =
-  (author && (await getEntryBySlug('personas', author))) ||
-  (await getEntryBySlug('personas', 'tony'))
-
-const avatarEntry = await getEntryBySlug('photos', persona.data.logo)
-const avatar = (avatarEntry && await resolvePhoto(avatarEntry)) || persona.data.logo
+const [handleName, handleDomain] = author.data.nickname.split('@')
 ---
 
 <div class:list={[className, 'h-card']} {...attrs}>
   <Image
-    src={avatar}
-    alt={avatarEntry?.data?.name || ""}
+    src={author.data.logo}
+    alt=""
     width={48}
     height={48}
     format="webp"
     class="u-logo"
   />
-  <p class="p-name sr-only">{persona.data.name}</p>
+  <p class="p-name sr-only">{author.data.name}</p>
   <p class="p-nickname">
-    <b>{getHandleName(persona)}</b>
-    <span>@</span>
-    <i>{getHandleDomain(persona)}</i>
-    <span
-      >{
-        persona.data.nickname.slice(persona.data.nickname.lastIndexOf('.'))
-      }</span
-    >
+    <b>{handleName}</b>
+    {!!handleDomain && (
+      <span>@</span>
+      <i>{handleDomain.slice(0, handleDomain.lastIndexOf('.'))}</i>
+      <span>{handleDomain.slice(handleDomain.lastIndexOf('.'))}</span>
+    )}
   </p>
 </div>
 

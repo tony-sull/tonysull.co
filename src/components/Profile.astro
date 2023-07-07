@@ -2,7 +2,7 @@
 import type { HTMLAttributes } from 'astro/types'
 import { getCollection } from 'astro:content'
 import { Icon } from 'astro-icon'
-import site from '~/data/site.json'
+import site from '~/data/site'
 import TagList from './TagList.astro'
 
 export type Props = Omit<HTMLAttributes<'aside'>, 'slot'>
@@ -16,7 +16,7 @@ const notes = await getCollection('notes')
 const entries = [...articles, ...bookmarks, ...notes]
 
 const uniq = entries.reduce((acc, next) => {
-  (next.data.category || []).forEach(tag => {
+  ;(next.data.category || []).forEach(tag => {
     const count = acc.has(tag) ? acc.get(tag)! : 0
 
     acc.set(tag, count + 1)
@@ -86,7 +86,8 @@ const tags = Array.from(uniq.entries())
     --link-visited: var(--text-2);
   }
 
-  a:hover, a:focus-visible {
+  a:hover,
+  a:focus-visible {
     --link: var(--indigo-11);
     --link-visited: var(--indigo-11);
   }
@@ -104,7 +105,8 @@ const tags = Array.from(uniq.entries())
     gap: var(--size-1);
   }
 
-  a, p {
+  a,
+  p {
     font-size: var(--font-size-fluid-0);
   }
 

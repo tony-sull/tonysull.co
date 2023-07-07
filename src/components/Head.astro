@@ -1,11 +1,11 @@
 ---
 import { Fathom } from 'astro-fathom'
-import site from '~/data/site.json'
+import site from '~/data/site'
 
 export interface Props {
   title?: string | undefined
   description?: string | undefined
-  image?: string | undefined
+  image?: ImageMetadata | undefined
   canonicalURL?: URL | undefined
 }
 
@@ -16,7 +16,7 @@ const {
   canonicalURL = new URL(Astro.url.pathname, Astro.site),
 } = Astro.props
 
-const imageAbsolute = new URL(image, site.url)
+const imageAbsolute = new URL(image.src, site.url)
 
 const fullTitle = [title, site.title].filter(Boolean).join(' • ')
 ---

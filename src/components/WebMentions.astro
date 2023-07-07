@@ -132,6 +132,8 @@ const replies = mentions.filter(isMentionType(MENTION_TYPE.Reply))
 
   :is(.facepile, .reply) img {
     border-radius: var(--radius-round);
+    aspect-ratio: 1;
+    object-fit: cover;
   }
 
   .reply {

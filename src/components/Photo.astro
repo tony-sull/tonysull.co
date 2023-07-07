@@ -1,67 +1,33 @@
 ---
-import { Picture } from '@astrojs/image/components'
-import type { Props as PictureProps } from '@astrojs/image/components/Picture.astro'
-import { getEntryBySlug } from 'astro:content'
-import { resolvePhoto } from '~/utils/assets.js'
-import Show from './Show.astro'
+import Picture from './Picture.astro'
+import type { Props as PictureProps } from './Picture.astro'
 
-export type Props = Omit<PictureProps, 'alt' | 'src' | 'slot'> & {
-  src: string
-  alt?: string
+export type Props = Omit<PictureProps, 'src' | 'slot'> & {
+  src: ImageMetadata
+  caption?: string
   zoomIn?: boolean
 }
 
-const { src, zoomIn = false, ...attrs } = Astro.props
-
-const photoEntry = src ? await getEntryBySlug('photos', src) : undefined
-const resolvedPhoto = photoEntry ? await resolvePhoto(photoEntry) : undefined
-
-if (photoEntry && !resolvedPhoto) {
-  throw new Error(
-    `${src} entry was found but the image "${photoEntry.data.photo}" could not be found. Is there a typo?`
-  )
-}
-
-const pictureSrc: any = resolvedPhoto
-  ? resolvedPhoto
-  : photoEntry
-  ? photoEntry.data.photo
-  : src
-const caption = photoEntry?.data?.name
-
-const {
-  alt = photoEntry ? photoEntry.data.summary : attrs.alt,
-  ...pictureProps
-} = attrs
+const { src, zoomIn = false, caption, ...attrs } = Astro.props
 ---
 
 <figure>
-  <Show when={zoomIn}>
-    <a href={pictureSrc?.src || pictureSrc} target="_blank">
-      <Picture
-        src={pictureSrc}
-        alt={alt || ''}
-        {...pictureProps}
-        width={resolvedPhoto?.width}
-        height={resolvedPhoto?.height}
-      />
-    </a>
-
-    <Picture
-      slot="fallback"
-      src={pictureSrc}
-      alt={alt || ''}
-      {...pictureProps}
-      width={resolvedPhoto?.width}
-      height={resolvedPhoto?.height}
-    />
-  </Show>
-  <figcaption>{caption}</figcaption>
+  {
+    zoomIn ? (
+      <a href={src.src} target="_blank">
+        <Picture src={src} {...attrs} />
+      </a>
+    ) : (
+      <Picture src={src} {...attrs} />
+    )
+  }
+  {!!caption && <figcaption>{caption}</figcaption>}
 </figure>
 
 <style>
   a:hover,
   a:focus-within {
     cursor: zoom-in;
+    http: ; //localhost:3000/articles/astro-showcase
   }
 </style>

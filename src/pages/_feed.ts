@@ -1,7 +1,7 @@
 import type { APIContext } from 'astro'
-import { CollectionEntry, getCollection } from 'astro:content'
+import { getCollection } from 'astro:content'
 import { Feed, Item } from 'feed'
-import siteData from '~/data/site.json'
+import siteData from '~/data/site'
 import { mdToHtml } from '~/utils/markdown'
 import { sortByDate } from '~/utils/sortByDate'
 
@@ -44,7 +44,7 @@ export async function getFeed({ site, generator }: APIContext) {
     }
 
     if ('featured' in entry.data && entry.data.featured) {
-      item.image = new URL(entry.data.featured, site).toString()
+      item.image = new URL(entry.data.featured.src, site).toString()
     }
 
     feed.addItem(item)

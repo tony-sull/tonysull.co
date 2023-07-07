@@ -490,13 +490,6 @@ declare module 'astro:content' {
   collection: "notes";
   data: InferEntrySchema<"notes">
 } & { render(): Render[".md"] };
-"surface-duo-camera.md": {
-	id: "surface-duo-camera.md";
-  slug: "surface-duo-camera";
-  body: string;
-  collection: "notes";
-  data: InferEntrySchema<"notes">
-} & { render(): Render[".md"] };
 "tailwind-blockers.md": {
 	id: "tailwind-blockers.md";
   slug: "tailwind-blockers";
@@ -585,16 +578,9 @@ declare module 'astro:content' {
   collection: "photos";
   data: InferEntrySchema<"photos">
 } & { render(): Render[".md"] };
-"avatar-tony-sull.md": {
-	id: "avatar-tony-sull.md";
-  slug: "avatar-tony-sull";
-  body: string;
-  collection: "photos";
-  data: InferEntrySchema<"photos">
-} & { render(): Render[".md"] };
-"duo-sample-pandi.md": {
-	id: "duo-sample-pandi.md";
-  slug: "duo-sample-pandi";
+"surface-duo-camera.md": {
+	id: "surface-duo-camera.md";
+  slug: "surface-duo-camera";
   body: string;
   collection: "photos";
   data: InferEntrySchema<"photos">

@@ -6,13 +6,14 @@ category:
   - astro
   - simplicity
 published: '2021-06-14T12:00:00Z'
-featured: '/uploads/2021-06-14-keeping-it-simple-with-astro.jpg'
-url: https://navillus.dev/blog/keeping-it-simple-with-astro/
+featured: '~/assets/uploads/2021-06-14-keeping-it-simple-with-astro.jpg'
+uid: https://navillus.dev/blog/keeping-it-simple-with-astro/
 author: navillus
 ---
 
-import ArticlePhoto from "~/components/ArticlePhoto.astro"
+import ArticlePhoto from '~/components/ArticlePhoto.astro'
 import { Tweet } from '@astro-community/astro-embed-twitter'
+import devtools from '~/assets/uploads/2021-06-14-navillus-dev-tools.png'
 
 Frontend frameworks have taken over much of the web, but the question remains - do we really need all that JavaScript in the browser?
 
@@ -22,7 +23,11 @@ Client-side rendering can be an extremely powerful tool, and in some cases can s
 
 The [Navillus](https://navillus.dev) is a perfect example. It has a mobile menu taking advantage of Svelte's excellent [built-in transition](https://svelte.dev/docs#svelte_transition), and we recently added in a dark mode toggle. That's it for interactions on our site though, the rest is entirely static.
 
-<ArticlePhoto src="2021-06-14-navillus-dev-tools" />
+<ArticlePhoto
+  src={devtools}
+  caption="Browser developer tools showing navillus.dev loading in under 800ms"
+  alt="Chrome Devtools when loading https://navillus.dev"
+/>
 
 Here's a screenshot of devtools with our homepage loaded. A grand total of ~78KB transferred, including all the HTML, CSS, JavaScript, images, and fonts. Don't get me wrong, there's more to web design and development than just minimizing bundle size, but performance matters and small wins can add up quickly.
 

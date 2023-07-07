@@ -1,4 +1,5 @@
 ---
+import type { CollectionEntry } from 'astro:content'
 import Photo from '~/components/Photo.astro'
 import { isoDate, shortDate } from '~/utils/dates.js'
 import Avatar from './Avatar.astro'
@@ -6,15 +7,15 @@ import Show from './Show.astro'
 import TagList from './TagList.astro'
 
 export type Props = {
-  author?: string | undefined
+  author: CollectionEntry<'personas'>
   href?: string
   date?: Date | null | undefined
   tags?: string[] | undefined
-  photo?: (string | undefined)[] | string | undefined
+  photo?: ImageMetadata | ImageMetadata[] | undefined
   contentClass?: string
 }
 
-const { author, href, date, tags, photo, contentClass } = Astro.props
+const { author, date, tags, photo, contentClass } = Astro.props
 
 const singlePhoto = Array.isArray(photo) ? photo[0] : photo
 ---
@@ -36,9 +37,18 @@ const singlePhoto = Array.isArray(photo) ? photo[0] : photo
     </Show>
   </header>
 
-  {singlePhoto && (
-    <Photo zoomIn src={singlePhoto} class="u-fetaured" widths={[375, 522, 1044]} sizes="(min-width: 530px) 522px, 100vw" />
-  )}
+  {
+    singlePhoto && (
+      <Photo
+        zoomIn
+        src={singlePhoto}
+        alt=""
+        class="u-fetaured"
+        widths={[375, 522, 1044]}
+        sizes="(min-width: 530px) 522px, 100vw"
+      />
+    )
+  }
 
   <div class:list={[contentClass, 'e-content']}>
     <slot />

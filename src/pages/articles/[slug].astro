@@ -4,11 +4,7 @@ import Article from '~/components/Article.astro'
 import Show from '~/components/Show.astro'
 import WebMentions from '~/components/WebMentions.astro'
 import Layout from '~/layouts/Page.astro'
-import {
-  getAllMentions,
-  isForUrl,
-  sortMentions,
-} from '~/utils/mentions.js'
+import { getAllMentions, isForUrl, sortMentions } from '~/utils/mentions.js'
 
 export async function getStaticPaths() {
   const articles = await getCollection('articles')
@@ -48,4 +44,3 @@ const mentions = allMentions.children
     <WebMentions mentions={mentions} />
   </Show>
 </Layout>
-

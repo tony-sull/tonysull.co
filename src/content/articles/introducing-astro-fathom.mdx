@@ -7,10 +7,11 @@ category:
   - opensource
 slug: introducing-astro-fathom
 published: '2023-01-22T21:55:21Z'
-featured: '/uploads/2023-01-22-introducing-astro-fathom.jpg'
+featured: '~/assets/uploads/2023-01-22-introducing-astro-fathom.jpg'
 ---
 
 import ArticlePhoto from '~/components/ArticlePhoto.astro'
+import devtools from '~/assets/uploads/2023-01-22-astro-build-devtools.png'
 
 Two paragraphs in and I realized how much I have to say about analytics! This will likely be the first in a series covering everything from my love/hate relationship with Google Analytics to what data you _really_ need to be collecting. Subscribe to my [RSS Feed](https://tonysull.co/articles/feed.xml) for updates!
 
@@ -22,7 +23,11 @@ I've been using [Fathom Analytics](https://usefathom.com) on my own sites for a 
 
 It's not surprise I prefer to use [Astro](https://astro.build) these days. Go ahead and pull up the developer console on our site...
 
-<ArticlePhoto src="2023-01-22-astro-build-devtools" />
+<ArticlePhoto
+  src={devtools}
+  caption="Browser developer tools showing Fathom analytics running on https://astro.build"
+  alt="Fathom Analytics loading their main script.js bundle"
+/>
 
 That's right, we use Fathom on Astro's homepage (as well as our [docs](https://docs.astro.build) and [astro.new](https://astro.new)).
 

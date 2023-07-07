@@ -1,6 +1,6 @@
 import fs from 'node:fs'
 import unionBy from 'lodash/unionBy.js'
-import site from '../data/site.json'
+import site from '../data/site'
 
 export interface WebMention {
   published: string | Date

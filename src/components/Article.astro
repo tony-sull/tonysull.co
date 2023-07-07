@@ -1,11 +1,12 @@
 ---
-import type { CollectionEntry } from 'astro:content'
+import { type CollectionEntry, getEntry } from 'astro:content'
 import readingTime from 'reading-time'
 import { isoDate, shortDate } from '~/utils/dates.js'
 import { Icon } from 'astro-icon'
 import Avatar from './Avatar.astro'
 import Show from './Show.astro'
 import TagList from './TagList.astro'
+import { Image } from 'astro:assets'
 
 export type Props = CollectionEntry<'articles'>
 
@@ -13,6 +14,7 @@ const { body, data, render } = Astro.props
 
 const { Content } = await render()
 
+const author = await getEntry(data.author)
 const minutes = readingTime(body)
 ---
 
@@ -27,7 +29,7 @@ const minutes = readingTime(body)
       <strong slot="fallback">DRAFT</strong>
     </Show>
 
-    <Avatar class="p-author" author={data.author} />
+    <Avatar class="p-author" author={author} />
 
     <p>
       <Icon name="clock" size={16} aria-hidden="true" role="img" />
@@ -41,12 +43,11 @@ const minutes = readingTime(body)
     <blockquote class="p-summary">{data.summary}</blockquote>
 
     <Show when={data.featured}>
-      <img
-        src="u-photo"
-        src={data.featured}
-        alt=""
+      <Image
+        class="u-photo u-featured"
+        src={data.featured!}
+        alt={data.summary}
         aria-hidden="true"
-        loading="lazy"
         hidden
       />
     </Show>
