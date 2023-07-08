@@ -13,6 +13,7 @@ const site = {
     twitter_card: 'summary_large_image',
     twitter_url: 'https://twitter.com/tonysull_co',
     github_url: 'https://github.com/tony-sull',
+    gitea_url: 'https://git.tonysull.co',
     mastodon_url: 'https://indieweb.social/@tonysull',
   },
   feeds: {
