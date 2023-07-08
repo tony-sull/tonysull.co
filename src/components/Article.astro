@@ -54,8 +54,8 @@ const minutes = readingTime(body)
 
     <a
       class="u-url"
-      href={/*(data.url && new URL(data.url)) ||*/
-      new URL(Astro.url.pathname, Astro.site)}
+      href={(data.uid && new URL(data.uid)) ||
+        new URL(Astro.url.pathname, Astro.site)}
       hidden></a>
   </header>
 
