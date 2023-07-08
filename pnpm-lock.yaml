@@ -65,6 +65,9 @@ devDependencies:
   marked:
     specifier: ^5.0.4
     version: 5.1.0
+  marked-gfm-heading-id:
+    specifier: ^3.0.4
+    version: 3.0.4(marked@5.1.0)
   metascraper:
     specifier: ^5.34.7
     version: 5.34.8
@@ -4082,6 +4085,15 @@ packages:
 
   /markdown-table@3.0.3:
     resolution: {integrity: sha512-Z1NL3Tb1M9wH4XESsCDEksWoKTdlUafKc4pt0GRwjUyXaCFZ+dc3g2erqB6zm3szA2IUSi7VnPI+o/9jnxh9hw==}
+    dev: true
+
+  /marked-gfm-heading-id@3.0.4(marked@5.1.0):
+    resolution: {integrity: sha512-k22f+k8B449kRVXbi3OYxahI6t8HywKIF0wn0L0atzYhFHYRcJynLDekh+lcxcZkNnkEGRZOHuRfTcpjMjLqDw==}
+    peerDependencies:
+      marked: ^4 || ^5
+    dependencies:
+      github-slugger: 2.0.0
+      marked: 5.1.0
     dev: true
 
   /marked@5.1.0:
