@@ -1,7 +1,6 @@
 ---
 import { CollectionEntry, getCollection } from 'astro:content'
 import Article from '~/components/Article.astro'
-import Show from '~/components/Show.astro'
 import WebMentions from '~/components/WebMentions.astro'
 import Layout from '~/layouts/Page.astro'
 import { getAllMentions, isForUrl, sortMentions } from '~/utils/mentions.js'
@@ -36,11 +35,7 @@ const mentions = allMentions.children
   image={data.featured}
   canonicalURL={data.uid ? new URL(data.uid) : undefined}
 >
-  <Show when={article}>
-    <Article {...article} />
-  </Show>
+  {!!article && <Article {...article} />}
 
-  <Show when={mentions.length}>
-    <WebMentions mentions={mentions} />
-  </Show>
+  {mentions.length > 0 && <WebMentions mentions={mentions} />}
 </Layout>

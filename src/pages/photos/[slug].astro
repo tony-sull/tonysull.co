@@ -1,7 +1,6 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content'
 import PhotoCard from '~/components/PhotoCard.astro'
-import Show from '~/components/Show.astro'
 import WebMentions from '~/components/WebMentions.astro'
 import Layout from '~/layouts/Page.astro'
 import { getAllMentions, isForUrl, sortMentions } from '~/utils/mentions.js'
@@ -36,7 +35,5 @@ const mentions = allMentions.children
 <Layout title="Notes" image={image}>
   <PhotoCard {...photo} />
 
-  <Show when={mentions.length}>
-    <WebMentions mentions={mentions} />
-  </Show>
+  {mentions.length > 0 && <WebMentions mentions={mentions} />}
 </Layout>

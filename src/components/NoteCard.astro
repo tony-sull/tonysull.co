@@ -1,7 +1,6 @@
 ---
 import { getEntry, type CollectionEntry } from 'astro:content'
 import Card from './Card.astro'
-import Show from './Show.astro'
 
 export type Props = CollectionEntry<'notes'>
 
@@ -26,14 +25,16 @@ const author = await getEntry(data.author)
   <div slot="footer">
     <a href={`/notes/${slug}`} class="u-url">View and share</a>
 
-    <Show when={replyMetadata}>
-      <small>
-        <span>In reply to</span>
-        <a href={replyMetadata?.url} class="u-in-reply-to">
-          {replyMetadata?.title}
-        </a>
-      </small>
-    </Show>
+    {
+      !!replyMetadata && (
+        <small>
+          <span>In reply to</span>
+          <a href={replyMetadata?.url} class="u-in-reply-to">
+            {replyMetadata?.title}
+          </a>
+        </small>
+      )
+    }
   </div>
 </Card>
 

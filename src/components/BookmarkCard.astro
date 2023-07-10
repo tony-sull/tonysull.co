@@ -2,7 +2,6 @@
 import Card from './Card.astro'
 import { Icon } from 'astro-icon'
 import { type CollectionEntry, getEntry } from 'astro:content'
-import Show from './Show.astro'
 
 export type Props = CollectionEntry<'bookmarks'>
 
@@ -28,9 +27,7 @@ const author = await getEntry(data.author)
 >
   <h2 class="p-name">{metadata.title}</h2>
 
-  <Show when={metadata.description}>
-    <p class="p-summary">{metadata.description}</p>
-  </Show>
+  {!!metadata.description && <p class="p-summary">{metadata.description}</p>}
 
   <small slot="footer">
     <Icon name="bookmark-solid" size={24} aria-label="Bookmark" />
