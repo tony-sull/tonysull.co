@@ -1,0 +1,37 @@
+---
+import { getEntry, type CollectionEntry } from 'astro:content'
+import Card from './Card.astro'
+
+export type Props = CollectionEntry<'photos'>
+
+const { data, render, slug } = Astro.props
+
+const { Content } = await render()
+
+const author = await getEntry(data.author)
+---
+
+<Card
+  author={author}
+  href={`/photos/${slug}`}
+  date={data.published}
+  tags={data.category}
+  photo={data.photo}
+>
+  <Content />
+
+  <div slot="footer">
+    <a href={`/photos/${slug}`} class="u-url">View and share</a>
+  </div>
+</Card>
+
+<style>
+  footer small span {
+    opacity: 75%;
+  }
+
+  .u-url {
+    white-space: nowrap;
+    font-size: var(--size-fluid-2);
+  }
+</style>

@@ -11,13 +11,17 @@ import { sortByDate } from '~/utils/sortByDate'
 const articles = await getCollection('articles')
 const bookmarks = await getCollection('bookmarks')
 const notes = await getCollection('notes')
+const photos = await getCollection('photos')
 
-const entries = [...articles, ...bookmarks, ...notes].sort(sortByDate)
+const entries = [...articles, ...bookmarks, ...notes, ...photos].sort(
+  sortByDate
+)
 
 type Entry =
   | CollectionEntry<'articles'>
   | CollectionEntry<'bookmarks'>
   | CollectionEntry<'notes'>
+  | CollectionEntry<'photos'>
 ---
 
 <Layout>

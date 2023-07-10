@@ -1,4 +1,5 @@
 import type { APIContext } from 'astro'
+import { getImage } from 'astro:assets'
 import { getCollection } from 'astro:content'
 import { Feed, Item } from 'feed'
 import siteData from '~/data/site'
@@ -8,8 +9,9 @@ import { sortByDate } from '~/utils/sortByDate'
 export async function getFeed({ site, generator }: APIContext) {
   const articles = await getCollection('articles')
   const notes = await getCollection('notes')
+  const photos = await getCollection('photos')
 
-  const entries = [...articles, ...notes]
+  const entries = [...articles, ...notes, ...photos]
     .filter(entry => entry.data.published)
     .sort(sortByDate)
 
@@ -19,7 +21,7 @@ export async function getFeed({ site, generator }: APIContext) {
     id: site!.toString(),
     link: site!.toString(),
     language: 'en',
-    image: new URL(siteData.social.image, site).toString(),
+    image: new URL(siteData.social.image.src, site).toString(),
     favicon: new URL('/favicon.svg', site).toString(),
     copyright: `All rights reserved ${new Date().getFullYear()}, Tony Sullivan`,
     generator,

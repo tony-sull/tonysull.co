@@ -4,6 +4,7 @@ type SortableEntry =
   | CollectionEntry<'articles'>
   | CollectionEntry<'bookmarks'>
   | CollectionEntry<'notes'>
+  | CollectionEntry<'photos'>
 
 export function sortByDate(a: SortableEntry, b: SortableEntry) {
   if (!a.data.published && !b.data.published) {

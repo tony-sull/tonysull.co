@@ -536,48 +536,6 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 };
 "photos": {
-"2021-06-14-navillus-dev-tools.md": {
-	id: "2021-06-14-navillus-dev-tools.md";
-  slug: "2021-06-14-navillus-dev-tools";
-  body: string;
-  collection: "photos";
-  data: InferEntrySchema<"photos">
-} & { render(): Render[".md"] };
-"2022-04-06-astro-partytown.md": {
-	id: "2022-04-06-astro-partytown.md";
-  slug: "2022-04-06-astro-partytown";
-  body: string;
-  collection: "photos";
-  data: InferEntrySchema<"photos">
-} & { render(): Render[".md"] };
-"2022-04-06-astro-themes-integrations.md": {
-	id: "2022-04-06-astro-themes-integrations.md";
-  slug: "2022-04-06-astro-themes-integrations";
-  body: string;
-  collection: "photos";
-  data: InferEntrySchema<"photos">
-} & { render(): Render[".md"] };
-"2022-04-06-astro-themes.md": {
-	id: "2022-04-06-astro-themes.md";
-  slug: "2022-04-06-astro-themes";
-  body: string;
-  collection: "photos";
-  data: InferEntrySchema<"photos">
-} & { render(): Render[".md"] };
-"2022-04-08-astro-showcase-screenshot.md": {
-	id: "2022-04-08-astro-showcase-screenshot.md";
-  slug: "2022-04-08-astro-showcase-screenshot";
-  body: string;
-  collection: "photos";
-  data: InferEntrySchema<"photos">
-} & { render(): Render[".md"] };
-"2023-01-22-astro-build-devtools.md": {
-	id: "2023-01-22-astro-build-devtools.md";
-  slug: "2023-01-22-astro-build-devtools";
-  body: string;
-  collection: "photos";
-  data: InferEntrySchema<"photos">
-} & { render(): Render[".md"] };
 "surface-duo-camera.md": {
 	id: "surface-duo-camera.md";
   slug: "surface-duo-camera";
