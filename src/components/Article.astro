@@ -4,7 +4,6 @@ import readingTime from 'reading-time'
 import { isoDate, shortDate } from '~/utils/dates.js'
 import { Icon } from 'astro-icon'
 import Avatar from './Avatar.astro'
-import Show from './Show.astro'
 import TagList from './TagList.astro'
 import { Image } from 'astro:assets'
 
@@ -22,12 +21,15 @@ const minutes = readingTime(body)
   <header>
     <h1 class="p-name">{data.name}</h1>
 
-    <Show when={data.published}>
-      <time datetime={isoDate(data.published!)} class="dt-published"
-        >{shortDate(data.published!)}</time
-      >
-      <strong slot="fallback">DRAFT</strong>
-    </Show>
+    {
+      data.published ? (
+        <time datetime={isoDate(data.published!)} class="dt-published">
+          {shortDate(data.published!)}
+        </time>
+      ) : (
+        <strong slot="fallback">DRAFT</strong>
+      )
+    }
 
     <Avatar class="p-author" author={author} />
 
@@ -36,21 +38,25 @@ const minutes = readingTime(body)
       <span>{minutes.text}</span>
     </p>
 
-    <Show when={data.category?.length}>
-      <TagList tags={data.category!} class="tags" />
-    </Show>
+    {
+      data.category?.length > 0 && (
+        <TagList tags={data.category!} class="tags" />
+      )
+    }
 
     <blockquote class="p-summary">{data.summary}</blockquote>
 
-    <Show when={data.featured}>
-      <Image
-        class="u-photo u-featured"
-        src={data.featured!}
-        alt={data.summary}
-        aria-hidden="true"
-        hidden
-      />
-    </Show>
+    {
+      !!data.featured && (
+        <Image
+          class="u-photo u-featured"
+          src={data.featured!}
+          alt={data.summary}
+          aria-hidden="true"
+          hidden
+        />
+      )
+    }
 
     <a
       class="u-url"

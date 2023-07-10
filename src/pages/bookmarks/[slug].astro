@@ -1,14 +1,9 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content'
 import BookmarkCard from '~/components/BookmarkCard.astro'
-import Show from '~/components/Show.astro'
 import WebMentions from '~/components/WebMentions.astro'
 import Layout from '~/layouts/Page.astro'
-import {
-  getAllMentions,
-  isForUrl,
-  sortMentions,
-} from '~/utils/mentions.js'
+import { getAllMentions, isForUrl, sortMentions } from '~/utils/mentions.js'
 
 export async function getStaticPaths() {
   const bookmarks = await getCollection('bookmarks')
@@ -36,7 +31,5 @@ const mentions = allMentions.children
 <Layout title="Bookmarks">
   <BookmarkCard {...bookmark} />
 
-  <Show when={mentions.length}>
-    <WebMentions mentions={mentions} />
-  </Show>
+  {mentions.length > 0 && <WebMentions mentions={mentions} />}
 </Layout>

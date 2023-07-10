@@ -1,6 +1,4 @@
 ---
-import For from '~/components/For.astro'
-import Show from '~/components/Show.astro'
 import {
   type WebMention,
   isMentionType,
@@ -21,12 +19,14 @@ const replies = mentions.filter(isMentionType(MENTION_TYPE.Reply))
 <section>
   <h2 id="comments">Mentions</h2>
 
-  <Show when={likes.length}>
-    <p>{likes.length} like{likes.length > 1 ? 's' : ''}</p>
-    <ul class="facepile">
-      <For each={likes}>
-        {
-          (like: WebMention) => (
+  {
+    likes.length > 0 && (
+      <>
+        <p>
+          {likes.length} like{likes.length > 1 ? 's' : ''}
+        </p>
+        <ul class="facepile">
+          {likes.map(like => (
             <li title={like.author.name}>
               <a href={like.url}>
                 <img
@@ -38,18 +38,20 @@ const replies = mentions.filter(isMentionType(MENTION_TYPE.Reply))
                 />
               </a>
             </li>
-          )
-        }
-      </For>
-    </ul>
-  </Show>
+          ))}
+        </ul>
+      </>
+    )
+  }
 
-  <Show when={reposts.length}>
-    <p>{reposts.length} share{reposts.length > 1 ? 's' : ''}</p>
-    <ul class="facepile">
-      <For each={reposts}>
-        {
-          (repost: WebMention) => (
+  {
+    reposts.length > 0 && (
+      <>
+        <p>
+          {reposts.length} share{reposts.length > 1 ? 's' : ''}
+        </p>
+        <ul class="facepile">
+          {reposts.map(repost => (
             <li title={repost.author.name}>
               <a href={repost.url}>
                 <img
@@ -61,34 +63,32 @@ const replies = mentions.filter(isMentionType(MENTION_TYPE.Reply))
                 />
               </a>
             </li>
-          )
-        }
-      </For>
-    </ul>
-  </Show>
+          ))}
+        </ul>
+      </>
+    )
+  }
 
-  <For each={replies}>
-    {
-      (reply: WebMention) => (
-        <div class="reply">
-          <blockquote set:html={reply.content!.html} />
-          <div>
-            <a href={reply.author.url}>
-              <span class="sr-only">{reply.author.name}</span>
-              <img
-                src={reply.author.photo}
-                alt=""
-                width="24"
-                height="24"
-                loading="lazy"
-              />
-            </a>
-            <a href={reply.url}>{reply.author.name}</a>
-          </div>
+  {
+    replies.map(reply => (
+      <div class="reply">
+        <blockquote set:html={reply.content!.html} />
+        <div>
+          <a href={reply.author.url}>
+            <span class="sr-only">{reply.author.name}</span>
+            <img
+              src={reply.author.photo}
+              alt=""
+              width="24"
+              height="24"
+              loading="lazy"
+            />
+          </a>
+          <a href={reply.url}>{reply.author.name}</a>
         </div>
-      )
-    }
-  </For>
+      </div>
+    ))
+  }
 </section>
 
 <style>

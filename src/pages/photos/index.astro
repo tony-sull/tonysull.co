@@ -1,26 +1,19 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content'
+import { getCollection } from 'astro:content'
 import PhotoCard from '~/components/PhotoCard.astro'
-import For from '~/components/For.astro'
 import Layout from '~/layouts/Page.astro'
 import { sortByDate } from '~/utils/sortByDate'
 
 const photos = await getCollection('photos')
-
-type Photo = CollectionEntry<'photos'>
 ---
 
 <Layout title="Notes">
   <ul>
-    <For each={photos.sort(sortByDate)}>
-      {
-        (photo: Photo) => (
-          <li>
+    {photos.sort(sortByDate).map((photo) => (
+      <li>
             <PhotoCard {...photo} />
           </li>
-        )
-      }
-    </For>
+    ))}
   </ul>
 </Layout>
 

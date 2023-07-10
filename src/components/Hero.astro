@@ -1,6 +1,4 @@
 ---
-import Show from './Show.astro'
-
 export type Props = {
   title: string
   cta?: {
@@ -17,7 +15,5 @@ const { title, cta } = Astro.props
 
   <slot />
 
-  <Show when={cta}>
-    <a href={cta!.href}>{cta!.text}</a>
-  </Show>
+  {!!cta?.href && <a href={cta!.href}>{cta!.text}</a>}
 </section>
