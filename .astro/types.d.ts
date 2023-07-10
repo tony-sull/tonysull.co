@@ -411,6 +411,13 @@ declare module 'astro:content' {
   collection: "bookmarks";
   data: InferEntrySchema<"bookmarks">
 } & { render(): Render[".md"] };
+"1688996383.md": {
+	id: "1688996383.md";
+  slug: "1688996383";
+  body: string;
+  collection: "bookmarks";
+  data: InferEntrySchema<"bookmarks">
+} & { render(): Render[".md"] };
 "2358572395.md": {
 	id: "2358572395.md";
   slug: "2358572395";
