@@ -311,6 +311,13 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".md"] };
+"just-use-the-platform.md": {
+	id: "just-use-the-platform.md";
+  slug: "just-use-the-platform";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
 "keeping-it-simple-with-astro.mdx": {
 	id: "keeping-it-simple-with-astro.mdx";
   slug: "keeping-it-simple-with-astro";
