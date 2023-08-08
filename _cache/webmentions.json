@@ -1,5 +1,5 @@
 {
-  "lastFetched": "2023-08-07T13:20:07.647Z",
+  "lastFetched": "2023-08-08T13:04:26.391Z",
   "children": [
     {
       "type": "entry",
@@ -1484,6 +1484,60 @@
       "wm-target": "https://tonysull.co/articles/astro-webfinger-2/",
       "like-of": "https://tonysull.co/articles/astro-webfinger-2/",
       "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Simon MacDonald",
+        "photo": "https://webmention.io/avatar/cdn.masto.host/27aa701b0695944d4243704b267bd92a72519acda749f75738797d44b3ec4f7e.png",
+        "url": "https://mastodon.online/@macdonst"
+      },
+      "url": "https://indieweb.social/@tonysull/110848576886987685#reblogged-by-109269283767534860",
+      "published": null,
+      "wm-received": "2023-08-08T01:15:59Z",
+      "wm-id": 1702708,
+      "wm-source": "https://brid.gy/repost/mastodon/@tonysull@indieweb.social/110848576886987685/109269283767534860",
+      "wm-target": "https://tonysull.co/articles/just-use-the-platform/",
+      "repost-of": "https://tonysull.co/articles/just-use-the-platform/",
+      "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Sarah Rainsberger",
+        "photo": "https://webmention.io/avatar/cdn.masto.host/05076d25d9264be52cf139edb482f6ee48480852fd479634735f19e351640024.jpg",
+        "url": "https://mastodon.social/@sarah11918"
+      },
+      "url": "https://indieweb.social/@tonysull/110848576886987685#favorited-by-109325671007949409",
+      "published": null,
+      "wm-received": "2023-08-08T01:15:58Z",
+      "wm-id": 1702707,
+      "wm-source": "https://brid.gy/like/mastodon/@tonysull@indieweb.social/110848576886987685/109325671007949409",
+      "wm-target": "https://tonysull.co/articles/just-use-the-platform/",
+      "like-of": "https://tonysull.co/articles/just-use-the-platform/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Sarah Rainsberger",
+        "photo": "https://webmention.io/avatar/cdn.masto.host/05076d25d9264be52cf139edb482f6ee48480852fd479634735f19e351640024.jpg",
+        "url": "https://mastodon.social/@sarah11918"
+      },
+      "url": "https://indieweb.social/@tonysull/110848576886987685#reblogged-by-109325671007949409",
+      "published": null,
+      "wm-received": "2023-08-08T01:15:55Z",
+      "wm-id": 1702704,
+      "wm-source": "https://brid.gy/repost/mastodon/@tonysull@indieweb.social/110848576886987685/109325671007949409",
+      "wm-target": "https://tonysull.co/articles/just-use-the-platform/",
+      "repost-of": "https://tonysull.co/articles/just-use-the-platform/",
+      "wm-property": "repost-of",
       "wm-private": false
     }
   ]
