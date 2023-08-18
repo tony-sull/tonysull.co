@@ -497,6 +497,13 @@ declare module 'astro:content' {
   collection: "notes";
   data: InferEntrySchema<"notes">
 } & { render(): Render[".md"] };
+"rich-men-north-of-richmond.md": {
+	id: "rich-men-north-of-richmond.md";
+  slug: "rich-men-north-of-richmond";
+  body: string;
+  collection: "notes";
+  data: InferEntrySchema<"notes">
+} & { render(): Render[".md"] };
 "self-host-webfinger.md": {
 	id: "self-host-webfinger.md";
   slug: "self-host-webfinger";

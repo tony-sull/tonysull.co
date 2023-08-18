@@ -4,6 +4,8 @@ import Photo from '~/components/Photo.astro'
 import { isoDate, shortDate } from '~/utils/dates.js'
 import Avatar from './Avatar.astro'
 import TagList from './TagList.astro'
+import { isYoutubeVideo } from '~/utils/videos'
+import { YouTube } from '@astro-community/astro-embed-youtube'
 
 export type Props = {
   author: CollectionEntry<'personas'>
@@ -11,12 +13,14 @@ export type Props = {
   date?: Date | null | undefined
   tags?: string[] | undefined
   photo?: ImageMetadata | ImageMetadata[] | undefined
+  video?: string | string[] | undefined
   contentClass?: string
 }
 
-const { author, date, tags, photo, contentClass } = Astro.props
+const { author, date, tags, photo, video, contentClass } = Astro.props
 
 const singlePhoto = Array.isArray(photo) ? photo[0] : photo
+const singleVideo = Array.isArray(video) ? video[0] : video
 ---
 
 <article class="h-entry">
@@ -48,6 +52,8 @@ const singlePhoto = Array.isArray(photo) ? photo[0] : photo
       />
     )
   }
+
+  {singleVideo && isYoutubeVideo(singleVideo) && <YouTube id={singleVideo} />}
 
   <div class:list={[contentClass, 'e-content']}>
     <slot />
