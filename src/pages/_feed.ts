@@ -1,5 +1,4 @@
 import type { APIContext } from 'astro'
-import { getImage } from 'astro:assets'
 import { getCollection } from 'astro:content'
 import { Feed, Item } from 'feed'
 import siteData from '~/data/site'
@@ -33,7 +32,7 @@ export async function getFeed({ site, generator }: APIContext) {
   entries.forEach(entry => {
     const url = new URL(`/${entry.collection}/${entry.slug}/`, site)
 
-    let item: Item = {
+    const item: Item = {
       title: entry.collection === 'articles' ? entry.data.name : entry.body,
       id: url.toString(),
       link: url.toString(),
@@ -47,6 +46,22 @@ export async function getFeed({ site, generator }: APIContext) {
 
     if ('featured' in entry.data && entry.data.featured) {
       item.image = new URL(entry.data.featured.src, site).toString()
+    } else if ('photo' in entry.data && entry.data.photo) {
+      const photo = Array.isArray(entry.data.photo)
+        ? entry.data.photo[0]
+        : entry.data.photo
+      if (photo) {
+        item.image = new URL(photo.src, site).toString()
+      }
+    }
+
+    if ('video' in entry.data && entry.data.video) {
+      const video = Array.isArray(entry.data.video)
+        ? entry.data.video[0]
+        : entry.data.video
+      if (video) {
+        item.video = video
+      }
     }
 
     feed.addItem(item)
