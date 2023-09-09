@@ -1,0 +1,27 @@
+---
+import Cluster from './Cluster.astro'
+import MaxWidth from './MaxWidth.astro'
+import Stack from './Stack.astro'
+import site from '../data/site.js'
+---
+
+<MaxWidth as="header">
+	<Stack style="--gap: var(--space-2xs);">
+		<a href="/">{site.title}</a>
+
+		<Cluster as="ul" style="--gap: var(--space-md);">
+			<li><a href="/articles">Articles</a></li>
+			<li><a href="/notes">Notes</a></li>
+			<li><a href="/photos">Photos</a></li>
+			<li><a href="/bookmarks">Bookmarks</a></li>
+		</Cluster>
+	</Stack>
+</MaxWidth>
+
+<style>
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+</style>

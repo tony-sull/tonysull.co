@@ -1,7 +1,9 @@
 ---
 import Head, { type Props as HeadProps } from '../components/Head.astro'
+import Header from '../components/Header.astro'
 import MaxWidth from '../components/MaxWidth.astro'
 import Prose from '../components/Prose.astro'
+import Stack from '../components/Stack.astro'
 import '../styles/reset.css'
 import '../styles/theme.css'
 
@@ -15,11 +17,13 @@ const { ...head } = Astro.props
 		<Head {...head} />
 	</head>
 
-	<body>
+	<Stack as="body" style="--gap: var(--space-sm-lg);">
+		<Header />
+
 		<MaxWidth as="main" id="main">
 			<Prose>
 				<slot />
 			</Prose>
 		</MaxWidth>
-	</body>
+	</Stack>
 </html>

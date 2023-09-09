@@ -1,0 +1,21 @@
+---
+import type { HTMLTag } from 'astro/types'
+import Component, { type Props as ComponentProps } from './Component.astro'
+
+export type Props<T extends HTMLTag = 'div'> = ComponentProps<T>
+
+const { class: className, ...attrs } = Astro.props
+---
+
+<Component class:list={[className, 'cluster']} {...attrs}>
+	<slot />
+</Component>
+
+<style>
+	.cluster {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: var(--gap, var(--space-md));
+	}
+</style>

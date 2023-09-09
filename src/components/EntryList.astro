@@ -1,0 +1,45 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import Stack from './Stack.astro'
+import type { Entry } from '../types'
+import type { Collection } from '../content/config'
+
+export type Props = {
+	entries: { collection: Collection; data: Entry; slug: string; body: string }[]
+}
+
+const { entries } = Astro.props
+
+function truncate(entry: (typeof entries)[0]) {
+	return entry.body
+		.split('\n')
+		.map(s => s.trim())
+		.filter(Boolean)[0]
+}
+
+function toPreview(entry: (typeof entries)[0]) {
+	if ('name' in entry.data) {
+		return entry.data.name
+	}
+
+	return truncate(entry)
+}
+---
+
+<Stack as="ul" style="--gap: var(--space-sm);">
+	{
+		entries.map(entry => (
+			<li>
+				<a href={`/${entry.collection}/${entry.slug}/`}>{toPreview(entry)}</a>
+			</li>
+		))
+	}
+</Stack>
+
+<style>
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+</style>

@@ -1,0 +1,43 @@
+---
+import type { GetStaticPaths } from 'astro'
+import { getCollection, getEntry } from 'astro:content'
+import Layout from '../../layouts/Page.astro'
+import type { Collection } from '../../content/config'
+
+export const getStaticPaths = (async () => {
+	return await Promise.all([
+		getCollection('articles'),
+		getCollection('bookmarks'),
+		getCollection('notes'),
+		getCollection('photos'),
+	]).then(res =>
+		res.flat().map(entry => ({
+			params: {
+				collection: entry.collection,
+				slug: entry.slug,
+			},
+		})),
+	)
+}) satisfies GetStaticPaths
+
+const { collection, slug } = Astro.params as {
+	collection: Collection
+	slug: string
+}
+
+const entry = await getEntry(collection, slug)
+
+if (!entry) {
+	throw new Error(
+		`entry with slug "${slug}" not found in collection "${collection}"!`,
+	)
+}
+
+const { Content } = await entry.render()
+---
+
+<Layout>
+	<h1>{slug} | {collection}</h1>
+
+	<Content />
+</Layout>

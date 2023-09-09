@@ -1,10 +1,7 @@
 :root {
-    --color-text: hsl(180, 20%, 2%);
-    --color-text-alt: hsl(180, 5%, 15%);
-    --color-background: hsl(195, 26%, 91%);
-    --color-primary: hsl(226, 25%, 30%);
-    --color-secondary: hsl(259, 27%, 82%);
-    --color-accent: hsl(257, 26%, 42%);
+    --color-foreground: hsl(180, 2%, 9%);
+    --color-background: hsl(120, 7%, 97%);
+    --color-accent: hsl(252, 2%, 41%);
 
     --font-sans: 'Atkinson Hyperlegible', system-ui, -apple-system, Segoe UI,
       Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
@@ -51,12 +48,9 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --color-text: hsl(195, 26%, 91%);
-        --color-text-alt: hsl(195, 8%, 80%);
-        --color-background: hsl(180, 20%, 2%);
-        --color-primary: hsl(226, 25%, 30%);
-        --color-secondary: hsl(260, 27%, 2%);
-        --coloraccent: hsl(257, 25%, 72%);
+        --color-foreground: hsl(120, 7%, 97%);
+        --color-background: hsl(180, 2%, 9%);
+        --color-accent: hsl(255, 3%, 71%);
     }
 }
 
@@ -64,7 +58,7 @@ body {
     font-family: var(--font-sans);
     font-size: var(--font-md);
     line-height: 1.6;
-    color: var(--color-text-alt);
+    color: var(--color-foreground);
     background-color: var(--color-background);
     min-height: 100dvh;
 }
@@ -73,14 +67,6 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-serif);
     line-height: 1.1;
     text-wrap: balance;
-}
-
-h1, h2 {
-    color: var(--color-primary);
-}
-
-h3, h4, h5 {
-    color: var(--color-text);
 }
 
 h1 {
@@ -108,7 +94,7 @@ h6, small {
 }
 
 a {
-    color: var(--color-primary);
+    color: var(--color-foreground);
 }
 
 a:hover, a:focus {
@@ -116,5 +102,5 @@ a:hover, a:focus {
 }
 
 ::marker {
-    color: var(--color-primary);
+    color: var(--color-accent);
 }
