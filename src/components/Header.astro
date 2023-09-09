@@ -2,12 +2,17 @@
 import Cluster from './Cluster.astro'
 import MaxWidth from './MaxWidth.astro'
 import Stack from './Stack.astro'
+import ThemeToggle from './ThemeToggle.astro'
 import site from '../data/site.js'
 ---
 
 <MaxWidth as="header">
 	<Stack style="--gap: var(--space-2xs);">
-		<a href="/">{site.title}</a>
+		<Cluster style="justify-content: space-between;">
+			<a href="/">{site.title}</a>
+
+			<ThemeToggle />
+		</Cluster>
 
 		<Cluster as="ul" style="--gap: var(--space-md);">
 			<li><a href="/articles">Articles</a></li>
@@ -19,6 +24,10 @@ import site from '../data/site.js'
 </MaxWidth>
 
 <style>
+	header > :first-child {
+		padding-block: var(--space-sm);
+	}
+
 	ul {
 		list-style: none;
 		padding: 0;

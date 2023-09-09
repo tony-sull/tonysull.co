@@ -4,8 +4,8 @@ import { getCollection } from 'astro:content'
 import EntryList from '../../components/EntryList.astro'
 import type { Collection } from '../../content/config.js'
 import Layout from '../../layouts/Page.astro'
-import { capitalize } from 'lodash'
-import { sortByDate } from '../../utils/sortByDate'
+import { capitalize } from '../../utils/capitalize.js'
+import { sortByDate } from '../../utils/sortByDate.js'
 
 export const getStaticPaths = (() => {
 	return ['articles', 'bookmarks', 'notes', 'photos'].map(collection => ({

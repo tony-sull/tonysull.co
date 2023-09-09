@@ -44,13 +44,29 @@
 
     /* Custom pairs */
     --space-sm-lg: clamp(1.00rem, calc(0.48rem + 2.61vw), 2.50rem);
+    --space-md-lg: clamp(1.50rem, calc(1.15rem + 1.74vw), 2.50rem);
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
+    :where(:root) {
         --color-foreground: hsl(120, 7%, 97%);
         --color-background: hsl(180, 2%, 9%);
         --color-accent: hsl(255, 3%, 71%);
+    }
+}
+
+:root[data-theme=dark] {
+    --color-foreground: hsl(120, 7%, 97%);
+    --color-background: hsl(180, 2%, 9%);
+    --color-accent: hsl(255, 3%, 71%);
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+    *, *::before, *::after {
+        transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
     }
 }
 
