@@ -58,7 +58,7 @@ function mergeWebmentions(a: WebMentionResponse, b: WebMentionResponse) {
 }
 
 // save combined webmentions in cache file
-function writeToCache(data: any) {
+function writeToCache(data: unknown) {
 	const dir = '_cache'
 	const fileContent = JSON.stringify(data, null, 2)
 
@@ -134,7 +134,7 @@ export function isForUrl(url: string) {
 }
 
 export function isMentionType(type: string) {
-	return function (webmention: any) {
+	return function (webmention: { [key: string]: unknown }) {
 		return !!webmention[type]
 	}
 }

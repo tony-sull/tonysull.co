@@ -55,7 +55,7 @@ export async function scrape(url: string): Promise<Metadata> {
 	if (!scrapeCache.has(url)) {
 		scrapeCache.set(
 			url,
-			fetch(url, {
+			fetchWithTimeout(url, {
 				headers: {
 					'user-agent': USER_AGENT,
 				},
