@@ -5,12 +5,12 @@ category:
   - code
   - simplicity
 published: '2023-02-22T17:58:23Z'
-featured: '~/assets/uploads/2023-02-22-my-ideal-ssr-router.jpg'
+featured: '../../assets/uploads/2023-02-22-my-ideal-ssr-router.jpg'
 ---
 
 Thought I'd follow up on a rant I published over the weekend about [how complicated routing is](https://tonysull.co/articles/routing-is-complicated/) — request routing on the server that is, don't let me near your network router!
 
-**tl;dr;** Request routing is a complicated issue that's a fundamental feature of monolithic JavaScript frameworks. Whether your tool of choice is a static site generator like [11ty](https://11ty.dev), a server-first framework like [SvelteKit](https://kit.svelte.dev), or something in the middle like [Astro](https://astro.build) they're all having to deal with request routing. What would a shared router spec look like if it needed to work *well enough* for every framework?
+**tl;dr;** Request routing is a complicated issue that's a fundamental feature of monolithic JavaScript frameworks. Whether your tool of choice is a static site generator like [11ty](https://11ty.dev), a server-first framework like [SvelteKit](https://kit.svelte.dev), or something in the middle like [Astro](https://astro.build) they're all having to deal with request routing. What would a shared router spec look like if it needed to work _well enough_ for every framework?
 
 ---
 
@@ -40,7 +40,7 @@ Say a bug is reported on a blog index page, for some reason draft posts are stil
 
 There's been a trend recently for frameworks to split route logic across multiple files: `+layout.whatever`, `+loader.gql`, `+page.nothtml`, `+styles.idontlikecss`. Where do I start for that bug? Is it in the loader? Is a filter function in the page broken? Is the data actually being loaded by a parent route, passed down through some nested layout logic or a `<Provider>`?
 
-I get *why* splitting this logic across files is helpful for frameworks. It can make bundling more efficient, it helps define conventions that draw the line between client & server, and it looks cool as hell in a file tree.
+I get _why_ splitting this logic across files is helpful for frameworks. It can make bundling more efficient, it helps define conventions that draw the line between client & server, and it looks cool as hell in a file tree.
 
 I've used plenty of routers over the years and by far the nicest developer experience I've had is with routers that start each route from one file. I can go straight there and see where the data is loaded, how the data is processed, and where its rendered to HTML. No bouncing between files, no remembering the "right" convention for where data loading lives in the file structure or component tree. Simple.
 
@@ -56,7 +56,7 @@ In the case of routing the `+layout`, `+page`, `+somethingbroke`, etc is pure co
 
 ## Not component based
 
-If framework libraries are meant to be a component-based approach for rendering DOM, why the heck are components so often used for things *other* than rendering DOM?
+If framework libraries are meant to be a component-based approach for rendering DOM, why the heck are components so often used for things _other_ than rendering DOM?
 
 Defining routes, context providers, etc. as components really blurs the line in a confusing way IMO. If a component is just logic and doesn't actually render anything, it really shouldn't be a UI component at all. This pattern has always felt a bit more like a solution to a more fundamental problem with a component framework, or JSX itself.
 

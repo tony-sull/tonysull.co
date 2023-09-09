@@ -1,8 +1,5 @@
 ---
-import Head, { type Props as HeadProps } from '~/components/Head.astro'
-import Header from '~/components/Header.astro'
-import '~/assets/global.css'
-import Footer from '~/components/Footer.astro'
+import Head, { type Props as HeadProps } from '../components/Head.astro'
 
 export type Props = HeadProps
 
@@ -15,30 +12,8 @@ const { ...head } = Astro.props
   </head>
 
   <body>
-    <Header />
-
     <main id="main" class="container">
       <slot />
     </main>
-
-    <Footer />
-    <style>
-      html,
-      body {
-        height: 100%;
-      }
-
-      body {
-        overflow-y: scroll;
-        display: flex;
-        flex-direction: column;
-      }
-
-      main {
-        flex: 1;
-        margin-block: var(--size-fluid-4);
-        align-items: start;
-      }
-    </style>
   </body>
 </html>

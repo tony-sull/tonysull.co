@@ -5,7 +5,7 @@ category:
   - code
   - astro
 published: '2021-07-20T12:00:00Z'
-featured: '~/assets/uploads/2021-07-20-converting-navillus-to-astro.jpg'
+featured: '../../assets/uploads/2021-07-20-converting-navillus-to-astro.jpg'
 uid: https://navillus.dev/blog/converting-navillus-to-astro/
 author: navillus
 ---
@@ -36,9 +36,9 @@ In Svelte...
 {#if open} ... {/if}
 
 <ul>
-  {#each items as item}
-  <li>{item}</li>
-  {/each}
+	{#each items as item}
+	<li>{item}</li>
+	{/each}
 </ul>
 ```
 

@@ -5,7 +5,7 @@ category:
   - code
   - astro
 published: '2021-06-28T12:00:00Z'
-featured: '~/assets/uploads/2021-06-28-astro-plus-forestry.jpg'
+featured: '../../assets/uploads/2021-06-28-astro-plus-forestry.jpg'
 uid: https://navillus.dev/blog/astro-plus-forestry/
 author: navillus
 ---
@@ -61,10 +61,10 @@ A few different pages and templates need to load the author data, and they all e
 ```js
 let allAuthors = Astro.fetchContent('../data/authors/*.md')
 let authorData = allAuthors.reduce((acc, next) => {
-  return {
-    ...acc,
-    [`src/data/authors/${next.slug}.md`]: next,
-  }
+	return {
+		...acc,
+		[`src/data/authors/${next.slug}.md`]: next,
+	}
 }, {})
 ```
 

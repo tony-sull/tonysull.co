@@ -5,7 +5,7 @@ category:
   - indieweb
   - simplicity
 published: '2023-02-01T15:32:36Z'
-featured: '~/assets/uploads/2023-02-01-the-web-needs-more-indie.jpg'
+featured: '../../assets/uploads/2023-02-01-the-web-needs-more-indie.jpg'
 ---
 
 I just finished reading a really interesting article [Cory Doctorow](https://www.wired.com/author/cory-doctorow) published on Wired, [The ‘Enshittification’ of TikTok](https://www.wired.com/story/tiktok-platforms-cory-doctorow/) ([archive.org link](https://web.archive.org/web/20230130001322/https://www.wired.com/story/tiktok-platforms-cory-doctorow/)). In it he outlines a surprisingly simple pattern that's seen over and over again as platforms come and go, what I wasn't expecting to find was how closely the pattern matches the history of the web and what the [IndieWeb](https://indieweb.org) is all about.
@@ -36,4 +36,4 @@ At it's core the IndieWeb is an attempt to reclaim the internet, to pull focus b
 
 ## Jump right in
 
-...the water's nice! If you're interested in building your own site, avoid the rabbit hole of what tools you *should* use and Just Ship It™. Not interested in managing your own site? Give [ghost](https://ghost.org/) a look for an easy way to get started (I'm not affiliated to ghost at all, I just like what they do). It really doesn't matter how you setup your site, just get out there and share your thoughts and ideas on your own site instead of feeding the algorithmic social media machine.
+...the water's nice! If you're interested in building your own site, avoid the rabbit hole of what tools you _should_ use and Just Ship It™. Not interested in managing your own site? Give [ghost](https://ghost.org/) a look for an easy way to get started (I'm not affiliated to ghost at all, I just like what they do). It really doesn't matter how you setup your site, just get out there and share your thoughts and ideas on your own site instead of feeding the algorithmic social media machine.

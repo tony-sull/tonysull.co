@@ -1,6 +1,6 @@
 ---
 import Layout from './Page.astro'
-import { shortDate } from '~/utils/dates.js'
+import { shortDate } from '../utils/dates.js'
 
 interface Content {
   title: string
@@ -59,7 +59,8 @@ const modifiedDate = shortDate(modified_date)
     font-size: var(--font-size-fluid-2);
   }
 
-  section :global(h3), section :global(h4) {
+  section :global(h3),
+  section :global(h4) {
     font-size: var(--font-size-fluid-1);
   }
 

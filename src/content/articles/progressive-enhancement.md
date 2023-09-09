@@ -4,7 +4,7 @@ summary: That's right! Your site built with a JS framework with client-side code
 category:
   - code
 published: '2021-05-08T12:00:00Z'
-featured: '~/assets/uploads/2021-05-08-progressive-enhancement.jpg'
+featured: '../../assets/uploads/2021-05-08-progressive-enhancement.jpg'
 uid: https://navillus.dev/blog/progressive-enhancement/
 author: navillus
 ---

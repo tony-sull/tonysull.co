@@ -6,7 +6,7 @@ categories:
   - svelte
   - opensource
 published: '2021-05-01T12:00:00Z'
-featured: '~/assets/uploads/2021-05-01-introducing-svelte-entity-store.jpg'
+featured: '../../assets/uploads/2021-05-01-introducing-svelte-entity-store.jpg'
 uid: https://navillus.dev/blog/introducing-svelte-entity-store/
 author: navillus
 ---
@@ -79,9 +79,9 @@ import { entityStore } from 'svelte-entity-store'
 
 // Define your entity interface
 interface TodoItem {
-  id: string
-  description: string
-  completed: boolean
+	id: string
+	description: string
+	completed: boolean
 }
 
 // Write a getter function that returns the ID of an entity (can be inlined in the constructor also)
@@ -102,7 +102,7 @@ No problem! The store accepts an optional second parameter.
 
 ```ts
 const items = [
-  // ... array of TodoItem's to populate the store with
+	// ... array of TodoItem's to populate the store with
 ]
 const store = entityStore<TodoItem>(getId, items)
 ```
@@ -157,14 +157,14 @@ Much like `get()`, `set()` has a few different overrides. Calling `set` will blo
 ```ts
 // Replace the existing entity with ID 123, or add it if the ID doesn't exist yet
 store.set({
-  id: 123,
-  description: 'Todo #1',
-  completed: true,
+	id: 123,
+	description: 'Todo #1',
+	completed: true,
 })
 
 // Or add/replace multiple todos at once
 store.set([
-  // ... multiple todo objects
+	// ... multiple todo objects
 ])
 ```
 
@@ -172,10 +172,10 @@ Sometimes you just need to change part of an entity without worrying about the e
 
 ```ts
 function toggleTodo(todo: TodoItem) {
-  return {
-    ...todo,
-    completed: !todo.completed,
-  }
+	return {
+		...todo,
+		completed: !todo.completed,
+	}
 }
 
 // Update a single entity by ID

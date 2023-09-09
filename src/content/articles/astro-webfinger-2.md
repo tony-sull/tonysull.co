@@ -6,14 +6,14 @@ category:
   - astro
   - opensource
 published: '2023-03-10T14:07:24Z'
-featured: '~/assets/uploads/2023-03-10-astro-webfinger-2.jpg'
+featured: '../../assets/uploads/2023-03-10-astro-webfinger-2.jpg'
 ---
 
 Not sure what [Webfinger](https://webfinger.net) even is? Check out the `astro-webfinger` [announcement post](/articles/introducing-astro-webfinger/) for a quick rundown of what the heck the integration even does!
 
 ---
 
-The first release of `astro-webfinger` was focused mainly on static sites, letting you create a vanity username for your fediverse (usually Mastodon) account from your own domain. The main caveat was that the Webfinger spec can't *really* be supported on a static site, the spec uses query parameters to search for account details and that requires a live server to work.
+The first release of `astro-webfinger` was focused mainly on static sites, letting you create a vanity username for your fediverse (usually Mastodon) account from your own domain. The main caveat was that the Webfinger spec can't _really_ be supported on a static site, the spec uses query parameters to search for account details and that requires a live server to work.
 
 For example, fire up your Mastodon frontend of choice and search for `@tony@tonysull.co` - you'll find my account details. Now search `@spam@tonysull.co`, it resolves to the same account! That's because the actual search query is ignored, the static `wellknown` file always points to my [indieweb.social](https://indieweb.social) account.
 
@@ -23,7 +23,7 @@ One [Vite](https://vitejs.dev) plugin refactor later and `astro-webfinger` now f
 
 Static builds are still supported (and encouraged!), the API hasn't changed there and the 2.0 update should be seamless.
 
-If you do need to alias multiple [ActivityPub](https://www.w3.org/TR/activitypub/) accounts, or just don't like that search doesn't *really* work statically, we've got you covered.
+If you do need to alias multiple [ActivityPub](https://www.w3.org/TR/activitypub/) accounts, or just don't like that search doesn't _really_ work statically, we've got you covered.
 
 ### Configuration
 
@@ -31,25 +31,25 @@ If you do need to alias multiple [ActivityPub](https://www.w3.org/TR/activitypub
 import webfinger from 'astro-webfinger'
 
 export default defineConfig({
-  /**
-   * BYO server-side rendering adapter
-   * https://docs.astro.build/en/guides/server-side-rendering/
-   */
-  adapter: {},
-  output: 'server',
-  site: 'https://tonysull.co',
-  integrations: [
-    webfinger({
-      tony: {
-        instance: 'indieweb.social',
-        username: 'tony',
-      },
-      spam: {
-        instance: 'myinstance.social',
-        username: 'fake'
-      }
-    }),
-  ],
+	/**
+	 * BYO server-side rendering adapter
+	 * https://docs.astro.build/en/guides/server-side-rendering/
+	 */
+	adapter: {},
+	output: 'server',
+	site: 'https://tonysull.co',
+	integrations: [
+		webfinger({
+			tony: {
+				instance: 'indieweb.social',
+				username: 'tony',
+			},
+			spam: {
+				instance: 'myinstance.social',
+				username: 'fake',
+			},
+		}),
+	],
 })
 ```
 

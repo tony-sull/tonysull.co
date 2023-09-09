@@ -6,7 +6,7 @@ category:
   - indieweb
   - opensource
 published: '2022-11-27T21:55:21Z'
-featured: '~/assets/uploads/2022-11-27-introducing-astro-webfinger.jpg'
+featured: '../../assets/uploads/2022-11-27-introducing-astro-webfinger.jpg'
 ---
 
 This is the first in a series of articles as I attempt to tie together concepts from the [IndieWeb](https://indieweb.com) and [ActivityPub](https://www.w3.org/TR/activitypub/) to build a self-hosted social network. Subscribe to the [RSS Feed](https://tonysull.co/articles/feed.xml) for updates!
@@ -70,12 +70,12 @@ To configure this integration, pass a `config` object to the `webfinger()` funct
 import webfinger from 'astro-webfinger'
 
 export default defineConfig({
-  integrations: [
-    webfinger({
-      instance: 'myinstance.social',
-      username: 'myusername',
-    }),
-  ],
+	integrations: [
+		webfinger({
+			instance: 'myinstance.social',
+			username: 'myusername',
+		}),
+	],
 })
 ```
 

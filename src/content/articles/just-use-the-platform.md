@@ -4,7 +4,7 @@ summary: The whole MPA vs. SPA debate in web development really was poorly named
 category:
   - code
 published: '2023-08-07T13:30:00Z'
-featured: '~/assets/uploads/2023-08-07-just-use-the-platform.jpg'
+featured: '../../assets/uploads/2023-08-07-just-use-the-platform.jpg'
 ---
 
 The debate has revolved around whether page navigations should require a full page refresh.

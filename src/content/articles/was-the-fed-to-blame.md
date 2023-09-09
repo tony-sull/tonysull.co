@@ -1,10 +1,10 @@
 ---
-name: Is the Fed to blame for the collapse of SVB? 
+name: Is the Fed to blame for the collapse of SVB?
 summary: Plenty has been said about the risk of investments SVB held - were they playing a game the Fed designed?
 category:
   - economics
 published: '2023-03-29T13:50:51Z'
-featured: '~/assets/uploads/2023-03-29-was-the-fed-to-blame.jpg'
+featured: '../../assets/uploads/2023-03-29-was-the-fed-to-blame.jpg'
 ---
 
 If you paid any attention to [collapse of Silicon Valley Bank](https://en.wikipedia.org/wiki/Collapse_of_Silicon_Valley_Bank), you likely heard about [how risky](https://www.bloomberg.com/opinion/articles/2023-03-14/svb-took-the-wrong-risks) the bank's investments were and [regulatory changes in 2018](https://rooseveltinstitute.org/2023/03/15/how-2018-regulatory-rollbacks-set-the-stage-for-the-silicon-valley-bank-collapse-and-how-to-change-course/) that may have played a role in the bank's collapse. Neither explanation quite made sense to me and I've been trying to piece it together ever since.
@@ -17,7 +17,7 @@ Silicon Valley Bank (SVB) got caught up in what can only be described as a moder
 
 It's been [widely](https://www.npr.org/2023/03/19/1164531413/bank-fail-how-government-bonds-turned-toxic-for-silicon-valley-bank) [reported](https://www.wsj.com/articles/banks-investors-revive-push-for-changes-to-securities-accounting-after-svb-collapse-99caa9ce) that SVB held a collection of risky government securities that, through a technicality, could be reported on corporate financials at face value even though they were millions of dollars under water. Basically, if those bonds were held to maturity they would get all their money back plus a small profit and finance laws allow the banks to mark the value of the securities at face value. Unfortunately for SVB they were running low on cash and needed to sell the securities. Because the Fed has increased interest rates dramatically over the last year, no one actually wants to buy old bonds that pay well under market rate and they weren't worth anything close to face value.
 
-The other issue often raised is a regulatory change in 2018. The Dodd-Frank Act was passed after the 2008 financial crisis in an attempt to better regulate banks that are, for better or worse, too big to fail. The important bit for SVB was a series of stress tests that banks with over $100 billion were required to pass a series of stress tests that were designed to see how a bank would weather different storms. One such test was a sharp increase in interest rates. This may have helped raise alarm bells earlier *if* the limit wasn't raised in 2018 to only include banks with $250 billion in assets - SVB had around $200 billion shortly before it collapsed.
+The other issue often raised is a regulatory change in 2018. The Dodd-Frank Act was passed after the 2008 financial crisis in an attempt to better regulate banks that are, for better or worse, too big to fail. The important bit for SVB was a series of stress tests that banks with over $100 billion were required to pass a series of stress tests that were designed to see how a bank would weather different storms. One such test was a sharp increase in interest rates. This may have helped raise alarm bells earlier _if_ the limit wasn't raised in 2018 to only include banks with $250 billion in assets - SVB had around $200 billion shortly before it collapsed.
 
 This can't be the whole story though, right? Why to would a bank really hold onto assets that they know are losing more and more value as interest rates go up? Even if they took the Fed at it's word a year ago when they didn't expect to raise rates, a few rate hikes and you'd surely shore up your books. Well, it gets interesting when you come across a seemingly tiny rule change in 2013 that I have found only a few references to so far.
 
@@ -41,7 +41,7 @@ When one bank buys a bond directly from the Fed in the reverse-repo market, that
 
 Again, so what? Well, this may very well mean that SVB did exactly what the Fed wanted them to do. When the Fed started to raise interest rates, SVB considered buying securities directly from the Fed to get the best rates.
 
-It just so happens in 2020 and 2021 the Fed was also busy printing money to the tune of more than $4 trillion dollars.  All of that money ends up in banks, and because banks are bound by regulations that limit how much cash they can keep on hand they have to invest it somewhere.
+It just so happens in 2020 and 2021 the Fed was also busy printing money to the tune of more than $4 trillion dollars. All of that money ends up in banks, and because banks are bound by regulations that limit how much cash they can keep on hand they have to invest it somewhere.
 
 These two factors combined, the Fed (at the request of Congress) gave banks trillions of dollars. The banks needed a safe place to put the money, government bonds. The Fed already changed the rules to ensure that in times of interest rate hikes, the Fed would likely certainly pay the best rates.
 
@@ -59,4 +59,4 @@ I could go on and on about how all roads lead back to the Federal Reserve here. 
 
 In the meantime, I'm still trying to answer the simple question of how all SVB deposits were made whole over a single weekend when the bank wasn't sold or liquidated. As of the beginning of this year the Fed's FDIC Insurance Fund only had [$128.2 billion dollars](https://www.fdic.gov/analysis/quarterly-banking-profile/fdic-quarterly/index.html) in capital. The best estimates I've seen peg uninsured SVB deposits in the ballpark of $150 billion.
 
-How the heck was that money put back in place given that the only public explanation was that tax payers wouldn't be on the hook and banks would eventually pay out of pocket? Did they honestly just click a few buttons and re-enable account balances, or did they fund it from some other part of the Fed's books?  The answer is probably horribly mundane and boring but I'm really curious to know how such a massive depositor bailout was pulled off that quickly.
+How the heck was that money put back in place given that the only public explanation was that tax payers wouldn't be on the hook and banks would eventually pay out of pocket? Did they honestly just click a few buttons and re-enable account balances, or did they fund it from some other part of the Fed's books? The answer is probably horribly mundane and boring but I'm really curious to know how such a massive depositor bailout was pulled off that quickly.

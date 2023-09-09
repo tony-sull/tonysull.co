@@ -5,7 +5,7 @@ category:
   - code
   - simplicity
 published: '2023-02-18T17:58:23Z'
-featured: '~/assets/uploads/2023-02-18-routing-is-complicated.jpg'
+featured: '../../assets/uploads/2023-02-18-routing-is-complicated.jpg'
 ---
 
 Routing on the web is a complicated problem, and kind of a big deal considering your site just won't work if URLs are busted. More often than not we (we as in people, not just coders) see complicated problems and throw complex solutions at them, adding more and more complexity until we have it **under control\***. We as web developers owe it to ourselves to take a step back from framework router hell to have a frank discussion about what the best way forward is.
@@ -30,7 +30,7 @@ Routing in a JavaScript-based web framework is similarly complicated, unfortunat
 
 What template/component/function should be used to render the URL? Is the URL even valid? How are URL parameters matched for dynamic routes like `/blog/post-123`? What happens if two templates match the same URL? What's the "right" developer experience (DX)? These are really tricky questions to answer because they end up rooted more in tradeoffs and opinions than anything else.
 
-So what are we to do? The most clear answer here is to start from the top and write a list of rules for how routing works in *our* framework.
+So what are we to do? The most clear answer here is to start from the top and write a list of rules for how routing works in _our_ framework.
 
 ### Route matching
 
@@ -42,15 +42,19 @@ Debate file-based routing vs. config-based routing, then pick one...or go nuts a
 import BlogIndexPage from './routes/BlogIndexPage'
 import BlogPostPage from './routes/BlogPostPage'
 
-const routes = [{
-  path: "/blog",
-  component: BlogIndexPage,
+const routes = [
+	{
+		path: '/blog',
+		component: BlogIndexPage,
 
-  children: [{
-    path: [":slug"],
-    component: BlogPostPage,
-  }]
-}]
+		children: [
+			{
+				path: [':slug'],
+				component: BlogPostPage,
+			},
+		],
+	},
+]
 ```
 
 Any solution here will have the possibility of naming collisions where multiple routes match the same URL. i.e. `/blog/latest` would match `/blog/[slug].html`. That's probably not what we want since the template would have to know about this and handle `lastest` as a special slug, time for a set of rules defining priority order.
@@ -66,21 +70,25 @@ Config-based routing might open a few doors here, what if each route can have a 
 ```js
 import BlogIndexPage from './routes/BlogIndexPage'
 import BlogPostPage from './routes/BlogPostPage'
-import { getPost } from "./db/definitely-not-mysql.js"
+import { getPost } from './db/definitely-not-mysql.js'
 
-const routes = [{
-  path: "/blog",
-  component: BlogIndexPage,
+const routes = [
+	{
+		path: '/blog',
+		component: BlogIndexPage,
 
-  children: [{
-    path: [":slug"],
-    component: BlogPostPage,
-    check: async ({ slug }) => {
-      const post = await getPost(slug)
-      return !!post
-    }
-  }]
-}]
+		children: [
+			{
+				path: [':slug'],
+				component: BlogPostPage,
+				check: async ({ slug }) => {
+					const post = await getPost(slug)
+					return !!post
+				},
+			},
+		],
+	},
+]
 ```
 
 When the validation fails we probably want to handle that gracefully. Does our router need a special 404 template? Redirects might be important here, so `/blog/fake-post` can redirect to the main blog page instead of a 404 — does the router automatically redirect to the closest parent route, or expose a redirect convention/helper function? Can we at least stick to specs here and use a standard `Response` object?
@@ -101,32 +109,37 @@ import BlogLayout from './layouts/BlogLayout'
 import BlogIndexPage from './routes/BlogIndexPage'
 import BlogPostPage from './routes/BlogPostPage'
 import BlogPostEditPage from './routes/BlogPostEditPage'
-import { getPost } from "./db/definitely-not-mysql.js"
+import { getPost } from './db/definitely-not-mysql.js'
 
-const routes = [{
-  path: "/",
-  layout: RootLayout,
-  
-  children: [
-    {
-      path: "/blog",
-      layout: BlogLayout,
-      component: BlogIndexPage,
+const routes = [
+	{
+		path: '/',
+		layout: RootLayout,
 
-      children: [{
-        path: ":slug",
-        component: BlogPostPage,
-        check: async ({ slug }) => {
-          const post = await getPost(slug)
-          return !!post
-        }
-      }]
-    }, {
-      path: "/blog/:slug/edit",
-      component: BlogPostEditPage
-    }
-  ]
-}]
+		children: [
+			{
+				path: '/blog',
+				layout: BlogLayout,
+				component: BlogIndexPage,
+
+				children: [
+					{
+						path: ':slug',
+						component: BlogPostPage,
+						check: async ({ slug }) => {
+							const post = await getPost(slug)
+							return !!post
+						},
+					},
+				],
+			},
+			{
+				path: '/blog/:slug/edit',
+				component: BlogPostEditPage,
+			},
+		],
+	},
+]
 ```
 
 ## Was it worth it?

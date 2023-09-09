@@ -5,7 +5,7 @@ category:
   - code
   - astro
 published: '2021-07-04T12:00:00Z'
-featured: '~/assets/uploads/2021-07-24-astro-plus-swup.jpg'
+featured: '../../assets/uploads/2021-07-24-astro-plus-swup.jpg'
 uid: https://navillus.dev/blog/astro-plus-swup/
 author: navillus
 ---
@@ -38,7 +38,7 @@ Most importantly, in `src/layouts/Main.astro`
 
 ```html
 <main id="swup" class="wrapper">
-  <slot />
+	<slot />
 </main>
 ```
 
@@ -84,7 +84,7 @@ import Swup from 'swup'
 import SwupSlideTheme from '@swup/slide-theme'
 
 const swup = new Swup({
-  plugins: [new SwupSlideTheme()],
+	plugins: [new SwupSlideTheme()],
 })
 ```
 
@@ -106,7 +106,7 @@ import SwupHeadPlugin from '@swup/head-plugin'
 import SwupSlideTheme from '@swup/slide-theme'
 
 const swup = new Swup({
-  plugins: [new SwupHeadPlugin(), new SwupSlideTheme()],
+	plugins: [new SwupHeadPlugin(), new SwupSlideTheme()],
 })
 ```
 
@@ -129,7 +129,7 @@ import SwupHeadPlugin from '@swup/head-plugin'
 import SwupSlideTheme from '@swup/slide-theme'
 
 const swup = new Swup({
-  plugins: [new SwupA11yPlugin(), new SwupHeadPlugin(), new SwupSlideTheme()],
+	plugins: [new SwupA11yPlugin(), new SwupHeadPlugin(), new SwupSlideTheme()],
 })
 ```
 

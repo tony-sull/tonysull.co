@@ -470,6 +470,13 @@ declare module 'astro:content' {
   collection: "notes";
   data: InferEntrySchema<"notes">
 } & { render(): Render[".md"] };
+"json-apis-code-smell.md": {
+	id: "json-apis-code-smell.md";
+  slug: "json-apis-code-smell";
+  body: string;
+  collection: "notes";
+  data: InferEntrySchema<"notes">
+} & { render(): Render[".md"] };
 "modern-web-astro.md": {
 	id: "modern-web-astro.md";
   slug: "modern-web-astro";

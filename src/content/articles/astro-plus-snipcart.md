@@ -5,7 +5,7 @@ category:
   - code
   - astro
 published: '2021-07-03T12:00:00Z'
-featured: '~/assets/uploads/2021-07-02-astro-plus-snipcart.jpg'
+featured: '../../assets/uploads/2021-07-02-astro-plus-snipcart.jpg'
 uid: https://navillus.dev/blog/astro-plus-snipcart/
 author: navillus
 ---
@@ -60,8 +60,8 @@ Snipcart makes this extremely simple.
 
 ```html
 <button class="header__cartbtn snipcart-checkout">
-  <img class="header__cart" src="/icons/cart.svg" alt="open cart" />
-  <span class="snipcart-items-count header__cartcount">0</span>
+	<img class="header__cart" src="/icons/cart.svg" alt="open cart" />
+	<span class="snipcart-items-count header__cartcount">0</span>
 </button>
 ```
 
@@ -92,11 +92,11 @@ The string formatting for custom fields can be a bit confusing at first glance, 
 
 ```html
 <button
-  ...
-  data-item-custom1-name="Frame color"
-  data-item-custom1-options="Black|Brown[+100.00]|Gold[+300.00]"
+	...
+	data-item-custom1-name="Frame color"
+	data-item-custom1-options="Black|Brown[+100.00]|Gold[+300.00]"
 >
-  ...
+	...
 </button>
 ```
 

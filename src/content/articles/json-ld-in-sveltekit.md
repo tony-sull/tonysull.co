@@ -5,7 +5,7 @@ category:
   - code
   - svelte
 published: '2021-05-17T12:00:00Z'
-featured: '~/assets/uploads/2021-05-17-json-ld-in-sveltekit.jpg'
+featured: '../../assets/uploads/2021-05-17-json-ld-in-sveltekit.jpg'
 uid: https://navillus.dev/blog/json-ld-in-sveltekit/
 author: navillus
 ---
@@ -24,12 +24,12 @@ Let's take a look at a basic example first. I pulled this straight from the [JSO
 
 ```json
 {
-  "@context": "http://schema.org/",
-  "@type": "Person",
-  "name": "Jane Doe",
-  "jobTitle": "Professor",
-  "telephone": "(425) 123-4567",
-  "url": "http://www.janedoe.com"
+	"@context": "http://schema.org/",
+	"@type": "Person",
+	"name": "Jane Doe",
+	"jobTitle": "Professor",
+	"telephone": "(425) 123-4567",
+	"url": "http://www.janedoe.com"
 }
 ```
 
@@ -72,7 +72,7 @@ I prefer to move this out of the Svelte component all together. With the logic i
 
 ```js
 export function serializeSchema(thing) {
-  return `<script type="application/ld+json">${JSON.stringify(thing)}</script>`
+	return `<script type="application/ld+json">${JSON.stringify(thing)}</script>`
 }
 ```
 
@@ -88,11 +88,11 @@ import type { Thing, WithContext } from 'schema-dts'
 export type Schema = Thing | WithContext<Thing>
 
 export function serializeSchema(thing: Schema) {
-  return `<script type="application/ld+json">${JSON.stringify(
-    thing,
-    null,
-    2
-  )}</script>`
+	return `<script type="application/ld+json">${JSON.stringify(
+		thing,
+		null,
+		2,
+	)}</script>`
 }
 ```
 
@@ -127,14 +127,14 @@ Finally, let's add the JSON+LD into the DOM. Most of our projects end up with a 
 
 ```html
 <script lang="ts">
-  import { serializeSchema } from '$utils/json-ld'
-  import type { Schema } from '$utils/json-ld'
+	import { serializeSchema } from '$utils/json-ld'
+	import type { Schema } from '$utils/json-ld'
 
-  export let schema: Schema
+	export let schema: Schema
 </script>
 
 <svelte:head>
-  {@html serializeSchema(schema)}
+	{@html serializeSchema(schema)}
 </svelte:head>
 ```
 

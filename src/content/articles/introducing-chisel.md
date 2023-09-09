@@ -6,7 +6,7 @@ category:
   - opensource
 slug: introducing-chisel
 published: '2021-06-02T12:00:00Z'
-featured: '~/assets/uploads/2021-06-02-introducing-chisel.jpg'
+featured: '../../assets/uploads/2021-06-02-introducing-chisel.jpg'
 uid: https://navillus.dev/blog/introducing-chisel/
 author: navillus
 ---
@@ -65,7 +65,7 @@ At least on some browsers, CSS variable scope isn't always what you'd expect.
 
 ```css
 [data-chisel-theme='dark'] {
-  ---chisel-primary: #002244;
+	---chisel-primary: #002244;
 }
 ```
 

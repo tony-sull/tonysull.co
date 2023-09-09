@@ -5,7 +5,7 @@ category:
   - code
   - svelte
 published: '2021-06-03T12:00:00Z'
-featured: '~/assets/uploads/2021-06-03-power-of-svelte-actions.jpg'
+featured: '../../assets/uploads/2021-06-03-power-of-svelte-actions.jpg'
 uid: https://navillus.dev/blog/power-of-svelte-actions/
 author: navillus
 ---
@@ -51,20 +51,20 @@ This isn't a big deal to do in the Modal component itself - add an extra DOM ele
 
 ```ts
 export default (node, _options = {}) => {
-  const options = { onClickOutside: () => {}, ..._options }
+	const options = { onClickOutside: () => {}, ..._options }
 
-  function detect({ target }) {
-    if (!node.contains(target)) {
-      options.onClickOutside()
-    }
-  }
-  document.addEventListener('click', detect, { passive: true, capture: true })
+	function detect({ target }) {
+		if (!node.contains(target)) {
+			options.onClickOutside()
+		}
+	}
+	document.addEventListener('click', detect, { passive: true, capture: true })
 
-  return {
-    destroy() {
-      document.removeEventListener('click', detect)
-    },
-  }
+	return {
+		destroy() {
+			document.removeEventListener('click', detect)
+		},
+	}
 }
 ```
 
@@ -80,18 +80,18 @@ Finally, the action returns a `destroy` callback that will clean up the event li
 
 ```ts
 export default (node, _options = {}) => {
-  const options = { include: [], onClickOutside: () => {}, ..._options }
+	const options = { include: [], onClickOutside: () => {}, ..._options }
 
-  function detect({ target }) {
-    if (
-      !node.contains(target) ||
-      options.include.some(i => target.isSameNode(i))
-    ) {
-      options.onClickOutside()
-    }
-  }
+	function detect({ target }) {
+		if (
+			!node.contains(target) ||
+			options.include.some(i => target.isSameNode(i))
+		) {
+			options.onClickOutside()
+		}
+	}
 
-  /** Same as above */
+	/** Same as above */
 }
 ```
 

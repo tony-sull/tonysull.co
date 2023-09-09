@@ -5,7 +5,7 @@ category:
   - code
   - a11y
 published: '2021-05-10T12:00:00Z'
-featured: '~/assets/uploads/2021-05-10-accessibility-skip-to-content.jpg'
+featured: '../../assets/uploads/2021-05-10-accessibility-skip-to-content.jpg'
 uid: https://navillus.dev/blog/accessibility-skip-to-content/
 author: navillus
 ---
@@ -36,19 +36,19 @@ Actually implementing this hidden button can be a bit confusing at first, Let's 
 
 ```html
 <body>
-  <a href="#start-of-content" class="sr-only sr-only-focusable">
-    Skip to content
-  </a>
+	<a href="#start-of-content" class="sr-only sr-only-focusable">
+		Skip to content
+	</a>
 
-  <header>
-    <!-- Your header content goes here -->
-  </header>
+	<header>
+		<!-- Your header content goes here -->
+	</header>
 
-  <div id="start-of-content" class="sr-only"></div>
+	<div id="start-of-content" class="sr-only"></div>
 
-  <section>
-    <!-- Your awesome hero section -->
-  </section>
+	<section>
+		<!-- Your awesome hero section -->
+	</section>
 </body>
 ```
 
@@ -60,32 +60,32 @@ The `<a>` doesn't necessarily have to be the first child of the page's `body`, b
 
 ```css
 .sr-only {
-  border: 0;
-  padding: 0;
-  margin: 0;
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
-  clip: rect(1px 1px 1px 1px);
-  /* maybe deprecated but we need to support legacy browsers */
-  clip: rect(1px, 1px, 1px, 1px);
-  /* modern browsers, clip-path works inwards from each corner */
-  clip-path: inset(50%);
-  /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
-  white-space: nowrap;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	/* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+	clip: rect(1px 1px 1px 1px);
+	/* maybe deprecated but we need to support legacy browsers */
+	clip: rect(1px, 1px, 1px, 1px);
+	/* modern browsers, clip-path works inwards from each corner */
+	clip-path: inset(50%);
+	/* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
+	white-space: nowrap;
 }
 
 .sr-only.sr-only-focusable:focus {
-  width: auto;
-  height: auto;
-  padding: 0;
-  margin: 0;
-  overflow: visible;
-  clip: auto;
-  clip-path: initial;
-  white-space: normal;
+	width: auto;
+	height: auto;
+	padding: 0;
+	margin: 0;
+	overflow: visible;
+	clip: auto;
+	clip-path: initial;
+	white-space: normal;
 }
 ```
 
@@ -103,31 +103,31 @@ This feature already works as-is, no JavaScript at all. There is a catch though,
 
 ```js
 function onSkipToContent(event) {
-  // Stop the event's default behavior
-  // In this case, don't let it actually change the page's URL
-  event.preventDefault()
+	// Stop the event's default behavior
+	// In this case, don't let it actually change the page's URL
+	event.preventDefault()
 
-  // Find the hidden target div
-  const target = document.getElementById('start-of-content')
+	// Find the hidden target div
+	const target = document.getElementById('start-of-content')
 
-  if (!target) {
-    return
-  }
+	if (!target) {
+		return
+	}
 
-  // Find the next element in the DOM
-  const content = target.nextElementSibling
+	// Find the next element in the DOM
+	const content = target.nextElementSibling
 
-  if (content instanceof HTMLElement) {
-    // Make sure the content div can't be tabbed to again, the give it focus
-    content.setAttribute('tabindex', '-1')
-    content.focus()
-  }
+	if (content instanceof HTMLElement) {
+		// Make sure the content div can't be tabbed to again, the give it focus
+		content.setAttribute('tabindex', '-1')
+		content.focus()
+	}
 }
 
 // Find the hidden "Skip to content" link and hook up tje click event
 const link = document.querySelector('a[href="#start-of-content"]')
 if (link) {
-  link.addEventListener('click', onSkipToContent())
+	link.addEventListener('click', onSkipToContent())
 }
 ```
 

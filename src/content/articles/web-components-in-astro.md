@@ -5,7 +5,7 @@ category:
   - code
   - astro
 published: '2021-08-23T21:55:21Z'
-featured: '~/assets/uploads/2021-08-23-web-components-in-astro.jpg'
+featured: '../../assets/uploads/2021-08-23-web-components-in-astro.jpg'
 uid: https://navillus.dev/blog/web-components-in-astro/
 author: navillus
 ---
@@ -68,13 +68,13 @@ But you can make your own `<my-counter>` component, that's definitely not part o
 
 ```js
 class MyCounter extends HTMLElement {
-  constructor() {
-    super()
-    this.count = 0
-    // open mode keeps all elements accessible to the outside world
-    this.attachShadow({ mode: 'open' })
-  }
-  // ...
+	constructor() {
+		super()
+		this.count = 0
+		// open mode keeps all elements accessible to the outside world
+		this.attachShadow({ mode: 'open' })
+	}
+	// ...
 }
 
 // tell the browser to use this class for all `<my-counter>` elements
@@ -115,17 +115,17 @@ const template = `
 `
 
 class MyCounter extends HTMLElement {
-  constructor() {
-    super()
+	constructor() {
+		super()
 
-    const elem = document.createElement('template')
-    elem.innerHTML = template
+		const elem = document.createElement('template')
+		elem.innerHTML = template
 
-    this.count = 0
-    this.attachShadow({ mode: 'open' }).appendChild(
-      elem.content.cloneNode(true)
-    )
-  }
+		this.count = 0
+		this.attachShadow({ mode: 'open' }).appendChild(
+			elem.content.cloneNode(true),
+		)
+	}
 }
 
 customElements.define('my-counter', MyCounter)

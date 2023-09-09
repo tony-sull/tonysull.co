@@ -5,7 +5,7 @@ category:
   - code
   - svelte
 published: '2021-06-25T12:00:00Z'
-featured: '~/assets/uploads/2021-06-25-svelte-class-props.jpg'
+featured: '../../assets/uploads/2021-06-25-svelte-class-props.jpg'
 uid: https://navillus.dev/blog/svelte-class-props/
 author: navillus
 ---
@@ -22,7 +22,7 @@ With Svelte, you may think it's as simple as
 
 ```html
 <script>
-  export let class = "";
+	export let class = "";
 </script>
 
 <div {class}>...</div>
@@ -36,7 +36,7 @@ If you're like me you probably hit this once, banged your head against the neare
 
 ```html
 <script>
-  export let className = ''
+	export let className = ''
 </script>
 
 <div class="{className}">...</div>
@@ -48,8 +48,8 @@ Writing Svelte is so close to HTML that you can almost forget there's a framewor
 
 ```html
 <script>
-  let className = ''
-  export { className as class }
+	let className = ''
+	export { className as class }
 </script>
 
 <div class="{className}">...</div>
