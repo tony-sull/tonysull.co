@@ -1,0 +1,19 @@
+---
+import { HTMLTag } from 'astro/types';
+import Component, { type Props as ComponentProps } from './Component.astro'
+
+export type Props<T extends HTMLTag = 'section'> = ComponentProps<T>
+
+const { class: className, ...attrs } = Astro.props
+---
+
+<Component class:list={[className, 'max-width']} {...attrs}>
+    <slot />
+</Component>
+
+<style>
+    .max-width {
+        max-width: var(--size-content);
+        margin-inline: auto;
+    }
+</style>

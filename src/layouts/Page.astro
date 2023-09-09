@@ -1,5 +1,9 @@
 ---
 import Head, { type Props as HeadProps } from '../components/Head.astro'
+import MaxWidth from '../components/MaxWidth.astro'
+import Prose from '../components/Prose.astro'
+import '../styles/reset.css'
+import '../styles/theme.css'
 
 export type Props = HeadProps
 
@@ -7,13 +11,15 @@ const { ...head } = Astro.props
 ---
 
 <html lang="en" data-theme="light">
-  <head>
-    <Head {...head} />
-  </head>
+	<head>
+		<Head {...head} />
+	</head>
 
-  <body>
-    <main id="main" class="container">
-      <slot />
-    </main>
-  </body>
+	<body>
+		<MaxWidth as="main" id="main">
+			<Prose>
+				<slot />
+			</Prose>
+		</MaxWidth>
+	</body>
 </html>

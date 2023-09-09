@@ -1,0 +1,13 @@
+---
+import type { HTMLAttributes, HTMLTag } from 'astro/types'
+
+export type Props<T extends HTMLTag = 'div'> = HTMLAttributes<T> & {
+	as?: T | undefined
+}
+
+const { as: Comp = 'div', class: className, ...attrs } = Astro.props
+---
+
+<Comp class:list={[className]} {...attrs}>
+	<slot />
+</Comp>

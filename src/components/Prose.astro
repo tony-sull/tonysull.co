@@ -1,0 +1,26 @@
+---
+import type { HTMLTag } from 'astro/types'
+import Component, { type Props as ComponentProps } from './Component.astro'
+
+export type Props<T extends HTMLTag = 'article'> = ComponentProps<T>
+
+const { class: className, ...attrs } = Astro.props
+---
+
+<Component class:list={[className, 'prose']} {...attrs}>
+	<slot />
+</Component>
+
+<style>
+	.prose > :global(* + *) {
+		margin-block-start: var(--prose-space, 1em);
+	}
+
+    .prose > :global(h1) {
+        --prose-space: 2em;
+    }
+
+    .prose > :global(h2, h3, h4, h5, h6) {
+        --prose-space: 1.5em;
+    }
+</style>
