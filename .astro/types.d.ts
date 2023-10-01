@@ -361,6 +361,13 @@ declare module 'astro:content' {
   collection: "articles";
   data: InferEntrySchema<"articles">
 } & { render(): Render[".md"] };
+"web-3-is-here.md": {
+	id: "web-3-is-here.md";
+  slug: "web-3-is-here";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
 "web-components-in-astro.md": {
 	id: "web-components-in-astro.md";
   slug: "web-components-in-astro";
@@ -466,6 +473,13 @@ declare module 'astro:content' {
 "indieweb-schemas.md": {
 	id: "indieweb-schemas.md";
   slug: "indieweb-schemas";
+  body: string;
+  collection: "notes";
+  data: InferEntrySchema<"notes">
+} & { render(): Render[".md"] };
+"json-apis-code-smell.md": {
+	id: "json-apis-code-smell.md";
+  slug: "json-apis-code-smell";
   body: string;
   collection: "notes";
   data: InferEntrySchema<"notes">

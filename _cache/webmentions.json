@@ -1,5 +1,5 @@
 {
-  "lastFetched": "2023-09-04T12:35:09.513Z",
+  "lastFetched": "2023-10-01T19:06:16.656Z",
   "children": [
     {
       "type": "entry",
@@ -1538,6 +1538,29 @@
       "wm-target": "https://tonysull.co/articles/just-use-the-platform/",
       "repost-of": "https://tonysull.co/articles/just-use-the-platform/",
       "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "tonysull",
+        "photo": "https://webmention.io/avatar/cdn.masto.host/1f414b7da35680fdaf68a1335833849d6f77bbab7cf655991fbb8599554e2391.png",
+        "url": "https://indieweb.social/@tonysull"
+      },
+      "url": "https://indieweb.social/@tonysull/111006931345805685",
+      "published": "2023-09-04T12:42:29",
+      "wm-received": "2023-09-04T15:57:16Z",
+      "wm-id": 1712470,
+      "wm-source": "https://brid.gy/comment/mastodon/@tonysull@indieweb.social/111006930403522784/111006931345805685",
+      "wm-target": "https://tonysull.co/notes/csr-perf-challenges/",
+      "wm-protocol": "webmention",
+      "content": {
+        "html": "<p>At best you’ll find these issues after the fact, and in all likelihood you may never even notice them</p><p>Server-side rendering is important because you own the entire infrastructure up to the point of sending the actual HTML back to the user’s device</p><p>You can distribute your APIs, add caching layers, and distribute your database if that’s needed</p><p>With CSR you’re way more limited</p><p>2/2</p>",
+        "text": "At best you’ll find these issues after the fact, and in all likelihood you may never even notice themServer-side rendering is important because you own the entire infrastructure up to the point of sending the actual HTML back to the user’s deviceYou can distribute your APIs, add caching layers, and distribute your database if that’s neededWith CSR you’re way more limited2/2"
+      },
+      "mention-of": "https://tonysull.co/notes/csr-perf-challenges/",
+      "wm-property": "mention-of",
       "wm-private": false
     }
   ]
