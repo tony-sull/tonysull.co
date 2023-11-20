@@ -26,23 +26,19 @@ Almost every technical hire you make will likely need to be a full-stack enginee
 
 Your SQL specialist will need to understand bundlers, JS tooling, and may need to know what "import server", "use server", and "use client" all do.
 
-Your HTML/CSS and accessibility experts will need to know how to work in your JS component framework of choice.
-
-If you pull in Tailwind because styling in JS can be painful, they'll need to know that as well.
+Your HTML/CSS and accessibility experts will need to know how to work in your JS component framework of choice. If you pull in Tailwind because styling in JS can be painful, they'll need to know that as well.
 
 ## APIs
 
-If you have, or plan to have,a public API it may need to be entirely separate from your own frontend project.
+If you have, or plan to have,a public API it may need to be entirely separate from your own frontend project. This isn't a bad thing, I personally prefer separate backend and frontend code bases, but this flies in the face of a core benefit of a metaframework.
 
 Now that RPCs are new stew rather than 3 day old halibut (RIP Anthony Bourdain), your project is likely using APIs created by the bundler without versioning or documentation.
 
-## Bug reproducability
+## Bug reproducibility
 
-Bug reproducability is going to be tricky too.
+Bug reproducibility is going to be tricky too.
 
-Application flow now moves between SSR, client rendering, and functions marshaled back to the server via RPC calls.
-
-When a user hits an error, where do you look? How do you recreate it locally? And how do you automate a test?
+Application flow now moves between SSR, client rendering, and functions marshaled back to the server via RPC calls. When a user hits an error, where do you look? How do you recreate it locally? And how do you automate a test?
 
 I'll assume that you're deploying to a serverless or edge environment. In that case, you likely can't recreate the production environment locally if you wanted to.
 
@@ -54,6 +50,6 @@ I'm sure there's more I'm missing here, and I haven't touched on the pros though
 
 The moral of the story, though, is to avoid diving into a brand new metaframework because its the most hyped online. These tools are brand new and are an amalgamation of so many different concepts (both new and repurposed) that we don't yet know what we don't know.
 
-Picking your tech stack cna have a profound impact in the long term. Choose your dependencies carefully, sticking with "boring" tech as much as possible.
+Picking your tech stack can have a profound impact in the long term. Choose your dependencies carefully, sticking with "boring" tech as much as possible.
 
 Throwing in a couple carefully picked bets on newer tech is totally reasonable, but those bets really shouldn't be so all-encompassing that you need to reconsider your organizational structure or hiring practices.
