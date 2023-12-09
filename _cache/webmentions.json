@@ -1,5 +1,5 @@
 {
-  "lastFetched": "2023-10-01T19:06:16.656Z",
+  "lastFetched": "2023-12-09T03:12:48.573Z",
   "children": [
     {
       "type": "entry",
@@ -1561,6 +1561,246 @@
       },
       "mention-of": "https://tonysull.co/notes/csr-perf-challenges/",
       "wm-property": "mention-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "tonysull",
+        "photo": "https://webmention.io/avatar/cdn.masto.host/1f414b7da35680fdaf68a1335833849d6f77bbab7cf655991fbb8599554e2391.png",
+        "url": "https://indieweb.social/@tonysull"
+      },
+      "url": "https://indieweb.social/@tonysull/111443436845497263",
+      "published": "2023-11-20T14:51:35+00:00",
+      "wm-received": "2023-11-21T00:43:49Z",
+      "wm-id": 1741984,
+      "wm-source": "https://brid.gy/comment/mastodon/@tonysull@indieweb.social/111443434190226780/111443436845497263",
+      "wm-target": "https://tonysull.co/articles/hidden-cost-of-metaframeworks/",
+      "wm-protocol": "webmention",
+      "content": {
+        "html": "<p>They define your team structure and hiring goals</p><p>The lines between backend and frontend blur, to the point that there may not be a distinction anymore</p><p>Infrastructure, maintainability, testability, and scaling all change</p><p>????</p>",
+        "text": "They define your team structure and hiring goalsThe lines between backend and frontend blur, to the point that there may not be a distinction anymoreInfrastructure, maintainability, testability, and scaling all change????"
+      },
+      "in-reply-to": "https://tonysull.co/articles/hidden-cost-of-metaframeworks/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "tonysull",
+        "photo": "https://webmention.io/avatar/cdn.masto.host/1f414b7da35680fdaf68a1335833849d6f77bbab7cf655991fbb8599554e2391.png",
+        "url": "https://indieweb.social/@tonysull"
+      },
+      "url": "https://indieweb.social/@tonysull/111443439732305499",
+      "published": "2023-11-20T14:52:19+00:00",
+      "wm-received": "2023-11-21T00:43:46Z",
+      "wm-id": 1741982,
+      "wm-source": "https://brid.gy/comment/mastodon/@tonysull@indieweb.social/111443434190226780/111443439732305499",
+      "wm-target": "https://tonysull.co/articles/hidden-cost-of-metaframeworks/",
+      "wm-protocol": "webmention",
+      "content": {
+        "html": "<p>If you have, or plan to have, a public API it may need to be entirely separate from your own frontend project</p><p>Now that RPCs are new stew rather than 3 day old halibut (RIP Anthony Bourdain), your project is using APIs created by the bundler without versioning or documentation</p><p>????</p>",
+        "text": "If you have, or plan to have, a public API it may need to be entirely separate from your own frontend projectNow that RPCs are new stew rather than 3 day old halibut (RIP Anthony Bourdain), your project is using APIs created by the bundler without versioning or documentation????"
+      },
+      "in-reply-to": "https://tonysull.co/articles/hidden-cost-of-metaframeworks/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "tonysull",
+        "photo": "https://webmention.io/avatar/cdn.masto.host/1f414b7da35680fdaf68a1335833849d6f77bbab7cf655991fbb8599554e2391.png",
+        "url": "https://indieweb.social/@tonysull"
+      },
+      "url": "https://indieweb.social/@tonysull/111443437966976821",
+      "published": "2023-11-20T14:51:52+00:00",
+      "wm-received": "2023-11-21T00:43:46Z",
+      "wm-id": 1741983,
+      "wm-source": "https://brid.gy/comment/mastodon/@tonysull@indieweb.social/111443434190226780/111443437966976821",
+      "wm-target": "https://tonysull.co/articles/hidden-cost-of-metaframeworks/",
+      "wm-protocol": "webmention",
+      "content": {
+        "html": "<p>Almost every technical hire you make will likely need to be a full-stack engineer, bonus if they specialize a bit</p><p>Your SQL specialist will need to understand bundlers, JS tooling, and may need to know what \"import server\", \"use server\", and \"use client\" all do</p><p>Your HTML/CSS and accessibility experts will need to know how to work in your JS component framework of choice</p><p>If you pull in Tailwind because styling in JS can be painful, they'll need to know that as well</p><p>????</p>",
+        "text": "Almost every technical hire you make will likely need to be a full-stack engineer, bonus if they specialize a bitYour SQL specialist will need to understand bundlers, JS tooling, and may need to know what \"import server\", \"use server\", and \"use client\" all doYour HTML/CSS and accessibility experts will need to know how to work in your JS component framework of choiceIf you pull in Tailwind because styling in JS can be painful, they'll need to know that as well????"
+      },
+      "in-reply-to": "https://tonysull.co/articles/hidden-cost-of-metaframeworks/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "tonysull",
+        "photo": "https://webmention.io/avatar/cdn.masto.host/1f414b7da35680fdaf68a1335833849d6f77bbab7cf655991fbb8599554e2391.png",
+        "url": "https://indieweb.social/@tonysull"
+      },
+      "url": "https://indieweb.social/@tonysull/111443442233174532",
+      "published": "2023-11-20T14:52:57+00:00",
+      "wm-received": "2023-11-21T00:43:42Z",
+      "wm-id": 1741980,
+      "wm-source": "https://brid.gy/comment/mastodon/@tonysull@indieweb.social/111443434190226780/111443442233174532",
+      "wm-target": "https://tonysull.co/articles/hidden-cost-of-metaframeworks/",
+      "wm-protocol": "webmention",
+      "content": {
+        "html": "<p>Bug reproducability is going to be tricky too</p><p>Application flow now moves between SSR, client rendering, and functions marshaled back to the server via RPC calls</p><p>When a user hits an error, where do you look? How do you recreate it locally? And how do you automate a test?</p><p>????</p>",
+        "text": "Bug reproducability is going to be tricky tooApplication flow now moves between SSR, client rendering, and functions marshaled back to the server via RPC callsWhen a user hits an error, where do you look? How do you recreate it locally? And how do you automate a test?????"
+      },
+      "in-reply-to": "https://tonysull.co/articles/hidden-cost-of-metaframeworks/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "tonysull",
+        "photo": "https://webmention.io/avatar/cdn.masto.host/1f414b7da35680fdaf68a1335833849d6f77bbab7cf655991fbb8599554e2391.png",
+        "url": "https://indieweb.social/@tonysull"
+      },
+      "url": "https://indieweb.social/@tonysull/111443443325304047",
+      "published": "2023-11-20T14:53:14+00:00",
+      "wm-received": "2023-11-21T00:43:42Z",
+      "wm-id": 1741981,
+      "wm-source": "https://brid.gy/comment/mastodon/@tonysull@indieweb.social/111443434190226780/111443443325304047",
+      "wm-target": "https://tonysull.co/articles/hidden-cost-of-metaframeworks/",
+      "wm-protocol": "webmention",
+      "content": {
+        "html": "<p>I'll assume that you're deploying to serverless or edge</p><p>In that case, you likely can't recreate the production environment if you wanted to</p><p>Devs won't be able to locally reproduce the deployed hardware, OS, or network. Same for the end user's hardware and network conditions</p><p>????</p>",
+        "text": "I'll assume that you're deploying to serverless or edgeIn that case, you likely can't recreate the production environment if you wanted toDevs won't be able to locally reproduce the deployed hardware, OS, or network. Same for the end user's hardware and network conditions????"
+      },
+      "in-reply-to": "https://tonysull.co/articles/hidden-cost-of-metaframeworks/",
+      "wm-property": "in-reply-to",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Beta, Pilot",
+        "photo": "",
+        "url": "https://geek.ds3783.com/author/pilot_beta/"
+      },
+      "url": "https://geek.ds3783.com/2023/10/web-3-0-%e6%ad%a3%e5%bc%8f%e6%9d%a5%e4%b8%b4%ef%bc%8c%e8%80%8c%e5%ae%83%e5%b9%b6%e4%b8%8d%e6%98%af%e5%8c%ba%e5%9d%97%e9%93%be%e3%80%82/",
+      "published": null,
+      "wm-received": "2023-10-26T16:50:50Z",
+      "wm-id": 1731002,
+      "wm-source": "https://geek.ds3783.com/2023/10/web-3-0-%e6%ad%a3%e5%bc%8f%e6%9d%a5%e4%b8%b4%ef%bc%8c%e8%80%8c%e5%ae%83%e5%b9%b6%e4%b8%8d%e6%98%af%e5%8c%ba%e5%9d%97%e9%93%be%e3%80%82/",
+      "wm-target": "https://tonysull.co/articles/web-3-is-here/",
+      "wm-protocol": "pingback",
+      "name": "Web 3.0 正式来临，而它并不是区块链。",
+      "content": {
+        "html": "<p>Web 3.0 正式来临，而它并不是区块链</p>\n<p>当我们谈到 Web 3.0 时，脑海中是否会立刻浮现出区块链的画面？是的，我们习惯性地将 Web 3.0 与区块链联系在一起，但实际上，Web 3.0 可不仅仅是区块链的延伸。</p>\n<p>近日，全球知名科技专家 Tony Sullivan 最新文章《Web 3.0 是真实存在的》呼唤了 Web 3.0 的来临，揭示了它并不是表面看上去那般简单。这篇令人惊艳的文章引发了广泛关注，让我们一同来探索 Web 3.0 的新面貌吧！</p>\n<p>在过去的几十年里，我们见证了 Web 的快速发展与演变。从 Web 1.0 的静态页面、Web 2.0 的互动社交，到如今的 Web 3.0，互联网已经发生了天翻地覆的变革。Web 3.0 不再仅仅为人类所用，更多地将智能化与自主性引入其中。</p>\n<p>那么，Web 3.0 究竟是什么？Sullivan 在文章中警示我们不要只局限于区块链的认知。他将 Web 3.0 定义为：通过分布式计算、人工智能和物联网等技术构建的智能化网络。它的出现，将推动整个互联网从中心化向去中心化发展。</p>\n<p>对于普通用户而言，Web 3.0 提供了更加自主权威的网络环境。不再依赖互联网巨头的中心化掌控，Web 3.0 赋予了用户更大的数据掌握权，并以隐私与安全为基石，保护用户的数字身份。</p>\n<p>而对于开发者而言，Web 3.0 则为他们带来了更广阔的创新空间。通过智能合约、去中心化应用（DApps）等技术，Web 3.0 打开了全新的商业模式，为开发者和企业家创造了更多可能性。</p>\n<p>尽管区块链在 Web 3.0 中发挥了重要作用，但应当认识到，Web 3.0 不等同于区块链。Web 3.0 是一个更广义的概念，它包含了更多技术的集合，是一个全方位的演进。</p>\n<p>在未来，我们将会看到越来越多的项目和应用基于 Web 3.0 的理念而展开。这是一个充满希望与无限可能的时代。让我们共同期待 Web 3.0 的正式来临，一同见证互联网的新变革！</p>\n<p>无论是普通用户，还是开发者，Web 3.0 都带来了全新的机遇与挑战。沐浴在 Web 3.0 的光芒下，我们需要适应变革，不断学习与创新。因为，Web 3.0 的未来已经在向我们召唤，让我们握紧先机，迈入全新的网络时代！</p>\n                        \n                        \n                        \n                        <p><a href=\"https://tonysull.co/articles/web-3-is-here/\">详情参考</a> </p>\n                        \n                        \n                        \n                        <p>了解更多有趣的事情：<a href=\"https://blog.ds3783.com/\">https://blog.ds3783.com/</a></p>\n                        \n<h3>Related Posts</h3>\n<ul><li>\n<a href=\"https://geek.ds3783.com/2023/07/web-%E6%B5%8F%E8%A7%88%E5%99%A8%E4%BA%92%E6%93%8D%E4%BD%9C%E6%80%A72023%E9%87%8D%E7%82%B9/\">Web 浏览器互操作性2023重点</a><p>亲爱的读者们，您是否曾经陷入Web浏览器不兼容的困境中？我敢肯定绝大多数人都曾历经这样的经历。然而，…</p>\n</li>\n<li>\n<a href=\"https://geek.ds3783.com/2023/09/web-captioner%E5%B0%86%E4%BA%8E2023%E5%B9%B410%E6%9C%8831%E6%97%A5%E7%BB%88%E6%AD%A2%E5%B9%B6%E5%BC%80%E6%BA%90%E3%80%82/\">Web Captioner将于2023年10月31日终止并开源。</a><p>**Web Captioner将于2023年10月31日终止并开源。辞世未泯，传世经典。** **2…</p>\n</li>\n<li>\n<a href=\"https://geek.ds3783.com/2023/05/web-roulette-%E6%98%AF%E4%B8%80%E4%B8%AA%E5%8F%AF%E3%80%8C%E5%B7%A6%E6%BB%91%E3%80%8D%E7%9A%84%E7%BD%91%E9%A1%B5%E6%B5%8F%E8%A7%88%E5%99%A8%E3%80%82/\">Web Roulette 是一个可「左滑」的网页浏览器。</a><p>Web Roulette 是一个独具创意的、可「左滑」的网页浏览器。它的新颖玩法以及对 TikTok…</p>\n</li>\n</ul>",
+        "text": "Web 3.0 正式来临，而它并不是区块链\n当我们谈到 Web 3.0 时，脑海中是否会立刻浮现出区块链的画面？是的，我们习惯性地将 Web 3.0 与区块链联系在一起，但实际上，Web 3.0 可不仅仅是区块链的延伸。\n近日，全球知名科技专家 Tony Sullivan 最新文章《Web 3.0 是真实存在的》呼唤了 Web 3.0 的来临，揭示了它并不是表面看上去那般简单。这篇令人惊艳的文章引发了广泛关注，让我们一同来探索 Web 3.0 的新面貌吧！\n在过去的几十年里，我们见证了 Web 的快速发展与演变。从 Web 1.0 的静态页面、Web 2.0 的互动社交，到如今的 Web 3.0，互联网已经发生了天翻地覆的变革。Web 3.0 不再仅仅为人类所用，更多地将智能化与自主性引入其中。\n那么，Web 3.0 究竟是什么？Sullivan 在文章中警示我们不要只局限于区块链的认知。他将 Web 3.0 定义为：通过分布式计算、人工智能和物联网等技术构建的智能化网络。它的出现，将推动整个互联网从中心化向去中心化发展。\n对于普通用户而言，Web 3.0 提供了更加自主权威的网络环境。不再依赖互联网巨头的中心化掌控，Web 3.0 赋予了用户更大的数据掌握权，并以隐私与安全为基石，保护用户的数字身份。\n而对于开发者而言，Web 3.0 则为他们带来了更广阔的创新空间。通过智能合约、去中心化应用（DApps）等技术，Web 3.0 打开了全新的商业模式，为开发者和企业家创造了更多可能性。\n尽管区块链在 Web 3.0 中发挥了重要作用，但应当认识到，Web 3.0 不等同于区块链。Web 3.0 是一个更广义的概念，它包含了更多技术的集合，是一个全方位的演进。\n在未来，我们将会看到越来越多的项目和应用基于 Web 3.0 的理念而展开。这是一个充满希望与无限可能的时代。让我们共同期待 Web 3.0 的正式来临，一同见证互联网的新变革！\n无论是普通用户，还是开发者，Web 3.0 都带来了全新的机遇与挑战。沐浴在 Web 3.0 的光芒下，我们需要适应变革，不断学习与创新。因为，Web 3.0 的未来已经在向我们召唤，让我们握紧先机，迈入全新的网络时代！\n                        \n                        \n                        \n                        详情参考 \n                        \n                        \n                        \n                        了解更多有趣的事情：https://blog.ds3783.com/\n                        \nRelated Posts\n\nWeb 浏览器互操作性2023重点亲爱的读者们，您是否曾经陷入Web浏览器不兼容的困境中？我敢肯定绝大多数人都曾历经这样的经历。然而，…\n\n\nWeb Captioner将于2023年10月31日终止并开源。**Web Captioner将于2023年10月31日终止并开源。辞世未泯，传世经典。** **2…\n\n\nWeb Roulette 是一个可「左滑」的网页浏览器。Web Roulette 是一个独具创意的、可「左滑」的网页浏览器。它的新颖玩法以及对 TikTok…"
+      },
+      "mention-of": "https://tonysull.co/articles/web-3-is-here/",
+      "wm-property": "mention-of",
+      "wm-private": false,
+      "rels": {
+        "canonical": "https://geek.ds3783.com/2023/10/web-3-0-正式来临，而它并不是区块链。/"
+      }
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "",
+        "photo": "",
+        "url": ""
+      },
+      "url": "https://zerobytes.monster/post/2366252",
+      "published": null,
+      "wm-received": "2023-10-03T12:57:58Z",
+      "wm-id": 1722978,
+      "wm-source": "https://zerobytes.monster/post/2366252",
+      "wm-target": "https://tonysull.co/articles/web-3-is-here/",
+      "wm-protocol": "webmention",
+      "mention-of": "https://tonysull.co/articles/web-3-is-here/",
+      "wm-property": "mention-of",
+      "wm-private": false,
+      "rels": {
+        "canonical": "https://zerobytes.monster/post/2366252"
+      }
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Sarah Rainsberger",
+        "photo": "https://webmention.io/avatar/cdn.masto.host/05076d25d9264be52cf139edb482f6ee48480852fd479634735f19e351640024.jpg",
+        "url": "https://mastodon.social/@sarah11918"
+      },
+      "url": "https://indieweb.social/@tonysull/111161336715455042#favorited-by-109325671007949409",
+      "published": null,
+      "wm-received": "2023-10-02T20:58:06Z",
+      "wm-id": 1722823,
+      "wm-source": "https://brid.gy/like/mastodon/@tonysull@indieweb.social/111161336715455042/109325671007949409",
+      "wm-target": "https://tonysull.co/articles/web-3-is-here/",
+      "wm-protocol": "webmention",
+      "like-of": "https://tonysull.co/articles/web-3-is-here/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Kevin Cole",
+        "photo": "https://webmention.io/avatar/cdn.masto.host/6cb1256aa31eafd4ce33cd65b309d256914408aa9ab5f40d883800057a0f82ea.png",
+        "url": "https://mastodon.online/@kcole"
+      },
+      "url": "https://indieweb.social/@tonysull/111161336715455042#favorited-by-109434934787850043",
+      "published": null,
+      "wm-received": "2023-10-02T12:30:16Z",
+      "wm-id": 1722645,
+      "wm-source": "https://brid.gy/like/mastodon/@tonysull@indieweb.social/111161336715455042/109434934787850043",
+      "wm-target": "https://tonysull.co/articles/web-3-is-here/",
+      "wm-protocol": "webmention",
+      "like-of": "https://tonysull.co/articles/web-3-is-here/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Kevin Cole",
+        "photo": "https://webmention.io/avatar/cdn.masto.host/6cb1256aa31eafd4ce33cd65b309d256914408aa9ab5f40d883800057a0f82ea.png",
+        "url": "https://mastodon.online/@kcole"
+      },
+      "url": "https://indieweb.social/@tonysull/111161336715455042#reblogged-by-109434934787850043",
+      "published": null,
+      "wm-received": "2023-10-02T12:30:16Z",
+      "wm-id": 1722646,
+      "wm-source": "https://brid.gy/repost/mastodon/@tonysull@indieweb.social/111161336715455042/109434934787850043",
+      "wm-target": "https://tonysull.co/articles/web-3-is-here/",
+      "wm-protocol": "webmention",
+      "repost-of": "https://tonysull.co/articles/web-3-is-here/",
+      "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "nate",
+        "photo": "https://webmention.io/avatar/cdn.masto.host/a11dfaddf375eff22caf505481582225dcb2a5c57bb56d7ed7e08dd3f1d39de4.jpg",
+        "url": "https://mas.to/@nmoo"
+      },
+      "url": "https://indieweb.social/@tonysull/111161336715455042#favorited-by-109363254768401603",
+      "published": null,
+      "wm-received": "2023-10-01T22:01:50Z",
+      "wm-id": 1722360,
+      "wm-source": "https://brid.gy/like/mastodon/@tonysull@indieweb.social/111161336715455042/109363254768401603",
+      "wm-target": "https://tonysull.co/articles/web-3-is-here/",
+      "wm-protocol": "webmention",
+      "like-of": "https://tonysull.co/articles/web-3-is-here/",
+      "wm-property": "like-of",
       "wm-private": false
     }
   ]

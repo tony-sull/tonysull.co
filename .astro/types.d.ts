@@ -22,7 +22,12 @@ declare module 'astro:content' {
 	export { z } from 'astro/zod';
 
 	type Flatten<T> = T extends { [K: string]: infer U } ? U : never;
-	export type CollectionEntry<C extends keyof AnyEntryMap> = Flatten<AnyEntryMap[C]>;
+
+	export type CollectionKey = keyof AnyEntryMap;
+	export type CollectionEntry<C extends CollectionKey> = Flatten<AnyEntryMap[C]>;
+
+	export type ContentCollectionKey = keyof ContentEntryMap;
+	export type DataCollectionKey = keyof DataEntryMap;
 
 	// This needs to be in sync with ImageMetadata
 	export type ImageFunction = () => import('astro/zod').ZodObject<{
@@ -38,6 +43,7 @@ declare module 'astro:content' {
 				import('astro/zod').ZodLiteral<'webp'>,
 				import('astro/zod').ZodLiteral<'gif'>,
 				import('astro/zod').ZodLiteral<'svg'>,
+				import('astro/zod').ZodLiteral<'avif'>,
 			]
 		>;
 	}>;
@@ -245,6 +251,13 @@ declare module 'astro:content' {
 "converting-navillus-to-astro.md": {
 	id: "converting-navillus-to-astro.md";
   slug: "converting-navillus-to-astro";
+  body: string;
+  collection: "articles";
+  data: InferEntrySchema<"articles">
+} & { render(): Render[".md"] };
+"hidden-cost-of-metaframeworks.md": {
+	id: "hidden-cost-of-metaframeworks.md";
+  slug: "hidden-cost-of-metaframeworks";
   body: string;
   collection: "articles";
   data: InferEntrySchema<"articles">
@@ -470,6 +483,13 @@ declare module 'astro:content' {
   collection: "notes";
   data: InferEntrySchema<"notes">
 } & { render(): Render[".md"] };
+"if-we-didnt-have-fullstack-devs.md": {
+	id: "if-we-didnt-have-fullstack-devs.md";
+  slug: "if-we-didnt-have-fullstack-devs";
+  body: string;
+  collection: "notes";
+  data: InferEntrySchema<"notes">
+} & { render(): Render[".md"] };
 "indieweb-schemas.md": {
 	id: "indieweb-schemas.md";
   slug: "indieweb-schemas";
@@ -494,6 +514,13 @@ declare module 'astro:content' {
 "prediction-google-disables-js.md": {
 	id: "prediction-google-disables-js.md";
   slug: "prediction-google-disables-js";
+  body: string;
+  collection: "notes";
+  data: InferEntrySchema<"notes">
+} & { render(): Render[".md"] };
+"prediction-no-build-frameworks.md": {
+	id: "prediction-no-build-frameworks.md";
+  slug: "prediction-no-build-frameworks";
   body: string;
   collection: "notes";
   data: InferEntrySchema<"notes">
