@@ -33,7 +33,7 @@ export async function getFeed({ site, generator }: APIContext) {
     const url = new URL(`/${entry.collection}/${entry.slug}/`, site)
 
     const item: Item = {
-      title: entry.collection === 'articles' ? entry.data.name : entry.body,
+      title: 'name' in entry.data ? entry.data.name : '',
       id: url.toString(),
       link: url.toString(),
       date: entry.data.updated ?? entry.data.published!,
