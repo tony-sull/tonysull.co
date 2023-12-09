@@ -1,6 +1,6 @@
 import type { APIContext } from 'astro'
 import { getCollection } from 'astro:content'
-import { Feed, Item } from 'feed'
+import { Feed, type Item } from 'feed'
 import siteData from '~/data/site'
 import { mdToHtml } from '~/utils/markdown'
 import { sortByDate } from '~/utils/sortByDate'
@@ -36,8 +36,9 @@ export async function getFeed({ site, generator }: APIContext) {
       title: entry.collection === 'articles' ? entry.data.name : entry.body,
       id: url.toString(),
       link: url.toString(),
+      date: entry.data.updated ?? entry.data.published!,
+      published: entry.data.published!,
       content: mdToHtml(entry.body),
-      date: entry.data.published!,
     }
 
     if ('summary' in entry.data && entry.data.summary) {
