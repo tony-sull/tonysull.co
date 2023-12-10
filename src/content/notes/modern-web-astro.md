@@ -9,4 +9,4 @@ Great read that's been making the rounds recently, especially the history of how
 
 https://dev.to/oxharris/rethinking-the-modern-web-5cn1
 
-Also highlights what brought me to [https://astro.build](Astro) in the first, `[HTML, CSS, JS]` > `Build_Step` > `[HTML, CSS, ...JS?]`
+Also highlights what brought me to [Astro](https://astro.build) in the first, `[HTML, CSS, JS]` > `Build_Step` > `[HTML, CSS, ...JS?]`
