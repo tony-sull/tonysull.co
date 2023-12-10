@@ -38,11 +38,16 @@ export async function getFeed({ site, generator }: APIContext) {
       link: url.toString(),
       date: entry.data.updated ?? entry.data.published!,
       published: entry.data.published!,
-      content: mdToHtml(entry.body),
     }
 
     if ('summary' in entry.data && entry.data.summary) {
       item.description = entry.data.summary
+    }
+
+    if (!item.title) {
+      item.description = item.description ?? mdToHtml(entry.body)
+    } else {
+      item.content = mdToHtml(entry.body)
     }
 
     if ('featured' in entry.data && entry.data.featured) {
