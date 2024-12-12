@@ -5,7 +5,7 @@ category:
   - indieweb
   - simplicity
 published: '2023-02-01T15:32:36Z'
-featured: '/uploads/2023-02-01-the-web-needs-more-indie.jpg'
+featured: '../../assets/uploads/2023-02-01-the-web-needs-more-indie.jpg'
 ---
 
 I just finished reading a really interesting article [Cory Doctorow](https://www.wired.com/author/cory-doctorow) published on Wired, [The ‘Enshittification’ of TikTok](https://www.wired.com/story/tiktok-platforms-cory-doctorow/) ([archive.org link](https://web.archive.org/web/20230130001322/https://www.wired.com/story/tiktok-platforms-cory-doctorow/)). In it he outlines a surprisingly simple pattern that's seen over and over again as platforms come and go, what I wasn't expecting to find was how closely the pattern matches the history of the web and what the [IndieWeb](https://indieweb.org) is all about.

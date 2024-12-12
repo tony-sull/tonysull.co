@@ -1,9 +1,10 @@
 ---
 import Card from './Card.astro'
-import { Icon } from 'astro-icon'
+import { Icon } from 'astro-icon/components'
 import type { CollectionEntry } from 'astro:content'
 import { scrape } from '~/utils/scrape'
 import Show from './Show.astro'
+import { getEntry } from 'astro:content'
 
 export type Props = CollectionEntry<'bookmarks'>
 
@@ -16,10 +17,11 @@ if (!metadata) {
 }
 
 const bookmarkUrl = new URL(data.bookmarkOf)
+const author = await getEntry(data.author)
 ---
 
 <Card
-  author={data.author}
+  {author}
   href={data.bookmarkOf}
   date={data.published}
   tags={data.category}

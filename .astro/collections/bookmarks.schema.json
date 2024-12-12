@@ -1,0 +1,95 @@
+{
+  "$ref": "#/definitions/bookmarks",
+  "definitions": {
+    "bookmarks": {
+      "type": "object",
+      "properties": {
+        "published": {
+          "anyOf": [
+            {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "integer",
+                  "format": "unix-time"
+                }
+              ]
+            },
+            {
+              "type": "string",
+              "format": "date-time",
+              "description": "when the entry was published",
+              "markdownDescription": "when the entry was published"
+            }
+          ],
+          "description": "when the entry was published",
+          "markdownDescription": "when the entry was published"
+        },
+        "updated": {
+          "anyOf": [
+            {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "integer",
+                  "format": "unix-time"
+                }
+              ]
+            },
+            {
+              "type": "string",
+              "format": "date-time",
+              "description": "when the entry was updated",
+              "markdownDescription": "when the entry was updated"
+            }
+          ],
+          "description": "when the entry was updated",
+          "markdownDescription": "when the entry was updated"
+        },
+        "author": {
+          "type": "string",
+          "description": "who wrote the entry, optionally embedded as a Card",
+          "markdownDescription": "who wrote the entry, optionally embedded as a Card"
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": "entry categories/tags",
+          "markdownDescription": "entry categories/tags",
+          "default": []
+        },
+        "bookmarkOf": {
+          "type": "string",
+          "format": "uri",
+          "description": "original URL the entry is considered a bookmark of",
+          "markdownDescription": "original URL the entry is considered a bookmark of"
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "bookmarkOf"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

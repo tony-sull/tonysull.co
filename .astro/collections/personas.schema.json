@@ -1,0 +1,57 @@
+{
+  "$ref": "#/definitions/personas",
+  "definitions": {
+    "personas": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The full/formatted name of the person or organization",
+          "markdownDescription": "The full/formatted name of the person or organization"
+        },
+        "nickname": {
+          "type": "string",
+          "description": "nickname, alias, or handle",
+          "markdownDescription": "nickname, alias, or handle"
+        },
+        "givenName": {
+          "type": "string",
+          "description": "given (often first) name",
+          "markdownDescription": "given (often first) name"
+        },
+        "familyName": {
+          "type": "string",
+          "description": "family (often last) name",
+          "markdownDescription": "family (often last) name"
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "email address",
+          "markdownDescription": "email address"
+        },
+        "logo": {
+          "type": "string",
+          "description": "a logo representing the person or organization, e.g. avatar icon",
+          "markdownDescription": "a logo representing the person or organization, e.g. avatar icon"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "home page or other URL representing the person or organization",
+          "markdownDescription": "home page or other URL representing the person or organization"
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "nickname",
+        "logo"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

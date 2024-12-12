@@ -2,10 +2,12 @@
 import type { CollectionEntry } from 'astro:content'
 import readingTime from 'reading-time'
 import { isoDate, shortDate } from '~/utils/dates.js'
-import { Icon } from 'astro-icon'
+import { Icon } from 'astro-icon/components'
 import Avatar from './Avatar.astro'
 import Show from './Show.astro'
 import TagList from './TagList.astro'
+import { getEntry } from 'astro:content'
+import { Image } from 'astro:assets'
 
 export type Props = CollectionEntry<'articles'>
 
@@ -14,6 +16,7 @@ const { body, data, render } = Astro.props
 const { Content } = await render()
 
 const minutes = readingTime(body)
+const author = await getEntry(data.author)
 ---
 
 <article class="h-entry">
@@ -27,7 +30,7 @@ const minutes = readingTime(body)
       <strong slot="fallback">DRAFT</strong>
     </Show>
 
-    <Avatar class="p-author" author={data.author} />
+    <Avatar class="p-author" {author} />
 
     <p>
       <Icon name="clock" size={16} aria-hidden="true" role="img" />
@@ -41,9 +44,9 @@ const minutes = readingTime(body)
     <blockquote class="p-summary">{data.summary}</blockquote>
 
     <Show when={data.featured}>
-      <img
-        src="u-photo"
-        src={data.featured}
+      <Image
+        class="u-photo"
+        src={data.featured!}
         alt=""
         aria-hidden="true"
         loading="lazy"
@@ -55,7 +58,7 @@ const minutes = readingTime(body)
       class="u-url"
       href={/*(data.url && new URL(data.url)) ||*/
       new URL(Astro.url.pathname, Astro.site)}
-      hidden></a>
+      hidden>See the full post</a>
   </header>
 
   <div class="e-content">

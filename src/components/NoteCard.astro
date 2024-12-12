@@ -3,6 +3,8 @@ import type { CollectionEntry } from 'astro:content'
 import Card from './Card.astro'
 import { scrape } from '~/utils/scrape'
 import Show from './Show.astro'
+import { getEntries } from 'astro:content'
+import { getEntry } from 'astro:content'
 
 export type Props = CollectionEntry<'notes'>
 
@@ -11,14 +13,16 @@ const { data, render, slug } = Astro.props
 const { Content } = await render()
 
 const replyMetadata = data.inReplyTo ? await scrape(data.inReplyTo) : undefined
+const author = await getEntry(data.author)
+const photo = await getEntries(data.photo)
 ---
 
 <Card
-  author={data.author}
+  {author}
   href={`/notes/${slug}`}
   date={data.published}
   tags={data.category}
-  photo={data.photo}
+  {photo}
 >
   <Content />
 

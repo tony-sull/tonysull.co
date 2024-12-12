@@ -4,7 +4,7 @@ summary: Plenty has been said about the risk of investments SVB held - were they
 category:
   - economics
 published: '2023-03-29T13:50:51Z'
-featured: '/uploads/2023-03-29-was-the-fed-to-blame.jpg'
+featured: '../../assets/uploads/2023-03-29-was-the-fed-to-blame.jpg'
 ---
 
 If you paid any attention to [collapse of Silicon Valley Bank](https://en.wikipedia.org/wiki/Collapse_of_Silicon_Valley_Bank), you likely heard about [how risky](https://www.bloomberg.com/opinion/articles/2023-03-14/svb-took-the-wrong-risks) the bank's investments were and [regulatory changes in 2018](https://rooseveltinstitute.org/2023/03/15/how-2018-regulatory-rollbacks-set-the-stage-for-the-silicon-valley-bank-collapse-and-how-to-change-course/) that may have played a role in the bank's collapse. Neither explanation quite made sense to me and I've been trying to piece it together ever since.

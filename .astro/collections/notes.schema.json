@@ -1,0 +1,143 @@
+{
+  "$ref": "#/definitions/notes",
+  "definitions": {
+    "notes": {
+      "type": "object",
+      "properties": {
+        "published": {
+          "anyOf": [
+            {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "integer",
+                  "format": "unix-time"
+                }
+              ]
+            },
+            {
+              "type": "string",
+              "format": "date-time",
+              "description": "when the entry was published",
+              "markdownDescription": "when the entry was published"
+            }
+          ],
+          "description": "when the entry was published",
+          "markdownDescription": "when the entry was published"
+        },
+        "updated": {
+          "anyOf": [
+            {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "integer",
+                  "format": "unix-time"
+                }
+              ]
+            },
+            {
+              "type": "string",
+              "format": "date-time",
+              "description": "when the entry was updated",
+              "markdownDescription": "when the entry was updated"
+            }
+          ],
+          "description": "when the entry was updated",
+          "markdownDescription": "when the entry was updated"
+        },
+        "author": {
+          "type": "string",
+          "description": "who wrote the entry, optionally embedded as a Card",
+          "markdownDescription": "who wrote the entry, optionally embedded as a Card"
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": "entry categories/tags",
+          "markdownDescription": "entry categories/tags",
+          "default": []
+        },
+        "inReplyTo": {
+          "type": "string",
+          "format": "uri",
+          "description": "the URL which the entry is considered a reply to",
+          "markdownDescription": "the URL which the entry is considered a reply to"
+        },
+        "rsvp": {
+          "type": "string",
+          "enum": [
+            "yes",
+            "maybe",
+            "no",
+            "interested"
+          ]
+        },
+        "likeOf": {
+          "type": "string",
+          "format": "uri",
+          "description": "the URL which the entry is considered a \"like\" of",
+          "markdownDescription": "the URL which the entry is considered a \"like\" of"
+        },
+        "repostOf": {
+          "type": "string",
+          "format": "uri",
+          "description": "the URL which the entry is considered a \"repost\" of",
+          "markdownDescription": "the URL which the entry is considered a \"repost\" of"
+        },
+        "photo": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          ],
+          "description": "one or more photos that is/are considered the primary content of the entry",
+          "markdownDescription": "one or more photos that is/are considered the primary content of the entry"
+        },
+        "video": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          ],
+          "description": "one or more videos that is/are considered the primary content of the entry",
+          "markdownDescription": "one or more videos that is/are considered the primary content of the entry"
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

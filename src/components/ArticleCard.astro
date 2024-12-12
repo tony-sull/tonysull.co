@@ -1,14 +1,17 @@
 ---
 import type { CollectionEntry } from 'astro:content'
 import Card from './Card.astro'
+import { getEntry } from 'astro:content'
 
 export type Props = CollectionEntry<'articles'>
 
 const { data, slug } = Astro.props
+
+const author = await getEntry(data.author)
 ---
 
 <Card
-  author={data.author}
+  {author}
   href={`/articles/${slug}`}
   date={data.published}
   tags={data.category}

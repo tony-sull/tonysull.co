@@ -5,7 +5,7 @@ category:
   - code
   - astro
 published: '2021-07-03T12:00:00Z'
-featured: '/uploads/2021-07-02-astro-plus-snipcart.jpg'
+featured: '../../assets/uploads/2021-07-02-astro-plus-snipcart.jpg'
 url: https://navillus.dev/blog/astro-plus-snipcart/
 author: navillus
 ---

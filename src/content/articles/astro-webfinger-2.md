@@ -6,8 +6,7 @@ category:
   - astro
   - opensource
 published: '2023-03-10T14:07:24Z'
-featured: '/uploads/2023-03-10-astro-webfinger
--2.jpg'
+featured: '../../assets/uploads/2023-03-10-astro-webfinger-2.jpg'
 ---
 
 Not sure what [Webfinger](https://webfinger.net) even is? Check out the `astro-webfinger` [announcement post](/articles/introducing-astro-webfinger/) for a quick rundown of what the heck the integration even does!

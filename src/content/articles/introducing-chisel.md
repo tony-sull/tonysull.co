@@ -6,7 +6,7 @@ category:
   - opensource
 slug: introducing-chisel
 published: '2021-06-02T12:00:00Z'
-featured: '/uploads/2021-06-02-introducing-chisel.jpg'
+featured: '../../assets/uploads/2021-06-02-introducing-chisel.jpg'
 url: https://navillus.dev/blog/introducing-chisel/
 author: navillus
 ---

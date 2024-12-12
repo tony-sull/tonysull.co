@@ -1,59 +1,44 @@
 ---
-import { Picture } from '@astrojs/image/components'
-import type { Props as PictureProps } from '@astrojs/image/components/Picture.astro'
-import { getEntryBySlug } from 'astro:content'
-import { resolvePhoto } from '~/utils/assets.js'
+import { Picture } from 'astro:assets'
+import { getEntry, type CollectionEntry } from 'astro:content'
+import { type HTMLAttributes } from 'astro/types'
 import Show from './Show.astro'
 
-export type Props = Omit<PictureProps, 'alt' | 'src' | 'slot'> & {
-  src: string
-  alt?: string
+export type Props = Omit<HTMLAttributes<"img">, 'alt' | 'src' | 'slot'> & {
+  photo: CollectionEntry<"photos">
   zoomIn?: boolean
+  sizes: string
+  widths: number[]
 }
 
-const { src, zoomIn = false, ...attrs } = Astro.props
+const { photo, zoomIn = false, sizes, widths, ...attrs } = Astro.props
 
-const photoEntry = src ? await getEntryBySlug('photos', src) : undefined
-const resolvedPhoto = photoEntry ? await resolvePhoto(photoEntry) : undefined
-
-if (photoEntry && !resolvedPhoto) {
-  throw new Error(
-    `${src} entry was found but the image "${photoEntry.data.photo}" could not be found. Is there a typo?`
-  )
-}
-
-const pictureSrc: any = resolvedPhoto
-  ? resolvedPhoto
-  : photoEntry
-  ? photoEntry.data.photo
-  : src
-const caption = photoEntry?.data?.name
+const caption = photo.data.name
 
 const {
-  alt = photoEntry ? photoEntry.data.summary : attrs.alt,
   ...pictureProps
 } = attrs
 ---
 
 <figure>
   <Show when={zoomIn}>
-    <a href={pictureSrc?.src || pictureSrc} target="_blank">
+    <a href={photo.data.photo.src} target="_blank">
       <Picture
-        src={pictureSrc}
-        alt={alt || ''}
+        src={photo.data.photo}
+        alt={photo.data.summary ?? ""}
+        {sizes}
+        {widths}
         {...pictureProps}
-        width={resolvedPhoto?.width}
-        height={resolvedPhoto?.height}
       />
     </a>
 
     <Picture
       slot="fallback"
-      src={pictureSrc}
-      alt={alt || ''}
+      src={photo.data.photo}
+      alt={photo.data.summary ?? ""}
+      {sizes}
+      {widths}
       {...pictureProps}
-      width={resolvedPhoto?.width}
-      height={resolvedPhoto?.height}
     />
   </Show>
   <figcaption>{caption}</figcaption>

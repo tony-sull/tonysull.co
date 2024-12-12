@@ -5,7 +5,7 @@ category:
   - code
   - astro
 published: '2021-08-23T21:55:21Z'
-featured: '/uploads/2021-08-23-web-components-in-astro.jpg'
+featured: '../../assets/uploads/2021-08-23-web-components-in-astro.jpg'
 url: https://navillus.dev/blog/web-components-in-astro/
 author: navillus
 ---

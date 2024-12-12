@@ -4,24 +4,25 @@ import { isoDate, shortDate } from '~/utils/dates.js'
 import Avatar from './Avatar.astro'
 import Show from './Show.astro'
 import TagList from './TagList.astro'
+import type { CollectionEntry } from 'astro:content'
 
 export type Props = {
-  author?: string | undefined
+  author: CollectionEntry<"personas">
   href?: string
   date?: Date | null | undefined
   tags?: string[] | undefined
-  photo?: (string | undefined)[] | string | undefined
+  photo?: CollectionEntry<"photos">[] | CollectionEntry<"photos"> | undefined
   contentClass?: string
 }
 
-const { author, href, date, tags, photo, contentClass } = Astro.props
+const { author, date, tags, photo, contentClass } = Astro.props
 
 const singlePhoto = Array.isArray(photo) ? photo[0] : photo
 ---
 
 <article class="h-entry">
   <header class="p-author h-card">
-    <Avatar class="p-author" author={author} />
+    <Avatar class="p-author" {author} />
     <Show when={date}>
       <small>
         <time datetime={isoDate(date!)} class="dt-published">
@@ -37,7 +38,7 @@ const singlePhoto = Array.isArray(photo) ? photo[0] : photo
   </header>
 
   {singlePhoto && (
-    <Photo zoomIn src={singlePhoto} class="u-fetaured" widths={[375, 522, 1044]} sizes="(min-width: 530px) 522px, 100vw" />
+    <Photo zoomIn photo={singlePhoto} class="u-fetaured" widths={[375, 522, 1044]} sizes="(min-width: 530px) 522px, 100vw" />
   )}
 
   <div class:list={[contentClass, 'e-content']}>

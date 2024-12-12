@@ -5,7 +5,7 @@ category:
   - code
   - svelte
 published: '2021-06-25T12:00:00Z'
-featured: '/uploads/2021-06-25-svelte-class-props.jpg'
+featured: '../../assets/uploads/2021-06-25-svelte-class-props.jpg'
 url: https://navillus.dev/blog/svelte-class-props/
 author: navillus
 ---
