@@ -23,7 +23,7 @@ This can't be the whole story though, right? Why to would a bank really hold ont
 
 ## 2013 - the Fed quietly changes the game
 
-This one gets really in the weeds of how banking and finance works - I'm going to do my best to gloss over the details and hit the high points. This isn't a full accounting of the change and I may miss a few things, bear with me! The Economist had a [great article]https://www.economist.com/finance-and-economics/2023/03/21/americas-banks-are-missing-hundreds-of-billions-of-dollars)([archived link](https://archive.md/qFfCt)) that touches on the ideas below with more thorough explanation in case you're interested.
+This one gets really in the weeds of how banking and finance works - I'm going to do my best to gloss over the details and hit the high points. This isn't a full accounting of the change and I may miss a few things, bear with me! The Economist had a [great article](https://www.economist.com/finance-and-economics/2023/03/21/americas-banks-are-missing-hundreds-of-billions-of-dollars) ([archived link](https://archive.md/qFfCt)) that touches on the ideas below with more thorough explanation in case you're interested.
 
 Historically, banks weren't able to go straight to the Federal Reserve to buy securities on a whim. The Fed may occasionally make a lot of securities available, but standard practice for banks involved what is called the repo market. One bank who has cash on hand and needs to invest it in something that is considered safe and liquid would buy government-backed securities from other banks - this is a repo transaction.
 
