@@ -1,20 +1,20 @@
 ---
-import { type CollectionEntry, getEntry } from 'astro:content'
-import readingTime from 'reading-time'
-import { isoDate, shortDate } from '~/utils/dates.js'
-import { Icon } from 'astro-icon'
-import Avatar from './Avatar.astro'
-import TagList from './TagList.astro'
-import { Image } from 'astro:assets'
+import { type CollectionEntry, getEntry } from "astro:content";
+import readingTime from "reading-time";
+import { isoDate, shortDate } from "~/utils/dates.js";
+import { Icon } from "astro-icon/components";
+import Avatar from "./Avatar.astro";
+import TagList from "./TagList.astro";
+import { Image } from "astro:assets";
 
-export type Props = CollectionEntry<'articles'>
+export type Props = CollectionEntry<"articles">;
 
-const { body, data, render } = Astro.props
+const { body, data, render } = Astro.props;
 
-const { Content } = await render()
+const { Content } = await render();
 
-const author = await getEntry(data.author)
-const minutes = readingTime(body)
+const author = await getEntry(data.author);
+const minutes = readingTime(body);
 ---
 
 <article class="h-entry">
@@ -79,7 +79,7 @@ const minutes = readingTime(body)
   header {
     display: grid;
     grid-template-columns: auto 1fr;
-    grid-template-areas: 'tags tags' 'title title' 'author author' 'published minutes' 'summary summary';
+    grid-template-areas: "tags tags" "title title" "author author" "published minutes" "summary summary";
     align-items: center;
     column-gap: var(--size-fluid-2);
     margin-block-end: var(--size-fluid-3);
@@ -168,7 +168,7 @@ const minutes = readingTime(body)
   @media (min-width: 640px) {
     header {
       grid-template-columns: auto 1fr auto;
-      grid-template-areas: 'tags tags tags' 'title title title' 'author published minutes' 'summary summary summary';
+      grid-template-areas: "tags tags tags" "title title title" "author published minutes" "summary summary summary";
       row-gap: var(--size-fluid-1);
     }
 
