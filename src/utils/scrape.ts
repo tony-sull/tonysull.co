@@ -29,7 +29,7 @@ const scraper = metascraper([
 
 async function fetchWithTimeout(
   resource: RequestInfo | URL,
-  options: { timeout?: number } & RequestInit = {}
+  options: { timeout?: number } & RequestInit = {},
 ) {
   const { timeout = 5000 } = options
 
@@ -59,7 +59,7 @@ export async function scrape(url: string): Promise<Metadata> {
         headers: {
           'user-agent': USER_AGENT,
         },
-      }).then(res => res.text())
+      }).then(res => res.text()),
     )
   }
 

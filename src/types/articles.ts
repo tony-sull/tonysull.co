@@ -11,7 +11,7 @@ export function articleSchema({ image }: { image: ImageFunction }) {
       .string()
       .url()
       .describe(
-        'canonical URL for the article, used if the article was originally published on another site'
+        'canonical URL for the article, used if the article was originally published on another site',
       )
       .optional(),
   })

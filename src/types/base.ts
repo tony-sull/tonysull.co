@@ -13,7 +13,7 @@ type ImageFunction = () => import('zod').ZodObject<{
       import('zod').ZodLiteral<'tiff'>,
       import('zod').ZodLiteral<'webp'>,
       import('zod').ZodLiteral<'gif'>,
-      import('zod').ZodLiteral<'svg'>
+      import('zod').ZodLiteral<'svg'>,
     ]
   >
 }>
@@ -41,7 +41,7 @@ export const baseEntrySchema = ({ image }: { image: ImageFunction }) =>
     featured: image()
       .optional()
       .describe(
-        'primary photo for an entry suitable for use in a link preview'
+        'primary photo for an entry suitable for use in a link preview',
       ),
   })
 
@@ -54,14 +54,14 @@ export const baseCardSchema = ({ image }: { image: ImageFunction }) =>
     email: z.string().email().describe('email address').optional(),
     logo: image()
       .describe(
-        'a logo representing the person or organization, e.g. avatar icon'
+        'a logo representing the person or organization, e.g. avatar icon',
       )
       .optional(),
     url: z
       .string()
       .url()
       .describe(
-        'home page or other URL representing the person or organization'
+        'home page or other URL representing the person or organization',
       )
       .optional(),
   })

@@ -13,7 +13,7 @@ const notes = await getCollection('notes')
 const photos = await getCollection('photos')
 
 const entries = [...articles, ...bookmarks, ...notes, ...photos].sort(
-  sortByDate
+  sortByDate,
 )
 ---
 

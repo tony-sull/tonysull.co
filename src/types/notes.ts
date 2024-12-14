@@ -56,14 +56,14 @@ export function noteSchema({ image }: { image: ImageFunction }) {
     photo: image()
       .or(z.array(image()))
       .describe(
-        'one or more photos that is/are considered the primary content of the entry'
+        'one or more photos that is/are considered the primary content of the entry',
       )
       .optional(),
     video: z
       .string()
       .or(z.array(z.string()))
       .describe(
-        'one or more videos that is/are considered the primary content of the entry'
+        'one or more videos that is/are considered the primary content of the entry',
       )
       .optional(),
   })
