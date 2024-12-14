@@ -12,15 +12,17 @@ export type Props = {
   href?: string
   date?: Date | null | undefined
   tags?: string[] | undefined
-  photo?: ImageMetadata | ImageMetadata[] | undefined
+  photo?: CollectionEntry<'photos'>[] | ImageMetadata[] | undefined
   video?: string | string[] | undefined
   contentClass?: string
 }
 
-const { author, date, tags, photo, video, contentClass } = Astro.props
+const { author, date, tags, photo = [], video, contentClass } = Astro.props
 
-const singlePhoto = Array.isArray(photo) ? photo[0] : photo
+const singlePhoto = photo[0]
 const singleVideo = Array.isArray(video) ? video[0] : video
+
+const isEntry = singlePhoto && 'data' in singlePhoto
 ---
 
 <article class="h-entry">
@@ -44,8 +46,9 @@ const singleVideo = Array.isArray(video) ? video[0] : video
     singlePhoto && (
       <Photo
         zoomIn
-        src={singlePhoto}
-        alt=""
+        src={isEntry ? singlePhoto.data.photo : singlePhoto}
+        alt={isEntry ? (singlePhoto.data.summary ?? "") : ""}
+        caption={isEntry ? singlePhoto.data.name : undefined}
         class="u-fetaured"
         widths={[375, 522, 1044]}
         sizes="(min-width: 530px) 522px, 100vw"
@@ -55,7 +58,7 @@ const singleVideo = Array.isArray(video) ? video[0] : video
 
   {singleVideo && isYoutubeVideo(singleVideo) && <YouTube id={singleVideo} />}
 
-  <div class:list={[contentClass, 'e-content']}>
+  <div class:list={[contentClass, "e-content"]}>
     <slot />
   </div>
 
@@ -81,7 +84,7 @@ const singleVideo = Array.isArray(video) ? video[0] : video
     display: grid;
     grid-template-columns: 1fr auto;
     grid-template-rows: auto auto;
-    grid-template-areas: 'avatar published' 'tags tags';
+    grid-template-areas: "avatar published" "tags tags";
     align-items: center;
     column-gap: var(--size-fluid-1);
     row-gap: var(--size-fluid-1);
@@ -106,7 +109,7 @@ const singleVideo = Array.isArray(video) ? video[0] : video
     color: var(--gray-7);
   }
 
-  :global([data-theme='dark']) .dt-published {
+  :global([data-theme="dark"]) .dt-published {
     color: var(--gray-4);
   }
 
