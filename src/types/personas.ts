@@ -6,6 +6,7 @@ export function personSchema({ image }: { image: ImageFunction }) {
   return baseCardSchema({ image }).extend({
     type: z.literal('person').default('person'),
   })
+    .required({ nickname: true, logo: true })
 }
 
 export type Person = z.infer<ReturnType<typeof personSchema>>

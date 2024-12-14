@@ -110,7 +110,7 @@ async function _getAllMentions() {
     }
   } else {
     console.log(
-      `>>> Skipping webmentions check, WEBMENTION_IO_TOKEN not provided`
+      `>>> Skipping webmentions check, WEBMENTION_IO_TOKEN not provided`,
     )
   }
 

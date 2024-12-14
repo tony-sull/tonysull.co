@@ -1,5 +1,5 @@
 import { z } from 'astro/zod'
-import type { ImageFunction } from 'astro:content'
+import { reference, type ImageFunction } from 'astro:content'
 import { baseEntrySchema } from './base'
 import { scrape } from '../utils/scrape'
 
@@ -53,17 +53,17 @@ export function noteSchema({ image }: { image: ImageFunction }) {
         }
       }),
     /* Draft properties */
-    photo: image()
-      .or(z.array(image()))
+    photo: reference("photos")
+      .or(z.array(reference("photos")))
       .describe(
-        'one or more photos that is/are considered the primary content of the entry'
+        'one or more photos that is/are considered the primary content of the entry',
       )
       .optional(),
     video: z
       .string()
       .or(z.array(z.string()))
       .describe(
-        'one or more videos that is/are considered the primary content of the entry'
+        'one or more videos that is/are considered the primary content of the entry',
       )
       .optional(),
   })

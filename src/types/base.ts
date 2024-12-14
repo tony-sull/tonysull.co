@@ -1,22 +1,4 @@
-import { z } from 'astro/zod'
-import { reference } from 'astro:content'
-
-type ImageFunction = () => import('zod').ZodObject<{
-  src: import('zod').ZodString
-  width: import('zod').ZodNumber
-  height: import('zod').ZodNumber
-  format: import('zod').ZodUnion<
-    [
-      import('zod').ZodLiteral<'png'>,
-      import('zod').ZodLiteral<'jpg'>,
-      import('zod').ZodLiteral<'jpeg'>,
-      import('zod').ZodLiteral<'tiff'>,
-      import('zod').ZodLiteral<'webp'>,
-      import('zod').ZodLiteral<'gif'>,
-      import('zod').ZodLiteral<'svg'>
-    ]
-  >
-}>
+import { reference, z, type ImageFunction } from 'astro:content'
 
 export const baseEntrySchema = ({ image }: { image: ImageFunction }) =>
   z.object({
@@ -41,7 +23,7 @@ export const baseEntrySchema = ({ image }: { image: ImageFunction }) =>
     featured: image()
       .optional()
       .describe(
-        'primary photo for an entry suitable for use in a link preview'
+        'primary photo for an entry suitable for use in a link preview',
       ),
   })
 
@@ -54,14 +36,14 @@ export const baseCardSchema = ({ image }: { image: ImageFunction }) =>
     email: z.string().email().describe('email address').optional(),
     logo: image()
       .describe(
-        'a logo representing the person or organization, e.g. avatar icon'
+        'a logo representing the person or organization, e.g. avatar icon',
       )
       .optional(),
     url: z
       .string()
       .url()
       .describe(
-        'home page or other URL representing the person or organization'
+        'home page or other URL representing the person or organization',
       )
       .optional(),
   })

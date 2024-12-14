@@ -1,20 +1,21 @@
 ---
-import { getCollection } from 'astro:content'
-import ArticleCard from '~/components/ArticleCard.astro'
-import BookmarkCard from '~/components/BookmarkCard.astro'
-import NoteCard from '~/components/NoteCard.astro'
-import Profile from '~/components/Profile.astro'
-import Layout from '~/layouts/Page.astro'
-import { sortByDate } from '~/utils/sortByDate'
+import { getCollection } from "astro:content";
+import ArticleCard from "~/components/ArticleCard.astro";
+import BookmarkCard from "~/components/BookmarkCard.astro";
+import NoteCard from "~/components/NoteCard.astro";
+import PhotoCard from "~/components/PhotoCard.astro";
+import Profile from "~/components/Profile.astro";
+import Layout from "~/layouts/Page.astro";
+import { sortByDate } from "~/utils/sortByDate";
 
-const articles = await getCollection('articles')
-const bookmarks = await getCollection('bookmarks')
-const notes = await getCollection('notes')
-const photos = await getCollection('photos')
+const articles = await getCollection("articles");
+const bookmarks = await getCollection("bookmarks");
+const notes = await getCollection("notes");
+const photos = await getCollection("photos");
 
 const entries = [...articles, ...bookmarks, ...notes, ...photos].sort(
-  sortByDate
-)
+  sortByDate,
+);
 ---
 
 <Layout>
@@ -22,11 +23,12 @@ const entries = [...articles, ...bookmarks, ...notes, ...photos].sort(
 
   <ul>
     {
-      entries.map(entry => (
+      entries.map((entry) => (
         <li>
-          {entry.collection === 'articles' && <ArticleCard {...entry} />}
-          {entry.collection === 'bookmarks' && <BookmarkCard {...entry} />}
-          {entry.collection === 'notes' && <NoteCard {...entry} />}
+          {entry.collection === "articles" && <ArticleCard {...entry} />}
+          {entry.collection === "bookmarks" && <BookmarkCard {...entry} />}
+          {entry.collection === "notes" && <NoteCard {...entry} />}
+          {entry.collection === "photos" && <PhotoCard {...entry} />}
         </li>
       ))
     }
