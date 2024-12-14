@@ -7,11 +7,11 @@ import TagList from './TagList.astro'
 import type { CollectionEntry } from 'astro:content'
 
 export type Props = {
-  author: CollectionEntry<"personas">
+  author: CollectionEntry<'personas'>
   href?: string
   date?: Date | null | undefined
   tags?: string[] | undefined
-  photo?: CollectionEntry<"photos">[] | CollectionEntry<"photos"> | undefined
+  photo?: CollectionEntry<'photos'>[] | CollectionEntry<'photos'> | undefined
   contentClass?: string
 }
 

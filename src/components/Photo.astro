@@ -1,23 +1,30 @@
 ---
-import { Picture } from 'astro:assets'
-import { getEntry, type CollectionEntry } from 'astro:content'
+import { Picture, type LocalImageProps } from 'astro:assets'
+import { type CollectionEntry } from 'astro:content'
 import { type HTMLAttributes } from 'astro/types'
 import Show from './Show.astro'
+import type { ImageOutputFormat } from 'astro'
 
-export type Props = Omit<HTMLAttributes<"img">, 'alt' | 'src' | 'slot'> & {
-  photo: CollectionEntry<"photos">
-  zoomIn?: boolean
-  sizes: string
-  widths: number[]
+type PictureProps = LocalImageProps & {
+  formats?: ImageOutputFormat[]
+  fallbackFormat?: ImageOutputFormat
+  pictureAttributes?: HTMLAttributes<'picture'>
+  widths?: number[]
 }
 
-const { photo, zoomIn = false, sizes, widths, ...attrs } = Astro.props
-
-const caption = photo.data.name
+export type Props = Omit<PictureProps, 'alt' | 'src' | 'slot'> & {
+  photo: CollectionEntry<'photos'>
+  zoomIn?: boolean
+}
 
 const {
-  ...pictureProps
-} = attrs
+  photo,
+  zoomIn = false,
+  formats = ['avif', 'webp', 'jpg'],
+  ...attrs
+} = Astro.props
+
+const caption = photo.data.name
 ---
 
 <figure>
@@ -26,9 +33,8 @@ const {
       <Picture
         src={photo.data.photo}
         alt={photo.data.summary ?? ""}
-        {sizes}
-        {widths}
-        {...pictureProps}
+        {formats}
+        {...attrs}
       />
     </a>
 
@@ -36,9 +42,8 @@ const {
       slot="fallback"
       src={photo.data.photo}
       alt={photo.data.summary ?? ""}
-      {sizes}
-      {widths}
-      {...pictureProps}
+      {formats}
+      {...attrs}
     />
   </Show>
   <figcaption>{caption}</figcaption>

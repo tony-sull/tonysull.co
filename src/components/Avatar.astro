@@ -4,7 +4,7 @@ import type { HTMLAttributes } from 'astro/types'
 import { type CollectionEntry } from 'astro:content'
 
 export type Props = HTMLAttributes<'div'> & {
-  author: CollectionEntry<"personas">
+  author: CollectionEntry<'personas'>
 }
 
 const { author, class: className, ...attrs } = Astro.props
@@ -19,7 +19,7 @@ function getHandleDomain(author: CollectionEntry<'personas'>) {
 
   return author.data.nickname.slice(
     start + 1,
-    end >= 0 ? end : author.data.nickname.length
+    end >= 0 ? end : author.data.nickname.length,
   )
 }
 ---

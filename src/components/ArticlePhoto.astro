@@ -3,11 +3,7 @@ import Photo, { type Props as PhotoProps } from './Photo.astro'
 
 export type Props = PhotoProps
 
-const {
-    widths = [375, 768, 1532],
-    sizes = "100vw",
-    ...attrs
-} = Astro.props
+const { widths = [375, 768, 1532], sizes = '100vw', ...attrs } = Astro.props
 ---
 
 <Photo widths={widths} sizes={sizes} {...attrs} />

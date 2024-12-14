@@ -16,7 +16,7 @@ const notes = await getCollection('notes')
 const entries = [...articles, ...bookmarks, ...notes]
 
 const uniq = entries.reduce((acc, next) => {
-  (next.data.category || []).forEach(tag => {
+  ;(next.data.category || []).forEach(tag => {
     const count = acc.has(tag) ? acc.get(tag)! : 0
 
     acc.set(tag, count + 1)

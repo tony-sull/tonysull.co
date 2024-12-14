@@ -1,10 +1,12 @@
 import type { APIRoute } from 'astro'
 import { getFeed } from './_feed.js'
 
-export const get: APIRoute = async context => {
+export const GET: APIRoute = async context => {
   const feed = await getFeed(context)
 
-  return {
-    body: feed.json1(),
-  }
+  return new Response(feed.json1(), {
+    headers: {
+      'Content-Type': 'application/feed+json',
+    },
+  })
 }
