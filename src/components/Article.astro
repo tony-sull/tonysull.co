@@ -1,20 +1,20 @@
 ---
-import { type CollectionEntry, getEntry } from "astro:content";
-import readingTime from "reading-time";
-import { isoDate, shortDate } from "~/utils/dates.js";
-import { Icon } from "astro-icon/components";
-import Avatar from "./Avatar.astro";
-import TagList from "./TagList.astro";
-import { Image } from "astro:assets";
+import { type CollectionEntry, getEntry } from 'astro:content'
+import readingTime from 'reading-time'
+import { isoDate, shortDate } from '~/utils/dates.js'
+import { Icon } from 'astro-icon/components'
+import Avatar from './Avatar.astro'
+import TagList from './TagList.astro'
+import { Image } from 'astro:assets'
 
-export type Props = CollectionEntry<"articles">;
+export type Props = CollectionEntry<'articles'>
 
-const { body, data, render } = Astro.props;
+const { body, data, render } = Astro.props
 
-const { Content } = await render();
+const { Content } = await render()
 
-const author = await getEntry(data.author);
-const minutes = readingTime(body);
+const author = await getEntry(data.author)
+const minutes = readingTime(body)
 ---
 
 <article class="h-entry">

@@ -53,8 +53,8 @@ export function noteSchema({ image }: { image: ImageFunction }) {
         }
       }),
     /* Draft properties */
-    photo: reference("photos")
-      .or(z.array(reference("photos")))
+    photo: reference('photos')
+      .or(z.array(reference('photos')))
       .describe(
         'one or more photos that is/are considered the primary content of the entry',
       )

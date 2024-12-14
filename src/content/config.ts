@@ -18,8 +18,7 @@ export const collections = {
     schema: bookmarkSchema,
   }),
   personas: defineCollection({
-    schema: ({ image }) =>
-      personSchema({ image }),
+    schema: ({ image }) => personSchema({ image }),
   }),
   photos: defineCollection({
     schema: photoSchema,

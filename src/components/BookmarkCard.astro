@@ -1,21 +1,21 @@
 ---
-import Card from "./Card.astro";
-import { Icon } from "astro-icon/components";
-import { type CollectionEntry, getEntry } from "astro:content";
+import Card from './Card.astro'
+import { Icon } from 'astro-icon/components'
+import { type CollectionEntry, getEntry } from 'astro:content'
 
-export type Props = CollectionEntry<"bookmarks">;
+export type Props = CollectionEntry<'bookmarks'>
 
-const { data, slug } = Astro.props;
+const { data, slug } = Astro.props
 
-const metadata = data["bookmark-of"];
+const metadata = data['bookmark-of']
 
 if (!metadata) {
-  throw new Error(`Could not load metadata for bookmark "${slug}"`);
+  throw new Error(`Could not load metadata for bookmark "${slug}"`)
 }
 
-const bookmarkUrl = new URL(metadata.url);
+const bookmarkUrl = new URL(metadata.url)
 
-const author = await getEntry(data.author);
+const author = await getEntry(data.author)
 ---
 
 <Card
