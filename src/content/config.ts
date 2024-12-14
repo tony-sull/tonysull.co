@@ -19,7 +19,7 @@ export const collections = {
   }),
   personas: defineCollection({
     schema: ({ image }) =>
-      personSchema({ image }).required({ nickname: true, logo: true }),
+      personSchema({ image }),
   }),
   photos: defineCollection({
     schema: photoSchema,

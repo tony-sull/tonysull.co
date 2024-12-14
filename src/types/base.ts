@@ -1,22 +1,4 @@
-import { z } from 'astro/zod'
-import { reference } from 'astro:content'
-
-type ImageFunction = () => import('zod').ZodObject<{
-  src: import('zod').ZodString
-  width: import('zod').ZodNumber
-  height: import('zod').ZodNumber
-  format: import('zod').ZodUnion<
-    [
-      import('zod').ZodLiteral<'png'>,
-      import('zod').ZodLiteral<'jpg'>,
-      import('zod').ZodLiteral<'jpeg'>,
-      import('zod').ZodLiteral<'tiff'>,
-      import('zod').ZodLiteral<'webp'>,
-      import('zod').ZodLiteral<'gif'>,
-      import('zod').ZodLiteral<'svg'>,
-    ]
-  >
-}>
+import { reference, z, type ImageFunction } from 'astro:content'
 
 export const baseEntrySchema = ({ image }: { image: ImageFunction }) =>
   z.object({

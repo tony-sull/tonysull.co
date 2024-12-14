@@ -21,4 +21,7 @@ export default defineConfig({
       username: "tonysull",
     }),
   ],
+  legacy: {
+    collections: true
+  }
 });

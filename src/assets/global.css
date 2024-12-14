@@ -24,6 +24,12 @@
   .dark-theme {
     --link: var(--indigo-2);
   }
+
+  :where(h1, h2, h3 ,h4 ,h5, h6) {
+    text-wrap:initial;
+    text-wrap: pretty;
+    max-width: var(--size-header-3);
+  }
 }
 
 @layer base.fonts {
