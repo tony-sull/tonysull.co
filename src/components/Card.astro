@@ -1,28 +1,27 @@
 ---
-import type { CollectionEntry } from 'astro:content'
-import Photo from '~/components/Photo.astro'
-import { isoDate, shortDate } from '~/utils/dates.js'
-import Avatar from './Avatar.astro'
-import TagList from './TagList.astro'
-import { isYoutubeVideo } from '~/utils/videos'
-import { YouTube } from '@astro-community/astro-embed-youtube'
+import type { CollectionEntry } from "astro:content";
+import Photo from "~/components/Photo.astro";
+import { isoDate, shortDate } from "~/utils/dates.js";
+import Avatar from "./Avatar.astro";
+import TagList from "./TagList.astro";
+import { isYoutubeVideo } from "~/utils/videos";
+import { YouTube } from "@astro-community/astro-embed-youtube";
+import PhotoCarousel from "./PhotoCarousel.astro";
 
 export type Props = {
-  author: CollectionEntry<'personas'>
-  href?: string
-  date?: Date | null | undefined
-  tags?: string[] | undefined
-  photo?: CollectionEntry<'photos'>[] | ImageMetadata[] | undefined
-  video?: string | string[] | undefined
-  contentClass?: string
-}
+  author: CollectionEntry<"personas">;
+  href?: string;
+  date?: Date | null | undefined;
+  tags?: string[] | undefined;
+  photo?: CollectionEntry<"photos">[] | undefined;
+  video?: string | string[] | undefined;
+  contentClass?: string;
+};
 
-const { author, date, tags, photo = [], video, contentClass } = Astro.props
+const { author, date, tags, photo = [], video, contentClass } = Astro.props;
 
-const singlePhoto = photo[0]
-const singleVideo = Array.isArray(video) ? video[0] : video
-
-const isEntry = singlePhoto && 'data' in singlePhoto
+const singlePhoto = photo[0];
+const singleVideo = Array.isArray(video) ? video[0] : video;
 ---
 
 <article class="h-entry">
@@ -42,19 +41,7 @@ const isEntry = singlePhoto && 'data' in singlePhoto
     {tags && tags.length > 0 && <TagList tags={tags!} alt class="tags" />}
   </header>
 
-  {
-    singlePhoto && (
-      <Photo
-        zoomIn
-        src={isEntry ? singlePhoto.data.photo : singlePhoto}
-        alt={isEntry ? (singlePhoto.data.summary ?? "") : ""}
-        caption={isEntry ? singlePhoto.data.name : undefined}
-        class="u-fetaured"
-        widths={[375, 522, 1044]}
-        sizes="(min-width: 530px) 522px, 100vw"
-      />
-    )
-  }
+  <PhotoCarousel photos={photo} />
 
   {singleVideo && isYoutubeVideo(singleVideo) && <YouTube id={singleVideo} />}
 

@@ -13,8 +13,6 @@ export function photoSchema({ image }: { image: ImageFunction }) {
       .describe('description of the photo, often used for alt text')
       .optional(),
     photo: image()
-      .or(z.array(image()))
-      .transform(val => (Array.isArray(val) ? val : [val]))
       .describe('src URL for the original image file'),
   })
 }

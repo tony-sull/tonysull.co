@@ -1,14 +1,14 @@
 ---
-import Picture from './Picture.astro'
-import type { Props as PictureProps } from './Picture.astro'
+import Picture from "./Picture.astro";
+import type { Props as PictureProps } from "./Picture.astro";
 
-export type Props = Omit<PictureProps, 'src' | 'slot'> & {
-  src: ImageMetadata
-  caption?: string
-  zoomIn?: boolean
-}
+export type Props = Omit<PictureProps, "src" | "slot"> & {
+  src: ImageMetadata;
+  caption?: string;
+  zoomIn?: boolean;
+};
 
-const { src, zoomIn = false, caption, ...attrs } = Astro.props
+const { src, zoomIn = false, caption, ...attrs } = Astro.props;
 ---
 
 <figure>
@@ -28,5 +28,10 @@ const { src, zoomIn = false, caption, ...attrs } = Astro.props
   a:hover,
   a:focus-within {
     cursor: zoom-in;
+  }
+
+  figcaption {
+    text-align: center;
+    font-size: var(--font-size-fluid-0);
   }
 </style>

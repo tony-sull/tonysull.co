@@ -1,0 +1,167 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Photo from "./Photo.astro";
+
+type Props = {
+    photos: CollectionEntry<"photos">[];
+    widths?: number[];
+    sizes?: string;
+};
+
+const {
+    photos,
+    widths = [375, 522, 1044],
+    sizes = "(min-width: 530px) 522px, 100vw",
+} = Astro.props;
+---
+
+{
+    photos.length === 1 && (
+        <Photo
+            src={photos[0]!.data.photo}
+            alt={photos[0]!.data.summary ?? ""}
+            caption={photos[0]!.data.name}
+            class="u-featured"
+            {widths}
+            {sizes}
+        />
+    )
+}
+{
+    photos.length > 1 && (
+        <photo-carousel>
+            <ul>
+                {photos.map(({ data }) => (
+                    <li>
+                        <Photo
+                            src={data.photo}
+                            alt={data.summary ?? ""}
+                            caption={data.name}
+                            class="u-featured"
+                            widths={[375, 522, 1044]}
+                            sizes="(min-width: 530px) 522px, 100vw"
+                        />
+                    </li>
+                ))}
+            </ul>
+            <nav>
+                {photos.map((_, i) => (
+                    <div aria-current={i === 0} />
+                ))}
+            </nav>
+        </photo-carousel>
+    )
+}
+
+<script>
+    class PhotoCarousel extends HTMLElement {
+        #ulElem: HTMLUListElement | null = null;
+        #photoElems: HTMLImageElement[] = [];
+        #navElem: HTMLElement | null = null;
+        #indicatorElems: HTMLDivElement[] = [];
+        #observer: IntersectionObserver | null = null;
+
+        connectedCallback() {
+            this.#ulElem = this.querySelector("ul");
+            this.#navElem = this.querySelector("nav");
+
+            if (this.#ulElem && this.#navElem) {
+                this.#photoElems = Array.from(
+                    this.#ulElem.querySelectorAll("img"),
+                );
+                this.#indicatorElems = Array.from(
+                    this.#navElem.querySelectorAll("div"),
+                );
+
+                this.#observer = new IntersectionObserver(
+                    (entries) => {
+                        const current = entries.find(
+                            (elem) => elem.isIntersecting,
+                        );
+                        const currentIndex = this.#photoElems.findIndex(
+                            (e) => e === current?.target,
+                        );
+                        console.log("selected", currentIndex);
+
+                        this.#indicatorElems.forEach((_, i) => {
+                            const elem = this.#indicatorElems[i];
+                            console.log(i === currentIndex, elem);
+                            if (elem) {
+                                if (i === currentIndex) {
+                                    elem.ariaCurrent = "true";
+                                } else {
+                                    elem.removeAttribute("aria-current");
+                                }
+                            }
+                        });
+                    },
+                    {
+                        threshold: 0.5,
+                    },
+                );
+
+                for (const elem of this.#photoElems) {
+                    this.#observer!.observe(elem);
+                }
+
+                this.#indicatorElems.forEach((elem, i) => {
+                    elem.addEventListener("click", () => {
+                        this.#photoElems[i]?.scrollIntoView({
+                            behavior: "smooth",
+                            block: "nearest",
+                            inline: "center",
+                        });
+                    });
+                });
+            }
+        }
+    }
+
+    customElements.define("photo-carousel", PhotoCarousel);
+</script>
+
+<style>
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        overflow-x: scroll;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x mandatory;
+        scroll-padding: 0;
+        scrollbar-width: none;
+    }
+
+    li {
+        position: relative;
+        width: 100%;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        padding: 0;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        gap: var(--size-1);
+        padding-block: var(--size-1);
+    }
+
+    nav > * {
+        width: 0.75em;
+        height: 0.75em;
+        background-color: var(--gray-5);
+        border-radius: 0.375em;
+        cursor: pointer;
+        transition:
+            width 0.25s ease-out,
+            background-color 0.25s ease-out;
+    }
+
+    nav > [aria-current="true"] {
+        width: 1.5em;
+        background-color: var(--blue-7);
+    }
+</style>
