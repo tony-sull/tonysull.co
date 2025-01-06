@@ -1,37 +1,37 @@
 ---
-import type { HTMLAttributes } from 'astro/types'
-import { getCollection } from 'astro:content'
-import { Icon } from 'astro-icon/components'
-import site from '~/data/site'
-import TagList from './TagList.astro'
+import type { HTMLAttributes } from "astro/types";
+import { getCollection } from "astro:content";
+import { Icon } from "astro-icon/components";
+import site from "~/data/site";
+import TagList from "./TagList.astro";
 
-export type Props = Omit<HTMLAttributes<'aside'>, 'slot'>
+export type Props = Omit<HTMLAttributes<"aside">, "slot">;
 
-const { ...attrs } = Astro.props
+const { ...attrs } = Astro.props;
 
-const articles = await getCollection('articles')
-const bookmarks = await getCollection('bookmarks')
-const notes = await getCollection('notes')
+const articles = await getCollection("articles");
+const bookmarks = await getCollection("bookmarks");
+const notes = await getCollection("notes");
 
-const entries = [...articles, ...bookmarks, ...notes]
+const entries = [...articles, ...bookmarks, ...notes];
 
 const uniq = entries.reduce((acc, next) => {
-  ;(next.data.category || []).forEach(tag => {
-    const count = acc.has(tag) ? acc.get(tag)! : 0
+  (next.data.category || []).forEach((tag) => {
+    const count = acc.has(tag) ? acc.get(tag)! : 0;
 
-    acc.set(tag, count + 1)
-  })
-  return acc
-}, new Map<string, number>())
+    acc.set(tag, count + 1);
+  });
+  return acc;
+}, new Map<string, number>());
 
 const tags = Array.from(uniq.entries())
   .sort(([, a], [, b]) => b - a)
-  .map(([tag]) => tag)
+  .map(([tag]) => tag);
 ---
 
 <aside {...attrs}>
   <div>
-    <p>💼 Navillus</p>
+    <p>💼 Observable</p>
     <p>🖥️ Software Engineer</p>
     <p>🔥 IndieWeb Enthusiast</p>
   </div>

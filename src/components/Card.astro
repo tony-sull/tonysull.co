@@ -1,6 +1,5 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import Photo from "~/components/Photo.astro";
 import { isoDate, shortDate } from "~/utils/dates.js";
 import Avatar from "./Avatar.astro";
 import TagList from "./TagList.astro";
@@ -20,7 +19,6 @@ export type Props = {
 
 const { author, date, tags, photo = [], video, contentClass } = Astro.props;
 
-const singlePhoto = photo[0];
 const singleVideo = Array.isArray(video) ? video[0] : video;
 ---
 

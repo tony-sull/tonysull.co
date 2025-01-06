@@ -1,22 +1,22 @@
 ---
-import type { HTMLAttributes } from 'astro/types'
+import type { HTMLAttributes } from "astro/types";
 
-export type Props = HTMLAttributes<'ul'> & {
-  tags: string[]
-  alt?: boolean
-}
+export type Props = HTMLAttributes<"ul"> & {
+  tags: string[];
+  alt?: boolean;
+};
 
-const { tags, alt = false, ...attrs } = Astro.props
+const { tags, alt = false, ...attrs } = Astro.props;
 ---
 
 <ul {...attrs}>
   {
-    tags.map(tag => (
+    tags.map((tag) => (
       <li>
         <a
           href={`/tags/${tag}`}
           rel="category tag"
-          class:list={['p-category', { alt }]}
+          class:list={["p-category", { alt }]}
         >
           #{tag}
         </a>
@@ -29,7 +29,7 @@ const { tags, alt = false, ...attrs } = Astro.props
   ul {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--size-4);
+    gap: var(--size-2);
     margin: 0;
     padding: 0;
     list-style: none;
@@ -53,7 +53,7 @@ const { tags, alt = false, ...attrs } = Astro.props
     background: var(--surface-2);
   }
 
-  :global([data-theme='dark']) .p-category {
+  :global([data-theme="dark"]) .p-category {
     color: var(--gray-3);
   }
 </style>
