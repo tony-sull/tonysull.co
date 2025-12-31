@@ -1,5 +1,5 @@
 {
-  "lastFetched": "2025-02-23T01:23:08.268Z",
+  "lastFetched": "2025-12-31T18:09:30.846Z",
   "children": [
     {
       "type": "entry",
@@ -1801,6 +1801,29 @@
       "wm-protocol": "webmention",
       "like-of": "https://tonysull.co/articles/web-3-is-here/",
       "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "caleb",
+        "photo": "https://avatars.webmention.io/cdn.masto.host/2a6ee744c69aec44ae197ac44e9512f542795db6ffd7efb420f42f92291cb03f.png",
+        "url": "https://mas.to/@calebjasik"
+      },
+      "url": "https://mas.to/@calebjasik/110719507919740742",
+      "published": "2023-07-15T18:26:56+00:00",
+      "wm-received": "2025-04-05T22:00:20Z",
+      "wm-id": 1901721,
+      "wm-source": "https://brid.gy/post/mastodon/@tonysull@indieweb.social/110719507982155060",
+      "wm-target": "https://tonysull.co/articles/astro-webfinger-2/",
+      "wm-protocol": "webmention",
+      "content": {
+        "html": "<p>I’ve got to get around to setting up <a href=\"https://tonysull.co/articles/astro-webfinger-2/\"><span>https://</span><span>tonysull.co/articles/astro-web</span><span>finger-2/</span></a> so I can be @calebjasik@jasik.xyz on here :p</p><p>thx for the article and tech <span class=\"h-card\"><a href=\"https://indieweb.social/@tonysull\" class=\"u-url\">@<span>tonysull</span></a></span></p>\n<a href=\"https://tonysull.co/articles/astro-webfinger-2/\">astro-webfinger 2.0 • Tony Sullivan</a>",
+        "text": "I’ve got to get around to setting up https://tonysull.co/articles/astro-webfinger-2/ so I can be @calebjasik@jasik.xyz on here :p\n\nthx for the article and tech @tonysull\nastro-webfinger 2.0 • Tony Sullivan"
+      },
+      "mention-of": "https://tonysull.co/articles/astro-webfinger-2/",
+      "wm-property": "mention-of",
       "wm-private": false
     }
   ]
